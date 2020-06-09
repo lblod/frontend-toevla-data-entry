@@ -4,7 +4,6 @@ import Controller from '@ember/controller';
 import Store from '@ember-data/store';
 import { statechart } from 'ember-statecharts/computed'
 import Statechart from 'ember-statecharts/utils/statechart';
-import PointOfInterest from 'frontend-toevla-data-entry/app/models/point-of-interest';
 
 export default class PoiNew extends Controller {
   @tracked label: string | null = null;

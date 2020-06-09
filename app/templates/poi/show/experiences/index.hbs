@@ -1,0 +1,9 @@
+<h2>Events</h2>
+
+<ul>
+  {{#each @model as |experience|}}
+    <li><LinkTo @route="experience.show" @model={{experience}}>{{experience.title}}</LinkTo></li>
+  {{/each}}
+</ul>
+
+<LinkTo @route="poi.show.experiences.new" @model={{this.poi}}>Add event</LinkTo>

@@ -8,8 +8,16 @@ export default class Router extends EmberRouter {
 
 Router.map(function() {
   this.route('poi', function() {
-    this.route('show', { path: "/:id" });
+    this.route('show', { path: "/:id" }, function() {
+      this.route('experiences', function() {
+        this.route('new');
+      });
+    });
     this.route('new');
     this.route('edit', { path: "/:id/edit" });
+  });
+
+  this.route('experience', function() {
+    this.route('show', { path: "/:id/" });
   });
 });

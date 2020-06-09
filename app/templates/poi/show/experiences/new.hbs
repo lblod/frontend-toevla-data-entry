@@ -1,0 +1,32 @@
+<h3>New event</h3>
+<WithStatechart @state={{this.statechart}} as |chart|>
+
+  <chart.if @state="init">
+    <form {{on "submit" (fn chart.preventAndSend "CREATE")}}>
+      <label>
+        title
+        <Input @value={{this.title}} @placeholder="Permanent exhibition SMAK" />
+      </label>
+      <button type="submit" {{on "click" (fn chart.preventAndSend "CREATE")}}>Create</button>
+    </form>
+    <button type="button" {{on "click" (fn chart.preventAndSend "CLEAR")}}>Reset</button>
+  </chart.if>
+
+  <chart.if @state="creating">
+    ... creating your event ...
+  </chart.if>
+
+  <chart.if @state="failed">
+    <p>Oops, failed to create your event</p>
+    <button type="button" {{on "click" (fn chart.preventAndSend "RESET")}}>RESET</button>
+  </chart.if>
+
+  <chart.if @state="created">
+    ... created your event, transitioning you to the details ...
+  </chart.if>
+
+  <chart.if @state="failedTransitioning">
+    ... failed to transition to your created experience ...
+    <LinkTo @route="poi.show.experiences.index" @model={{this.poi}}>Back to POI</LinkTo>
+  </chart.if>
+</WithStatechart>

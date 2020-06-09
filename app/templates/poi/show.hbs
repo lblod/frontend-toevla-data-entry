@@ -1,9 +1,9 @@
 <article>
-  <h1>Point of interest</h1>
+  <h1>Point of interest: {{@model.label}}</h1>
 
-  {{@model.label}}
-
-  <LinkTo @route="poi.index">Overview</LinkTo> | <LinkTo  @route="poi.edit" @model={{@model}}>Edit</LinkTo>
+  <LinkTo @route="poi.index">Overview</LinkTo>
+  | <LinkTo  @route="poi.edit" @model={{@model}}>Edit</LinkTo>
+  | <LinkTo @route="poi.show.experiences.index" @model={{@model}}>Show experiences</LinkTo>
 </article>
 
 {{outlet}}
