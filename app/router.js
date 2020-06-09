@@ -19,5 +19,6 @@ Router.map(function() {
 
   this.route('experience', function() {
     this.route('show', { path: "/:id/" });
+    this.route('edit', { path: "/:id/edit" });
   });
 });

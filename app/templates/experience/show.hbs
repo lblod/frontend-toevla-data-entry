@@ -1,7 +1,6 @@
 <h2>Experience: {{@model.title}}</h2>
 
-{{#if @model.pointOfInterest}}
-  <LinkTo @route="poi.show" @model={{hash id=@model.pointOfInterest.id}}>Show POI</LinkTo>
-{{/if}}
+<LinkTo @route="experience.edit" @model={{@model}}>Edit</LinkTo>
+| <LinkTo @route="poi.show" @model={{hash id=@model.pointOfInterest.id}}>Show POI</LinkTo>
 
 {{outlet}}

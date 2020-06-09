@@ -1,0 +1,10 @@
+<h2>Update experience: {{@model.title}}</h2>
+
+<form {{on "submit" this.submit}}>
+  <label>Title <Input @value={{@model.title}} /></label>
+  <button {{on "click" this.submit}} type="submit">Save</button>
+</form>
+
+<ConfirmationButton @onConfirm={{this.delete}}>Delete experience</ConfirmationButton>
+
+{{outlet}}
