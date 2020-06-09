@@ -1,0 +1,9 @@
+<article>
+  <h1>Point of interest</h1>
+
+  {{@model.label}}
+
+  <LinkTo @route="poi.index">Overview</LinkTo> | <LinkTo  @route="poi.edit" @model={{@model}}>Edit</LinkTo>
+</article>
+
+{{outlet}}

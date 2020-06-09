@@ -1,0 +1,11 @@
+<h2>Listing points of interest</h2>
+
+<ul>
+  {{#each @model as |poi|}}
+    <LinkTo @route="poi.show" @model={{poi}}>
+      <li>{{poi.title}}</li>
+    </LinkTo>
+  {{/each}}
+</ul>
+
+<LinkTo @route="poi.new">Add point of interest</LinkTo>

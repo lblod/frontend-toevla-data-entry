@@ -1,0 +1,10 @@
+<article>
+  <h1>Edit Point of Interest</h1>
+  <form {{on "submit" this.submit}}>
+    <label>
+      Label
+      <Input @type="string" @value={{this.model.label}} />
+    </label>
+    <button type="submit">Save</button>
+  </form>
+</article>
