@@ -3,7 +3,7 @@
 <ul>
   {{#each @model as |poi|}}
     <LinkTo @route="poi.show" @model={{poi}}>
-      <li>{{poi.title}}</li>
+      <li>{{poi.label}}</li>
     </LinkTo>
   {{/each}}
 </ul>

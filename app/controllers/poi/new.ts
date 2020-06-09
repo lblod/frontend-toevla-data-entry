@@ -2,25 +2,39 @@ import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import Controller from '@ember/controller';
+import Store from '@ember-data/store';
 
 export default class PoiNew extends Controller {
-  @tracked label = null;
+  @tracked label: string | null = null;
+  @tracked state: string = "ok";
 
-  @service store;
+  @service store!: Store;
 
+  /**
+   * Handles the submit event from the cursor.
+   */
   @action
-  submit(event) {
+  submit(event: Event) {
     event.preventDefault();
 
-    this.createPoi(this.label);
-    this.reset();
+    if (this.label) {
+      this.createPoi(this.label as unknown as string);
+      this.reset();
+    } else {
+      this.state = "error"
+    }
   }
 
+  /**
+   * Resets the controller.
+   */
   reset() {
-    console.log("Resetting controller");
     this.label = null;
   }
 
+  /**
+   * Creates a new point-of-interest and transitions to it.
+   */
   async createPoi(label: string) {
     const record =
       await this
