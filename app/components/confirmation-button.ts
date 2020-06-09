@@ -1,6 +1,8 @@
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import Component from '@glimmer/component';
+import { statechart, matchesState } from 'ember-statecharts/computed';
+import Statechart from 'ember-statecharts/utils/statechart';
 
 interface ConfirmationButtonArgs {
   onConfirm: () => any;
@@ -8,23 +10,48 @@ interface ConfirmationButtonArgs {
 }
 
 export default class ConfirmationButton extends Component<ConfirmationButtonArgs> {
-  @tracked state = "init";
+  @statechart(
+    {
+      initial: 'init',
+      states: {
+        init: {
+          on: {
+            CLICK: 'unconfirmed'
+          }
+        },
+        unconfirmed: {
+          on: {
+            CLICK: 'confirmed',
+            CANCEL: 'init'
+          }
+        },
+        confirmed: {
+          entry: ['trigger']
+        }
+      }
+    },
+      {
+        actions: {
+          trigger(context: ConfirmationButton) {
+            if (context.args.onConfirm)
+              context.args.onConfirm();
+          }
+        }
+      }
+  )
+  statechart: Statechart;
 
-  @action click(event : Event) {
+  @matchesState('init') isInit!: boolean;
+  @matchesState('unconfirmed') isUnconfirmed!: boolean;
+  @matchesState('confirmed') isConfirmed!: boolean;
+
+  @action click(event: Event) {
     event.preventDefault();
-    switch (this.state) {
-      case "init":
-        this.state = "unconfirmed";
-        break;
-      case "unconfirmed":
-        this.state = "confirmed";
-        this.args.onConfirm();
-        break;
-    }
+    this.statechart.send("CLICK");
   }
 
-  @action cancelClick(event : Event) {
+  @action cancelClick(event: Event) {
     event.preventDefault();
-    this.state = "init";
+    this.statechart.send("CANCEL");
   }
 }

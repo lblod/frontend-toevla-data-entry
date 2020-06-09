@@ -1,13 +1,13 @@
-{{#if (eq this.state "init")}}
+{{#if this.isInit}}
   <button {{on "click" this.click}} type="button">{{yield}}</button>
 {{/if}}
 
-{{#if (eq this.state "unconfirmed")}}
+{{#if this.isUnconfirmed}}
   Are you sure?
   <button {{on "click" this.cancelClick}} type="button">No</button>
   <button {{on "click" this.click}} type="button">Yes</button>
 {{/if}}
 
-{{#if (eq this.state "confirmed")}}
+{{#if this.isConfirmed}}
   Action executed!
 {{/if}}
