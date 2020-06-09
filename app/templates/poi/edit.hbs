@@ -8,5 +8,7 @@
     <button type="submit">Save</button>
   </form>
 
+  <LinkTo @route="poi.index">Overview</LinkTo>
+  <LinkTo @route="poi.show" @model={{@model}}>Show</LinkTo>
   <ConfirmationButton @onConfirm={{this.delete}}>Delete Point of Interest</ConfirmationButton>
 </article>

@@ -28,14 +28,14 @@ export default class ConfirmationButton extends Component<ConfirmationButtonArgs
         }
       }
     },
-      {
-        actions: {
-          trigger(context: ConfirmationButton) {
-            if (context.args.onConfirm)
-              context.args.onConfirm();
-          }
+    {
+      actions: {
+        trigger(context: ConfirmationButton) {
+          if (context.args.onConfirm)
+            context.args.onConfirm();
         }
       }
+    }
   )
-  statechart: Statechart;
+  statechart!: Statechart;
 }

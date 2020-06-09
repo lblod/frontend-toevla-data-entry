@@ -1,15 +1,28 @@
 <h2>Add a new point of interest</h2>
 
-{{#if (eq this.state "ok")}}
-  <form {{on "submit" this.submit}}>
-    <label>
-      Name: <Input type="text" @value={{this.label}} @placeholder="Museum M" />
-    </label>
+<WithStatechart @state={{this.statechart}} as |chart|>
+  <chart.if @state="init">
+    <form {{on "submit" (fn chart.preventAndSend "CREATE")}}>
+      <label>
+        Name: <Input type="text" @value={{this.label}} @placeholder="Museum M" />
+      </label>
 
-    <button type="submit">Create</button>
-  </form>
-{{else}}
-  An error occurred.
-{{/if}}
+      <button type="submit">Create</button>
+    </form>
+  </chart.if>
+
+  <chart.if @state="saving">
+    ... saving ...
+  </chart.if>
+
+  <chart.if @state="failed">
+    <button type="button" {{on "click" (fn chart.preventAndSend "RESET")}}>reset</button>
+    <button type="button" {{on "click" (fn chart.preventAndSend "RETRY")}}>retry</button>
+  </chart.if>
+
+  <chart.if @state="done">
+    ... redirecting ...
+  </chart.if>
+</WithStatechart>
 
 <LinkTo @route="poi.index">Overview</LinkTo>
