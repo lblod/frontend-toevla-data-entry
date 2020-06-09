@@ -1,13 +1,15 @@
-{{#if this.isInit}}
-  <button {{on "click" this.click}} type="button">{{yield}}</button>
-{{/if}}
+<WithStatechart @state={{this.statechart}} as |chart|>
+  <chart.if @state="init">
+    <button {{on "click" (fn chart.preventAndSend "CLICK")}} type="button">{{yield}}</button>
+  </chart.if>
 
-{{#if this.isUnconfirmed}}
-  Are you sure?
-  <button {{on "click" this.cancelClick}} type="button">No</button>
-  <button {{on "click" this.click}} type="button">Yes</button>
-{{/if}}
+  <chart.if @state="unconfirmed">
+    Are you sure?
+    <button {{on "click" (fn chart.preventAndSend "CANCEL")}} type="button">No</button>
+    <button {{on "click" (fn chart.preventAndSend "CLICK")}} type="button">Yes</button>
+  </chart.if>
 
-{{#if this.isConfirmed}}
-  Action executed!
-{{/if}}
+  <chart.if @state="confirmed">
+    Action executed!
+  </chart.if>
+</WithStatechart>

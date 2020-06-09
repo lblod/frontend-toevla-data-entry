@@ -1,0 +1,7 @@
+{{yield
+    (hash
+    state=this.stateName
+    send=this.send
+    preventAndSend=this.send
+    if=(component "with-statechart/if" currentState=this.stateName)
+    )}}
