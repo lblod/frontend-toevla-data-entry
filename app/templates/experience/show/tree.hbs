@@ -3,7 +3,7 @@
   <ul>
   {{#each this.model.topLevelNodes as |node|}}
     <li>
-      <Tree::Node @node={{node}} />
+      <Tree::Node @node={{node}} @experience={{this.experience}} />
     </li>
   {{/each}}
   </ul>

@@ -21,6 +21,10 @@ Router.map(function() {
     this.route('show', { path: "/:id/" }, function() {
       this.route('tree');
     });
-    this.route('edit', { path: "/:id/edit" });
+    this.route('edit', { path: "/:id/edit" }, function() {
+      this.route('tree-node', { path: "/tree-node/:tree_node_id" });
+    });
   });
+
+  this.route('tree-node', function() {});
 });

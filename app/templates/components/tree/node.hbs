@@ -1,12 +1,13 @@
 {{#if this.handlerComponent}}
-  {{component this.handlerComponent node=@node}}
+  {{component this.handlerComponent node=@node experience=@experience}}
 {{else}}
   {{@node.title}} ({{@node.uri}})
 
   <ul>
     {{#each @node.children as |child|}}
       <li>
-        <Tree::Node @node={{child}} />
+        <LinkTo @route="experience.edit.tree-node" @model={{hash id=this.experience.id tree_node_id=@node.id}}>[E]</LinkTo>
+        <Tree::Node @node={{child}} @experience={{@experience}} />
       </li>
     {{/each}}
   </ul>

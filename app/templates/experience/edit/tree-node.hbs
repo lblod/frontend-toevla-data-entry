@@ -1,0 +1,10 @@
+<h3>We are editing the scoring for {{@model.treeNode.title}}</h3>
+
+<form {{on "submit" this.submit}}>
+  <label>Score
+    <Input @value={{this.currentScore}} @placeholder="Brons" />
+  </label>
+  <button type="submit" {{on "click" this.submit}}>Set</button>
+</form>
+
+{{outlet}}
