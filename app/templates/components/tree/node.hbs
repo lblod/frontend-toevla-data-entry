@@ -1,0 +1,13 @@
+{{#if this.handlerComponent}}
+  {{component this.handlerComponent node=@node}}
+{{else}}
+  {{@node.title}} ({{@node.uri}})
+
+  <ul>
+    {{#each @node.children as |child|}}
+      <li>
+        <Tree::Node @node={{child}} />
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}

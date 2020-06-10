@@ -2,7 +2,9 @@
   <h1>{{this.model.title}}</h1>
   <ul>
   {{#each this.model.topLevelNodes as |node|}}
-    <li>{{node.title}}</li>
+    <li>
+      <Tree::Node @node={{node}} />
+    </li>
   {{/each}}
   </ul>
 </article>
