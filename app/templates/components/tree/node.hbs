@@ -1,14 +1,25 @@
 {{#if this.handlerComponent}}
   {{component this.handlerComponent node=@node experience=@experience}}
 {{else}}
-  {{@node.title}} ({{@node.uri}})
+  <button type="button" {{on "click" this.toggleIsOpen}}>
+    {{#if this.isOpen}}+{{else}}-{{/if}}
+  </button>
+    {{@node.title}} ({{@node.uri}})
 
-  <ul>
-    {{#each @node.children as |child|}}
-      <li>
-        <LinkTo @route="experience.edit.tree-node" @model={{hash id=this.experience.id tree_node_id=child.id}}>[E]</LinkTo>
-        <Tree::Node @node={{child}} @experience={{@experience}} />
-      </li>
-    {{/each}}
-  </ul>
+  {{#if this.isOpen}}
+    {{#if @node.children.length}}
+      <ul>
+        {{#each @node.children as |child|}}
+          <li>
+            <LinkTo @route="experience.edit.tree-node" @model={{hash id=this.experience.id tree_node_id=child.id}}>[E]</LinkTo>
+            <Tree::Node @node={{child}} @experience={{@experience}} />
+          </li>
+        {{/each}}
+      </ul>
+      {{else}}
+      <p>
+        Geen kinderen
+      </p>
+    {{/if}}
+  {{/if}}
 {{/if}}
