@@ -6,7 +6,7 @@
   <ul>
     {{#each @node.children as |child|}}
       <li>
-        <LinkTo @route="experience.edit.tree-node" @model={{hash id=this.experience.id tree_node_id=@node.id}}>[E]</LinkTo>
+        <LinkTo @route="experience.edit.tree-node" @model={{hash id=this.experience.id tree_node_id=child.id}}>[E]</LinkTo>
         <Tree::Node @node={{child}} @experience={{@experience}} />
       </li>
     {{/each}}
