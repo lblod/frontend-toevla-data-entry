@@ -1,6 +1,7 @@
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import Controller from '@ember/controller';
+import { editMapping } from 'frontend-toevla-data-entry/utils/custom-component-mapping';
 
 export default class ExperienceEditTreeNode extends Controller {
   @tracked internalScore = null;
@@ -13,6 +14,10 @@ export default class ExperienceEditTreeNode extends Controller {
       this.model.scoring.score = score;
     else
       this.internalScore = score;
+  }
+
+  get extendedEditComponent(){
+    return editMapping( this.model.treeNode.uri );
   }
 
   @action submit( event: Event ) {

@@ -7,4 +7,10 @@
   <button type="submit" {{on "click" this.submit}}>Set</button>
 </form>
 
+{{#if this.extendedEditComponent}}
+  {{component this.extendedEditComponent
+      treeNode=@model.treeNode
+      experience=@model.experience}}
+{{/if}}
+
 {{outlet}}

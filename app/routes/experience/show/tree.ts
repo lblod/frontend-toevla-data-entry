@@ -7,7 +7,7 @@ import Tree from 'frontend-toevla-data-entry/models/tree';
 export default class ExperienceShowTree extends Route {
   @service store!: Store;
 
-  async model() {
+  async model(): Promise<Tree | undefined> {
     const model = await this.store.query( 'tree', {
       "page[size]": 1
     });
