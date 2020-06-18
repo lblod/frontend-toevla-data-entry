@@ -2,11 +2,13 @@ import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import Controller from '@ember/controller';
 import Store from '@ember-data/store';
-import { statechart } from 'ember-statecharts/computed'
 import Statechart from 'ember-statecharts/utils/statechart';
+import PointOfInterest from 'frontend-toevla-data-entry/models/point-of-interest';
+import { handler, guard, statechart } from 'frontend-toevla-data-entry/utils/rockin-statechart';
 
 export default class PoiNew extends Controller {
   @tracked label: string | null = null;
+  @service store!: Store;
 
   @statechart(
     {
@@ -41,42 +43,42 @@ export default class PoiNew extends Controller {
           }
         }
       }
-    },
-    {
-      actions: {
-        resetState(context: PoiNew) {
-          context.label = null;
-        },
-        async launchSave(context: PoiNew) {
-          const label = context.label as string;
-          try {
-            const record =
-              await context
-                .store
-                .createRecord("point-of-interest", { label })
-                .save();
-            context.statechart.send("SAVED", { record })
-          } catch (e) {
-            context.statechart.send("FAIL");
-          }
-        },
-        showEntity(context: PoiNew, { record }: { record: PointOfInterest }) {
-          try {
-            context.transitionToRoute('poi.show', record);
-          } catch (e) {
-            context.statechart.send("FAIL");
-          }
-        }
-      },
-      guards: {
-        hasLabel(context: PoiNew) {
-          return context.label;
-        }
-      }
     }
   ) statechart!: Statechart;
 
-  @service store!: Store;
+  @handler()
+  resetState() {
+    this.label = null;
+  }
+
+  @handler()
+  async launchSave(){
+    const label = this.label;
+    try {
+      const record =
+        await this
+          .store
+          .createRecord("point-of-interest", { label })
+          .save();
+      this.statechart.send("SAVED", { record })
+    } catch (e) {
+      this.statechart.send("FAIL");
+    }
+  }
+
+  @handler()
+  showEntity({ record }: { record: PointOfInterest }) {
+    try {
+      this.transitionToRoute('poi.show', record);
+    } catch (e) {
+      this.statechart.send("FAIL");
+    }
+  }
+
+  @guard()
+  get hasLabel() {
+    return this.label && this.label !== "";
+  }
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your controllers.

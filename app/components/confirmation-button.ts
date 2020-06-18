@@ -1,5 +1,5 @@
 import Component from '@glimmer/component';
-import { statechart } from 'ember-statecharts/computed';
+import { statechart, handler } from 'frontend-toevla-data-entry/utils/rockin-statechart';
 import Statechart from 'ember-statecharts/utils/statechart';
 
 interface ConfirmationButtonArgs {
@@ -27,15 +27,12 @@ export default class ConfirmationButton extends Component<ConfirmationButtonArgs
           entry: ['trigger']
         }
       }
-    },
-    {
-      actions: {
-        trigger(context: ConfirmationButton) {
-          if (context.args.onConfirm)
-            context.args.onConfirm();
-        }
-      }
     }
   )
   statechart!: Statechart;
+
+  @handler("trigger")
+  executeOnConfirm(){
+    this.args.onConfirm();
+  }
 }
