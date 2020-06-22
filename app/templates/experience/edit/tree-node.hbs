@@ -3,7 +3,7 @@
 <p>
   <dl>
     <dt>Tree node</dt><dd>{{@model.treeNode.uri}}</dd>
-    <dt>Edit component</dt><dd>{{this.extendedEditComponent}}</dd>
+    <dt>Edit component</dt><dd>{{this.extendedEditInfo.component}}</dd>
   </dl>
 </p>
 
@@ -14,8 +14,9 @@
   <button type="submit" {{on "click" this.submit}}>Set</button>
 </form>
 
-{{#if this.extendedEditComponent}}
-  {{component this.extendedEditComponent
+{{#if this.extendedEditInfo}}
+  {{component this.extendedEditInfo.component
+      key=this.extendedEditInfo.key
       treeNode=@model.treeNode
       experience=@model.experience}}
 {{/if}}

@@ -1,0 +1,7 @@
+{{#if this.currentInstance}}
+  <Input @checked={{this.currentValue}} @type="checkbox" />
+
+  <button {{on "click" this.save}} type="button">save</button>
+{{else}}
+  ...
+{{/if}}

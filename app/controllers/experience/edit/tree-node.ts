@@ -16,7 +16,7 @@ export default class ExperienceEditTreeNode extends Controller {
       this.internalScore = score;
   }
 
-  get extendedEditComponent(){
+  get extendedEditInfo() {
     return editMapping( this.model.treeNode.uri );
   }
 

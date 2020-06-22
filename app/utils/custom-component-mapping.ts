@@ -8,12 +8,13 @@ export default function customComponentMapping(uri: string | null | undefined) :
   return null;
 }
 
-const eMapping: { [key:string]:string } = {
-  "http://data.toevla.org/d1fbdb7e-104c-4493-8275-62ef73af8460": "edit-components/wifi-availability",
-  "http://data.toevla.org/bebe20d0-0d82-419f-bfcd-49834a7db8a5": "edit-components/electronic-payment-system-movable"
+const eMapping: { [key:string]:{component:string, key?:string} } = {
+  // "http://data.toevla.org/d1fbdb7e-104c-4493-8275-62ef73af8460": { component: "edit-components/wifi-availability", key: "pointOfInterest.wifiAlwaysAvailable" },
+  "http://data.toevla.org/d1fbdb7e-104c-4493-8275-62ef73af8460": { component: "edit-components/boolean", key: "pointOfInterest.wifiAlwaysAvailable" },
+  "http://data.toevla.org/bebe20d0-0d82-419f-bfcd-49834a7db8a5": { component: "edit-components/electronic-payment-system-movable" }
 };
 
-export function editMapping( uri: string | null | undefined ) : string | null {
+export function editMapping( uri: string | null | undefined ) : { component: string, key?: string } | null {
   if( uri && eMapping[uri] )
     return eMapping[uri];
   return null;
