@@ -1,5 +1,12 @@
 <h3>We are editing the scoring for {{@model.treeNode.title}}</h3>
 
+<p>
+  <dl>
+    <dt>Tree node</dt><dd>{{@model.treeNode.uri}}</dd>
+    <dt>Edit component</dt><dd>{{this.extendedEditComponent}}</dd>
+  </dl>
+</p>
+
 <form {{on "submit" this.submit}}>
   <label>Score
     <Input @value={{this.currentScore}} @placeholder="Brons" />

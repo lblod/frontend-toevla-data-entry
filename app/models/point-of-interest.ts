@@ -4,6 +4,7 @@ import Experience from './experience';
 export default class PointOfInterest extends Model {
   @attr('string') label: string | null | undefined;
   @attr('boolean') hasMovableElectronicPaymentSystem: boolean | undefined | null;
+  @attr('boolean') wifiAlwaysAvailable: boolean | undefined | null;
   @hasMany('experience') experiences!: Experience[];
 }
 
