@@ -5,6 +5,11 @@ export default class PointOfInterest extends Model {
   @attr('string') label: string | null | undefined;
   @attr('boolean') hasMovableElectronicPaymentSystem: boolean | undefined | null;
   @attr('boolean') wifiAlwaysAvailable: boolean | undefined | null;
+  @attr('boolean') assistanceForGuideDogs: boolean | undefined | null;
+  @attr('boolean') websiteHasScreenreader: boolean | undefined | null;
+  @attr('boolean') websiteSupportsWcag2: boolean | undefined | null;
+  @attr('boolean') websiteAllowsTextIncrease: boolean | undefined | null;
+
   @hasMany('experience') experiences!: Experience[];
 }
 
