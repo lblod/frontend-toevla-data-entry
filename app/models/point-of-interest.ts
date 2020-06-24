@@ -9,7 +9,10 @@ export default class PointOfInterest extends Model {
   @attr('boolean') websiteHasScreenreader: boolean | undefined | null;
   @attr('boolean') websiteSupportsWcag2: boolean | undefined | null;
   @attr('boolean') websiteAllowsTextIncrease: boolean | undefined | null;
-
+  @attr('boolean') publicTransportGuidanceAvailable: boolean | undefined | null;
+  @attr('boolean') websiteHasAccessibleContrast: boolean | undefined | null;
+  @attr('boolean') websiteHasSignLanguage: boolean | undefined | null;
+  @attr('boolean') wheelchairAvailable: boolean | undefined | null;
   @hasMany('experience') experiences!: Experience[];
 }
 
