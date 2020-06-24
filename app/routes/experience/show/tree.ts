@@ -3,6 +3,7 @@ import Route from '@ember/routing/route';
 import Store from '@ember-data/store';
 import ExperienceShowTreeController from 'frontend-toevla-data-entry/controllers/experience/show/tree';
 import Tree from 'frontend-toevla-data-entry/models/tree';
+import Experience from 'frontend-toevla-data-entry/models/experience';
 
 export default class ExperienceShowTree extends Route {
   @service store!: Store;
@@ -16,6 +17,6 @@ export default class ExperienceShowTree extends Route {
 
   setupController( controller: ExperienceShowTreeController, model: Tree ) {
     controller.model = model;
-    controller.experience = this.modelFor("experience.show");
+    controller.experience = this.modelFor("experience.show") as Experience;
   }
 }

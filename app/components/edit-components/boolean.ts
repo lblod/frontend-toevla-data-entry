@@ -5,7 +5,7 @@ import TreeNode from 'frontend-toevla-data-entry/models/tree-node';
 import Experience from 'frontend-toevla-data-entry/models/experience';
 import { property, getInstance, setInstanceValue, save } from 'frontend-toevla-data-entry/utils/path-instances';
 import Statechart from 'ember-statecharts/utils/statechart';
-import { handler, guard, statechart } from 'frontend-toevla-data-entry/utils/rockin-statechart';
+import { handler, statechart } from 'frontend-toevla-data-entry/utils/rockin-statechart';
 
 interface EditComponentsBooleanArgs {
   key: string;

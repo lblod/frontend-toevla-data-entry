@@ -6,7 +6,7 @@ export default class TreeNode extends Model {
   @attr('number') order: number | undefined;
   @attr('string') htmlContent: string | undefined;
   @belongsTo('tree-node', { inverse: "children" }) parent: TreeNode | undefined;
-  @hasMany('tree-node', { inverse: "parent" }) children: TreeNode[] | undefined;
+  @hasMany('tree-node', { inverse: "parent" }) children: Promise<TreeNode[]> | undefined;
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.

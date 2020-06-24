@@ -1,25 +1,31 @@
 {{#if this.handlerComponent}}
   {{component this.handlerComponent node=@node experience=@experience}}
 {{else}}
-  <button type="button" {{on "click" this.toggleIsOpen}}>
-    {{#if this.isOpen}}+{{else}}-{{/if}}
-  </button>
+  <WithStatechart @state={{this.statechart}} as |chart|>
+    <button type="button" {{on "click" (fn chart.preventAndSend "TOGGLE_OPEN")}}>
+      <chart.if @state="collapsed">-</chart.if>
+      <chart.if @state="loading">x</chart.if>
+      <chart.if @state="open">+</chart.if>
+    </button>
+
     {{@node.title}} ({{@node.uri}})
 
-  {{#if this.isOpen}}
-    {{#if @node.children.length}}
-      <ul>
-        {{#each @node.children as |child|}}
-          <li>
-            <LinkTo @route="experience.edit.tree-node" @models={{array @experience.id child.id}}>[E]</LinkTo>
-            <Tree::Node @node={{child}} @experience={{@experience}} />
-          </li>
-        {{/each}}
-      </ul>
+    <chart.if @state="error">ERROR OCCURRED</chart.if>
+    <chart.if @state="open">
+      {{#if @node.children.length}}
+        <ul>
+          {{#each @node.children as |child|}}
+            <li>
+              <LinkTo @route="experience.edit.tree-node" @models={{array @experience.id child.id}}>[E]</LinkTo>
+              <Tree::Node @node={{child}} @experience={{@experience}} />
+            </li>
+          {{/each}}
+        </ul>
       {{else}}
-      <p>
-        Geen kinderen
-      </p>
-    {{/if}}
-  {{/if}}
+        <p>
+          Geen kinderen
+        </p>
+      {{/if}}
+    </chart.if>
+  </WithStatechart>
 {{/if}}
