@@ -1,7 +1,15 @@
-{{#if this.currentInstance}}
-  <Input @checked={{this.currentValue}} @type="checkbox" />
+<WithStatechart @state={{this.statechart}} as |chart|>
+  <chart.if @state="init">
+    ...
+  </chart.if>
+  <chart.if @state="dataEntry">
+    <Input @checked={{this.currentValue}} @type="checkbox" />
 
-  <button {{on "click" this.save}} type="button">save</button>
-{{else}}
-  ...
-{{/if}}
+    <button {{on "click" (fn chart.preventAndSend "SAVE")}} type="button">save</button>
+  </chart.if>
+  <chart.if @state="saving">
+    <Input @checked={{this.currentValue}} @type="checkbox" />
+
+    <button disabled type="button">save</button>
+  </chart.if>
+</WithStatechart>
