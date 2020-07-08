@@ -7,6 +7,7 @@ import Experience from 'frontend-toevla-data-entry/models/experience';
 import mapping from 'frontend-toevla-data-entry/utils/custom-component-mapping';
 import Statechart from 'ember-statecharts/utils/statechart';
 import { handler, statechart } from 'frontend-toevla-data-entry/utils/rockin-statechart';
+import treeNodeMachine from 'frontend-toevla-data-entry/machines/tree-node-machine';
 
 interface TreeNodeArgs {
   node: TreeNode;
@@ -14,32 +15,7 @@ interface TreeNodeArgs {
 }
 
 export default class TreeNodeComponent extends Component<TreeNodeArgs> {
-  @statechart(
-    {
-      initial: "collapsed",
-      states: {
-        collapsed: {
-          on: {
-            "TOGGLE_OPEN": "loading"
-          }
-        },
-        loading: {
-          entry: ["loadChildren"],
-          on: {
-            "LOADED": "open",
-            "ERROR": "error",
-            "COLLAPSE": "collapsed"
-          }
-        },
-        open: {
-          on: {
-            "TOGGLE_OPEN": "collapsed"
-          }
-        },
-        error: {}
-      }
-    }
-  ) statechart!: Statechart;
+  @statechart( treeNodeMachine ) statechart!: Statechart;
 
   @handler()
   loadChildren(){
