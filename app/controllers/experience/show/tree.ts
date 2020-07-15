@@ -6,6 +6,10 @@ import Experience from 'frontend-toevla-data-entry/models/experience';
 export default class ExperienceShowTree extends Controller {
   @tracked model!: Tree ;
   @tracked experience!: Experience;
+
+  get sortedNodes() {
+    return this.model?.topLevelNodes?.sortBy("order");
+  }
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your controllers.

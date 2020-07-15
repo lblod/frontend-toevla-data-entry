@@ -28,6 +28,10 @@ export default class TreeNodeComponent extends Component<TreeNodeArgs> {
     return mapping( this.args.node.uri );
   }
 
+  get sortedChildren(){
+    return this.args.node?.children?.sortBy("order");
+  }
+
   @tracked
   isOpen:boolean = false;
 

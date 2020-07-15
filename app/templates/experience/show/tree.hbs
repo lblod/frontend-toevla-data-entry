@@ -1,7 +1,7 @@
 <article>
   <h1>{{this.model.title}}</h1>
   <ul>
-  {{#each this.model.topLevelNodes as |node|}}
+  {{#each this.sortedNodes as |node|}}
     <li>
       <Tree::Node @node={{node}} @experience={{this.experience}} />
     </li>
