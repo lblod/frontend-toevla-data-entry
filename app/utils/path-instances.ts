@@ -45,6 +45,9 @@ async function ensureExistingInstances(item: Object, kind: string, path: string[
     else if (kind === "parking") {
       return await ensureExistingParkingInstances(item, path);
     }
+    else if (kind === "toilet" ) {
+      return await ensureExistingToiletInstances(item, path);
+    }
     else {
       throw `Could not find [${path.join(",")}] for ${kind}`;
     }
@@ -84,6 +87,65 @@ async function ensureExistingPointOfInterestInstances(poi: PointOfInterest, [fir
       poi.save();
     }
     return ensureExistingInstances(parking, "parking", rest);
+  } else if (first === "toilet") {
+    const toilets = await emberGet(poi, "toilets");
+    let toilet;
+    if (toilets.length > 0) {
+      toilet = toilets.firstObject;
+    } else {
+      toilet =
+        await poi
+          .store
+          .createRecord("toilet", {
+            pointOfInterest: poi
+          })
+          .save();
+      poi.toilets.pushObject(toilet);
+      poi.save();
+    }
+    return ensureExistingInstances(toilet, "toilet", rest);
+  }
+}
+
+async function ensureExistingToiletInstances(toilet: Ojbect, [first, ...rest]: string[]): Promise<Object> {
+  if (first === "sizeOfElevator") {
+    let sizeOfElevator = await emberGet(toilet, "sizeOfElevator");
+    if (!sizeOfElevator) {
+      sizeOfElevator =
+        await toilet
+          .store
+          .createRecord("area")
+          .save();
+      toilet.sizeOfElevator = sizeOfElevator;
+      await toilet.save();
+    }
+    return ensureExistingInstances(sizeOfElevator, "sizeOfElevator", rest);
+  }
+  else if (first === "sizeOfPlateauElevator") {
+    let sizeOfPlateauElevator = await emberGet(toilet, "sizeOfPlateauElevator");
+    if (!sizeOfPlateauElevator) {
+      sizeOfPlateauElevator =
+        await toilet
+          .store
+          .createRecord("area")
+          .save();
+      toilet.sizeOfPlateauElevator = sizeOfPlateauElevator;
+      await toilet.save();
+    }
+    return ensureExistingInstances(sizeOfPlateauElevator, "sizeOfPlateauElevator", rest);
+  }
+  else if (first === "sizeOfToiletRoom") {
+    let sizeOfToiletRoom = await emberGet(toilet, "sizeOfToiletRoom");
+    if (!sizeOfToiletRoom) {
+      sizeOfToiletRoom =
+        await toilet
+          .store
+          .createRecord("area")
+          .save();
+      toilet.sizeOfToiletRoom = sizeOfToiletRoom;
+      await toilet.save();
+    }
+    return ensureExistingInstances(sizeOfToiletRoom, "sizeOfToiletRoom", rest);
   }
 }
 

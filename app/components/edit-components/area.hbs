@@ -1,0 +1,27 @@
+<WithStatechart @state={{this.statechart}} as |chart|>
+  <chart.if @state="init">
+    ...
+  </chart.if>
+  <chart.if @state="dataEntry">
+    <form {{on "submit" (fn chart.preventAndSend "SAVE")}}>
+      <dl>
+        <dt>width (cm)</dt>
+        <dd><Input @value={{this.width}} @type="number" /></dd>
+        <dt>height (cm)</dt>
+        <dd><Input @value={{this.height}} @type="number" /></dd>
+      </dl>
+
+      <button type="submit">save</button>
+    </form>
+  </chart.if>
+  <chart.if @state="saving">
+    <dl>
+      <dt>width (cm)</dt>
+      <dd><Input @value={{this.width}} @type="number" disabled /></dd>
+      <dt>height (cm)</dt>
+      <dd><Input @value={{this.height}} @type="number" disabled /></dd>
+    </dl>
+
+    <button disabled type="button">save</button> ...
+  </chart.if>
+</WithStatechart>

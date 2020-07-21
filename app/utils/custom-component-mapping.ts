@@ -47,6 +47,39 @@ const eMapping: { [key:string]:{component:string, key?:string} } = {
   "https://data.toevla.org/id/concepts/eb456081-cf65-4f5e-aaeb-92f3b91247a0": { component: "edit-components/count", key: "pointOfInterest.parking.pathToEntrance.amountOfSlopes" },
   "https://data.toevla.org/id/concepts/ab2942e4-bfd2-4410-973a-a99d61bff979": { component: "edit-components/boolean", key: "pointOfInterest.parking.pathToEntrance.hasRamp" },
 
+  "https://data.toevla.org/id/concepts/79804c21-ba2d-4b3a-8633-447ffbc77fce": { component: "edit-components/boolean", key: "pointOfInterest.toilet.hasSimpleAndLogicalRoute" },
+  "https://data.toevla.org/id/concepts/fadff95d-20b7-422f-b402-3317bd747129": { component: "edit-components/boolean", key: "pointOfInterest.toilet.hasSyntheticSpeechInElevator" },
+  "https://data.toevla.org/id/concepts/7a16f2ea-abbf-4367-9e2e-33af82336928": { component: "edit-components/boolean", key: "pointOfInterest.toilet.hasClearSignalizationInBuilding" },
+  "https://data.toevla.org/id/concepts/b3f68ed9-d415-4704-a3be-5f366077b80c": { component: "edit-components/boolean", key: "pointOfInterest.toilet.hasBabyNurturingTable" },
+  "https://data.toevla.org/id/concepts/8c400682-6f97-410a-8791-996c498e212c": { component: "edit-components/area", key: "pointOfInterest.toilet.sizeOfElevator" },
+  "https://data.toevla.org/id/concepts/f32a0e76-853b-40bb-86c8-81894cdb70bb": { component: "edit-components/centimeters", key: "pointOfInterest.toilet.smallestPointOnRoute" },
+  "https://data.toevla.org/id/concepts/bf1005f6-10f1-4afb-8bec-cd55e52fdba9": { component: "edit-components/centimeters", key: "pointOfInterest.toilet.highestThresholdOnRoute" },
+  "https://data.toevla.org/id/concepts/a70ec038-cdc7-43eb-9a52-7e6083e81947": { component: "edit-components/count", key: "pointOfInterest.toilet.amountOfThresholds" },
+  // "https://data.toevla.org/id/concepts/67ffba68-3154-49f6-9ee9-26ece1e05e17": { component: "edit-components/count", key: "" }, // found in tree, not in CSV
+  // https://data.toevla.org/id/concepts/ed4e8a32-e7ef-42f8-9967-75d0ec8a9b26 // found in tree, not in CSV
+  "https://data.toevla.org/id/concepts/5dc312ae-d003-433b-b281-0cea6b125088": { component: "edit-components/count", key: "pointOfInterest.toilet.amountOfSlopes" },
+  // "": { component: "edit-components/boolean", key: "NOTHING" },
+  // "": { component: "edit-components/boolean", key: "NOTHING" },
+  // "": { component: "edit-components/boolean", key: "NOTHING" },
+  // is not in CSV? https://data.toevla.org/id/concepts/9da2a401-9d6c-4f1b-9020-7f7c21ed8383
+  "https://data.toevla.org/id/concepts/8a171198-7826-4fe8-8e94-1bcae36277e8": { component: "edit-components/boolean", key: "pointOfInterest.toilet.hasRamps" },
+  // "": { component: "edit-components/boolean", key: "pointOfInterest.toilet.sizeOfPlateauElevator" }, // found in CSV, not in tree
+  "https://data.toevla.org/id/concepts/954d684f-bba6-4e64-90bb-1e1f712a3a07": { component: "edit-components/count", key: "pointOfInterest.toilet.amountOfPlateauElevators" },
+  "https://data.toevla.org/id/concepts/f1568429-0d10-41df-8fd5-a7579dc6be85": { component: "edit-components/string", key: "pointOfInterest.toilet.typeOfElevator" },
+  // TOILETDEUR  // Found in tree, but shouldn't be configurable
+  // "": { component: "edit-components/boolean", key: "pointOfInterest.toilet.doorWidth" }, // Found in CSV, not in tree
+  "https://data.toevla.org/id/concepts/b3a5395a-3a3e-42cf-a140-c456f2a52237": { component: "edit-components/centimeters", key: "pointOfInterest.toilet.turningRadiusAtDoor" },
+  // "": { component: "edit-components/boolean", key: "IN HET TOILET" } // found in tree as https://data.toevla.org/id/concepts/309d359b-7127-42e5-8ab0-e1ef7af27b7b
+  // "": { component: "edit-components/boolean", key: "pointOfInterest.toilet.sizeOfToiletRoom" }, // Found in CSV, not in tree
+  "https://data.toevla.org/id/concepts/4a3cfa2c-ac2d-419e-a48e-a85c8bbb3c66": { component: "edit-components/centimeters", key: "pointOfInterest.toilet.spaceInFrontOfToilet" },
+  "https://data.toevla.org/id/concepts/319b7eeb-5f07-4174-8342-4e2fdb601d9d": { component: "edit-components/centimeters", key: "pointOfInterest.toilet.spaceNextToToilet" },
+  "https://data.toevla.org/id/concepts/d02bbcf1-338d-4cc1-b2be-2c7af896b13a": { component: "edit-components/centimeters", key: "pointOfInterest.toilet.turningRadius" },
+  "https://data.toevla.org/id/concepts/4bcfc144-a0d8-4461-bacb-35831af7ee4c": { component: "edit-components/boolean", key: "pointOfInterest.toilet.hasSupportBraces" },
+  "https://data.toevla.org/id/concepts/35f9c08e-0b4f-4a67-8d06-36dc37fb59f0": { component: "edit-components/boolean", key: "pointOfInterest.toilet.hasWashbasin" },
+  "https://data.toevla.org/id/concepts/846960af-ba55-4b56-a92a-861a88160204": { component: "edit-components/boolean", key: "pointOfInterest.toilet.canRideUnderWashbasin" },
+  "https://data.toevla.org/id/concepts/36d9f853-4cb5-4021-9322-5d8f658f9b3a": { component: "edit-components/centimeters", key: "pointOfInterest.toilet.freeHeightUnderWashbasin" },
+  "https://data.toevla.org/id/concepts/eefaadc4-9732-48aa-b9da-7472f348990c": { component: "edit-components/centimeters", key: "pointOfInterest.toilet.freeDepthUnderWashbasin" },
+  "https://data.toevla.org/id/concepts/972c27b2-c27b-4b25-9fc9-93a367c23f28": { component: "edit-components/centimeters", key: "pointOfInterest.toilet.freeWidthUnderWashbasin" },
 
   // "http://data.toevla.org/d1fbdb7e-104c-4493-8275-62ef73af8460": { component: "edit-components/wifi-availability", key: "pointOfInterest.wifiAlwaysAvailable" },
   // "http://data.toevla.org/77253484-8a8d-4662-b0c9-b533ba192358": { component: "edit-components/boolean", key: "pointOfInterest.publicTransportGuidanceAvailable" },

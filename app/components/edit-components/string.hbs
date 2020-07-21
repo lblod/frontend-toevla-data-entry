@@ -1,0 +1,16 @@
+<WithStatechart @state={{this.statechart}} as |chart|>
+  <chart.if @state="init">
+    ...
+  </chart.if>
+  <chart.if @state="dataEntry">
+    <form {{on "submit" (fn chart.preventAndSend "SAVE")}}>
+      <Input @value={{this.currentValue}} />
+      <button type="submit">save</button>
+    </form>
+  </chart.if>
+  <chart.if @state="saving">
+    <Input @value={{this.currentValue}} disabled/>
+
+    <button disabled type="button">save</button> ...
+  </chart.if>
+</WithStatechart>

@@ -2,6 +2,7 @@ import Model, { attr, hasMany } from '@ember-data/model';
 import Experience from './experience';
 import Entrance from './entrance';
 import Parking from './parking';
+import Toilet from './toilet';
 
 export default class PointOfInterest extends Model {
   @attr('string') label: string | null | undefined;
@@ -24,6 +25,7 @@ export default class PointOfInterest extends Model {
   @hasMany('experience') experiences!: Experience[];
   @hasMany('entrance') entrances!: Entrance[];
   @hasMany('parking') parkings!: Parking[];
+  @hasMany('toilet') toilets!: Toilet[];
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.
