@@ -2,28 +2,28 @@ import { set } from '@ember/object';
 import { get as emberGet } from '@ember/object';
 import Experience from 'frontend-toevla-data-entry/models/experience';
 
-export function butLast(path: string): string {
+export function butLast(path){
   const [, ...rest] = path.split(".").reverse();
   return rest.reverse().join(".");
 }
 
-export function property(path: string): string {
+export function property(path){
   const [name,] = path.split(".").reverse();
   return name;
 }
 
-export async function getInstance(experience: Experience, path: string): Promise<Object> {
+export async function getInstance(experience, path){
   const objectPath = butLast(path);
   return await ensureExistingInstances(experience, "experience", objectPath.split("."));
 }
 
-export async function setInstanceValue(experience: Experience, path: string, value: any): Promise<Object> {
+export async function setInstanceValue(experience, path, value) {
   const instance = await getInstance(experience, path);
   const prop = property(path);
   set(instance, prop, value);
 }
 
-export async function save(experience: Experience, path: string): Promise<Object> {
+export async function save(experience, path) {
   const instance = await getInstance(experience, path);
   if (instance) {
     await instance.save();
@@ -31,7 +31,7 @@ export async function save(experience: Experience, path: string): Promise<Object
 }
 
 
-async function ensureExistingInstances(item: Object, kind: string, path: string[]): Promise<Object> {
+async function ensureExistingInstances(item, kind, path) {
   if (path.length === 0) {
     return item;
   }
@@ -54,7 +54,7 @@ async function ensureExistingInstances(item: Object, kind: string, path: string[
   }
 }
 
-async function ensureExistingPointOfInterestInstances(poi: PointOfInterest, [first, ...rest]: string[]): Promise<Object> {
+async function ensureExistingPointOfInterestInstances(poi, [first, ...rest]) {
   if (first === "entrance") {
     const entrances = await emberGet(poi, "entrances");
     let entrance;
@@ -107,7 +107,7 @@ async function ensureExistingPointOfInterestInstances(poi: PointOfInterest, [fir
   }
 }
 
-async function ensureExistingToiletInstances(toilet: Ojbect, [first, ...rest]: string[]): Promise<Object> {
+async function ensureExistingToiletInstances(toilet, [first, ...rest]) {
   if (first === "sizeOfElevator") {
     let sizeOfElevator = await emberGet(toilet, "sizeOfElevator");
     if (!sizeOfElevator) {
@@ -149,7 +149,7 @@ async function ensureExistingToiletInstances(toilet: Ojbect, [first, ...rest]: s
   }
 }
 
-async function ensureExistingParkingInstances(parking: Object, [first, ...rest]: string[]): Promise<Object> {
+async function ensureExistingParkingInstances(parking, [first, ...rest]) {
   if (first === "pathToEntrance") {
     let pathToEntrance = await emberGet(parking, "pathToEntrance");
     if (!pathToEntrance) {
@@ -165,7 +165,7 @@ async function ensureExistingParkingInstances(parking: Object, [first, ...rest]:
   }
 }
 
-async function ensureExistingExperienceInstances(experience: Object, [first, ...rest]: string[]): Promise<Object> {
+async function ensureExistingExperienceInstances(experience, [first, ...rest]) {
   if (first === "pointOfInterest") {
     return await ensureExistingInstances(await emberGet(experience, "pointOfInterest"), "pointOfInterest", rest);
   }
