@@ -1,14 +1,14 @@
-const mapping: { [key:string]:string } = {
+const mapping={
   "http://data.toevla.org/ef9a1497-6e8d-461e-8671-75c5ee450bd0": "tree-components/accessibility"
 };
 
-export default function customComponentMapping(uri: string | null | undefined) : string | null {
+export default function customComponentMapping(uri){
   if( uri && mapping[uri] )
     return  mapping[uri];
   return null;
 }
 
-const eMapping: { [key:string]:{component:string, key?:string} } = {
+const eMapping = {
   "https://data.toevla.org/id/concepts/74837ebc-fb5f-4333-81f5-bd92db6861f2": { component: "edit-components/boolean", key: "pointOfInterest.hasClearlyRecognizableBuilding" },
   "https://data.toevla.org/id/concepts/82e3201c-60d4-4eb6-88c1-90bcc5f87910": { component: "edit-components/boolean", key: "pointOfInterest.hasClearlyRecognizableEntrance" },
   "https://data.toevla.org/id/concepts/3c06fec6-3a7c-483d-b53f-e3c0a5caf179": { component: "edit-components/boolean", key: "pointOfInterest.hasVisibleGuidelines" },
@@ -87,7 +87,7 @@ const eMapping: { [key:string]:{component:string, key?:string} } = {
   // "http://data.toevla.org/01d13e86-bdbb-4893-841e-d0d2aebd2b3d": { component: "edit-components/boolean", key: "pointOfInterest.assistanceForGuideDogs" },
 };
 
-export function editMapping( uri: string | null | undefined ) : { component: string, key?: string } | null {
+export function editMapping(uri){
   if( uri && eMapping[uri] )
     return eMapping[uri];
   return null;
