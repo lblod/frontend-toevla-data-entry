@@ -1,9 +1,37 @@
-<article>
-  <h1>Point of interest: {{@model.label}}</h1>
+<div class="au-c-main-container__content au-c-main-container__content--scroll"  id="content">
+  <AuToolbar @border="bottom" @skin="tint" @size="medium">
+    <AuToolbarGroup>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="poi.index" @skin="secondary">
+            <AuIcon @icon="nav-left" @alignment="left" />
+            Locaties
+         </AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <strong>
+            {{@model.label}}
+          </strong>
+        </li>
+      </ul>
+    </AuToolbarGroup>
+  </AuToolbar>
+  <AuToolbar @border="bottom" @size="large">
+    <AuToolbarGroup>
+      <AuHeading @skin="2"><AuPill>Locatie</AuPill> {{@model.label}}</AuHeading>
+    </AuToolbarGroup>
+    <AuToolbarGroup class="au-u-h6">
+      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.edit" @model={{@model}}>
+        <AuIcon @icon="pencil" @alignment="left" />
+        Aanpassen
+      </LinkTo>
+    </AuToolbarGroup>
+  </AuToolbar>
+  <div class="au-o-box">
+    <AuButtonGroup>
+      <LinkTo class="au-c-button" @route="poi.show.experiences.index" @model={{@model}}>Toon events</LinkTo>
+    </AuButtonGroup>
 
-  <LinkTo @route="poi.index">Overview</LinkTo>
-  | <LinkTo  @route="poi.edit" @model={{@model}}>Edit</LinkTo>
-  | <LinkTo @route="poi.show.experiences.index" @model={{@model}}>Show experiences</LinkTo>
-</article>
-
-{{outlet}}
+    {{outlet}}
+  </div>
+</div>

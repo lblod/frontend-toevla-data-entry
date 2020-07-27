@@ -1,6 +1,18 @@
 <form {{on "submit" this.submit}}>
-  <label>Title <Input @value={{@model.title}} /></label>
-  <button {{on "click" this.submit}} type="submit">Save</button>
+  <p>
+    <AuLabel for="editevent">Name</AuLabel>
+    <AuInput @width="block" id="editevent" @type="string" @value={{@model.title}} />
+  </p>
+
+  <AuButtonGroup class="au-u-margin-top-small">
+    <AuButton type="submit">Opslaan</AuButton>
+  </AuButtonGroup>
 </form>
 
-<ConfirmationButton @onConfirm={{this.delete}}>Delete experience</ConfirmationButton>
+<AuToolbar @border="top" class="au-u-margin-top au-u-padding-top-small">
+  <AuToolbarGroup class="au-c-toolbar__group--row">
+    <ConfirmationButton @onConfirm={{this.delete}}>
+      Event verwijderen
+    </ConfirmationButton>
+  </AuToolbarGroup>
+</AuToolbar>

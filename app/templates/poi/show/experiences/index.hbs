@@ -1,9 +1,20 @@
-<h2>Events</h2>
+<AuHeading @level="2" @skin="3" class="au-u-margin-bottom-small">
+  Events
+</AuHeading>
 
-<ul>
+<ul class="au-o-grid au-o-grid--tiny">
   {{#each @model as |experience|}}
-    <li><LinkTo @route="experience.show" @model={{experience}}>{{experience.title}}</LinkTo></li>
+    <li class="au-o-grid__item">
+      <article class="au-o-box au-o-box--small au-c-card au-c-card--link">
+        <LinkTo class="au-c-link au-c-link--secondary au-c-card__link" @route="experience.show" @model={{experience}}>{{experience.title}}</LinkTo>
+      </article>
+    </li>
   {{/each}}
 </ul>
 
-<LinkTo @route="poi.show.experiences.new" @model={{this.poi}}>Add event</LinkTo>
+<p class="au-u-margin-top">
+  <LinkTo @route="poi.show.experiences.new" @model={{this.poi}} class="au-c-button au-c-button--block">
+    <AuIcon @icon="add" @alignment="left" />
+    Event toevoegen
+  </LinkTo>
+</p>

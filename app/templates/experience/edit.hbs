@@ -1,3 +1,28 @@
-<h2>Update experience: {{@model.title}}</h2>
-
-{{outlet}}
+<div class="au-c-main-container__content au-c-main-container__content--scroll"  id="content">
+  <AuToolbar @border="bottom" @skin="tint" @size="medium">
+    <AuToolbarGroup>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="poi.index" @skin="secondary">
+            <AuIcon @icon="nav-left" @alignment="left" />
+            Locaties
+         </AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <LinkTo class="au-c-link au-c-link--secondary" @route="poi.show" @model={{hash id=@model.pointOfInterest.id}}>{{@model.pointOfInterest.label}}</LinkTo>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <strong>
+            Event aanpassen: {{@model.title}}
+          </strong>
+        </li>
+      </ul>
+    </AuToolbarGroup>
+  </AuToolbar>
+  <div class="au-o-layout">
+    <div class="au-o-region-large">
+      <AuHeading @skin="2" class="au-u-margin-bottom">Event aanpassen: {{@model.title}}</AuHeading>
+      {{outlet}}
+    </div>
+  </div>
+</div>

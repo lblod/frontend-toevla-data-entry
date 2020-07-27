@@ -1,12 +1,18 @@
 <WithStatechart @state={{this.statechart}} as |chart|>
   <chart.if @state="init">
-    <button {{on "click" (fn chart.preventAndSend "CLICK")}} type="button">{{yield}}</button>
+    <button {{on "click" (fn chart.preventAndSend "CLICK")}} type="button" class="au-c-button  au-c-button--tertiary au-c-button--alert">
+      <AuIcon @icon="bin" @alignment="left" />
+      {{yield}}
+    </button>
   </chart.if>
 
   <chart.if @state="unconfirmed">
-    Are you sure?
-    <button {{on "click" (fn chart.preventAndSend "CANCEL")}} type="button">No</button>
-    <button {{on "click" (fn chart.preventAndSend "CLICK")}} type="button">Yes</button>
+    <AuAlert @alertsize="tiny" @alertTitle="Are you sure?">
+      <AuButtonGroup>
+        <button class="au-c-button au-c-button--secondary" {{on "click" (fn chart.preventAndSend "CANCEL")}} type="button">No</button>
+        <button class="au-c-button au-c-button--secondary" {{on "click" (fn chart.preventAndSend "CLICK")}} type="button">Yes</button>
+      </AuButtonGroup>
+    </AuAlert>
   </chart.if>
 
   <chart.if @state="confirmed">

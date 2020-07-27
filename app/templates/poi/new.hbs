@@ -1,28 +1,63 @@
-<h2>Add a new point of interest</h2>
+<div class="au-c-main-container__content au-c-main-container__content--scroll"  id="content">
+  <AuToolbar @border="bottom" @skin="tint" @size="medium">
+    <AuToolbarGroup>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="poi.index" @skin="secondary">
+            <AuIcon @icon="nav-left" @alignment="left" />
+            Locaties
+         </AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <strong>
+            Nieuwe locatie toevoegen
+          </strong>
+        </li>
+      </ul>
+    </AuToolbarGroup>
+  </AuToolbar>
+  <AuToolbar @border="bottom" @size="large">
+    <AuToolbarGroup>
+      <AuHeading @skin="2">Nieuwe locatie toevoegen</AuHeading>
+    </AuToolbarGroup>
+  </AuToolbar>
+  <div class="au-o-box">
+    <WithStatechart @state={{this.statechart}} as |chart|>
+      <chart.if @state="init">
+        <form {{on "submit" (fn chart.preventAndSend "CREATE")}}>
+          <p>
+            <AuLabel for="addpoi">Naam</AuLabel>
+            <AuInput id="addpoi" type="text" @value={{this.label}} @width="block" @placeholder="Museum M" />
+          </p>
 
-<WithStatechart @state={{this.statechart}} as |chart|>
-  <chart.if @state="init">
-    <form {{on "submit" (fn chart.preventAndSend "CREATE")}}>
-      <label>
-        Name: <Input type="text" @value={{this.label}} @placeholder="Museum M" />
-      </label>
+          <p class="au-u-margin-top-small">
+            <AuButton type="submit">Voeg toe</AuButton>
+          </p>
+        </form>
+      </chart.if>
 
-      <button type="submit">Create</button>
-    </form>
-  </chart.if>
+      <chart.if @state="saving">
+        <p class="au-u-h6">
+          ... opslaan ...
+        </p>
+      </chart.if>
 
-  <chart.if @state="saving">
-    ... saving ...
-  </chart.if>
+      <chart.if @state="failed">
+        <AuButtonGroup>
+          <AuButton type="button" {{on "click" (fn chart.preventAndSend "RETRY")}}>
+            Opnieuw proberen
+          </AuButton>
+          <AuButton @skin="secondary" type="button" {{on "click" (fn chart.preventAndSend "RESET")}}>
+            Reset
+          </AuButton>
+        </AuButtonGroup>
+      </chart.if>
 
-  <chart.if @state="failed">
-    <button type="button" {{on "click" (fn chart.preventAndSend "RESET")}}>reset</button>
-    <button type="button" {{on "click" (fn chart.preventAndSend "RETRY")}}>retry</button>
-  </chart.if>
-
-  <chart.if @state="done">
-    ... redirecting ...
-  </chart.if>
-</WithStatechart>
-
-<LinkTo @route="poi.index">Overview</LinkTo>
+      <chart.if @state="done">
+        <p class="au-u-h6">
+          ... redirecting ...
+        </p>
+      </chart.if>
+    </WithStatechart>
+  </div>
+</div>

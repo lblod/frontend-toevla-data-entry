@@ -1,14 +1,47 @@
-<article>
-  <h1>Edit Point of Interest</h1>
-  <form {{on "submit" this.submit}}>
-    <label>
-      Label
-      <Input @type="string" @value={{this.model.label}} />
-    </label>
-    <button type="submit">Save</button>
-  </form>
+<div class="au-c-main-container__content au-c-main-container__content--scroll"  id="content">
+  <AuToolbar @border="bottom" @skin="tint" @size="medium">
+    <AuToolbarGroup>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="poi.index" @skin="secondary">
+            <AuIcon @icon="nav-left" @alignment="left" />
+            Locaties
+         </AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <LinkTo @route="poi.show" @model={{@model}} class="au-c-link au-c-link--secondary">
+            {{@model.label}}
+          </LinkTo>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <strong>
+            Locatie aanpassen
+          </strong>
+        </li>
+      </ul>
+    </AuToolbarGroup>
+  </AuToolbar>
+  <div class="au-o-layout">
+    <div class="au-o-region-large">
+      <AuHeading @skin="2" class="au-u-margin-bottom">Locatie aanpassen</AuHeading>
+      <form {{on "submit" this.submit}}>
+        <p>
+          <AuLabel for="edit">Name</AuLabel>
+          <AuInput @width="block" id="edit" @type="string" @value={{this.model.label}} />
+        </p>
 
-  <LinkTo @route="poi.index">Overview</LinkTo>
-  <LinkTo @route="poi.show" @model={{@model}}>Show</LinkTo>
-  <ConfirmationButton @onConfirm={{this.delete}}>Delete Point of Interest</ConfirmationButton>
-</article>
+        <AuButtonGroup class="au-u-margin-top-small">
+          <AuButton type="submit">Opslaan</AuButton>
+        </AuButtonGroup>
+      </form>
+
+      <AuToolbar @border="top" class="au-u-margin-top au-u-padding-top-small">
+        <AuToolbarGroup class="au-c-toolbar__group--row">
+          <ConfirmationButton @onConfirm={{this.delete}}>
+            Locatie verwijderen
+          </ConfirmationButton>
+        </AuToolbarGroup>
+      </AuToolbar>
+    </div>
+  </div>
+</div>
