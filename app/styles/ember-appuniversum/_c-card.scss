@@ -19,3 +19,41 @@
   flex-direction: row;
   flex-wrap: nowrap;
 }
+
+.au-c-card--link {
+  @include au-font-size($au-h6);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: box-shadow $au-transition;
+
+  &:hover {
+    box-shadow: 0 0 12px rgba($au-gray-900,.15), 0 0 2px rgba($au-gray-900,.1);
+  }
+
+  &:focus-within {
+    outline: $au-outline;
+  }
+
+  .au-c-pill {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.au-c-card__link {
+  &:focus {
+    outline: 0;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
