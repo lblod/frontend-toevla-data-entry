@@ -1,15 +1,15 @@
-<h3>New event</h3>
+<AuHeading @skin="3" class="au-u-margin-bottom">Nieuw event</AuHeading>
 <WithStatechart @state={{this.statechart}} as |chart|>
 
   <chart.if @state="init">
     <form {{on "submit" (fn chart.preventAndSend "CREATE")}}>
-      <label>
-        title
-        <Input @value={{this.title}} @placeholder="Permanent exhibition SMAK" />
-      </label>
-      <button type="submit" {{on "click" (fn chart.preventAndSend "CREATE")}}>Create</button>
+      <AuLabel for="editevent">Naam</AuLabel>
+      <AuInput @width="block" id="editevent" @type="string" @value={{this.title}} />
+      <AuButtonGroup class="au-u-margin-top-small">
+        <AuButton type="submit" {{on "click" (fn chart.preventAndSend "CREATE")}}>Aanmaken</AuButton>
+        <AuButton type="button" @skin="secondary" {{on "click" (fn chart.preventAndSend "CLEAR")}}>Reset</AuButton>
+      </AuButtonGroup>
     </form>
-    <button type="button" {{on "click" (fn chart.preventAndSend "CLEAR")}}>Reset</button>
   </chart.if>
 
   <chart.if @state="creating">
@@ -27,6 +27,14 @@
 
   <chart.if @state="failedTransitioning">
     ... failed to transition to your created experience ...
-    <LinkTo @route="poi.show.experiences.index" @model={{this.poi}}>Back to POI</LinkTo>
   </chart.if>
+
+  <AuToolbar @border="top" class="au-u-margin-top au-u-padding-top-small">
+    <AuToolbarGroup class="au-c-toolbar__group--row">
+      <LinkTo class="au-c-link au-c-link--secondary" @route="poi.show.experiences.index" @model={{this.poi}}>
+        <AuIcon @icon="arrow-left" @alignment="left" />
+        Terug naar de locatie
+      </LinkTo>
+    </AuToolbarGroup>
+  </AuToolbar>
 </WithStatechart>

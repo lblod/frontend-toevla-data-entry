@@ -4,7 +4,7 @@
       <ul class="au-c-list-horizontal">
         <li class="au-c-list-horizontal__item">
           <AuLink @linkRoute="poi.index" @skin="secondary">
-            <AuIcon @icon="nav-left" @alignment="left" />
+            <AuIcon @icon="arrow-left" @alignment="left" />
             Locaties
          </AuLink>
         </li>
@@ -12,8 +12,11 @@
           <LinkTo class="au-c-link au-c-link--secondary" @route="poi.show.experiences.index" @model={{@model.pointOfInterest.id}}>{{@model.pointOfInterest.label}}</LinkTo>
         </li>
         <li class="au-c-list-horizontal__item">
+          <LinkTo class="au-c-link au-c-link--secondary" @route="experience.show.tree" @model={{@model.id}}>{{@model.title}}</LinkTo>
+        </li>
+        <li class="au-c-list-horizontal__item">
           <strong>
-            Event aanpassen: {{@model.title}}
+            Event aanpassen
           </strong>
         </li>
       </ul>
