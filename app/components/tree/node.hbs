@@ -2,30 +2,53 @@
   {{component this.handlerComponent node=@node experience=@experience}}
 {{else}}
   <WithStatechart @state={{this.statechart}} as |chart|>
-    <button type="button" {{on "click" (fn chart.preventAndSend "TOGGLE_OPEN")}}>
-      <chart.if @state="collapsed">-</chart.if>
-      <chart.if @state="loading">x</chart.if>
-      <chart.if @state="open">+</chart.if>
-    </button>
+    <div class="au-c-tree__item-header">
+      {{#if @node.children.length}}
+      <chart.if @state="open">
+        <button class="au-c-tree__button" type="button" {{on "click" (fn chart.preventAndSend "TOGGLE_OPEN")}} aria-expanded="true">
+          <AuIcon @icon="nav-down" />
+          {{@node.title}}
+        </button>
+      </chart.if>
+      <chart.if @state="collapsed">
+        <button class="au-c-tree__button" type="button" {{on "click" (fn chart.preventAndSend "TOGGLE_OPEN")}}  aria-expanded="false">
+          <AuIcon @icon="nav-right" />
+          {{@node.title}}
+        </button>
+      </chart.if>
+      <chart.if @state="loading">
+        <button class="au-c-tree__button" type="button" {{on "click" (fn chart.preventAndSend "TOGGLE_OPEN")}}  aria-expanded="false">
+          <AuIcon @icon="nav-down" />
+          {{@node.title}}
+        </button>
+      </chart.if>
+      {{else}}
+      <AuHeading @level="3" @skin="6">
+        {{@node.title}}
+      </AuHeading>
+      {{/if}}
 
-    {{@node.title}} ({{@node.uri}})
+      <p class="au-c-tree__uri">{{@node.uri}}</p>
+    </div>
 
-    <chart.if @state="error">ERROR OCCURRED</chart.if>
+    <chart.if @state="error">
+      ERROR OCCURRED
+    </chart.if>
+
     <chart.if @state="open">
       {{#if @node.children.length}}
-        <ul>
+        <ul class="au-c-tree__list">
           {{#each this.sortedChildren as |child|}}
-            <li>
-              <LinkTo @route="experience.edit.tree-node" @models={{array @experience.id child.id}}>[E]</LinkTo>
+            <li class="au-c-tree__item au-c-tree__item--child">
               <Tree::Node @node={{child}} @experience={{@experience}} />
+              <LinkTo class="au-c-tree__edit" @route="experience.edit.tree-node" @models={{array @experience.id child.id}}>
+                <AuIcon @icon="pencil" @alignment="left" /> Aanpassen
+              </LinkTo>
             </li>
           {{/each}}
         </ul>
-      {{else}}
-        <p>
-          Geen kinderen
-        </p>
       {{/if}}
     </chart.if>
+
   </WithStatechart>
 {{/if}}

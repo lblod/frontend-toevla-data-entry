@@ -1,10 +1,18 @@
-<article>
-  <h1>{{this.model.title}}</h1>
-  <ul>
-  {{#each this.sortedNodes as |node|}}
-    <li>
-      <Tree::Node @node={{node}} @experience={{this.experience}} />
-    </li>
-  {{/each}}
-  </ul>
-</article>
+<AuToolbar @border="bottom" @size="medium">
+  <AuToolbarGroup>
+    <AuHeading @level="2" @skin="5">
+      {{this.model.title}}
+    </AuHeading>
+  </AuToolbarGroup>
+</AuToolbar>
+<div class="au-c-body-container au-c-body-container--scroll">
+  <div class="au-o-box au-c-tree-wrapper">
+    <ul class="au-c-tree">
+      {{#each this.sortedNodes as |node|}}
+      <li class="au-c-tree__item">
+        <Tree::Node @node={{node}} @experience={{this.experience}} />
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

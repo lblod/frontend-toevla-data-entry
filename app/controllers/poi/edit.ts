@@ -12,7 +12,7 @@ export default class PoiEdit extends Controller {
   @action submit(event: Event) {
     event.preventDefault();
     this.model.save();
-    this.transitionToRoute("poi.show", this.model);
+    this.transitionToRoute("poi.show.experiences.index", this.model);
   }
 
   @action delete() {

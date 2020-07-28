@@ -1,37 +1,37 @@
-<div class="au-c-main-container__content au-c-main-container__content--scroll"  id="content">
-  <AuToolbar @border="bottom" @skin="tint" @size="medium">
-    <AuToolbarGroup>
-      <ul class="au-c-list-horizontal">
-        <li class="au-c-list-horizontal__item">
-          <AuLink @linkRoute="poi.index" @skin="secondary">
-            <AuIcon @icon="arrow-left" @alignment="left" />
-            Locaties
-         </AuLink>
-        </li>
-        <li class="au-c-list-horizontal__item">
-          <LinkTo class="au-c-link au-c-link--secondary" @route="poi.show.experiences.index" @model={{@model.pointOfInterest.id}}>{{@model.pointOfInterest.label}}</LinkTo>
-        </li>
-        <li class="au-c-list-horizontal__item">
-          <strong>
-            {{@model.title}}
-          </strong>
-        </li>
-      </ul>
-    </AuToolbarGroup>
+<div class="au-c-main-container__content" id="content">
+  <div class="au-c-body-container">
+    <AuToolbar @border="bottom" @skin="tint" @size="medium">
+      <AuToolbarGroup>
+        <ul class="au-c-list-horizontal">
+          <li class="au-c-list-horizontal__item">
+            <AuLink @linkRoute="poi.index" @skin="secondary">
+              <AuIcon @icon="arrow-left" @alignment="left" />
+              Locaties
+          </AuLink>
+          </li>
+          <li class="au-c-list-horizontal__item">
+            <LinkTo class="au-c-link au-c-link--secondary" @route="poi.show.experiences.index" @model={{@model.pointOfInterest.id}}>{{@model.pointOfInterest.label}}</LinkTo>
+          </li>
+          <li class="au-c-list-horizontal__item">
+            <strong>
+              {{@model.title}}
+            </strong>
+          </li>
+        </ul>
+      </AuToolbarGroup>
 
-  </AuToolbar>
-  <AuToolbar @border="bottom" @size="large">
-    <AuToolbarGroup>
-      <AuHeading @skin="2"><AuPill>Event</AuPill> {{@model.title}}</AuHeading>
-    </AuToolbarGroup>
-    <AuToolbarGroup>
-      <LinkTo class="au-c-button au-c-button--secondary" @route="experience.edit" @model={{@model}}>
-        <AuIcon @icon="pencil" @alignment="left" />
-        Aanpassen
-      </LinkTo>
-    </AuToolbarGroup>
-  </AuToolbar>
-  <div class="au-o-box">
+    </AuToolbar>
+    <AuToolbar @border="bottom" @size="large">
+      <AuToolbarGroup>
+        <AuHeading @skin="2"><AuPill>Event</AuPill> {{@model.title}}</AuHeading>
+      </AuToolbarGroup>
+      <AuToolbarGroup>
+        <LinkTo class="au-c-button au-c-button--secondary" @route="experience.edit" @model={{@model}}>
+          <AuIcon @icon="pencil" @alignment="left" />
+          Aanpassen
+        </LinkTo>
+      </AuToolbarGroup>
+    </AuToolbar>
     {{outlet}}
   </div>
 </div>

@@ -1,0 +1,172 @@
+.au-c-tree {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.au-c-tree__list {
+  position: relative;
+  flex-basis: 100;
+  flex-grow: 1;
+}
+
+.au-c-tree__item--child .au-c-tree__list {
+  padding-left: $au-unit-small;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: $au-unit-small;
+    background-color: $au-gray-200;
+  }
+}
+
+.au-c-tree__item {
+  @include au-font-size($au-h5);
+  position: relative;
+  margin-bottom: $au-unit-small;
+  padding-bottom: $au-unit-small;
+  border-bottom: 1px solid $au-gray-200;
+}
+
+.au-c-tree__item--child {
+  @include au-font-size($au-h6);
+  padding: 0;
+  margin-bottom: $au-unit-tiny;
+  border: 1px solid $au-gray-200;
+  background-color: $au-white;
+}
+
+.au-c-tree__item .au-c-tree__item .au-c-tree__item {
+  @include au-font-size($au-h6);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-top: 1px solid $au-gray-200;
+}
+
+.au-c-tree__item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.au-c-tree__item--child .au-c-tree__item-header {
+  padding: $au-unit-small;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.au-c-tree__item-header + .au-c-tree__list {
+  margin-top: $au-unit-tiny;
+}
+
+.au-c-tree__item--child .au-c-tree__item-header + .au-c-tree__list {
+  margin-top: 0;
+}
+
+.au-c-tree__edit {
+  @include au-font-size($au-base);
+  display: flex;
+  align-items: center;
+  position: absolute;
+  height: $au-unit-large + $au-unit - .2rem;
+  top: 0;
+  right: 0;
+  font-family: $au-font;
+  transition: color $au-transition, text-decoration $au-transition;
+  font-weight: $au-regular;
+  text-decoration-color: tint($au-blue-700,70);
+  padding: $au-unit-small;
+
+  &,
+  &:visited {
+    color: $au-blue-700;
+  }
+
+  &:hover,
+  &:focus {
+    color: $au-blue-600;
+    text-decoration-color: tint($au-blue-600,80);
+  }
+
+  &:focus {
+    outline: $au-outline;
+    outline-offset: $au-unit-tiny/2;
+  }
+}
+
+.au-c-tree__button {
+  cursor: default;
+  font-size: inherit;
+  line-height: inherit;
+  font-family: $au-font;
+  font-weight: 500;
+  text-decoration: none;
+  text-align: center;
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: $au-button-radius;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  outline: 0;
+  border: 0;
+  padding: 0;
+  color: $au-blue-700;
+  text-decoration: underline;
+  text-decoration-color: tint($au-blue-700,70);
+  transition: color $au-transition;
+
+  .au-c-icon {
+    margin-right: $au-unit-tiny;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover,
+  &:focus {
+    color: $au-blue-600;
+    text-decoration-color: tint($au-blue-600,70);
+  }
+
+  &:focus {
+    outline: $au-outline;
+  }
+
+  &[aria-expanded="true"] {
+    color: $au-blue-900;
+    text-decoration: none;
+  }
+}
+
+.au-c-tree__uri {
+  @include au-font-size(1.3rem,1.2);
+  position: relative;
+  z-index: 1;
+  font-family: $au-font;
+  font-weight: $au-regular;
+  color: $au-gray-600;
+
+  .au-c-tree__item--child & {
+    margin-top: $au-unit-tiny;
+  }
+}
+
+.au-c-tree-wrapper {
+  height: 100%;
+  width: 100%;
+  background-color: $au-gray-100;
+}
