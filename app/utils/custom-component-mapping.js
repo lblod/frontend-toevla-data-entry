@@ -25,6 +25,15 @@ const eMapping = {
   "https://data.toevla.org/id/concepts/1f169010-d9ab-40f9-89f9-4033b569dd0f":	{ component: "edit-components/boolean", key: "pointOfInterest.websiteHasSignLanguage" },
   "https://data.toevla.org/id/concepts/df0271fa-5a57-4133-84ca-52975031712e":	{ component: "edit-components/boolean", key: "pointOfInterest.hasMovableElectronicPaymentSystem" },
 
+  "https://data.toevla.org/id/concepts/f4fc7b9f-1c55-415a-96ff-28fbda94881e": { component: "edit-components/boolean", key: "pointOfInterest.publicTransportRouteDescription.hasDetailedDescription" },
+  "https://data.toevla.org/id/concepts/0964f472-4c5a-43ff-a0c2-b89eee5f5650": { component: "edit-components/boolean", key: "pointOfInterest.publicTransportRouteDescription.hasScreenreader" },
+  "https://data.toevla.org/id/concepts/a44288c3-78d2-4896-a49c-c37ac215a9b3": { component: "edit-components/boolean", key: "pointOfInterest.publicTransportRouteDescription.hasFlemishSignLanguage" },
+  "https://data.toevla.org/id/concepts/d0b9ea46-e065-4ee0-9cfa-2463ba4a3027": { component: "edit-components/meters", key: "pointOfInterest.trainStop.distanceFromLocation" },
+  "https://data.toevla.org/id/concepts/306fa11e-a804-4b27-9dcd-4bb7f20ba8d4": { component: "edit-components/string", key: "pointOfInterest.trainStop.stopName" },
+  "https://data.toevla.org/id/concepts/bf7e42d6-dda7-4de7-a82c-8f8d5b031b42": { component: "edit-components/meters", key: "pointOfInterest.busStop.distanceFromLocation" },
+  "https://data.toevla.org/id/concepts/0273e136-173c-4a35-89c2-d07ac6ab22f7": { component: "edit-components/string", key: "pointOfInterest.busStop.stopName" },
+  "https://data.toevla.org/id/concepts/a15c7289-8906-4b12-8f49-1d8bf7b3b0ac": { component: "edit-components/meters", key: "pointOfInterest.tramStop.distanceFromLocation" },
+  "https://data.toevla.org/id/concepts/e2b6e01b-adb0-4dcd-b29d-e32366ec74bf": { component: "edit-components/string", key: "pointOfInterest.tramStop.stopName" },
 
   "https://data.toevla.org/id/concepts/74837ebc-fb5f-4333-81f5-bd92db6861f2": { component: "edit-components/boolean", key: "pointOfInterest.hasClearlyRecognizableBuilding" },
   "https://data.toevla.org/id/concepts/82e3201c-60d4-4eb6-88c1-90bcc5f87910": { component: "edit-components/boolean", key: "pointOfInterest.hasClearlyRecognizableEntrance" },
