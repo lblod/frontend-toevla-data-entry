@@ -19,7 +19,9 @@ Router.map(function() {
 
   this.route('experience', function() {
     this.route('show', { path: "/:id/" }, function() {
-      this.route('tree');
+      this.route('tree', function() {
+        this.route('tree-node', { path: "/tree-node/:tree_node_id" });
+      });
     });
     this.route('edit', { path: "/:id/edit" }, function() {
       this.route('tree-node', { path: "/tree-node/:tree_node_id" });

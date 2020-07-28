@@ -1,0 +1,84 @@
+.au-c-toggle {
+  display: block;
+
+  &:focus-within {
+    outline: $au-outline;
+  }
+}
+
+.au-c-toggle > .input-checkbox{
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  top: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.au-c-toggle > .au-c-toggle__elements {
+  display: block;
+  font-size: $au-h6;
+  line-height: $au-unit + $au-unit-small;
+  background-color: $au-gray-100;
+  border: .2rem solid $au-gray-200;
+  width: $au-unit-large + $au-unit;
+  height: $au-unit + $au-unit-small;
+  border-radius: $au-unit + $au-unit-small;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.au-c-toggle__switch {
+  position: absolute;
+  top: .1rem;
+  left: .1rem;
+  width: $au-unit + $au-unit-tiny;
+  height: $au-unit + $au-unit-tiny;
+  border-radius: $au-unit + $au-unit-tiny;
+  transition: all $au-transition;
+  background-color: $au-white;
+  border: .1rem solid rgba($au-gray-900,.2);
+}
+
+.au-c-toggle .au-c-toggle__off-value,
+.au-c-toggle .au-c-toggle__on-value{
+  @include au-font-size($au-base);
+  font-family: $au-font;
+  font-weight: 400;
+  text-align: center;
+  color: $au-gray-600;
+  width: 60%;
+  height: $au-unit + $au-unit-small;
+  line-height: $au-unit + $au-unit-tiny + .3rem;
+}
+
+.au-c-toggle .au-c-toggle__off-value {
+  display:block;
+  float:right
+}
+
+.au-c-toggle .au-c-toggle__on-value {
+  display:none;float:left;
+}
+
+.input-checkbox:checked + .au-c-toggle__elements .au-c-toggle__off-value {
+  display:none
+}
+
+.input-checkbox:checked + .au-c-toggle__elements {
+  background-color: $au-blue-600;
+  border: .2rem solid $au-blue-700;
+}
+
+.input-checkbox:checked + .au-c-toggle__elements .au-c-toggle__on-value {
+  display: block;
+  color: $au-white;
+}
+
+.input-checkbox:checked + .au-c-toggle__elements .au-c-toggle__switch {
+  left: auto;
+  right: .1rem;
+}

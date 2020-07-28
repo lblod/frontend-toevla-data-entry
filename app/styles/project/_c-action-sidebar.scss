@@ -4,14 +4,21 @@
    ================================== */
 
 .au-c-action-sidebar {
-  @include mq(medium) {
-    border-left: .1rem solid $au-gray-300;
-    box-shadow: 0 0 6rem rgba($au-gray-900,.2), 0 0 .3rem rgba($au-gray-900,.1);
-  }
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100%;
+  background-color: $au-white;
+  border-left: .1rem solid $au-gray-300;
+  box-shadow: 0 0 6rem rgba($au-gray-900,.2), 0 0 .3rem rgba($au-gray-900,.1);
 }
 
 .au-c-action-sidebar__header {
   border-bottom: .1rem solid $au-gray-300;
+}
+
+.au-c-action-sidebar__content {
+  flex-grow: 1;
 }
 
 .au-c-action-sidebar__footer {
