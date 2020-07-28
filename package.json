@@ -17,11 +17,12 @@
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "npm-run-all lint:* test:*",
-    "test:ember": "ember test"
+    "test:ember": "ember test",
+    "icons": "svg-symbols ./public/icons > ./public/appuniversum-symbolset.svg"
   },
   "devDependencies": {
-    "@appuniversum/ember-appuniversum": "0.0.24",
     "@ember/optional-features": "^1.3.0",
+    "@ember/render-modifiers": "^1.0.2",
     "@glimmer/component": "^1.0.0",
     "@glimmer/tracking": "^1.0.0",
     "@types/ember": "^3.1.2",
@@ -32,11 +33,13 @@
     "@types/ember__test-helpers": "^0.7.12",
     "@types/qunit": "^2.9.1",
     "@types/rsvp": "^4.0.3",
+    "@zestia/ember-auto-focus": "^4.1.0",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^1.5.3",
     "ember-cli": "~3.18.0",
     "ember-cli-app-version": "^3.2.0",
+    "ember-cli-autoprefixer": "^1.0.0",
     "ember-cli-babel": "^7.19.0",
     "ember-cli-dependency-checker": "^3.2.0",
     "ember-cli-htmlbars": "^4.3.1",
@@ -45,6 +48,7 @@
     "ember-cli-sri": "^2.1.1",
     "ember-cli-typescript": "^3.1.4",
     "ember-cli-uglify": "^3.0.0",
+    "ember-a11y-refocus": "^1.0.0",
     "ember-data": "~3.18.0",
     "ember-export-application-global": "^2.0.1",
     "ember-fetch": "^8.0.1",
@@ -63,7 +67,8 @@
     "qunit-dom": "^1.2.0",
     "sass": "^1.26.10",
     "tracked-toolbox": "^1.0.1",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.5",
+    "svg-symbols": "^1.0.5"
   },
   "engines": {
     "node": "10.* || >= 12"
