@@ -67,7 +67,7 @@ export default class PoiShowExperiencesNew extends Controller {
         },
         showExperience( context: PoiShowExperiencesNew, { record } : { record : Experience } ) {
           try {
-            context.transitionToRoute('experience.show', record);
+            context.transitionToRoute('experience.show.tree', record);
           } catch (e) {
             context.statechart.send("FAIL");
           }

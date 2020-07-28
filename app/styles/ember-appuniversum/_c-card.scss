@@ -45,7 +45,7 @@
 
 .au-c-card__link {
   &:focus {
-    outline: 0;
+    outline: 0 !important;
   }
 
   &:after {
