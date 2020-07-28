@@ -1,6 +1,5 @@
 import { set } from '@ember/object';
 import { get as emberGet } from '@ember/object';
-import Experience from 'frontend-toevla-data-entry/models/experience';
 
 export function butLast(path){
   const [, ...rest] = path.split(".").reverse();
