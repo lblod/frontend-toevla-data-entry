@@ -9,6 +9,23 @@ export default function customComponentMapping(uri){
 }
 
 const eMapping = {
+  "https://data.toevla.org/id/concepts/172da2d4-4114-465b-a083-7b7644618838":	{ component: "edit-components/boolean", key: "pointOfInterest.publicTransportGuidanceAvailable" },
+  "https://data.toevla.org/id/concepts/254027e0-9015-424b-a05f-60b0e33e5808":	{ component: "edit-components/boolean", key: "pointOfInterest.hasFreeEntranceForGuide" },
+  "https://data.toevla.org/id/concepts/481f153a-d901-4edc-af87-fa35cbed1057":	{ component: "edit-components/boolean", key: "pointOfInterest.acceptsMuseumPass" },
+  "https://data.toevla.org/id/concepts/76329315-c2ba-4309-b4f1-0233e10eec7b":	{ component: "edit-components/boolean", key: "pointOfInterest.acceptsUitpas" },
+  "https://data.toevla.org/id/concepts/fab3d846-a393-4c89-a2db-0ee075406f66":	{ component: "edit-components/boolean", key: "pointOfInterest.acceptsCityPass" },
+  "https://data.toevla.org/id/concepts/b60c0fd6-61ce-4461-824d-efd6cb2055bd":	{ component: "edit-components/boolean", key: "pointOfInterest.acceptsEdc" },
+  "https://data.toevla.org/id/concepts/fc8bb9f5-76f0-47a5-a628-858037dcc076":	{ component: "edit-components/boolean", key: "pointOfInterest.wheelchairAvailable" },
+  "https://data.toevla.org/id/concepts/667821b8-d5c4-48b1-ae52-d1691ff239a9":	{ component: "edit-components/boolean", key: "pointOfInterest.wifiAlwaysAvailable" },
+  "https://data.toevla.org/id/concepts/0545c86a-5d54-463c-b161-c1b8946b13cd":	{ component: "edit-components/boolean", key: "pointOfInterest.assistanceForGuideDogs" },
+  "https://data.toevla.org/id/concepts/9ae90bc9-2f2f-47b6-b7fc-a542172e6ac5":	{ component: "edit-components/boolean", key: "pointOfInterest.websiteSupportsWcag2" },
+  "https://data.toevla.org/id/concepts/0dd0cc1d-630d-445e-80a6-100d32ef460f":	{ component: "edit-components/boolean", key: "pointOfInterest.websiteAllowsTextIncrease" },
+  "https://data.toevla.org/id/concepts/eea322d2-e0ec-40f2-8d11-5774435ca067":	{ component: "edit-components/boolean", key: "pointOfInterest.websiteHasAccessibleContrast" },
+  "https://data.toevla.org/id/concepts/790d70c6-6fd3-4a7b-8536-0813f3e54888":	{ component: "edit-components/boolean", key: "pointOfInterest.websiteHasScreenreader" },
+  "https://data.toevla.org/id/concepts/1f169010-d9ab-40f9-89f9-4033b569dd0f":	{ component: "edit-components/boolean", key: "pointOfInterest.websiteHasSignLanguage" },
+  "https://data.toevla.org/id/concepts/df0271fa-5a57-4133-84ca-52975031712e":	{ component: "edit-components/boolean", key: "pointOfInterest.hasMovableElectronicPaymentSystem" },
+
+
   "https://data.toevla.org/id/concepts/74837ebc-fb5f-4333-81f5-bd92db6861f2": { component: "edit-components/boolean", key: "pointOfInterest.hasClearlyRecognizableBuilding" },
   "https://data.toevla.org/id/concepts/82e3201c-60d4-4eb6-88c1-90bcc5f87910": { component: "edit-components/boolean", key: "pointOfInterest.hasClearlyRecognizableEntrance" },
   "https://data.toevla.org/id/concepts/3c06fec6-3a7c-483d-b53f-e3c0a5caf179": { component: "edit-components/boolean", key: "pointOfInterest.hasVisibleGuidelines" },

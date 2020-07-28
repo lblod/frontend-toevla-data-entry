@@ -22,6 +22,11 @@ export default class PointOfInterest extends Model {
   @attr('boolean') hasMarkingsOrContrastsOnGlassDoors: boolean | undefined | null;
   @attr('boolean') extraAttentionGivenToAcoustics: boolean | undefined | null;
   @attr('boolean') hasAlternativeEntranceForWheelchair: boolean | undefined | null;
+  @attr('boolean') hasFreeEntranceForGuide: boolean | undefined | null;
+  @attr('boolean') acceptsMuseumPass: boolean | undefined | null;
+  @attr('boolean') acceptsUitpas: boolean | undefined | null;
+  @attr('boolean') acceptsCityPass: boolean | undefined | null;
+  @attr('boolean') acceptsEdc: boolean | undefined | null;
   @hasMany('experience') experiences!: Experience[];
   @hasMany('entrance') entrances!: Entrance[];
   @hasMany('parking') parkings!: Parking[];
