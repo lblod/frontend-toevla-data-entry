@@ -7,10 +7,10 @@
   </chart.if>
 
   <chart.if @state="unconfirmed">
-    <AuAlert @alertsize="tiny" @alertTitle="Are you sure?">
+    <AuAlert @alertsize="tiny" @alertTitle="Ben je zeker dat je dit item wil verwijderen?">
       <AuButtonGroup>
-        <button class="au-c-button au-c-button--secondary" {{on "click" (fn chart.preventAndSend "CANCEL")}} type="button">No</button>
-        <button class="au-c-button au-c-button--secondary" {{on "click" (fn chart.preventAndSend "CLICK")}} type="button">Yes</button>
+        <button class="au-c-button" {{on "click" (fn chart.preventAndSend "CLICK")}} type="button">Ja</button>
+        <button class="au-c-button au-c-button--secondary" {{on "click" (fn chart.preventAndSend "CANCEL")}} type="button">Nee</button>
       </AuButtonGroup>
     </AuAlert>
   </chart.if>

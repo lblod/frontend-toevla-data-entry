@@ -29,9 +29,9 @@
   </AuToolbar>
   <div class="au-o-box">
 
-    {{!-- <article class="au-o-box au-o-box--small au-c-card au-c-card--link au-u-margin-bottom">
-      <a href="#!" class="au-c-link au-c-link--secondary au-c-card__link"> Gebouw</a>
-    </article> --}}
+    <article class="au-o-box au-o-box--small au-c-card au-c-card--link au-u-margin-bottom">
+      <LinkTo class="au-c-link au-c-link--secondary au-c-card__link" @route="experience.show.tree" @model={{@model}}> Gebouw</LinkTo>
+    </article>
 
     {{outlet}}
   </div>

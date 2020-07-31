@@ -1,6 +1,16 @@
-<AuHeading @level="2" @skin="3" class="au-u-margin-bottom-small">
-  Events
-</AuHeading>
+<AuToolbar class="au-u-padding-top au-u-margin-bottom" @border="top">
+  <AuToolbarGroup>
+    <AuHeading @level="2" @skin="3">
+      Events
+    </AuHeading>
+  </AuToolbarGroup>
+  <AuToolbarGroup>
+    <LinkTo @route="poi.show.experiences.new" @model={{this.poi}} class="au-c-button">
+      <AuIcon @icon="add" @alignment="left" />
+      Event toevoegen
+    </LinkTo>
+  </AuToolbarGroup>
+</AuToolbar>
 
 <ul class="au-o-grid au-o-grid--tiny">
   {{#each @model as |experience|}}
@@ -11,10 +21,3 @@
     </li>
   {{/each}}
 </ul>
-
-<p class="au-u-margin-top">
-  <LinkTo @route="poi.show.experiences.new" @model={{this.poi}} class="au-c-button au-c-button--block">
-    <AuIcon @icon="add" @alignment="left" />
-    Event toevoegen
-  </LinkTo>
-</p>

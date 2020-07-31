@@ -1,4 +1,11 @@
-<AuHeading @skin="3" class="au-u-margin-bottom">Nieuw event</AuHeading>
+<AuToolbar class="au-u-padding-top au-u-margin-bottom" @border="top">
+  <AuToolbarGroup>
+    <AuHeading @level="2" @skin="3">
+      Nieuw event
+    </AuHeading>
+  </AuToolbarGroup>
+</AuToolbar>
+
 <WithStatechart @state={{this.statechart}} as |chart|>
 
   <chart.if @state="init">
@@ -13,7 +20,10 @@
   </chart.if>
 
   <chart.if @state="creating">
-    ... creating your event ...
+    <div>
+      <AuHeading @level="3" @skin="5">Event aanmaken</AuHeading>
+      <AuLoader />
+    </div>
   </chart.if>
 
   <chart.if @state="failed">
@@ -22,7 +32,10 @@
   </chart.if>
 
   <chart.if @state="created">
-    ... created your event, transitioning you to the details ...
+    <div>
+      <AuHeading @level="3" @skin="5">Event aanmaken, doorsturen naar detailpagina.</AuHeading>
+      <AuLoader />
+    </div>
   </chart.if>
 
   <chart.if @state="failedTransitioning">

@@ -1,31 +1,31 @@
 <div class="au-c-main-container__content au-c-main-container__content--scroll"  id="content">
-  <div class="au-o-layout">
-    <div class="au-o-region-large">
-      <AuHeading @skin="2" class="au-u-margin-bottom">Locaties</AuHeading>
-
-      <ul class="au-o-grid au-o-grid--tiny">
-        {{#each @model as |poi|}}
-          <li class="au-o-grid__item">
-            <article class="au-o-box au-o-box--small au-c-card au-c-card--link">
-              <AuHeading @level="2" @skin="4">
-                <LinkTo @route="poi.show.experiences.index" @model={{poi}} class="au-c-link au-c-link--secondary au-c-card__link">
-                  {{poi.label}}
-                </LinkTo>
-              </AuHeading>
-              <AuPill>
-                {{poi.id}}
-              </AuPill>
-            </article>
-          </li>
-        {{/each}}
-      </ul>
-
-      <p class="au-u-margin-top">
-        <LinkTo @route="poi.new" class="au-c-button au-c-button--block">
-          <AuIcon @icon="add" @alignment="left" />
-          Locatie toevoegen
-        </LinkTo>
-      </p>
-    </div>
+  <AuToolbar @border="bottom" @size="large">
+    <AuToolbarGroup>
+        <AuHeading @skin="2">Locaties</AuHeading>
+    </AuToolbarGroup>
+    <AuToolbarGroup>
+      <LinkTo @route="poi.new" class="au-c-button">
+        <AuIcon @icon="add" @alignment="left" />
+        Locatie toevoegen
+      </LinkTo>
+    </AuToolbarGroup>
+  </AuToolbar>
+  <div class="au-o-box">
+    <ul class="au-o-grid au-o-grid--tiny">
+      {{#each @model as |poi|}}
+        <li class="au-o-grid__item">
+          <article class="au-o-box au-o-box--small au-c-card au-c-card--link">
+            <AuHeading @level="2" @skin="4">
+              <LinkTo @route="poi.show.experiences.index" @model={{poi}} class="au-c-link au-c-link--secondary au-c-card__link">
+                {{poi.label}}
+              </LinkTo>
+            </AuHeading>
+            <AuPill>
+              {{poi.id}}
+            </AuPill>
+          </article>
+        </li>
+      {{/each}}
+    </ul>
   </div>
 </div>
