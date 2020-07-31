@@ -34,3 +34,14 @@
 .au-c-theme-background {
   background-color: $au-gray-100;
 }
+
+.region--alt {
+  background-color: $au-gray-200;
+}
+
+// Responsive alignment
+.au-u-text-right\@medium {
+  @include mq(medium) {
+    text-align: right;
+  }
+}

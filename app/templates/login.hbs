@@ -1,0 +1,94 @@
+<div class="au-c-main-container__content au-c-main-container__content--scroll">
+  <main id="content">
+    <AuContentHeader @titlePartOne="Vlaanderen" @titlePartTwo="is gelijke kansen">
+      <img sizes="50vw" src="/assets/images/loket-header-1600.jpg" srcset="/assets/images/loket-header-320.jpg 320w, /assets/images/loket-header-1024.jpg 1024w, /assets/images/loket-header-1600.jpg 1600w" alt="Foto van een laptop met daarop het vlaanderen logo.">
+    </AuContentHeader>
+
+    <section class="au-o-region-large">
+      <div class="au-o-layout">
+        <div class="au-o-grid au-o-grid--small">
+          <div class="au-o-grid__item au-u-3-4@small au-u-1-2@medium">
+            <AuContent @skin="large">
+              <h1>Toevla</h1>
+              <p>Lukt het aanmelden niet? Neem contact op met uw interne beheerder. Indien er zich een probleem voordoet, contacteer <a href="https://overheid.vlaanderen.be/ict/ict-diensten/gebruikersbeheer" class="au-c-link">gebruikersbeheer Vlaanderen</a>.</p>
+              <p>Het aanmelden gebeurt in een pop-up; zorg dat de instellingen van uw browser correct staan indien deze niet verschijnt.</p>
+            </AuContent>
+          </div>
+          <div class="au-o-grid__item au-u-1-4@small au-u-1-2@medium au-u-text-right@medium">
+            <LinkTo @route="poi" class="au-c-button au-c-button--large">Aanmelden</LinkTo>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="au-o-region-large region--alt">
+      <div class="au-o-layout">
+        <AuHeading @level="2" @skin="3" class="au-u-margin-bottom">Toevla widget en data entry</AuHeading>
+        <div class="au-o-grid au-o-grid--small">
+          <div class="au-o-grid__item au-u-1-2@small au-u-1-3@medium">
+            <AuCard class="au-u-text-center">
+              <AuBadge @icon="search-folder" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+              <AuContent>
+                <AuHeading @level="2" @skin="4">
+                  Widget
+                </AuHeading>
+                <p class="au-u-margin-top-tiny">...</p>
+                {{!-- <p>
+                  <a class="au-c-button" href="https://lokaalbestuur.vlaanderen.be/mijn-binnenland" target="_blank" rel="noopener noreferrer">Meer informatie</a>
+                  <a class="au-c-button au-c-button--secondary" href="https://loket.lokaalbestuur.vlaanderen.be/handleiding/#toezicht" target="_blank" rel="noopener noreferrer">Handleiding</a>
+                </p> --}}
+              </AuContent>
+            </AuCard>
+          </div>
+          <div class="au-o-grid__item au-u-1-2@small au-u-1-3@medium">
+            <AuCard class="au-u-text-center">
+              <AuBadge @icon="message" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+              <AuContent>
+                <AuHeading @level="2" @skin="4">
+                  API
+                </AuHeading>
+                <p class="au-u-margin-top-tiny">...</p>
+                {{!-- <p>
+                  <a class="au-c-button" href="https://lokaalbestuur.vlaanderen.be/loket-lokaal-bestuur-module-berichtencentrum" target="_blank" rel="noopener noreferrer">Meer informatie</a>
+                  <a class="au-c-button au-c-button--secondary" href="https://loket.lokaalbestuur.vlaanderen.be/handleiding/#berichtencentrum" target="_blank" rel="noopener noreferrer">Handleiding</a>
+                </p> --}}
+              </AuContent>
+            </AuCard>
+          </div>
+          <div class="au-o-grid__item au-u-1-2@small au-u-1-3@medium">
+            <AuCard class="au-u-text-center">
+              <AuBadge @icon="document" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+              <AuContent>
+                <AuHeading @level="2" @skin="4">
+                  Data ingave
+                </AuHeading>
+                <p class="au-u-margin-top-tiny">...</p>
+                {{!-- <p>
+                  <a class="au-c-button" href="https://lokaalbestuur.vlaanderen.be/bbc-strategisch-en-financieel-beleid/digitale-rapportering" target="_blank" rel="noopener noreferrer">Meer informatie</a>
+                  <a class="au-c-button au-c-button--secondary" href="https://loket.lokaalbestuur.vlaanderen.be/handleiding/#bbcdr" target="_blank" rel="noopener noreferrer">Handleiding</a>
+                </p> --}}
+              </AuContent>
+            </AuCard>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <AuMainFooter>
+    <AuHeading @level="3" @skin="4">
+      Toevla is een officiële website van de Vlaamse overheid
+    </AuHeading>
+    <AuContent @skin="small">
+      <p>Uitgegeven door <a class="au-c-link" href="https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-kanselarij-en-bestuur/toegankelijk-vlaanderen">Agentschap Toegankelijk Vlaanderen</a></p>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="login" @skin="secondary">Disclaimer</AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="login" @skin="secondary">Cookieverklaring</AuLink>
+        </li>
+      </ul>
+    </AuContent>
+  </AuMainFooter>
+</div>

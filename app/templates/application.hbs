@@ -1,4 +1,8 @@
-<AuMainHeader @homeRoute="poi" @appTitle="ToeVla data entry" />
+<AuMainHeader @homeRoute="poi" @appTitle="ToeVla data entry">
+  <LinkTo @route="poi" role="menuitem" class="au-c-button au-c-button--tertiary">
+    <AuIcon @icon="login" @alignment="left" />Aanmelden
+  </LinkTo>
+</AuMainHeader>
 
 <main class="au-c-main-container" id="main">
   {{outlet}}

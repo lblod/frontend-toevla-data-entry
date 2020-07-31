@@ -30,4 +30,5 @@ Router.map(function() {
 
   this.route('tree-node', function() {});
   this.route('json-model-tester');
+  this.route('login');
 });

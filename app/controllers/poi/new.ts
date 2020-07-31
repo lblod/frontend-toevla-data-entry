@@ -69,7 +69,7 @@ export default class PoiNew extends Controller {
   @handler()
   showEntity({ record }: { record: PointOfInterest }) {
     try {
-      this.transitionToRoute('poi.show', record);
+      this.transitionToRoute('experience.show.tree', record);
     } catch (e) {
       this.statechart.send("FAIL");
     }
