@@ -1,5 +1,5 @@
 .au-c-toggle {
-  display: block;
+  display: inline-block;
 
   &:focus-within {
     outline: $au-outline;
@@ -51,7 +51,7 @@
   text-align: center;
   color: $au-gray-600;
   width: 60%;
-  height: $au-unit + $au-unit-small;
+  height: $au-unit + $au-unit-tiny + .3rem;
   line-height: $au-unit + $au-unit-tiny + .3rem;
 }
 

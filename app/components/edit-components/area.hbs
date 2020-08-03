@@ -1,27 +1,29 @@
 <WithStatechart @state={{this.statechart}} as |chart|>
   <chart.if @state="init">
-    ...
+     <AuLoader />
   </chart.if>
   <chart.if @state="dataEntry">
     <form {{on "submit" (fn chart.preventAndSend "SAVE")}}>
-      <dl>
-        <dt>width (cm)</dt>
-        <dd><Input @value={{this.width}} @type="number" /></dd>
-        <dt>height (cm)</dt>
-        <dd><Input @value={{this.height}} @type="number" /></dd>
-      </dl>
-
-      <button type="submit">save</button>
+      <p class="au-u-margin-bottom-small">
+        <AuLabel for="width">Geef een breedte in cm.</AuLabel>
+        <Input id="width" @value={{this.width}} @type="number" class="au-c-input" /> <span class="au-u-margin-left-tiny au-c-info-text">cm</span>
+      </p>
+      <p class="au-u-margin-bottom-small">
+        <AuLabel for="height">Geef een diepte in cm.</AuLabel>
+        <Input id="height" @value={{this.height}} @type="number" class="au-c-input" /> <span class="au-u-margin-left-tiny au-c-info-text">cm</span>
+      </p>
+      <AuButton type="submit">Opslaan</AuButton>
     </form>
   </chart.if>
   <chart.if @state="saving">
-    <dl>
-      <dt>width (cm)</dt>
-      <dd><Input @value={{this.width}} @type="number" disabled /></dd>
-      <dt>height (cm)</dt>
-      <dd><Input @value={{this.height}} @type="number" disabled /></dd>
-    </dl>
-
-    <button disabled type="button">save</button> ...
+    <p class="au-u-margin-bottom-small">
+      <AuLabel for="width">Geef een breedte in cm.</AuLabel>
+      <Input id="width" @value={{this.width}} @type="number" class="au-c-input" /> <span class="au-u-margin-left-tiny au-c-info-text">cm</span>
+    </p>
+    <p class="au-u-margin-bottom-small">
+      <AuLabel for="height">Geef een diepte in cm.</AuLabel>
+      <Input id="height" @value={{this.height}} @type="number" class="au-c-input" /> <span class="au-u-margin-left-tiny au-c-info-text">cm</span>
+    </p>
+    <AuButton @loading="true">Opslaan</AuButton>
   </chart.if>
 </WithStatechart>

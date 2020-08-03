@@ -1,15 +1,20 @@
 <WithStatechart @state={{this.statechart}} as |chart|>
   <chart.if @state="init">
-    ...
+     <AuLoader />
   </chart.if>
   <chart.if @state="dataEntry">
-    <Input @value={{this.currentValue}} @type="number" /> KG
-
-    <button {{on "click" (fn chart.preventAndSend "SAVE")}} type="button">save</button>
+    <p class="au-u-margin-bottom-small">
+      <AuLabel for="force">Geef een waarde in kg.</AuLabel>
+      <Input id="force" @value={{this.currentValue}} @type="number" class="au-c-input" /> <span class="au-u-margin-left-tiny au-c-info-text">KG</span>
+    </p>
+    <AuButton {{on "click" (fn chart.preventAndSend "SAVE")}} type="button">Opslaan</AuButton>
   </chart.if>
   <chart.if @state="saving">
-    <Input @value={{this.currentValue}} @type="number" /> KG
+    <p class="au-u-margin-bottom-small">
+      <AuLabel for="force">Geef een waarde in kg.</AuLabel>
+      <Input id="force" @value={{this.currentValue}} @type="number" class="au-c-input" disabled/> <span class="au-u-margin-left-tiny au-c-info-text">KG</span>
+    </p>
 
-    <button disabled type="button">save</button> ...
+    <AuButton @loading="true">Opslaan</AuButton>
   </chart.if>
 </WithStatechart>

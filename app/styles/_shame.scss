@@ -85,3 +85,10 @@
     margin-top: $au-unit-small;
   }
 }
+
+.au-c-hr {
+  border: 0;
+  border-bottom: .1rem solid $au-gray-300;
+  margin-top: $au-unit;
+  margin-bottom: $au-unit;
+}

@@ -1,15 +1,33 @@
 <WithStatechart @state={{this.statechart}} as |chart|>
   <chart.if @state="init">
-    ...
+    <AuLoader />
   </chart.if>
   <chart.if @state="dataEntry">
-    <Input @checked={{this.currentValue}} @type="checkbox" />
-
-    <button {{on "click" (fn chart.preventAndSend "SAVE")}} type="button">save</button>
+    <p class="au-u-margin-bottom-tiny">
+      <AuLabel for="boolean">Is deze eigenschap aanwezig?</AuLabel>
+      <label class="au-c-toggle">
+        <Input id="boolean" @checked={{this.currentValue}} @type="checkbox" class="input-checkbox" />
+        <span class="au-c-toggle__elements">
+          <span class="au-c-toggle__switch"></span>
+          <span class="au-c-toggle__on-value">Ja</span>
+          <span class="au-c-toggle__off-value">Nee</span>
+        </span>
+      </label>
+    </p>
+    <AuButton {{on "click" (fn chart.preventAndSend "SAVE")}} type="button">Opslaan</AuButton>
   </chart.if>
   <chart.if @state="saving">
-    <Input @checked={{this.currentValue}} @type="checkbox" />
-
-    <button disabled type="button">save</button>
+    <p class="au-u-margin-bottom-tiny">
+      <AuLabel for="boolean">Is deze eigenschap aanwezig?</AuLabel>
+      <label class="au-c-toggle">
+        <Input id="boolean" @checked={{this.currentValue}} @type="checkbox" class="input-checkbox" disabled/>
+        <span class="au-c-toggle__elements">
+          <span class="au-c-toggle__switch"></span>
+          <span class="au-c-toggle__on-value">Ja</span>
+          <span class="au-c-toggle__off-value">Nee</span>
+        </span>
+      </label>
+    </p>
+    <AuButton @loading="true">Opslaan</AuButton>
   </chart.if>
 </WithStatechart>

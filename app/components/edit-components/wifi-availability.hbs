@@ -1,5 +1,15 @@
-<Input @checked={{this.wifiAlwaysAvailable}} @type="checkbox" />
+<p class="au-u-margin-bottom-tiny">
+  <AuLabel for="wifiAlwaysAvailable">Is deze eigenschap aanwezig?</AuLabel>
+  <label class="au-c-toggle">
+    <Input id="wifiAlwaysAvailable" @checked={{this.wifiAlwaysAvailable}} @type="checkbox" class="input-checkbox" />
+    <span class="au-c-toggle__elements">
+      <span class="au-c-toggle__switch"></span>
+      <span class="au-c-toggle__on-value">Ja</span>
+      <span class="au-c-toggle__off-value">Nee</span>
+    </span>
+  </label>
+</p>
 
-<button {{on "click" this.save}}>save</button>
+<AuButton {{on "click" this.save}} type="button">Opslaan</AuButton>
 
 {{yield}}
