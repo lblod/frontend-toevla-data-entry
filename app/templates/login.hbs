@@ -9,7 +9,7 @@
         <div class="au-o-grid au-o-grid--small">
           <div class="au-o-grid__item au-u-3-4@small au-u-1-2@medium">
             <AuContent @skin="large">
-              <h1>Toevla</h1>
+              <h1>Toevla widget & data entry</h1>
               <p>Lukt het aanmelden niet? Neem contact op met uw interne beheerder. Indien er zich een probleem voordoet, contacteer <a href="https://overheid.vlaanderen.be/ict/ict-diensten/gebruikersbeheer" class="au-c-link">gebruikersbeheer Vlaanderen</a>.</p>
               <p>Het aanmelden gebeurt in een pop-up; zorg dat de instellingen van uw browser correct staan indien deze niet verschijnt.</p>
             </AuContent>
@@ -23,7 +23,7 @@
 
     <section class="au-o-region-large au-c-theme-gray-200">
       <div class="au-o-layout">
-        <AuHeading @level="2" @skin="3" class="au-u-margin-bottom">Toevla widget en data entry</AuHeading>
+        <AuHeading @level="2" @skin="3" class="au-u-margin-bottom">Meer info</AuHeading>
         <div class="au-o-grid au-o-grid--small">
           <div class="au-o-grid__item au-u-1-2@small au-u-1-3@medium">
             <AuCard class="au-u-text-center">
@@ -33,10 +33,11 @@
                   Widget
                 </AuHeading>
                 <p class="au-u-margin-top-tiny">...</p>
-                {{!-- <p>
-                  <a class="au-c-button" href="https://lokaalbestuur.vlaanderen.be/mijn-binnenland" target="_blank" rel="noopener noreferrer">Meer informatie</a>
-                  <a class="au-c-button au-c-button--secondary" href="https://loket.lokaalbestuur.vlaanderen.be/handleiding/#toezicht" target="_blank" rel="noopener noreferrer">Handleiding</a>
-                </p> --}}
+                <p>
+                  <LinkTo @route="login" class="au-c-button au-c-button--secondary">
+                    Handleiding
+                  </LinkTo>
+                </p>
               </AuContent>
             </AuCard>
           </div>
@@ -48,10 +49,11 @@
                   API
                 </AuHeading>
                 <p class="au-u-margin-top-tiny">...</p>
-                {{!-- <p>
-                  <a class="au-c-button" href="https://lokaalbestuur.vlaanderen.be/loket-lokaal-bestuur-module-berichtencentrum" target="_blank" rel="noopener noreferrer">Meer informatie</a>
-                  <a class="au-c-button au-c-button--secondary" href="https://loket.lokaalbestuur.vlaanderen.be/handleiding/#berichtencentrum" target="_blank" rel="noopener noreferrer">Handleiding</a>
-                </p> --}}
+                <p>
+                  <LinkTo @route="login" class="au-c-button au-c-button--secondary">
+                    Handleiding
+                  </LinkTo>
+                </p>
               </AuContent>
             </AuCard>
           </div>
@@ -63,10 +65,11 @@
                   Data ingave
                 </AuHeading>
                 <p class="au-u-margin-top-tiny">...</p>
-                {{!-- <p>
-                  <a class="au-c-button" href="https://lokaalbestuur.vlaanderen.be/bbc-strategisch-en-financieel-beleid/digitale-rapportering" target="_blank" rel="noopener noreferrer">Meer informatie</a>
-                  <a class="au-c-button au-c-button--secondary" href="https://loket.lokaalbestuur.vlaanderen.be/handleiding/#bbcdr" target="_blank" rel="noopener noreferrer">Handleiding</a>
-                </p> --}}
+                <p>
+                  <LinkTo @route="login" class="au-c-button au-c-button--secondary">
+                    Handleiding
+                  </LinkTo>
+                </p>
               </AuContent>
             </AuCard>
           </div>
