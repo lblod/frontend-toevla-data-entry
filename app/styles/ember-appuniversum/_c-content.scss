@@ -79,6 +79,23 @@ $au-content-small         : $au-base !default;
   > * + h6 {
     margin-top: $au-unit;
   }
+
+  > * {
+    max-width: 80ch;
+  }
+
+  ul:not(.au-c-list-horizontal) {
+    list-style: disc;
+    margin-left: $au-unit;
+  }
+
+  ul:not(.au-c-list-horizontal) ul {
+    list-style: circle;
+  }
+
+  ul:not(.au-c-list-horizontal) li + li {
+    margin-top: $au-unit-tiny;
+  }
 }
 
 .au-c-content--small {

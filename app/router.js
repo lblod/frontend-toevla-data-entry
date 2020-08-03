@@ -31,4 +31,8 @@ Router.map(function() {
   this.route('tree-node', function() {});
   this.route('json-model-tester');
   this.route('login');
+  this.route('legal', function() {
+    this.route('cookiestatement');
+    this.route('disclaimer');
+  });
 });
