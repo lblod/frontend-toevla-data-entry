@@ -4,6 +4,7 @@
   background-color: $au-gray-100;
   overflow: auto;
   padding: $au-unit;
+  border-right: .1rem solid $au-gray-200;
 }
 
 .au-c-tree__list {
@@ -41,6 +42,8 @@
 .au-c-tree__item--child {
   @include au-font-size($au-h6);
   padding: 0;
+  overflow: hidden;
+
   margin-bottom: $au-unit-tiny;
   border: 1px solid $au-gray-200;
   background-color: $au-white;
@@ -84,7 +87,6 @@
   display: flex;
   align-items: center;
   position: absolute;
-  height: $au-unit-large + $au-unit - .2rem;
   top: 0;
   right: 0;
   font-family: $au-font;
@@ -92,6 +94,7 @@
   font-weight: $au-regular;
   text-decoration-color: tint($au-blue-700,70);
   padding: $au-unit-small;
+  background-color: $au-gray-100;
 
   &,
   &:visited {
@@ -106,11 +109,34 @@
 
   &:focus {
     outline: $au-outline;
-    outline-offset: $au-unit-tiny/2;
+    outline-offset: -$au-unit-tiny;
+  }
+
+  @include mq(medium) {
+    height: $au-unit-large + $au-unit - .2rem;
+    background-color: transparent;
+
+    .au-c-icon {
+      margin-right: $au-unit-small;
+    }
+  }
+}
+
+.au-c-tree__edit-label {
+  @include mq($until: medium) {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    top: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
   }
 }
 
 .au-c-tree__button {
+  position: relative;
   cursor: default;
   font-size: inherit;
   line-height: inherit;
@@ -129,6 +155,7 @@
   outline: 0;
   border: 0;
   padding: 0;
+  margin-right: $au-unit-large;
   color: $au-blue-700;
   text-decoration: underline;
   text-decoration-color: tint($au-blue-700,70);
