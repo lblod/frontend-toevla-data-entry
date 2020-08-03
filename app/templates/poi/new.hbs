@@ -37,9 +37,10 @@
       </chart.if>
 
       <chart.if @state="saving">
-        <p class="au-u-h6">
-          ... opslaan ...
-        </p>
+        <div>
+          <AuHeading @level="3" @skin="5">Opslaan</AuHeading>
+          <AuLoader />
+        </div>
       </chart.if>
 
       <chart.if @state="failed">
@@ -54,9 +55,10 @@
       </chart.if>
 
       <chart.if @state="done">
-        <p class="au-u-h6">
-          ... redirecting ...
-        </p>
+        <div>
+          <AuHeading @level="3" @skin="5">Redirecting</AuHeading>
+          <AuLoader />
+        </div>
       </chart.if>
     </WithStatechart>
   </div>

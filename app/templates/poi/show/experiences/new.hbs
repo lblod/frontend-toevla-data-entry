@@ -39,7 +39,9 @@
   </chart.if>
 
   <chart.if @state="failedTransitioning">
-    ... failed to transition to your created experience ...
+    <div>
+      <AuHeading @level="3" @skin="5">Failed to transition to your created experience.</AuHeading>
+    </div>
   </chart.if>
 
   <AuToolbar @border="top" class="au-u-margin-top au-u-padding-top-small">

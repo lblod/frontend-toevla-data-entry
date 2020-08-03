@@ -6,7 +6,7 @@
     <p class="au-c-info-text"><strong>Tree node:</strong> {{@model.treeNode.uri}}</p>
     <p class="au-c-info-text"><strong>Edit type:</strong> {{this.extendedEditInfo.component}}</p>
 
-    <LinkTo @route="experience.show.tree" @model={{@model.treeNode.id}} class="au-c-close au-c-close--large">
+    <LinkTo @route="experience.show.tree" @model={{@model.experience}} class="au-c-close au-c-close--large">
       <AuIcon @icon="cross" @size="large" />
       <span class="au-u-hidden-visually">Sluiten</span>
     </LinkTo>

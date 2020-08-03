@@ -1,4 +1,8 @@
-
+/* ==========================================================================
+   #SHAME
+   Dirty temporary css for demo purposes.
+   Some parts will be reused, but most of them will not.
+   ========================================================================== */
 
 
 // Toolbar group rows
@@ -30,12 +34,12 @@
   }
 }
 
-
-.au-c-theme-background {
+// Colour themes
+.au-c-theme-gray-100 {
   background-color: $au-gray-100;
 }
 
-.region--alt {
+.au-c-theme-gray-200 {
   background-color: $au-gray-200;
 }
 
@@ -80,12 +84,14 @@
   right: $au-unit;
 }
 
+// Form spacing
 .au-c-form {
   > * + * {
     margin-top: $au-unit-small;
   }
 }
 
+// Horizontal divider
 .au-c-hr {
   border: 0;
   border-bottom: .1rem solid $au-gray-300;
