@@ -1,4 +1,5 @@
 <WithStatechart @state={{this.statechart}} as |chart|>
+  {{yield (hash reset=(fn chart.send "RESET"))}}
   <chart.if @state="init">
     <AuLoader />
   </chart.if>

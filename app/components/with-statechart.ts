@@ -13,6 +13,7 @@ export default class WithStatechart extends Component<WithStatechartArgs> {
   }
 
   @action send(eventName: string): any {
+    console.log(`Sending ${eventName}`);
     this.args.state.send(eventName);
   }
 

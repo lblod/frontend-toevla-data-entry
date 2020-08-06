@@ -22,16 +22,13 @@ export default class ExperienceShowTreeEditController extends Controller {
   }
 
   @action
-  async resetComponent() {
-    this.showComponent = false;
-    setTimeout(
-      () => {
-        this.showComponent = true;
-      },
-      50);
+  reset(){
+    debugger;
+    console.log("We should reset");
   }
 
   @action submit( event ) {
+    console.log("trying to submit")
     event.preventDefault();
     if( this.model.scoring )
       this.model.scoring.save();

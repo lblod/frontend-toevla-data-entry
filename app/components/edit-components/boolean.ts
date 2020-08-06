@@ -25,20 +25,38 @@ export default class EditComponentsBoolean extends Component<EditComponentsBoole
         init: {
           entry: ["initIntermediateObjects"],
           on: {
-            SETUP_OBJECTS: "dataEntry"
+            SETUP_OBJECTS: "dataEntry",
+            RESET: "resetting"
           }
         },
         dataEntry: {
           on: {
-            SAVE: "saving"
+            SAVE: "saving",
+            RESET: "resetting"
           }
         },
         saving: {
           entry: ["save"],
           on: {
-            SAVED: "dataEntry"
+            SAVED: "dataEntry",
+            RESET: "resetAfterSave",
+            FAIL: "failed"
           }
-        }
+        },
+        resetAfterSave: {
+          on: {
+            SAVED: "resetting",
+            FAIL: "failed"
+          }
+        },
+        resetting: {
+          entry: ["resetDataEntry"],
+          on: {
+            CLEARED: "init",
+            RESET: "resetting"
+          }
+        },
+        failed: {}
       }
     }
   )
@@ -63,6 +81,15 @@ export default class EditComponentsBoolean extends Component<EditComponentsBoole
   }
 
   /**
+   * Resets the data entry
+   */
+  @handler()
+  resetDataEntry(){
+    this.hasSetValue = false;
+    this.statechart.send("CLEARED");
+  }
+
+  /**
    * Ensures we have an intermediate object and a current state.
    */
   @handler()
@@ -74,10 +101,14 @@ export default class EditComponentsBoolean extends Component<EditComponentsBoole
   // @action
   @handler()
   async save(){
-    if( this.hasSetValue ) {
-      await setInstanceValue( this.args.experience, this.args.key, this.configuredValue );
-      await save( this.args.experience, this.args.key );
+    try {
+      if( this.hasSetValue ) {
+        await setInstanceValue( this.args.experience, this.args.key, this.configuredValue );
+        await save( this.args.experience, this.args.key );
+      }
+      this.statechart.send("SAVED");
+    } catch {
+      this.statechart.send("FAIL");
     }
-    this.statechart.send("SAVED");
   }
 }

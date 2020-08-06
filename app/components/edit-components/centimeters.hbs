@@ -1,6 +1,7 @@
 <WithStatechart @state={{this.statechart}} as |chart|>
+  {{yield (hash reset=(fn chart.send "RESET"))}}
   <chart.if @state="init">
-     <AuLoader />
+    <AuLoader />
   </chart.if>
   <chart.if @state="dataEntry">
     <p class="au-u-margin-bottom-small">
@@ -16,4 +17,5 @@
     </p>
     <AuButton @loading="true">Opslaan</AuButton>
   </chart.if>
+  {{yield (hash reset=(fn chart.send "RESET"))}}
 </WithStatechart>

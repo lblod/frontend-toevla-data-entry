@@ -1,6 +1,7 @@
 <WithStatechart @state={{this.statechart}} as |chart|>
+  {{yield (hash reset=(fn chart.send "RESET"))}}
   <chart.if @state="init">
-     <AuLoader />
+    <AuLoader />
   </chart.if>
   <chart.if @state="dataEntry">
     <form {{on "submit" (fn chart.preventAndSend "SAVE")}}>
