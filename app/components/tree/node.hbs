@@ -41,7 +41,7 @@
           {{#each this.sortedChildren as |child|}}
             <li class="au-c-tree__item au-c-tree__item--child">
               <Tree::Node @node={{child}} @experience={{@experience}} />
-              <LinkTo class="au-c-tree__edit" @route="experience.edit.tree-node" @models={{array @experience.id child.id}}>
+              <LinkTo class="au-c-tree__edit" @route="experience.show.tree.edit" @models={{array @experience.id child.id}}>
                 <AuIcon @icon="pencil" />
                 <span class="au-c-tree__edit-label">Aanpassen</span>
               </LinkTo>
