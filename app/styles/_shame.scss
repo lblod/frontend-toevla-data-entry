@@ -98,3 +98,29 @@
   margin-top: $au-unit;
   margin-bottom: $au-unit;
 }
+
+// Save message
+.au-c-message {
+  @include au-font-size($au-base);
+  display: inline-flex;
+  align-items: center;
+  color: $au-green-700;
+  font-weight: $au-medium;
+  position: relative;
+  top: .5ex;
+  animation-name: dissappear;
+  animation-iteration-count: 1;
+  animation-duration: .3s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dissappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

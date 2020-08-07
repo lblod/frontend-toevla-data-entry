@@ -16,6 +16,19 @@
       <AuButton type="submit">Opslaan</AuButton>
     </form>
   </chart.if>
+  <chart.if @state="saved">
+    <form {{on "submit" (fn chart.preventAndSend "SAVE")}}>
+      <p class="au-u-margin-bottom-small">
+        <AuLabel for="width">Geef een breedte in cm.</AuLabel>
+        <Input id="width" @value={{this.width}} @type="number" class="au-c-input" /> <span class="au-u-margin-left-tiny au-c-info-text">cm</span>
+      </p>
+      <p class="au-u-margin-bottom-small">
+        <AuLabel for="height">Geef een diepte in cm.</AuLabel>
+        <Input id="height" @value={{this.height}} @type="number" class="au-c-input" /> <span class="au-u-margin-left-tiny au-c-info-text">cm</span>
+      </p>
+      <AuButton type="submit">Opslaan</AuButton><span class="au-c-message"><AuIcon @icon="check" @size="large" />Opgeslagen</span>
+    </form>
+  </chart.if>
   <chart.if @state="saving">
     <p class="au-u-margin-bottom-small">
       <AuLabel for="width">Geef een breedte in cm.</AuLabel>

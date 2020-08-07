@@ -38,9 +38,15 @@ export default class EditComponentsBoolean extends Component<EditComponentsBoole
         saving: {
           entry: ["save"],
           on: {
-            SAVED: "dataEntry",
+            SAVED: "saved",
             RESET: "resetAfterSave",
             FAIL: "failed"
+          }
+        },
+        saved: {
+          on: {
+            SAVE: "saving",
+            RESET: "resetting"
           }
         },
         resetAfterSave: {
