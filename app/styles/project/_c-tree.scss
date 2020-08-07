@@ -111,6 +111,12 @@
     outline-offset: -$au-unit-tiny;
   }
 
+  &.active  {
+    font-weight: $au-bold;
+    color: $au-blue-900;
+    text-decoration: none;
+  }
+
   @include mq(medium) {
     height: $au-unit-large + $au-unit - .2rem;
     background-color: transparent;
