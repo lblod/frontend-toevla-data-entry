@@ -13,6 +13,7 @@ interface TreeNodeArgs {
   title: string | undefined;
   node: TreeNode;
   experience: Experience;
+  disableHandlerComponent: boolean | undefined;
 }
 
 export default class TreeNodeComponent extends Component<TreeNodeArgs> {
@@ -26,7 +27,10 @@ export default class TreeNodeComponent extends Component<TreeNodeArgs> {
   }
 
   get handlerComponent(): string | null {
-    return mapping( this.args.node.uri );
+    if( this.args.disableHandlerComponent )
+      return null;
+    else
+      return mapping( this.args.node.uri );
   }
 
   get sortedChildren(){

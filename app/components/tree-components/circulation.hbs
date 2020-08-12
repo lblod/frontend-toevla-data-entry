@@ -1,8 +1,9 @@
 {{#each @experience.pointOfInterest.experiences as |experience|}}
-  <TreeComponents::Circulation::SingleNode
+  <Tree::Node
     @node={{@node}}
     @experience={{experience}}
     @title={{concat "Circuleren - " experience.title}}
+    @disableHandlerComponent={{true}}
     class="au-c-tree__item au-c-tree__item--child">
 
     <LinkTo class="au-c-tree__edit" @route="experience.show.tree.edit" @models={{array @experience.id child.id}}>
@@ -10,5 +11,5 @@
       <span class="au-c-tree__edit-label">Aanpassen</span>
     </LinkTo>
 
-  </TreeComponents::Circulation::SingleNode>
+  </Tree::Node>
 {{/each}}
