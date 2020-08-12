@@ -10,9 +10,7 @@
     <div class="au-o-grid__item au-u-3-5 au-u-2-3@medium">
       <ul class="au-c-tree">
         {{#each this.sortedNodes as |node|}}
-        <li class="au-c-tree__item">
-          <Tree::Node @node={{node}} @experience={{this.experience}} />
-        </li>
+          <Tree::Node @node={{node}} @experience={{this.experience}} class="au-c-tree__item" />
         {{/each}}
       </ul>
     </div>

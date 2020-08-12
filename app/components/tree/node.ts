@@ -10,6 +10,7 @@ import { handler, statechart } from 'frontend-toevla-data-entry/utils/rockin-sta
 import treeNodeMachine from 'frontend-toevla-data-entry/machines/tree-node-machine';
 
 interface TreeNodeArgs {
+  title: string | undefined;
   node: TreeNode;
   experience: Experience;
 }
@@ -38,5 +39,9 @@ export default class TreeNodeComponent extends Component<TreeNodeArgs> {
   @action
   toggleIsOpen(){
     this.isOpen = !this.isOpen;
+  }
+
+  get nodeTitle(){
+    return this.args.title || this.args.node.title;
   }
 }

@@ -1,0 +1,17 @@
+{{#each @experience.pointOfInterest.experiences as |experience|}}
+  {{#if this.realNode}}
+    <Tree::Node
+      @node={{this.realNode}}
+      @experience={{experience}}
+      @title={{concat "Circuleren - " experience.title}}
+      class="au-c-tree__item au-c-tree__item--child">
+
+      <LinkTo class="au-c-tree__edit" @route="experience.show.tree.edit" @models={{array @experience.id child.id}}>
+        <AuIcon @icon="pencil" />
+        <span class="au-c-tree__edit-label">Aanpassen</span>
+      </LinkTo>
+    </Tree::Node>
+  {{else}}
+    ...
+  {{/if}}
+{{/each}}
