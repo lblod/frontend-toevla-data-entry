@@ -145,3 +145,23 @@
     max-width: 130rem;
   }
 }
+
+.au-u-limit-breadcrumb {
+  display: block !important;
+  max-width: 14rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @include mq(small) {
+    max-width: 30rem;
+  }
+
+  @include mq(medium) {
+    max-width: 40rem;
+  }
+
+  @include mq(large) {
+    max-width: 70rem;
+  }
+}
