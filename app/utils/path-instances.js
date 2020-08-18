@@ -6,6 +6,25 @@ export function butLast(path){
   return rest.reverse().join(".");
 }
 
+/**
+ * Ensures an intermediate instance (not an array) exists.
+ *
+ * @param start [Object] Instance from which to start.
+ * @param key [string] The key which should exist on the instance.
+ * @param kind [string] The type of instance which should be created
+ *   through ember-data.
+ * @private
+ */
+async function ensureInstanceExists( start, key, kind ) {
+  let object = await emberGet( start, key );
+  if (!object) {
+    object = await start.store.createRecord( kind ).save();
+    set( start, key, object );
+    await start.save();
+  }
+  return object;
+}
+
 export function property(path){
   const [name,] = path.split(".").reverse();
   return name;
@@ -46,6 +65,8 @@ async function ensureExistingInstances(item, kind, path) {
     }
     else if (kind === "toilet" ) {
       return await ensureExistingToiletInstances(item, path);
+    } else if (kind === "circulation" ) {
+      return await ensureExistingCirculationInstances(item, path);
     }
     else {
       throw `Could not find [${path.join(",")}] for ${kind}`;
@@ -230,8 +251,23 @@ async function ensureExistingParkingInstances(parking, [first, ...rest]) {
 async function ensureExistingExperienceInstances(experience, [first, ...rest]) {
   if (first === "pointOfInterest") {
     return await ensureExistingInstances(await emberGet(experience, "pointOfInterest"), "pointOfInterest", rest);
+  } else if( first === "circulation" ) {
+    const circulation = await ensureInstanceExists( experience, "circulation", "route" );
+    return ensureExistingInstances(circulation, "circulation", rest);
   }
   else {
     throw `Requested path ${first} of Experience, which is not supported`;
+  }
+}
+
+async function ensureExistingCirculationInstances(circulation, [first, ...rest]) {
+  if (first === "sizeOfPlateauElevator") {
+    const area = await ensureInstanceExists( circulation, first, "area" );
+    return ensureExistingInstances( area, "area", rest );
+  } else if( first === "sizeOfElevator" ) {
+    const area = await ensureInstanceExists( circulation, first, "area" );
+    return ensureExistingInstances( area, "area", rest );
+  } else {
+    throw `Requested path ${first} of Circulation, which is not supported`;
   }
 }

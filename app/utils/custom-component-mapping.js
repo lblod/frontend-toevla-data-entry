@@ -101,6 +101,23 @@ const eMapping = {
   "https://data.toevla.org/id/concepts/eefaadc4-9732-48aa-b9da-7472f348990c": { component: "edit-components/centimeters", key: "pointOfInterest.toilet.freeDepthUnderWashbasin" },
   "https://data.toevla.org/id/concepts/972c27b2-c27b-4b25-9fc9-93a367c23f28": { component: "edit-components/centimeters", key: "pointOfInterest.toilet.freeWidthUnderWashbasin" },
 
+
+  "https://data.toevla.org/id/concepts/0139638d-8a35-4d51-b179-681984c055eb": { component: "edit-components/boolean", key: "circulation.isSimpleAndLogical" },
+  "https://data.toevla.org/id/concepts/6baf48b5-924b-4a1d-ae13-b5925c3f7618": { component: "edit-components/boolean", key: "circulation.hasClearSignalizationInBuilding" },
+  "https://data.toevla.org/id/concepts/e92a8c73-9740-4fec-b12c-470add4fc7b7": { component: "edit-components/boolean", key: "circulation.hasSyntheticSpeechInElevator" },
+  "https://data.toevla.org/id/concepts/3dfde9e0-724c-4728-8b16-ec50582038d3": { component: "edit-components/boolean", key: "circulation.isOnlyOnGroundFloor" },
+  "https://data.toevla.org/id/concepts/b858bc05-bef3-4abd-9fc9-0eeb389403be": { component: "edit-components/area", key: "circulation.sizeOfElevator" },
+  "https://data.toevla.org/id/concepts/d8f84769-3533-484f-8c7b-93a5ee5868cc": { component: "edit-components/centimeters", key: "circulation.smallestPointOnRoute" },
+  "https://data.toevla.org/id/concepts/1ba31d12-5a34-4224-876d-af8c87f834cc": { component: "edit-components/centimeters", key: "circulation.highestThresholdOnRoute" },
+  "https://data.toevla.org/id/concepts/3fdb7539-c5e1-4ba8-a54e-e0a813614af6": { component: "edit-components/count", key: "circulation.amountOfThresholds" },
+  "https://data.toevla.org/id/concepts/ff8a2110-dbc2-4c41-88c7-c6f16fc7baa0": { component: "edit-components/count", key: "circulation.amountOfStairs" },
+  "https://data.toevla.org/id/concepts/f0c27a68-f298-4b4b-ac7b-ca56b11d384b": { component: "edit-components/count", key: "circulation.amountOfSlopes" },
+  "https://data.toevla.org/id/concepts/3a8e9b83-107e-4ceb-bacb-b3808d062e00": { component: "edit-components/boolean", key: "circulation.hasRamps" },
+  "https://data.toevla.org/id/concepts/7993ccd5-de76-4893-9b1f-110bb11912c4": { component: "edit-components/area", key: "circulation.sizeOfPlateauElevator" },
+  "https://data.toevla.org/id/concepts/8d2b6701-43be-4283-9c52-aadcc8324133": { component: "edit-components/count", key: "circulation.amountOfPlateauElevators" },
+  "https://data.toevla.org/id/concepts/1c75758c-af92-467a-98c6-453d6bfdec29": { component: "edit-components/string", key: "circulation.typeOfElevator" },
+
+
   // "http://data.toevla.org/d1fbdb7e-104c-4493-8275-62ef73af8460": { component: "edit-components/wifi-availability", key: "pointOfInterest.wifiAlwaysAvailable" },
   // "http://data.toevla.org/77253484-8a8d-4662-b0c9-b533ba192358": { component: "edit-components/boolean", key: "pointOfInterest.publicTransportGuidanceAvailable" },
   // "http://data.toevla.org/d1fbdb7e-104c-4493-8275-62ef73af8460": { component: "edit-components/boolean", key: "pointOfInterest.wifiAlwaysAvailable" },
