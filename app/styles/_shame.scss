@@ -124,3 +124,24 @@
     opacity: 0;
   }
 }
+
+
+// Limit title text
+.au-u-limit-text {
+  max-width: 20rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @include mq(small) {
+    max-width: 45rem;
+  }
+
+  @include mq(medium) {
+    max-width: 75rem;
+  }
+
+  @include mq(large) {
+    max-width: 130rem;
+  }
+}

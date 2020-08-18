@@ -22,7 +22,7 @@
     </AuToolbar>
     <AuToolbar @border="bottom" @size="large">
       <AuToolbarGroup>
-        <AuHeading @skin="2"><AuPill>Event</AuPill> {{@model.title}}</AuHeading>
+        <AuHeading @skin="2"><AuPill>Event</AuPill> <span  class="au-u-limit-text">{{@model.title}}</span></AuHeading>
       </AuToolbarGroup>
       <AuToolbarGroup>
         <LinkTo class="au-c-button au-c-button--secondary" @route="experience.edit" @model={{@model}}>
