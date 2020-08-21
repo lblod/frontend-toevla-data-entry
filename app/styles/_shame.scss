@@ -98,3 +98,70 @@
   margin-top: $au-unit;
   margin-bottom: $au-unit;
 }
+
+// Save message
+.au-c-message {
+  @include au-font-size($au-base);
+  display: inline-flex;
+  align-items: center;
+  color: $au-green-700;
+  font-weight: $au-medium;
+  position: relative;
+  top: .5ex;
+  animation-name: dissappear;
+  animation-iteration-count: 1;
+  animation-duration: .3s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dissappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+// Limit title text
+.au-u-limit-text {
+  max-width: 20rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @include mq(small) {
+    max-width: 45rem;
+  }
+
+  @include mq(medium) {
+    max-width: 75rem;
+  }
+
+  @include mq(large) {
+    max-width: 130rem;
+  }
+}
+
+.au-u-limit-breadcrumb {
+  display: block !important;
+  max-width: 14rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @include mq(small) {
+    max-width: 30rem;
+  }
+
+  @include mq(medium) {
+    max-width: 40rem;
+  }
+
+  @include mq(large) {
+    max-width: 70rem;
+  }
+}

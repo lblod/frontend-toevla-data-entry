@@ -9,10 +9,10 @@
          </AuLink>
         </li>
         <li class="au-c-list-horizontal__item">
-          <LinkTo class="au-c-link au-c-link--secondary" @route="poi.show.experiences.index" @model={{@model.pointOfInterest.id}}>{{@model.pointOfInterest.label}}</LinkTo>
+          <LinkTo class="au-c-link au-c-link--secondary au-u-limit-breadcrumb" @route="poi.show.experiences.index" @model={{@model.pointOfInterest.id}}>{{@model.pointOfInterest.label}}</LinkTo>
         </li>
         <li class="au-c-list-horizontal__item">
-          <LinkTo class="au-c-link au-c-link--secondary" @route="experience.show.tree" @model={{@model.id}}>{{@model.title}}</LinkTo>
+          <LinkTo class="au-c-link au-c-link--secondary au-u-limit-breadcrumb" @route="experience.show.tree" @model={{@model.id}}>{{@model.title}}</LinkTo>
         </li>
         <li class="au-c-list-horizontal__item">
           <strong>
@@ -24,7 +24,7 @@
   </AuToolbar>
   <div class="au-o-layout">
     <div class="au-o-region-large">
-      <AuHeading @skin="2" class="au-u-margin-bottom">Event aanpassen: {{@model.title}}</AuHeading>
+      <AuHeading @skin="2" class="au-u-margin-bottom">Event aanpassen: <span  class="au-u-limit-text">{{@model.title}}</span></AuHeading>
 
       {{outlet}}
     </div>

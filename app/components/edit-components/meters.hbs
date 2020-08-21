@@ -10,6 +10,13 @@
     </p>
     <AuButton {{on "click" (fn chart.preventAndSend "SAVE")}} type="button">Opslaan</AuButton>
   </chart.if>
+  <chart.if @state="saved">
+    <p class="au-u-margin-bottom-small">
+      <AuLabel for="meters">Geef een waarde in m.</AuLabel>
+      <Input id="meters" @value={{this.currentValue}} @type="number" class="au-c-input" /> <span class="au-u-margin-left-tiny au-c-info-text">m</span>
+    </p>
+    <AuButton {{on "click" (fn chart.preventAndSend "SAVE")}} type="button">Opslaan</AuButton><span class="au-c-message"><AuIcon @icon="check" @size="large" />Opgeslagen</span>
+  </chart.if>
   <chart.if @state="saving">
     <p class="au-u-margin-bottom-small">
       <AuLabel for="meters">Geef een waarde in m.</AuLabel>

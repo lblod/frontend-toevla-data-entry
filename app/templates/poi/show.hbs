@@ -9,7 +9,7 @@
          </AuLink>
         </li>
         <li class="au-c-list-horizontal__item">
-          <strong>
+          <strong class="au-u-limit-breadcrumb">
             {{@model.label}}
           </strong>
         </li>
@@ -18,7 +18,7 @@
   </AuToolbar>
   <AuToolbar @border="bottom" @size="large">
     <AuToolbarGroup>
-      <AuHeading @skin="2"><AuPill>Locatie</AuPill> {{@model.label}}</AuHeading>
+      <AuHeading @skin="2"><AuPill>Locatie</AuPill> <span  class="au-u-limit-text">{{@model.label}}</span></AuHeading>
     </AuToolbarGroup>
     <AuToolbarGroup class="au-u-h6">
       <LinkTo class="au-c-button au-c-button--secondary" @route="poi.edit" @model={{@model}}>
