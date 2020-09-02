@@ -1,5 +1,4 @@
 const mapping = {
-  "http://data.toevla.org/ef9a1497-6e8d-461e-8671-75c5ee450bd0": "tree-components/accessibility",
   "https://data.toevla.org/id/concepts/02ab2a7a-128f-468f-9021-2174181b3e13": "tree-components/circulation"
 };
 
@@ -118,7 +117,6 @@ const eMapping = {
   "https://data.toevla.org/id/concepts/1c75758c-af92-467a-98c6-453d6bfdec29": { component: "edit-components/string", key: "circulation.typeOfElevator" },
 
 
-  // "http://data.toevla.org/d1fbdb7e-104c-4493-8275-62ef73af8460": { component: "edit-components/wifi-availability", key: "pointOfInterest.wifiAlwaysAvailable" },
   // "http://data.toevla.org/77253484-8a8d-4662-b0c9-b533ba192358": { component: "edit-components/boolean", key: "pointOfInterest.publicTransportGuidanceAvailable" },
   // "http://data.toevla.org/d1fbdb7e-104c-4493-8275-62ef73af8460": { component: "edit-components/boolean", key: "pointOfInterest.wifiAlwaysAvailable" },
   // "http://data.toevla.org/ff67e72c-0b06-4b92-884d-47665c3a443e": { component: "edit-components/boolean", key: "pointOfInterest.websiteHasAccessibleContrast" },
