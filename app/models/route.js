@@ -13,6 +13,12 @@ export default class RouteModel extends Model {
   @attr('boolean') hasRamps;
   @attr('number') amountOfPlateauElevators;
   @attr('string') typeOfElevator;
+  @attr('boolean') hasMultipleRestingAndSittingOpportunities;
+  @attr('boolean') hasAlternativePathForHardToAccessSpaces;
+  @attr('boolean') hasPlanForAdvisedPath
+  @attr('boolean') hasVenuePlan;
+  @attr('boolean') hasClearSignalizationOnRoute;
+  @attr('boolean') hasExtraAttentionForAcoustics;
   @belongsTo('area') sizeOfElevator;
   @belongsTo('area') sizeOfPlateauElevator;
 }

@@ -3,7 +3,11 @@ import { get as emberGet } from '@ember/object';
 
 export function butLast(path){
   const [, ...rest] = path.split(".").reverse();
-  return rest.reverse().join(".");
+  if( rest ) {
+    return rest.reverse().join(".");
+  } else {
+    return null;
+  }
 }
 
 /**
@@ -32,7 +36,8 @@ export function property(path){
 
 export async function getInstance(experience, path){
   const objectPath = butLast(path);
-  return await ensureExistingInstances(experience, "experience", objectPath.split("."));
+  const pathArray = objectPath ? objectPath.split(".") : [];
+  return await ensureExistingInstances(experience, "experience", pathArray);
 }
 
 export async function setInstanceValue(experience, path, value) {
@@ -254,8 +259,13 @@ async function ensureExistingExperienceInstances(experience, [first, ...rest]) {
   } else if( first === "circulation" ) {
     const circulation = await ensureInstanceExists( experience, "circulation", "route" );
     return ensureExistingInstances(circulation, "circulation", rest);
-  }
-  else {
+  } else if( first === "tour" ) {
+    const tour = await ensureInstanceExists( experience, "guidedTour", "guided-tour" );
+    return ensureExistingInstances(tour, "guidedTour", rest);
+  } else if( first === "auditorium" ) {
+    const auditorium = await ensureInstanceExists( experience, "auditorium", "auditorium" );
+    return ensureExistingInstances(auditorium, "auditorium", rest);
+  } else {
     throw `Requested path ${first} of Experience, which is not supported`;
   }
 }
