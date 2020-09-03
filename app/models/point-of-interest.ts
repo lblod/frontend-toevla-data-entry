@@ -41,6 +41,7 @@ export default class PointOfInterest extends Model {
   @hasMany('bus-stop') busStops!: BusStop[];
   @hasMany('tram-stop') tramStops!: TramStop[];
   @hasMany('file') files!: File[];
+  @hasMany('file', { inverse: null }) images!: File[];
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.

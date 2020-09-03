@@ -32,5 +32,12 @@
       </AuToolbarGroup>
     </AuToolbar>
     {{outlet}}
+    {{#async-await @model.pointOfInterest as |poi|}}
+      <h1>Images</h1>
+      <ListImages @poi={{poi}} @height={{200}}/>
+      <UploadImage @poi={{poi}}/>
+    {{else}}
+      ... loading ...
+    {{/async-await}}
   </div>
 </div>
