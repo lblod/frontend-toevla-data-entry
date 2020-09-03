@@ -1,0 +1,4 @@
+{{#each @poi.files as |image|}}
+  <VoMuFileCard @file={{image}} @onDelete={{this.removeFile}}/>
+  <img src="/images/{{image.id}}?height={{@height}}" alt="{{image.label}}"/>
+{{/each}}

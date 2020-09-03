@@ -56,6 +56,7 @@
     "ember-cli-sri": "^2.1.1",
     "ember-cli-typescript": "^3.1.4",
     "ember-cli-uglify": "^3.0.0",
+    "ember-concurrency": "^1.2.1",
     "ember-data": "~3.18.0",
     "ember-export-application-global": "^2.0.1",
     "ember-fetch": "^8.0.1",
@@ -82,5 +83,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "@lblod/ember-vo-mu-file-upload": "^0.6.0"
   }
 }
