@@ -3,7 +3,8 @@ import { action } from '@ember/object';
 
 export default class ListImagesComponent extends Component {
   @action
-  removeFile(){
-
+  removeFile(file){
+    file.pointOfInterest=null;
+    file.save();
   }
 }

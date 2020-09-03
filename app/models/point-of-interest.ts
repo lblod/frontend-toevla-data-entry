@@ -7,6 +7,7 @@ import RouteDescription from './route-description';
 import TrainStop from './train-stop';
 import BusStop from './bus-stop';
 import TramStop from './tram-stop';
+import File from './file';
 
 export default class PointOfInterest extends Model {
   @attr('string') label: string | null | undefined;
