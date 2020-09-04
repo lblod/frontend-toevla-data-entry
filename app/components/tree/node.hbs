@@ -29,7 +29,7 @@
           </AuHeading>
         {{/if}}
 
-        <p class="au-c-tree__uri">{{@node.uri}}</p>
+        <p class="au-c-tree__uri">{{@node.uri}} -- {{this.treeNodeScore.id}} -- {{this.treeNodeScore.entryVisited}}</p>
       </div>
 
       <chart.if @state="error">

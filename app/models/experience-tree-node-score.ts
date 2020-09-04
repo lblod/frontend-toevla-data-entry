@@ -4,6 +4,7 @@ import Experience from './experience';
 
 export default class ExperienceTreeNodeScore extends Model {
   @attr('string') score: string | null | undefined;
+  @attr('boolean') entryVisited: boolean | null | undefined;
   @belongsTo('tree-node') treeNode: TreeNode | null | undefined;
   @belongsTo('experience') experience: Experience | null | undefined;
 }

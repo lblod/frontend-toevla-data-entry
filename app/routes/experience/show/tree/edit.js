@@ -13,4 +13,9 @@ export default class ExperienceShowTreeEditRoute extends Route {
 
     return { experience, treeNode, scoring };
   }
+
+  async afterModel({ scoring }){
+    scoring.entryVisited = true;
+    scoring.save();
+  }
 }

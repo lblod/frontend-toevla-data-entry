@@ -1,3 +1,4 @@
+import { inject as service } from '@ember/service';
 import { get } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
@@ -18,6 +19,63 @@ interface TreeNodeArgs {
 
 export default class TreeNodeComponent extends Component<TreeNodeArgs> {
   @statechart( treeNodeMachine ) statechart!: Statechart;
+  @service store;
+
+  @tracked _experienceTreeNodeScore;
+
+  get treeNodeScore() {
+    if( this._experienceTreeNodeScore )
+      return this._experienceTreeNodeScore;
+    else if( this.args.node.get('id') && this.args.experience.get('id') ) {
+      const matchingScore =
+        this
+          .store
+          .peekAll('experience-tree-node-score')
+          .find( (etns) => {
+            const same =
+              etns.treeNode.get('id')
+              && etns.experience.get('id')
+              && etns.treeNode.get('id') == this.args.node.get('id')
+              && etns.experience.get('id') == this.args.experience.get('id');
+            if( same )
+              debugger;
+            return same
+          });
+      if( matchingScore ) {
+        this._experienceTreeNodeScore = matchingScore;
+        return matchingScore;
+      }
+      else
+        this.fetchTreeNodeScoreFromStore();
+    }
+  }
+
+  async fetchTreeNodeScoreFromStore() {
+    const scores =
+      await this
+        .store
+        .query( 'experience-tree-node-score',
+                { filter: {
+                  experience: { ":id:": this.args.experience.id },
+                  "tree-node": { ":id:": this.args.node.id } } } );
+    const score = await scores.firstObject;
+
+    if( score )
+      this._experienceTreeNodeScore = score;
+    else if( this.args.experience.id && this.args.node.id ) {
+      this._experienceTreeNodeScore =
+        this
+          .store
+          .createRecord("experience-tree-node-score",
+                        { experience: this.args.experience,
+                          treeNode: this.args.node });
+      this._experienceTreeNodeScore.save();
+    }
+  }
+
+  constructor() {
+    super(...arguments);
+  }
 
   @handler()
   loadChildren(){
