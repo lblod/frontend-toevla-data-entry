@@ -1,4 +1,9 @@
+<ul class="au-o-grid au-o-grid--tiny au-u-margin-bottom-none">
 {{#each @poi.images as |image|}}
-  <VoMuFileCard @file={{image}} @onDelete={{fn this.removeFile @poi}}/>
-  <LinkTo @route="file.edit" @model={{image}}><img src="/images/{{image.id}}?height={{@height}}" alt="{{image.label}}"/></LinkTo>
+  <li class="au-o-grid__item au-u-1-6 au-u-1-9@small au-u-1-12@medium">
+    <VoMuFileCard @file={{image}} @onDelete={{fn this.removeFile @poi}}>
+      <img src="/images/{{image.id}}?height={{@height}}" alt="{{image.label}}"/>
+    </VoMuFileCard>
+  </li>
 {{/each}}
+</ul>
