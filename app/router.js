@@ -26,7 +26,7 @@ Router.map(function() {
       });
 
       this.route('files', function() {
-        this.route('edit');
+        this.route('edit', { path: "/:file_id/edit" });
       });
     });
     this.route('edit', { path: "/:id/edit" }, function() {

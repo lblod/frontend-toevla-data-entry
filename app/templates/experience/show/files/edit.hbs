@@ -1,1 +1,11 @@
-{{outlet}}
+<div class='toevla-image-edit'>
+<LinkTo @route='experience.show.tree' @model={{this.experience}}>Terug</LinkTo>
+<br>
+{{@model.id}}
+<br>
+<img src="/images/{{@model.id}}?height=600" alt="{{@model.label}}"/>
+<br>
+Label: <Input id="site" type="text" @value={{@model.label}} @key-down={{this.updateLabel}}/>
+<br>
+<button type='button' {{on 'click' this.save}}>Opslaan</button><button type='button' {{on 'click' this.delete}}>Verwijderen</button>
+</div>

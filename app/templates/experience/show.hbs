@@ -32,16 +32,6 @@
       </AuToolbarGroup>
     </AuToolbar>
     {{outlet}}
-    {{#async-await @model.pointOfInterest as |poi|}}
 
-    <div class="au-c-upload-box">
-      <AuHeading @level="2" @skin="5" class="au-u-margin-bottom-small">Foto's</AuHeading>
-      <UploadImage @poi={{poi}}/>
-      <ListImages @poi={{poi}} @height={{100}}/>
-    </div>
-
-    {{else}}
-      <AuLoader />
-    {{/async-await}}
   </div>
 </div>

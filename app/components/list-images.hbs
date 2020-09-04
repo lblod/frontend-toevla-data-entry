@@ -2,7 +2,7 @@
 {{#each @poi.images as |image|}}
   <li class="au-o-grid__item au-u-1-6 au-u-1-9@small au-u-1-12@medium">
     <VoMuFileCard @file={{image}} @onDelete={{fn this.removeFile @poi}}>
-      <img src="/images/{{image.id}}?height={{@height}}" alt="{{image.label}}"/>
+      <LinkTo @route="experience.show.files.edit" @models={{array @poi.experiences.firstObject image}}><img src="/images/{{image.id}}?height={{@height}}" alt="{{image.label}}"/></LinkTo>
     </VoMuFileCard>
   </li>
 {{/each}}
