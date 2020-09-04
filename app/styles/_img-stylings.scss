@@ -1,0 +1,39 @@
+.toevla-list-images{
+  border-top: #E6E8EB solid 1px;
+}
+.toevla-list-images *{
+  display: inline;
+}
+
+.toevla-list-images h1{
+  margin: 10px;
+  margin-left: 18px;
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+}
+.toevla-list-images label > span{
+  margin-left: 18px;
+  background-color: #cccccc;
+  padding: 5px;
+}
+.toevla-list-images label > span:hover{
+  background-color: #eeeeee;
+  cursor: pointer;
+}
+.toevla-list-images label > small{
+  visibility: hidden;
+}
+
+.toevla-list-images  a.upload__files__close{
+  visibility: hidden;
+  position: fixed;
+}
+
+.toevla-list-images div.upload__files__container{
+  visibility: hidden;
+  position: fixed;
+}
+.toevla-list-images img{
+  margin: 18px;
+}
