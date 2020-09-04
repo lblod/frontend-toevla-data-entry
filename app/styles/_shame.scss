@@ -165,3 +165,23 @@
     max-width: 70rem;
   }
 }
+
+// Small
+.au-c-small-text {
+  font-family: $au-font;
+  font-weight: $au-regular;
+  color: $au-gray-800;
+}
+
+.au-u-1-9\@small {
+  @include mq(small) {
+    width: 11.1111111% !important;
+  }
+
+}
+
+.au-u-1-12\@medium {
+  @include mq(medium) {
+    width: 8.3333333% !important;
+  }
+}

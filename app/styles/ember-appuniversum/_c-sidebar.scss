@@ -39,6 +39,7 @@ $au-sidebar-footer-padding: $au-unit !default;
 .au-c-sidebar__content {
   @include mq(small) {
     flex-grow: 1;
+    overflow: auto;
   }
 }
 
