@@ -1,7 +1,9 @@
 .au-c-upload-box {
-  padding: $au-unit;
+  padding: $au-unit-small;
   padding-bottom: 0;
-  border-top: .1rem solid $au-gray-200;
+  border: .1rem solid $au-gray-200;
+  background-color: $au-white;
+  margin-bottom: $au-unit;
 }
 
 
@@ -99,4 +101,19 @@
       height: 90px;
     }
   }
+}
+
+.au-c-upload__file {
+  position: relative;
+
+  .au-c-close {
+    top: $au-unit-tiny;
+    right: $au-unit-tiny;
+    z-index: 3;
+  }
+}
+
+.au-c-upload-download {
+  padding:  $au-unit-tiny/2 $au-unit-tiny 0;
+  margin-top: 0;
 }

@@ -4,7 +4,7 @@
     <span class="au-u-hidden-visually">Verwijderen</span>
   </button>
 {{/if}}
-<div class="au-o-box au-o-box--small au-c-card">
+<div class="au-o-box au-o-box--flush au-c-card">
   <AuContent @skin="small">
     {{!-- <AuHeading @level="4" @skin="6">
       {{file.filename}}
@@ -14,12 +14,12 @@
       {{yield}}
     </div>
     {{#if downloadable}}
-      {{!-- <p class="au-u-margin-top-tiny">
+      <p class="au-c-upload-download">
         <a class="au-c-link" href="{{file.downloadLink}}" download="{{file.filename}}">
           <AuIcon @icon="download" @alignment="left" />
-          Download bestand
+          Download
         </a>
-      </p> --}}
+      </p>
     {{/if}}
   </AuContent>
 </div>
