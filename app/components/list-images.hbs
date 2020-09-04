@@ -1,6 +1,6 @@
 <ul class="au-o-grid au-o-grid--tiny au-u-margin-bottom-none">
 {{#each @poi.images as |image|}}
-  <li class="au-o-grid__item au-u-1-3 au-u-1-5@medium">
+  <li class="au-o-grid__item au-u-1-3 au-u-1-4@small au-u-1-6@medium">
     <VoMuFileCard @file={{image}} @onDelete={{fn this.removeFile @poi}} class="au-c-upload__file">
       <LinkTo @route="experience.show.files.edit" @models={{array @poi.experiences.firstObject image}}><img src="/images/{{image.id}}?height={{@height}}" alt="{{image.label}}"/></LinkTo>
     </VoMuFileCard>
