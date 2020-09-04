@@ -7,7 +7,6 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
-
   this.route('file-test');
 
   this.route('poi', function() {
@@ -25,6 +24,10 @@ Router.map(function() {
       this.route('tree', function() {
         this.route('edit', { path: "/tree-node/edit/:tree_node_id" });
       });
+
+      this.route('files', function() {
+        this.route('edit');
+      });
     });
     this.route('edit', { path: "/:id/edit" }, function() {
       this.route('tree-node', { path: "/tree-node/:tree_node_id" });
@@ -39,4 +42,7 @@ Router.map(function() {
     this.route('disclaimer');
   });
 
+  this.route('file', function() {
+    this.route('edit', { path: "/:id/edit" });
+  });
 });

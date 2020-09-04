@@ -1,4 +1,4 @@
 {{#each @poi.images as |image|}}
   <VoMuFileCard @file={{image}} @onDelete={{fn this.removeFile @poi}}/>
-  <img src="/images/{{image.id}}?height={{@height}}" alt="{{image.label}}"/>
+  <LinkTo @route="file.edit" @model={{image}}><img src="/images/{{image.id}}?height={{@height}}" alt="{{image.label}}"/></LinkTo>
 {{/each}}
