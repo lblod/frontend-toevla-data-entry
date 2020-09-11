@@ -192,6 +192,12 @@ async function ensureExistingPointOfInterestInstances(poi, [first, ...rest]) {
       await poi.save();
     }
     return ensureExistingInstances(routeDescription, "routeDescription", rest);
+  } else if (first === "restaurant") {
+    const restaurant = await ensureInstanceExists( poi, "restaurant", "restaurant" );
+    return ensureExistingInstances(restaurant, "restaurant", rest);
+  } else if (first === "shop") {
+    const shop = await ensureInstanceExists( poi, "shop", "shop" );
+    return ensureExistingInstances( shop, "shop", rest );
   }
 }
 

@@ -8,6 +8,8 @@ import TrainStop from './train-stop';
 import BusStop from './bus-stop';
 import TramStop from './tram-stop';
 import File from './file';
+import Restaurant from './restaurant';
+import Shop from './shop';
 
 export default class PointOfInterest extends Model {
   @attr('string') label: string | null | undefined;
@@ -37,6 +39,8 @@ export default class PointOfInterest extends Model {
   @hasMany('parking') parkings!: Parking[];
   @hasMany('toilet') toilets!: Toilet[];
   @belongsTo('route-description') publicTransportRouteDescription!: RouteDescription | null;
+  @belongsTo('restaurant') hasRestaurant: Restaurant | null;
+  @belongsTo('shop') hasShop: Shop | null;
   @hasMany('train-stop') trainStops!: TrainStop[];
   @hasMany('bus-stop') busStops!: BusStop[];
   @hasMany('tram-stop') tramStops!: TramStop[];
