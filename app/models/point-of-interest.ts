@@ -39,8 +39,8 @@ export default class PointOfInterest extends Model {
   @hasMany('parking') parkings!: Parking[];
   @hasMany('toilet') toilets!: Toilet[];
   @belongsTo('route-description') publicTransportRouteDescription!: RouteDescription | null;
-  @belongsTo('restaurant') hasRestaurant: Restaurant | null;
-  @belongsTo('shop') hasShop: Shop | null;
+  @belongsTo('restaurant') restaurant!: Restaurant | null;
+  @belongsTo('shop') shop!: Shop | null;
   @hasMany('train-stop') trainStops!: TrainStop[];
   @hasMany('bus-stop') busStops!: BusStop[];
   @hasMany('tram-stop') tramStops!: TramStop[];
