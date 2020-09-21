@@ -1,57 +1,71 @@
 <div class="au-c-main-container__content au-c-main-container__content--scroll">
   <main id="content">
     <AuContentHeader @titlePartOne="Vlaanderen" @titlePartTwo="is gelijke kansen">
-      <img sizes="50vw" src="/assets/images/loket-header-1600.jpg" srcset="/assets/images/loket-header-320.jpg 320w, /assets/images/loket-header-1024.jpg 1024w, /assets/images/loket-header-1600.jpg 1600w" alt="Foto van een laptop met daarop het vlaanderen logo.">
+      <img sizes="50vw" src="/assets/images/toevla-header-1600.jpg" srcset="/assets/images/toevla-header-320.jpg 320w, /assets/images/toevla-header-1024.jpg 1024w, /assets/images/toevla-header-1600.jpg 1600w" alt="Foto van een laptop met daarop het vlaanderen logo.">
     </AuContentHeader>
 
     <section class="au-o-region-large">
       <div class="au-o-layout">
-        <div class="au-o-grid au-o-grid--small">
-          <div class="au-o-grid__item au-u-3-4@small au-u-1-2@medium">
+        <div class="au-o-grid au-o-grid--middle">
+          <div class="au-o-grid__item au-u-1-2@medium">
             <AuContent @skin="large">
-              <h1>Toevla widget & data entry</h1>
-              <p>Lukt het aanmelden niet? Neem contact op met uw interne beheerder. Indien er zich een probleem voordoet, contacteer <a href="https://overheid.vlaanderen.be/ict/ict-diensten/gebruikersbeheer" class="au-c-link">gebruikersbeheer Vlaanderen</a>.</p>
-              <p>Het aanmelden gebeurt in een pop-up; zorg dat de instellingen van uw browser correct staan indien deze niet verschijnt.</p>
+              <h1>Toegankelijk Vlaanderen</h1>
+              <p>We verzamelen toegankelijkheidsinformatie over je locatie en bieden deze aan als een makkelijk bruikbare widget en gelinkte open data.</p>
+              <h2 class="au-c-heading au-c-heading--4 au-u-margin-top">Toepassingen:</h2>
+              <ul class="au-u-margin-top-small">
+                <li>Een gebruikvriendelijke widget met toegankelijkheidsinformatie</li>
+                <li>Als open data via een API <AuPill>Binnenkort</AuPill></li>
+              </ul>
+              {{!-- <p>Lukt het aanmelden niet? Neem contact op met uw interne beheerder. Indien er zich een probleem voordoet, contacteer <a href="https://overheid.vlaanderen.be/ict/ict-diensten/gebruikersbeheer" class="au-c-link">gebruikersbeheer Vlaanderen</a>.</p>
+              <p>Het aanmelden gebeurt in een pop-up; zorg dat de instellingen van uw browser correct staan indien deze niet verschijnt.</p> --}}
             </AuContent>
           </div>
-          <div class="au-o-grid__item au-u-1-4@small au-u-1-2@medium au-u-text-right@medium">
-            <LinkTo @route="poi" class="au-c-button au-c-button--large">Aanmelden</LinkTo>
+          <div class="au-o-grid__item au-u-1-2@medium">
+            <div class="au-c-image au-c-image--transparent">
+              <img src="/assets/images/toevla-mockup.png" alt="Overzicht van de widget met een detail van parkeren en een foto waarop je de ingang ziet van een gebouw.">
+            </div>
           </div>
+        </div>
+        <hr class="au-c-hr au-c-hr--huge">
+        <div class="au-o-grid">
+          <div class="au-o-grid__item au-u-1-2@small">
+            <AuContent>
+              <h3 class="au-c-heading au-c-heading--5">Detailinformatie per categorie</h3>
+              <p class="au-u-margin-top-small">We verzamelen informatie rond een vast aantal punten en geven deze weer in een overzichtelijke lijst.</p>
+            </AuContent>
+            <div class="au-c-image au-u-margin-top">
+              <img src="/assets/images/toevla-mockup-detail.png" alt="Widget detail van parkeren.">
+            </div>
+          </div>
+          <div class="au-o-grid__item au-u-1-2@small">
+            <AuContent>
+              <h3 class="au-c-heading au-c-heading--5">Foto's van de locatie</h3>
+              <p class="au-u-margin-top-small">Bekijk de toegankelijke eigenschappen van de locatie aan de hand van foto's.</p>
+            </AuContent>
+            <div class="au-c-image au-u-margin-top">
+              <img src="/assets/images/toevla-mockup-photo.png" alt="Een foto in een slideshow waarop je de ingang ziet van een gebouw.">
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
     <section class="au-o-region-large au-c-theme-gray-200">
       <div class="au-o-layout">
-        <AuHeading @level="2" @skin="3" class="au-u-margin-bottom">Meer info</AuHeading>
+        <AuHeading @level="2" @skin="3" class="au-u-margin-bottom">Integreer informatie over jouw toegankelijke locatie in je website.</AuHeading>
         <div class="au-o-grid au-o-grid--small">
-          <div class="au-o-grid__item au-u-1-2@small au-u-1-3@medium">
-            <AuCard class="au-u-text-center">
-              <AuBadge @icon="users" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
-              <AuContent>
-                <AuHeading @level="2" @skin="4">
-                  Widget
-                </AuHeading>
-                <p class="au-u-margin-top-tiny">...</p>
-                <p>
-                  <LinkTo @route="login" class="au-c-button au-c-button--secondary">
-                    Handleiding
-                  </LinkTo>
-                </p>
-              </AuContent>
-            </AuCard>
-          </div>
           <div class="au-o-grid__item au-u-1-2@small au-u-1-3@medium">
             <AuCard class="au-u-text-center">
               <AuBadge @icon="sitemap" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
               <AuContent>
                 <AuHeading @level="2" @skin="4">
-                  API
+                  Locaties
                 </AuHeading>
-                <p class="au-u-margin-top-tiny">...</p>
+                <p class="au-u-margin-top-tiny">Een overzicht van de locaties waarvoor we toegankelijkheidsinformatie beschikbaar hebben.</p>
                 <p>
-                  <LinkTo @route="login" class="au-c-button au-c-button--secondary">
-                    Handleiding
+                  <LinkTo @route="login" class="au-c-button">
+                    Zoek een locatie
                   </LinkTo>
                 </p>
               </AuContent>
@@ -59,16 +73,31 @@
           </div>
           <div class="au-o-grid__item au-u-1-2@small au-u-1-3@medium">
             <AuCard class="au-u-text-center">
-              <AuBadge @icon="pencil" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+              <AuBadge @icon="users" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
               <AuContent>
                 <AuHeading @level="2" @skin="4">
-                  Data ingave
+                  Voor developers
                 </AuHeading>
-                <p class="au-u-margin-top-tiny">...</p>
+                <p class="au-u-margin-top-tiny">Hier vind je meer informatie over hoe je de widget kan integreren in je website.</p>
                 <p>
-                  <LinkTo @route="login" class="au-c-button au-c-button--secondary">
+                  <LinkTo @route="developers" class="au-c-button au-c-button--secondary">
                     Handleiding
                   </LinkTo>
+                </p>
+              </AuContent>
+            </AuCard>
+          </div>
+
+          <div class="au-o-grid__item au-u-1-2@small au-u-1-3@medium">
+            <AuCard class="au-u-text-center">
+              <AuBadge @icon="export" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+              <AuContent>
+                <AuHeading @level="2" @skin="4">
+                  API
+                </AuHeading>
+                <p class="au-u-margin-top-tiny">Gebruik onze open en gelinkte data om je eigen applicatie of website te bouwen.</p>
+                <p>
+                  <AuPill class="au-c-faded">Informatie over de API is binnenkort beschikbaar.</AuPill>
                 </p>
               </AuContent>
             </AuCard>
@@ -80,16 +109,19 @@
 
   <AuMainFooter>
     <AuHeading @level="3" @skin="4">
-      Toevla is een officiële website van de Vlaamse overheid
+      Toegankelijk.Vlaanderen is een officiële website van de Vlaamse overheid
     </AuHeading>
     <AuContent @skin="small">
-      <p>Uitgegeven door <a class="au-c-link" href="https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-kanselarij-en-bestuur/toegankelijk-vlaanderen">Agentschap Toegankelijk Vlaanderen</a></p>
+      <p>Uitgegeven door <a class="au-c-link" href="https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-kanselarij-en-bestuur/agentschap-binnenlands-bestuur">Agentschap Binnenlands Bestuur</a></p>
       <ul class="au-c-list-horizontal">
         <li class="au-c-list-horizontal__item">
           <AuLink @linkRoute="legal.disclaimer" @skin="secondary">Disclaimer</AuLink>
         </li>
         <li class="au-c-list-horizontal__item">
           <AuLink @linkRoute="legal.cookiestatement" @skin="secondary">Cookieverklaring</AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="legal.toegankelijkheidsverklaring" @skin="secondary">Toegankelijkheidsverklaring</AuLink>
         </li>
       </ul>
     </AuContent>

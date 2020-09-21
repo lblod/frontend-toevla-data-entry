@@ -99,6 +99,14 @@
   margin-bottom: $au-unit;
 }
 
+.au-c-hr--large {
+  margin: $au-unit 0;
+}
+
+.au-c-hr--huge {
+  margin: $au-unit-large 0;
+}
+
 // Save message
 .au-c-message {
   @include au-font-size($au-base);
@@ -193,4 +201,8 @@
     display: block;
     width: 100%;
   }
+}
+
+.au-c-image--transparent {
+  border: 0;
 }

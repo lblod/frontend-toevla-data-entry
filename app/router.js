@@ -7,7 +7,6 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function() {
-
   this.route('poi', function() {
     this.route('show', { path: "/:id" }, function() {
       this.route('experiences', function() {
@@ -39,5 +38,11 @@ Router.map(function() {
   this.route('legal', function() {
     this.route('cookiestatement');
     this.route('disclaimer');
+    this.route('toegankelijkheidsverklaring');
+  });
+  this.route('contact');
+  this.route('developers', function() {
+    this.route('styling');
+    this.route('plaatsing');
   });
 });
