@@ -1,11 +1,55 @@
 <div class="au-c-main-container__content au-c-main-container__content--scroll">
-  <main id="content">
-    <section class="au-o-region-large">
-      <div class="au-o-layout">
-        {{outlet}}
+  <AuToolbar @size="medium" @skin="tint" @border="bottom" class="au-c-toolbar__breadcrumbs">
+    <AuToolbarGroup>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="login" @skin="secondary">
+            <AuIcon @icon="arrow-left" @alignment="left" />
+            Home
+          </AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <strong>Voor developers</strong>
+        </li>
+      </ul>
+    </AuToolbarGroup>
+  </AuToolbar>
+  <section class="au-o-region-large">
+    <div class="au-o-layout au-o-layout--large">
+      <AuContent>
+        <AuHeading>Voor developers</AuHeading>
+      </AuContent>
+      <hr class="au-c-hr">
+      <div class="au-o-grid">
+        <div class="au-o-grid__item au-u-1-4@medium">
+          <ul class="au-c-list-navigation">
+            <li class="au-c-list-navigation__item">
+              <li class="au-c-list-navigation__item">
+                <AuNavigationLink @linkRoute="developers.intro">
+                  Integratie stappenplan
+                </AuNavigationLink>
+              </li>
+              <li class="au-c-list-navigation__item">
+                <AuNavigationLink @linkRoute="developers.styling">
+                  Styling
+                </AuNavigationLink>
+              </li>
+              <li class="au-c-list-navigation__item">
+                <AuNavigationLink @linkRoute="developers.plaatsing">
+                  Plaatsing van de widget
+                </AuNavigationLink>
+              </li>
+            </li>
+          </ul>
+        </div>
+        <div class="au-o-grid__item au-u-3-4@medium">
+          <AuContent id="content">
+            {{outlet}}
+          </AuContent>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <AuMainFooter>
     <AuHeading @level="3" @skin="4">

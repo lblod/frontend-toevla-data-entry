@@ -44,5 +44,6 @@ Router.map(function() {
   this.route('developers', function() {
     this.route('styling');
     this.route('plaatsing');
+    this.route('intro');
   });
 });
