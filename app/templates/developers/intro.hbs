@@ -1,1 +1,42 @@
-{{outlet}}
+<AuHeading @level="2" @skin="2">Widget integreren</AuHeading>
+<p>Volg volgende stappen om de widget op je website te plaatsen.</p>
+<AuHeading @level="3" @skin="3">1. Zoek de identificatie code van jouw locatie</AuHeading>
+<p>Zoek op deze <a href="#!" class="au-c-link">overzichtpagina</a> de identificatie code van jouw locatie.</p>
+<AuHeading @level="3" @skin="3">2. Vul de widget code aan met jouw identificatie code</AuHeading>
+<p>Zet je identificatie code op de juiste plaats in de widget code. Je plaatst deze onder <CodeInline @code='data-resource=""' @language="html" />. De waarde is een combinatie van <CodeInline @code='http://toevla.org/id/' @language="html" /> + <strong>jouw locatie identificatie code</strong>.</p>
+<p>De volledige blok ziet er als volgt uit:</p>
+<CodeBlock @code='<script
+  id="toevla-widget"
+  data-resource="http://toevla.org/id/[id van jouw locatie]"
+  src="https://embed-dev.toevla.org/assets/js/toevla-widget.js">
+</script>'
+@language="html" />
+
+<AuHeading @level="3" @skin="3">3. Pas indien gewenst de stijl van de widget aan</AuHeading>
+<p>Je kan een aantal design elementen (kleuren, typografie) aanpassen door deze mee te geven in de widget code.</p>
+
+<CodeBlock @code='<script
+  id="toevla-widget"
+  data-resource="http://toevla.org/id/[id van jouw locatie]"
+  src="https://embed-dev.toevla.org/assets/js/toevla-widget.js"
+  data-widget-check="#0E5EB8"
+  data-widget-link="#0E5EB8"
+  data-widget-link-hover="#0F6FD7">
+</script>'
+@language="html" />
+
+<p>Meer info over de <LinkTo @route="developers.styling" class="au-c-link">mogelijkheden om de widget stijl aan te passen.</LinkTo></p>
+
+<AuHeading @level="3" @skin="3">4. Zet de widget code op de juiste pagina</AuHeading>
+<p>Kopieer de widget code naar de plaats op de pagina waar je de widget wil weergeven.</p>
+<p>Om de vindbaarheid en het gebruiksgemak te verhogen promoten we volgende regels:</p>
+<ul>
+  <li>zet bij voorkeur je toegankelijkheidsinformatie onder <CodeInline @code='/toegankelijkheid' @language="html" /></li>
+  <li>controleer of de overige informatie op deze pagina de widget informatie niet tegenspreekt</li>
+  <li>controleer of informatie niet onnodig herhaald wordt</li>
+</ul>
+<p>Meer info over een correcte <LinkTo @route="developers.plaatsing" class="au-c-link">plaatsing van de widget</LinkTo></p>
+
+<AuHeading @level="3" @skin="3">Vragen of hulp nodig?</AuHeading>
+<p>Indien je problemen tegenkomt bij het implementeren van de widget kan je ons contacteren op <a href="#!" class="au-c-link">toegankelijk@vlaanderen.be</a></p>
+<p>Bugs of issues met de widget kan je melden op de <a href="https://github.com/lblod/frontend-toevla/issues" target="_blank" rel="noopener noreferrer" class="au-c-link">github pagina</a> van het project.</p>
