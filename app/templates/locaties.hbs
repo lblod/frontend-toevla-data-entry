@@ -9,7 +9,7 @@
           </AuLink>
         </li>
         <li class="au-c-list-horizontal__item">
-          <strong>Voor developers</strong>
+          <strong>Locaties</strong>
         </li>
       </ul>
     </AuToolbarGroup>
@@ -17,32 +17,22 @@
   <section class="au-o-region-large">
     <div class="au-o-layout au-o-layout--large">
       <AuContent>
-        <AuHeading>Voor developers</AuHeading>
+        <AuHeading>Locaties</AuHeading>
       </AuContent>
       <hr class="au-c-hr">
       <div class="au-o-grid">
         <div class="au-o-grid__item au-u-1-4@medium">
           <ul class="au-c-list-navigation">
             <li class="au-c-list-navigation__item">
-              <AuNavigationLink @linkRoute="developers.intro">
-                Widget integreren
-              </AuNavigationLink>
-            </li>
-            <li class="au-c-list-navigation__item">
-              <AuNavigationLink @linkRoute="developers.styling">
-                Stijl aanpassen
-              </AuNavigationLink>
-            </li>
-            <li class="au-c-list-navigation__item">
-              <AuNavigationLink @linkRoute="developers.plaatsing">
-                Plaatsing van de widget
+              <AuNavigationLink @linkRoute="locaties">
+                Musea
               </AuNavigationLink>
             </li>
           </ul>
         </div>
         <div class="au-o-grid__item au-u-3-4@medium">
           <AuContent id="content">
-            {{outlet}}
+            <p>Hier komt een lijst van locaties.</p>
           </AuContent>
         </div>
       </div>
@@ -55,15 +45,15 @@
         <div class="au-o-grid au-o-grid--small">
           <div class="au-o-grid__item au-u-1-2@small">
             <AuCard class="au-u-text-center">
-              <AuBadge @icon="sitemap" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+              <AuBadge @icon="users" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
               <AuContent>
                 <AuHeading @level="2" @skin="4">
-                  Locaties
+                  Voor developers
                 </AuHeading>
-                <p class="au-u-margin-top-tiny">Een overzicht van de locaties waarvoor er toegankelijkheidsinformatie beschikbaar is.</p>
+                <p class="au-u-margin-top-tiny">Hier vind je meer informatie over hoe je de widget kan integreren in je website.</p>
                 <p>
-                  <LinkTo @route="locaties" class="au-c-button">
-                    Zoek een locatie
+                  <LinkTo @route="developers.intro" class="au-c-button au-c-button--secondary">
+                    Handleiding
                   </LinkTo>
                 </p>
               </AuContent>

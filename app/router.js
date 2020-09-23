@@ -46,4 +46,5 @@ Router.map(function() {
     this.route('plaatsing');
     this.route('intro');
   });
+  this.route('locaties');
 });
