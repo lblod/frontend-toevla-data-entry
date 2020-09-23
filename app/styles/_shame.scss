@@ -206,3 +206,14 @@
 .au-c-image--transparent {
   border: 0;
 }
+
+// List
+.au-c-list {
+  @include au-font-size($au-h6);
+}
+
+.au-c-list__item {
+  & + & {
+    margin-top: $au-unit-small;
+  }
+}
