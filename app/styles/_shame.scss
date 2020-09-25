@@ -217,3 +217,52 @@
     margin-top: $au-unit-small;
   }
 }
+
+
+/* ==================================
+   #HERO
+   ================================== */
+
+.au-c-hero {
+  border-bottom: .1rem solid $au-gray-200;
+}
+
+.au-c-hero__image {
+  position: relative;
+}
+
+.au-c-hero__image svg {
+  position: absolute;
+}
+
+  .au-c-hero__image:first-child svg {
+    left: -$au-unit-huge;
+  }
+  .au-c-hero__image:last-child svg {
+    right: 0;
+  }
+
+.au-c-hero__usp {
+  z-index: 1;
+}
+
+.au-c-intro {
+  @include au-font-size($au-h4);
+  font-weight: $au-light;
+  color: $au-gray-800;
+  max-width: 60ch;
+
+  & + & {
+    margin-top: $au-unit-small;
+  }
+
+  @include mq(medium) {
+    @include au-font-size($au-h3);
+    max-width: 35ch;
+
+    & + & {
+      margin-top: $au-unit;
+    }
+  }
+
+}
