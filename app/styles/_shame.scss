@@ -258,11 +258,25 @@
 
   @include mq(medium) {
     @include au-font-size($au-h3);
-    max-width: 35ch;
+    max-width: 44ch;
 
     & + & {
       margin-top: $au-unit;
     }
   }
 
+}
+
+.au-c-para {
+  @include au-font-size($au-h5);
+  font-weight: $au-light;
+  color: $au-gray-800;
+  max-width: 60ch;
+  margin-top: $au-unit-small;
+
+  @include mq(medium) {
+    @include au-font-size($au-h4);
+    max-width: 48ch;
+    margin-top: $au-unit;
+  }
 }
