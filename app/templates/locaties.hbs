@@ -31,9 +31,35 @@
           </ul>
         </div>
         <div class="au-o-grid__item au-u-3-4@medium">
-          <AuContent id="content">
-            <p>Hier komt een lijst van locaties.</p>
+          <AuContent id="content" class="au-u-margin-bottom-small">
+            <p>De volgende musea hebben toegankelijkheidsinformatie:</p>
           </AuContent>
+          <ul class="au-o-grid au-o-grid--tiny">
+          {{#each @model as |poi|}}
+            <li class="au-o-grid__item">
+              <article class="au-c-card">
+                <AuToolbar @border="bottom" @size="small">
+                  <AuToolbarGroup>
+                    <AuHeading @level="2" @skin="4">
+                      {{poi.label}}
+                    </AuHeading>
+                  </AuToolbarGroup>
+                  <AuToolbarGroup>
+                    <p>
+                      Identificatiecode:
+                      <AuPill>
+                        @TODO: ID weergeven
+                      </AuPill>
+                    </p>
+                  </AuToolbarGroup>
+                </AuToolbar>
+                <AuContent class="au-o-box au-o-box--small">
+                  <p><a href="#!" class="au-c-link">Bekijk de widget (@TODO: link toevoegen)</a></p>
+                </AuContent>
+              </article>
+            </li>
+          {{/each}}
+          </ul>
         </div>
       </div>
     </div>
