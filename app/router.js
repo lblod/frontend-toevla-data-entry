@@ -41,10 +41,10 @@ Router.map(function() {
     this.route('toegankelijkheidsverklaring');
   });
   this.route('contact');
-  this.route('ontwikkelaars', function() {
+  this.route('buildings', { path: "/gebouwen" });
+  this.route('developers', { path: "/ontwikkelaars" }, function() {
     this.route('styling');
     this.route('plaatsing');
     this.route('intro');
   });
-  this.route('gebouwen');
 });

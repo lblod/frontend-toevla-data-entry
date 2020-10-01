@@ -24,17 +24,17 @@
         <div class="au-o-grid__item au-u-1-4@medium">
           <ul class="au-c-list-navigation">
             <li class="au-c-list-navigation__item">
-              <AuNavigationLink @linkRoute="ontwikkelaars.intro">
+              <AuNavigationLink @linkRoute="developers.intro">
                 Widget integreren
               </AuNavigationLink>
             </li>
             <li class="au-c-list-navigation__item">
-              <AuNavigationLink @linkRoute="ontwikkelaars.styling">
+              <AuNavigationLink @linkRoute="developers.styling">
                 Stijl aanpassen
               </AuNavigationLink>
             </li>
             <li class="au-c-list-navigation__item">
-              <AuNavigationLink @linkRoute="ontwikkelaars.plaatsing">
+              <AuNavigationLink @linkRoute="developers.plaatsing">
                 Plaatsing van de widget
               </AuNavigationLink>
             </li>
@@ -50,43 +50,43 @@
   </section>
 
   <section class="au-o-region-large au-c-theme-gray-200">
-      <div class="au-o-layout au-o-layout--large">
-        <AuHeading @level="2" @skin="3" class="au-u-margin-bottom">Integreer informatie over jouw toegankelijk gebouw in je website.</AuHeading>
-        <div class="au-o-grid au-o-grid--small">
-          <div class="au-o-grid__item au-u-1-2@small">
-            <AuCard class="au-u-text-center">
-              <AuBadge @icon="sitemap" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
-              <AuContent>
-                <AuHeading @level="2" @skin="4">
-                  Gebouwen
-                </AuHeading>
-                <p class="au-u-margin-top-tiny">Een overzicht van de gebouwen waarvoor er toegankelijkheidsinformatie beschikbaar is.</p>
-                <p>
-                  <LinkTo @route="gebouwen" class="au-c-button">
-                    Zoek een gebouw
-                  </LinkTo>
-                </p>
-              </AuContent>
-            </AuCard>
-          </div>
+    <div class="au-o-layout au-o-layout--large">
+      <AuHeading @level="2" @skin="3" class="au-u-margin-bottom">Integreer informatie over jouw toegankelijk gebouw in je website.</AuHeading>
+      <div class="au-o-grid au-o-grid--small">
+        <div class="au-o-grid__item au-u-1-2@small">
+          <AuCard class="au-u-text-center">
+            <AuBadge @icon="sitemap" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+            <AuContent>
+              <AuHeading @level="2" @skin="4">
+                Gebouwen
+              </AuHeading>
+              <p class="au-u-margin-top-tiny">Een overzicht van de gebouwen waarvoor er toegankelijkheidsinformatie beschikbaar is.</p>
+              <p>
+                <LinkTo @route="buildings" class="au-c-button">
+                  Zoek een gebouw
+                </LinkTo>
+              </p>
+            </AuContent>
+          </AuCard>
+        </div>
 
-          <div class="au-o-grid__item au-u-1-2@small">
-            <AuCard class="au-u-text-center">
-              <AuBadge @icon="export" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
-              <AuContent>
-                <AuHeading @level="2" @skin="4">
-                  API
-                </AuHeading>
-                <p class="au-u-margin-top-tiny">Gebruik onze open en gelinkte data om uw eigen applicatie of website te bouwen.</p>
-                <p>
-                  <AuPill class="au-c-faded">Informatie over de API is binnenkort beschikbaar.</AuPill>
-                </p>
-              </AuContent>
-            </AuCard>
-          </div>
+        <div class="au-o-grid__item au-u-1-2@small">
+          <AuCard class="au-u-text-center">
+            <AuBadge @icon="export" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+            <AuContent>
+              <AuHeading @level="2" @skin="4">
+                API
+              </AuHeading>
+              <p class="au-u-margin-top-tiny">Gebruik onze open en gelinkte data om uw eigen applicatie of website te bouwen.</p>
+              <p>
+                <AuPill class="au-c-faded">Informatie over de API is binnenkort beschikbaar.</AuPill>
+              </p>
+            </AuContent>
+          </AuCard>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
   <AuMainFooter>
     <AuHeading @level="3" @skin="4">

@@ -1,0 +1,126 @@
+<div class="au-c-main-container__content au-c-main-container__content--scroll">
+  <AuToolbar @size="medium" @skin="tint" @border="bottom" class="au-c-toolbar__breadcrumbs">
+    <AuToolbarGroup>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="login" @skin="secondary">
+            <AuIcon @icon="arrow-left" @alignment="left" />
+            Home
+          </AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <strong>Gebouwen</strong>
+        </li>
+      </ul>
+    </AuToolbarGroup>
+  </AuToolbar>
+  <section class="au-o-region-large">
+    <div class="au-o-layout au-o-layout--large">
+      <AuContent>
+        <AuHeading>Gebouwen</AuHeading>
+      </AuContent>
+      <hr class="au-c-hr">
+      <div class="au-o-grid">
+        <div class="au-o-grid__item au-u-1-4@medium">
+          <ul class="au-c-list-navigation">
+            <li class="au-c-list-navigation__item">
+              <AuNavigationLink @linkRoute="buildings">
+                Musea
+              </AuNavigationLink>
+            </li>
+          </ul>
+        </div>
+        <div class="au-o-grid__item au-u-3-4@medium">
+          <AuContent id="content" class="au-u-margin-bottom-small">
+            <p>De volgende musea hebben toegankelijkheidsinformatie:</p>
+          </AuContent>
+          <ul class="au-o-grid au-o-grid--tiny">
+            {{#each @model as |poi|}}
+              <li class="au-o-grid__item">
+                <article class="au-c-card">
+                  <AuToolbar @border="bottom" @size="small">
+                    <AuToolbarGroup>
+                      <AuHeading @level="2" @skin="4">
+                        {{poi.label}}
+                      </AuHeading>
+                    </AuToolbarGroup>
+                    <AuToolbarGroup>
+                      <p>
+                        Identificatiecode:
+                        <AuPill>
+                          {{poi.uri}}
+                        </AuPill>
+                      </p>
+                    </AuToolbarGroup>
+                  </AuToolbar>
+                  <AuContent class="au-o-box au-o-box--small">
+                    <p><a href="#!" class="au-c-link">Bekijk de widget (@TODO: link toevoegen)</a></p>
+                  </AuContent>
+                </article>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="au-o-region-large au-c-theme-gray-200">
+    <div class="au-o-layout au-o-layout--large">
+      <AuHeading @level="2" @skin="3" class="au-u-margin-bottom">Integreer informatie over jouw toegankelijke locatie in je website.</AuHeading>
+      <div class="au-o-grid au-o-grid--small">
+        <div class="au-o-grid__item au-u-1-2@small">
+          <AuCard class="au-u-text-center">
+            <AuBadge @icon="users" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+            <AuContent>
+              <AuHeading @level="2" @skin="4">
+                Voor ontwikkelaars
+              </AuHeading>
+              <p class="au-u-margin-top-tiny">Hier vind je meer informatie over hoe je de widget kan integreren in je website.</p>
+              <p>
+                <LinkTo @route="developers.intro" class="au-c-button au-c-button--secondary">
+                  Handleiding
+                </LinkTo>
+              </p>
+            </AuContent>
+          </AuCard>
+        </div>
+
+        <div class="au-o-grid__item au-u-1-2@small">
+          <AuCard class="au-u-text-center">
+            <AuBadge @icon="export" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+            <AuContent>
+              <AuHeading @level="2" @skin="4">
+                API
+              </AuHeading>
+              <p class="au-u-margin-top-tiny">Gebruik onze open en gelinkte data om je eigen applicatie of website te bouwen.</p>
+              <p>
+                <AuPill class="au-c-faded">Informatie over de API is binnenkort beschikbaar.</AuPill>
+              </p>
+            </AuContent>
+          </AuCard>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <AuMainFooter>
+    <AuHeading @level="3" @skin="4">
+      Toegankelijk.Vlaanderen is een officiële website van de Vlaamse overheid
+    </AuHeading>
+    <AuContent @skin="small">
+      <p>Uitgegeven door <a class="au-c-link" href="https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-kanselarij-en-bestuur/agentschap-binnenlands-bestuur">Agentschap Binnenlands Bestuur</a></p>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="legal.disclaimer" @skin="secondary">Disclaimer</AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="legal.cookiestatement" @skin="secondary">Cookieverklaring</AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="legal.toegankelijkheidsverklaring" @skin="secondary">Toegankelijkheidsverklaring</AuLink>
+        </li>
+      </ul>
+    </AuContent>
+  </AuMainFooter>
+</div>
