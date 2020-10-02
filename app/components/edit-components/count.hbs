@@ -26,9 +26,15 @@
   </chart.if>
 </WithStatechart>
 
-<Criteria::SelectCriterion
-  @value={{parse-int this.currentValue}}
-  @treeNode={{this.args.treeNode}}
-  as |label|>
-  {{label}}
-</Criteria::SelectCriterion>
+<div>
+  {{#let (parse-int this.currentValue) as |parsedValue|}}
+    <Criteria::SelectCriterion
+      @value={{parsedValue}}
+      @treeNode={{this.args.treeNode}}
+      as |label|>
+      <Labels::NumericString
+        @label={{label}}
+        @value={{parsedValue}} />
+    </Criteria::SelectCriterion>
+  {{/let}}
+</div>
