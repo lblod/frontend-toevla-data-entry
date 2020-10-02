@@ -46,3 +46,11 @@
     <AuButton @loading="true">Opslaan</AuButton>
   </chart.if>
 </WithStatechart>
+
+<div>
+  {{#if this.currentValue}}
+    <Labels::String @value={{this.args.treeNode.firstLabel}} />
+  {{else}}
+    <Labels::String @value={{this.args.treeNode.secondLabel}} />
+  {{/if}}
+</div>

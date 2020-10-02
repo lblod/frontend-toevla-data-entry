@@ -5,6 +5,14 @@ export default class TreeNode extends Model {
   @attr('string') title: string | undefined;
   @attr('number') order: number | undefined;
   @attr('string') htmlContent: string | undefined;
+
+  @attr('string') firstLimit;
+  @attr('string') firstLabel;
+  @attr('string') secondLimit;
+  @attr('string') secondLabel;
+  @attr('string') thirdLimit;
+  @attr('string') thirdLabel;
+
   @belongsTo('tree-node', { inverse: "children" }) parent: TreeNode | undefined;
   @hasMany('tree-node', { inverse: "parent" }) children: Promise<TreeNode[]> | undefined;
 }
