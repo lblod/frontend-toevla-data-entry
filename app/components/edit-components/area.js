@@ -11,14 +11,20 @@ export default class EditComponentsCentimetersComponent extends EditComponentsBo
   @tracked hasSetHeight;
 
   get width(){
-    return this.hasSetWidth ? this.internalWidth : this.currentInstance.width;
+    if( !this.currentInstance )
+      return;
+    else
+      return this.hasSetWidth ? this.internalWidth : this.currentInstance.width;
   }
   set width(value){
     this.internalWidth = value;
     this.hasSetWidth = true;
   }
   get height(){
-    return this.hasSetHeight ? this.internalHeight : this.currentInstance.height;
+    if( !this.currentInstance )
+      return;
+    else
+      return this.hasSetHeight ? this.internalHeight : this.currentInstance.height;
   }
   set height(value){
     this.internalHeight = value;
