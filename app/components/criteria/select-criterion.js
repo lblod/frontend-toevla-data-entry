@@ -20,9 +20,21 @@ export default class CriteriaSelectCriterionComponent extends Component {
   }
 
   /**
-   * Returns truethy iff value matches with the specified constraint.
+   * Returns truethy iff value matches the specified constraint (MAY
+   * BE COMPLEX).
    */
   valueMatchesString( value, string ) {
+    return string
+      .split("en")
+      .map( (str) => str.trim() )
+      .every( (str) => this.valueMatchesSimpleString( value, str ) );
+  }
+
+  /**
+   * Returns truethy iff value matches with the specified SIMPLE
+   * constraint.
+   */
+  valueMatchesSimpleString( value, string ) {
     let regexMatch;
 
     if( !string || string == "undefined" ) {
