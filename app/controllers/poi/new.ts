@@ -55,12 +55,17 @@ export default class PoiNew extends Controller {
   async launchSave(){
     const label = this.label;
     try {
-      const record =
+      const poiRecord =
         await this
           .store
           .createRecord("point-of-interest", { label })
           .save();
-      this.statechart.send("SAVED", { record })
+      const widgetRecord =
+        await this
+          .store
+          .createRecord("widget", { "pointOfInterest": poiRecord })
+          .save();
+      this.statechart.send("SAVED", { record: poiRecord })
     } catch (e) {
       this.statechart.send("FAIL");
     }
