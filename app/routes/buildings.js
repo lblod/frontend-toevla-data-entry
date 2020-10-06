@@ -7,6 +7,9 @@ export default class BuildingsRoute extends Route {
   @service store!: StoreService;
 
   model() {
-    return this.store.findAll('point-of-interest');
+    if( this.store.peekAll('widget').length )
+      return this.store.findAll('widget');
+    else
+      return this.store.query('widget', { include: "point-of-interest" });
   }
 }
