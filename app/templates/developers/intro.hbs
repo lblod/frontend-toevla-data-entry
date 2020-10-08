@@ -5,13 +5,13 @@
 <CodeBlock @code='<script
   src="https://qa.toegankelijk.vlaanderen.be/widget.js"
   resource="[uri voor jouw gebouw-widget]"
-  typeof="http://data.toegankelijk.vlaanderen.be/ns/Widget" />'
+  typeof="http://data.toegankelijk.vlaanderen.be/ns/Widget"></script>'
   @language="html" />
 
-<AuHeading @level="3" @skin="3">2. Vervang de identificatie code</AuHeading>
-<p>Zoek op deze <LinkTo @route="buildings" class="au-c-link">overzichtpagina</LinkTo> de identificatie code van uw gebouw.</p>
+<AuHeading @level="3" @skin="3">2. Vervang de resource URI</AuHeading>
+<p>Zoek op deze <LinkTo @route="buildings" class="au-c-link">overzichtpagina</LinkTo> de resource URI code van uw gebouw.</p>
 
-<p>Zet uw identificatie code op de juiste plaats in de widget code. U plaatst deze onder <CodeInline @code='resource=""' @language="html" />. De waarde is een combinatie van <CodeInline @code='http://data.toegankelijk.vlaanderen.be/id/widgets/' @language="html" /> + <strong>een unieke identificatie code</strong>.</p>
+<p>Zet uw resource URI op de juiste plaats in de widget code. U plaatst deze onder <CodeInline @code='resource=""' @language="html" />. De waarde is een combinatie van <CodeInline @code='http://data.toegankelijk.vlaanderen.be/id/widgets/' @language="html" /> + <strong>een unieke identificatie code</strong>.</p>
 
 <AuHeading @level="3" @skin="3">3. Pas indien gewenst de stijl van de widget aan</AuHeading>
 <p>U kan een aantal design elementen (kleuren, typografie) aanpassen door deze mee te geven in de widget code.</p>
@@ -19,11 +19,10 @@
 <CodeBlock @code='<script
   src="https://qa.toegankelijk.vlaanderen.be/widget.js"
   resource="[uri voor jouw gebouw-widget]"
-  typeof="http://data.toegankelijk.vlaanderen.be/ns/Widget" />
+  typeof="http://data.toegankelijk.vlaanderen.be/ns/Widget"
   data-widget-check="#0E5EB8"
   data-widget-link="#0E5EB8"
-  data-widget-link-hover="#0F6FD7">
-  </script>'
+  data-widget-link-hover="#0F6FD7"></script>'
   @language="html" />
 
 <p>Meer info over de <LinkTo @route="developers.styling" class="au-c-link">mogelijkheden om de widget stijl aan te passen.</LinkTo></p>
