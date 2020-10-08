@@ -37,7 +37,9 @@ export default class PoiShowExperiencesNew extends Controller {
         created: {
           onEntry: ["showExperience"],
           on: {
-            FAIL: "failedTransitioning"
+            FAIL: "failedTransitioning",
+            RESET: "init"
+
           }
         },
         failedTransitioning: {}
@@ -68,6 +70,7 @@ export default class PoiShowExperiencesNew extends Controller {
         showExperience( context: PoiShowExperiencesNew, { record } : { record : Experience } ) {
           try {
             context.transitionToRoute('experience.show.tree', record);
+            context.statechart.send("RESET");
           } catch (e) {
             context.statechart.send("FAIL");
           }
