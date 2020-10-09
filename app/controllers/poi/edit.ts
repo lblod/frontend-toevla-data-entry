@@ -15,8 +15,10 @@ export default class PoiEdit extends Controller {
     this.transitionToRoute("poi.show.experiences.index", this.model);
   }
 
-  @action delete() {
-    this.model.destroyRecord();
+  @action async delete() {
+    const widget = await this.model.widget;
+    await this.model.destroyRecord();
+    await widget.destroyRecord();
     this.transitionToRoute('poi.index');
   }
 }

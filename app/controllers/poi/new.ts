@@ -39,7 +39,8 @@ export default class PoiNew extends Controller {
         done: {
           onEntry: ["showEntity"],
           on: {
-            FAIL: "failed"
+            FAIL: "failed",
+            RESET: "init"
           }
         }
       }
@@ -75,6 +76,7 @@ export default class PoiNew extends Controller {
   showEntity({ record }: { record: PointOfInterest }) {
     try {
       this.transitionToRoute('poi.show.experiences', record);
+      this.statechart.send("RESET");
     } catch (e) {
       this.statechart.send("FAIL");
     }
