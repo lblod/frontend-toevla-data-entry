@@ -6,10 +6,13 @@ export default class TreeNode extends Model {
   @attr('number') order: number | undefined;
   @attr('string') htmlContent: string | undefined;
 
+  @attr('string') firstScore;
   @attr('string') firstLimit;
   @attr('string') firstLabel;
+  @attr('string') secondScore;
   @attr('string') secondLimit;
   @attr('string') secondLabel;
+  @attr('string') thirdScore;
   @attr('string') thirdLimit;
   @attr('string') thirdLabel;
 
