@@ -19,7 +19,7 @@ export default class RestaurantModel extends Model {
   @attr('boolean') hasMenuAvailableOnline;
   @attr('boolean') hasSpaceSuitedForGroupsWithMobileLimitation;
   @attr('number') amountOfSeatingPlaces;
-  @attr('boolean') hasPaymentWithFixedElecntronicPaymentSystem;
-  @attr('boolean') hasPaymentWithMovableElecntronicPaymentSystem;
+  @attr('boolean') hasPaymentWithFixedElectronicPaymentSystem;
+  @attr('boolean') hasPaymentWithMovableElectronicPaymentSystem;
   @attr('boolean') hasCashPayment;
 }
