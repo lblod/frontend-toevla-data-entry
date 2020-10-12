@@ -5,6 +5,7 @@ import { editMapping } from 'frontend-toevla-data-entry/utils/custom-component-m
 
 export default class ExperienceShowTreeEditController extends Controller {
   @tracked internalScore = null;
+  @tracked internalComment = null;
   @tracked showComponent = false;
 
   get currentScore(){
@@ -17,14 +18,23 @@ export default class ExperienceShowTreeEditController extends Controller {
       this.internalScore = score;
   }
 
+  get currentComment(){
+    return this.model.scoring?.comment || this.internalComment;
+  }
+  set currentComment(comment){
+    if( this.model.scoring )
+      this.model.scoring.comment = comment;
+    else
+      this.internalComment = comment;
+  }
+
   get extendedEditInfo() {
     return editMapping( this.model.treeNode.uri );
   }
 
   @action
   reset(){
-    debugger;
-    console.log("We should reset");
+    console.log("we should reset");
   }
 
   @action submit( event ) {
@@ -35,6 +45,7 @@ export default class ExperienceShowTreeEditController extends Controller {
     else {
       this.model.scoring = this.store.createRecord('experience-tree-node-score', {
         score: this.internalScore,
+        comment: this.internalComment,
         experience: this.model.experience,
         treeNode: this.model.treeNode
       });

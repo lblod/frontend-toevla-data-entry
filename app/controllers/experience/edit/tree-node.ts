@@ -16,6 +16,17 @@ export default class ExperienceEditTreeNode extends Controller {
       this.internalScore = score;
   }
 
+  @tracked internalComment = null;
+  get currentComment(){
+    return this.model.scoring?.comment || this.internalComment
+  }
+  set currentComment(comment){
+    if( this.model.scoring )
+      this.model.scoring.comment = comment;
+    else
+      this.internalComment = comment;
+  }
+
   get extendedEditInfo() {
     return editMapping( this.model.treeNode.uri );
   }
@@ -27,6 +38,7 @@ export default class ExperienceEditTreeNode extends Controller {
     else {
       this.model.scoring = this.store.createRecord('experience-tree-node-score', {
         score: this.internalScore,
+        comment: this.internalComment,
         experience: this.model.experience,
         treeNode: this.model.treeNode
       });
