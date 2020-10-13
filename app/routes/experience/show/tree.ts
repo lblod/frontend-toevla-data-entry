@@ -4,13 +4,15 @@ import Store from '@ember-data/store';
 import ExperienceShowTreeController from 'frontend-toevla-data-entry/controllers/experience/show/tree';
 import Tree from 'frontend-toevla-data-entry/models/tree';
 import Experience from 'frontend-toevla-data-entry/models/experience';
+import { museaTree } from 'frontend-toevla-data-entry/utils/uris/concept-schemes';
 
 export default class ExperienceShowTree extends Route {
   @service store!: Store;
 
   async model(): Promise<Tree | undefined> {
     const model = await this.store.query( 'tree', {
-      "page[size]": 1
+      "page[size]": 1,
+      "filter[:uri:]": museaTree
     });
     return model.firstObject;
   }
