@@ -31,6 +31,15 @@ export default class ExperienceEditTreeNode extends Controller {
     return editMapping( this.model.treeNode.uri );
   }
 
+  get scoreOptions() {
+    return [
+      { value: "1", label: "One" },
+      { value: "2", label: "Two" },
+      { value: "3", label: "Three" },
+      { value: null, label: "None" }
+    ];
+  }
+
   @action submit( event: Event ) {
     event.preventDefault();
     if( this.model.scoring )

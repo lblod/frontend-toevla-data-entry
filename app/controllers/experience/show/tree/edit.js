@@ -2,6 +2,7 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import Controller from '@ember/controller';
 import { editMapping } from 'frontend-toevla-data-entry/utils/custom-component-mapping';
+import { yes, no, info } from 'frontend-toevla-data-entry/utils/uris/criterion-codelist';
 
 export default class ExperienceShowTreeEditController extends Controller {
   @tracked internalScore = null;
@@ -30,6 +31,20 @@ export default class ExperienceShowTreeEditController extends Controller {
 
   get extendedEditInfo() {
     return editMapping( this.model.treeNode.uri );
+  }
+
+  get scoreOptions() {
+    return [
+      { value: yes, label: "Ja" },
+      { value: no, label: "Nee" },
+      { value: info, label: "Info" },
+      { value: null, label: "Geen selectie" }
+    ];
+  }
+
+  @action
+  selectScore( score ) {
+    this.currentScore = score;
   }
 
   @action

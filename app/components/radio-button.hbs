@@ -1,0 +1,9 @@
+<label style="display:block;">
+  {{@label}}
+  <input
+    type='radio'
+    name={{@name}}
+    checked={{if (eq @selected @value) "selected" ""}}
+    {{on "input" (fn @choose @label @value)}}
+  />
+</label>

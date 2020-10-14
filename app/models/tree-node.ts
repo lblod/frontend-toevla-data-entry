@@ -16,8 +16,8 @@ export default class TreeNode extends Model {
   @attr('string') thirdLimit;
   @attr('string') thirdLabel;
 
-  @belongsTo('tree-node', { inverse: "children" }) parent: TreeNode | undefined;
-  @hasMany('tree-node', { inverse: "parent" }) children: Promise<TreeNode[]> | undefined;
+  @belongsTo('tree-node', { inverse: null }) parent: TreeNode | undefined;
+  @hasMany('tree-node', { inverse: null }) children: Promise<TreeNode[]> | undefined;
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.

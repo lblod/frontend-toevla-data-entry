@@ -30,7 +30,11 @@
     <form {{on "submit" this.submit}} class="au-c-form">
       <p>
         <AuLabel for="score">Score</AuLabel>
-        <AuInput id="score" @value={{this.currentScore}} @placeholder="Brons" />
+        <RadioButtons @selected={{this.currentScore}} @onSelect={{this.selectScore}} as |RadioButton|>
+          {{#each this.scoreOptions as |option|}}
+            <RadioButton @label={{option.label}} @value={{option.value}} />
+          {{/each}}
+        </RadioButtons>
       </p>
       <p>
         <AuLabel for="comment">Comment</AuLabel>
