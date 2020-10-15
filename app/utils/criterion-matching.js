@@ -24,6 +24,10 @@ function valueMatchesSimpleNumericString( value, string ) {
       // >=
       const constraint = parseInt(regexMatch[1]);
       return value >= constraint;
+    } else if ( (regexMatch = string.match( /= (\d+)/ ) ) ) {
+      // =
+      const constraint = parseInt(regexMatch[1]);
+      return value == constraint;
     }
   }
 }
