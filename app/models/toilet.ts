@@ -19,7 +19,7 @@ export default class Toilet extends Model {
   @attr('number') spaceInFrontOfToilet: number | null | undefined;
   @attr('number') spaceNextToToilet: number | null | undefined;
   @attr('number') turningRadius: number | null | undefined;
-  @attr('boolean') hasSupportBraces: boolean | null | undefined;
+  @attr('number') amountOfSupportBraces: number | null | undefined;
   @attr('boolean') hasWashbasin: boolean | null | undefined;
   @attr('boolean') canRideUnderWashbasin: boolean | null | undefined;
   @attr('number') freeHeightUnderWashbasin: number | null | undefined;

@@ -94,7 +94,7 @@ const eMapping = {
   "https://data.toevla.org/id/concepts/4a3cfa2c-ac2d-419e-a48e-a85c8bbb3c66": { component: "edit-components/centimeters", key: "pointOfInterest.toilet.spaceInFrontOfToilet" },
   "https://data.toevla.org/id/concepts/319b7eeb-5f07-4174-8342-4e2fdb601d9d": { component: "edit-components/centimeters", key: "pointOfInterest.toilet.spaceNextToToilet" },
   "https://data.toevla.org/id/concepts/d02bbcf1-338d-4cc1-b2be-2c7af896b13a": { component: "edit-components/centimeters", key: "pointOfInterest.toilet.turningRadius" },
-  "https://data.toevla.org/id/concepts/4bcfc144-a0d8-4461-bacb-35831af7ee4c": { component: "edit-components/boolean", key: "pointOfInterest.toilet.hasSupportBraces" },
+  "https://data.toevla.org/id/concepts/4bcfc144-a0d8-4461-bacb-35831af7ee4c": { component: "edit-components/count", key: "pointOfInterest.toilet.amountOfSupportBraces" },
   "https://data.toevla.org/id/concepts/35f9c08e-0b4f-4a67-8d06-36dc37fb59f0": { component: "edit-components/boolean", key: "pointOfInterest.toilet.hasWashbasin" },
   "https://data.toevla.org/id/concepts/846960af-ba55-4b56-a92a-861a88160204": { component: "edit-components/boolean", key: "pointOfInterest.toilet.canRideUnderWashbasin" },
   "https://data.toevla.org/id/concepts/36d9f853-4cb5-4021-9322-5d8f658f9b3a": { component: "edit-components/centimeters", key: "pointOfInterest.toilet.freeHeightUnderWashbasin" },
