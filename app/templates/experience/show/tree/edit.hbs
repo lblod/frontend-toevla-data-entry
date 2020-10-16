@@ -25,6 +25,10 @@
 
     {{outlet}}
 
+    <div>
+      <strong>Type</strong> {{@model.treeNode.criterionType}}
+    </div>
+
     <hr class="au-c-hr">
 
     <form {{on "submit" this.submit}} class="au-c-form">

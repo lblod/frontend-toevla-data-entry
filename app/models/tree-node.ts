@@ -5,6 +5,7 @@ export default class TreeNode extends Model {
   @attr('string') title: string | undefined;
   @attr('number') order: number | undefined;
   @attr('string') htmlContent: string | undefined;
+  @attr('string') criterionType: string | undefined;
 
   @attr('string') firstScore;
   @attr('string') firstLimit;
