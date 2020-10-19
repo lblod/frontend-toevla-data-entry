@@ -30,6 +30,11 @@
             <AuInput id="addpoi" type="text" @value={{this.label}} @width="block" @placeholder="Museum M" />
           </p>
 
+          <p>
+            <AuLabel for="edit">Address</AuLabel>
+            <AuInput @width="block" id="edit" @type="string" @value={{this.locationString}} />
+          </p>
+
           <p class="au-u-margin-top-small">
             <AuButton type="submit">Voeg toe</AuButton>
           </p>

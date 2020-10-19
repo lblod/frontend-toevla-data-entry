@@ -15,6 +15,7 @@ import Widget from './widget';
 export default class PointOfInterest extends Model {
   @attr('string') uri: string | null | undefined;
   @attr('string') label: string | null | undefined;
+  @attr('string') locationString: string | null | undefined;
   @attr('boolean') hasMovableElectronicPaymentSystem: boolean | undefined | null;
   @attr('boolean') wifiAlwaysAvailable: boolean | undefined | null;
   @attr('boolean') assistanceForGuideDogs: boolean | undefined | null;
