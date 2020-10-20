@@ -13,7 +13,7 @@ export default class EntranceModel extends Model {
   @attr('number') hasEntranceCheck: number | undefined | null;
   @attr('number') turningRadiusAtDoor: number | undefined | null;
   @attr('number') forceForOpeningDoor: number | undefined | null;
-  @attr('number') hasLoweredCounter: number | undefined | null;
+  @attr('number') heightOfLoweredCounter: number | undefined | null;
 
   @belongsTo('point-of-interest') pointOfInterest!: PointOfInterest;
 

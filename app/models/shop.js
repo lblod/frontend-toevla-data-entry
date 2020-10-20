@@ -7,6 +7,6 @@ export default class ShopModel extends Model {
   @attr('number') smallestPointOnRoute;
   @attr('number') highestThreshold;
   @attr('number') mostNarrowDoorwidth;
-  @attr('boolean') hasAccessControl;
-  @attr('boolean') hasLoweredCounter;
+  @attr('number') accessControlWidth;
+  @attr('number') heightOfLoweredCounter;
 }

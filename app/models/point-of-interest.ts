@@ -21,6 +21,7 @@ export default class PointOfInterest extends Model {
   @attr('boolean') hasPaymentWithFixedElectronicPaymentSystem: boolean | undefined | null;
   @attr('boolean') wifiAlwaysAvailable: boolean | undefined | null;
   @attr('boolean') assistanceForGuideDogs: boolean | undefined | null;
+  @attr('boolean') hasVisualVisitPreparationPlan: boolean | undefined | null;
   @attr('boolean') websiteHasScreenreader: boolean | undefined | null;
   @attr('boolean') websiteSupportsWcag2: boolean | undefined | null;
   @attr('boolean') websiteAllowsTextIncrease: boolean | undefined | null;
