@@ -31,7 +31,7 @@ const eMapping = {
   "https://data.toevla.org/id/concepts/f4fc7b9f-1c55-415a-96ff-28fbda94881e": { component: "edit-components/boolean", key: "pointOfInterest.publicTransportRouteDescription.hasDetailedDescription" },
   "https://data.toevla.org/id/concepts/0964f472-4c5a-43ff-a0c2-b89eee5f5650": { component: "edit-components/boolean", key: "pointOfInterest.publicTransportRouteDescription.hasScreenreader" },
   "https://data.toevla.org/id/concepts/a44288c3-78d2-4896-a49c-c37ac215a9b3": { component: "edit-components/boolean", key: "pointOfInterest.publicTransportRouteDescription.hasFlemishSignLanguage" },
-  "https://data.toevla.org/id/concepts/d0b9ea46-e065-4ee0-9cfa-2463ba4a3027": { component: "edit-components/meters", key: "pointOfInterest.trainStop.distanceFromLocation" },
+  "https://data.toevla.org/id/concepts/d0b9ea46-e065-4ee0-9cfa-2463ba4a3027": { component: "edit-components/kilometers", key: "pointOfInterest.trainStop.distanceFromLocation" },
   "https://data.toevla.org/id/concepts/306fa11e-a804-4b27-9dcd-4bb7f20ba8d4": { component: "edit-components/string", key: "pointOfInterest.trainStop.stopName" },
   "https://data.toevla.org/id/concepts/bf7e42d6-dda7-4de7-a82c-8f8d5b031b42": { component: "edit-components/meters", key: "pointOfInterest.busStop.distanceFromLocation" },
   "https://data.toevla.org/id/concepts/0273e136-173c-4a35-89c2-d07ac6ab22f7": { component: "edit-components/string", key: "pointOfInterest.busStop.stopName" },
