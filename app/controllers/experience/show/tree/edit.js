@@ -1,3 +1,5 @@
+import { get } from '@ember/object';
+import { set } from '@ember/object';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import Controller from '@ember/controller';
@@ -43,6 +45,17 @@ export default class ExperienceShowTreeEditController extends Controller {
   }
 
   @action
+  async uploaded( file ) {
+    this.ensureScoringModel();
+    await this.model.scoring.save();
+    this.model.scoring.images.pushObject(file);
+    this.model.scoring.save();
+    const poi = await this.model.experience.pointOfInterest;
+    get( poi, "images" ).pushObject(file);
+    poi.save();
+  }
+
+  @action
   selectScore( score ) {
     this.currentScore = score;
   }
@@ -52,19 +65,25 @@ export default class ExperienceShowTreeEditController extends Controller {
     console.log("we should reset");
   }
 
-  @action submit( event ) {
-    console.log("trying to submit")
+  @action
+  submit( event ) {
     event.preventDefault();
-    if( this.model.scoring )
-      this.model.scoring.save();
-    else {
-      this.model.scoring = this.store.createRecord('experience-tree-node-score', {
-        score: this.internalScore,
-        comment: this.internalComment,
-        experience: this.model.experience,
-        treeNode: this.model.treeNode
-      });
-      this.model.scoring.save();
-    }
+    this.ensureScoringModel();
+    this.model.scoring.save();
+  }
+
+  @action removeFile(image) {
+    console.error(`removefile is not implemented yet in /app/controllers/experience/show/tree/edit.js`);
+  }
+
+  ensureScoringModel() {
+    if( ! this.model.scoring )
+      set( this.model, "scoring",
+           this.store.createRecord('experience-tree-node-score', {
+             score: this.internalScore,
+             comment: this.internalComment,
+             experience: this.model.experience,
+             treeNode: this.model.treeNode
+           }));
   }
 }
