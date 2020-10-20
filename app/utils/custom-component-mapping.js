@@ -24,7 +24,9 @@ const eMapping = {
   "https://data.toevla.org/id/concepts/eea322d2-e0ec-40f2-8d11-5774435ca067":	{ component: "edit-components/boolean", key: "pointOfInterest.websiteHasAccessibleContrast" },
   "https://data.toevla.org/id/concepts/790d70c6-6fd3-4a7b-8536-0813f3e54888":	{ component: "edit-components/boolean", key: "pointOfInterest.websiteHasScreenreader" },
   "https://data.toevla.org/id/concepts/1f169010-d9ab-40f9-89f9-4033b569dd0f":	{ component: "edit-components/boolean", key: "pointOfInterest.websiteHasSignLanguage" },
-  "https://data.toevla.org/id/concepts/df0271fa-5a57-4133-84ca-52975031712e":	{ component: "edit-components/boolean", key: "pointOfInterest.hasMovableElectronicPaymentSystem" },
+  "https://data.toevla.org/id/concepts/c104d695-8623-4015-b119-ce74be01cbd3": { component: "edit-components/boolean", key: "pointOfInterest.hasCashPayment"},
+  "https://data.toevla.org/id/concepts/07920816-de6e-4338-9e4e-9d112e7c740a": { component: "edit-components/boolean", key: "pointOfInterest.hasPaymentWithMovableElectronicPaymentSystem"},
+  "https://data.toevla.org/id/concepts/7004c39e-5e7e-42f1-a945-8927343ad838": { component: "edit-components/boolean", key: "pointOfInterest.hasPaymentWithFixedElectronicPaymentSystem"},
 
   "https://data.toevla.org/id/concepts/f4fc7b9f-1c55-415a-96ff-28fbda94881e": { component: "edit-components/boolean", key: "pointOfInterest.publicTransportRouteDescription.hasDetailedDescription" },
   "https://data.toevla.org/id/concepts/0964f472-4c5a-43ff-a0c2-b89eee5f5650": { component: "edit-components/boolean", key: "pointOfInterest.publicTransportRouteDescription.hasScreenreader" },
@@ -158,12 +160,9 @@ const eMapping = {
   "https://data.toevla.org/id/concepts/7eaa513a-4179-477d-8852-44ec1e674bba": { component: "edit-components/boolean", key: "hasPlacesOfSilence" },
   "https://data.toevla.org/id/concepts/316287ec-83fd-4bd1-aeff-750486dd24ea": { component: "edit-components/string", key: "otherElements" },
 
-
-
-
-  "https://data.toevla.org/id/concepts/c104d695-8623-4015-b119-ce74be01cbd3": { component: "edit-components/boolean", key: "pointOfInterest.restaurant.hasCashPayment"},
-  "https://data.toevla.org/id/concepts/07920816-de6e-4338-9e4e-9d112e7c740a": { component: "edit-components/boolean", key: "pointOfInterest.restaurant.hasPaymentWithMovableElectronicPaymentSystem"},
-  "https://data.toevla.org/id/concepts/7004c39e-5e7e-42f1-a945-8927343ad838": { component: "edit-components/boolean", key: "pointOfInterest.restaurant.hasPaymentWithFixedElectronicPaymentSystem"},
+  "https://data.toevla.org/id/concepts/0a0bb258-18cb-4eca-8c10-925fb34236a5": { component: "edit-components/boolean", key: "pointOfInterest.restaurant.hasCashPayment"},
+  "https://data.toevla.org/id/concepts/92955e7c-ecb8-4a91-9981-04085d264f20": { component: "edit-components/boolean", key: "pointOfInterest.restaurant.hasPaymentWithMovableElectronicPaymentSystem"},
+  "https://data.toevla.org/id/concepts/09f40a74-67de-4ee0-8de1-4b338cc0cb91": { component: "edit-components/boolean", key: "pointOfInterest.restaurant.hasPaymentWithFixedElectronicPaymentSystem"},
   "https://data.toevla.org/id/concepts/25ea8a39-9e7b-401b-8618-e4143a53890b": { component: "edit-components/count", key: "pointOfInterest.restaurant.amountOfSeatingPlaces"},
   "https://data.toevla.org/id/concepts/cfe3f887-9bec-4fdf-bde8-b2401f486b58": { component: "edit-components/boolean", key: "pointOfInterest.restaurant.hasSpaceSuitedForGroupsWithMobileLimitation"},
   "https://data.toevla.org/id/concepts/6515cae2-20e3-4d79-8a8a-abbba38fd28b": { component: "edit-components/boolean", key: "pointOfInterest.restaurant.hasMenuAvailableOnline"},
