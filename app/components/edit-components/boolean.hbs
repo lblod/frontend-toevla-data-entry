@@ -48,9 +48,9 @@
 </WithStatechart>
 
 <div>
-  {{#if this.currentValue}}
-    <Labels::String @value={{this.args.treeNode.firstLabel}} />
-  {{else}}
-    <Labels::String @value={{this.args.treeNode.secondLabel}} />
-  {{/if}}
+  <Criteria::SelectBooleanCriterion @treeNode={{@treeNode}} @value={{this.currentValue}} as |label check score|>
+    {{#if label}}
+      <Labels::String @value={{label}} />
+    {{/if}}
+  </Criteria::SelectBooleanCriterion>
 </div>
