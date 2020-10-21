@@ -1,6 +1,6 @@
 import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
 
-export default class TreeNode extends Model {
+export default class ConceptScheme extends Model {
   @attr('string') uri: string | undefined;
   @attr('string') title: string | undefined;
   @attr('number') order: number | undefined;
@@ -17,13 +17,13 @@ export default class TreeNode extends Model {
   @attr('string') thirdLimit;
   @attr('string') thirdLabel;
 
-  @belongsTo('tree-node', { inverse: null }) parent: TreeNode | undefined;
-  @hasMany('tree-node', { inverse: null }) children: Promise<TreeNode[]> | undefined;
+  @belongsTo('concept', { inverse: null }) parent: Concept | undefined;
+  @hasMany('concept', { inverse: null }) children: Promise<Concept[]> | undefined;
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.
 declare module 'ember-data/types/registries/model' {
   export default interface ModelRegistry {
-    'tree-node': TreeNode;
+    'concept-scheme': ConceptScheme;
   }
 }

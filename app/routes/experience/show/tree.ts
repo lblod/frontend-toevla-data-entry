@@ -10,7 +10,7 @@ export default class ExperienceShowTree extends Route {
   @service store!: Store;
 
   async model(): Promise<Tree | undefined> {
-    const model = await this.store.query( 'tree', {
+    const model = await this.store.query( 'concept-scheme', {
       "page[size]": 1,
       "filter[:uri:]": museaTree
     });
