@@ -8,7 +8,6 @@ import { yes, no, info } from 'frontend-toevla-data-entry/utils/uris/criterion-c
 
 export default class ExperienceShowTreeEditController extends Controller {
   @tracked internalScore = null;
-  @tracked internalComment = null;
   @tracked showComponent = false;
 
   get currentScore(){
@@ -21,14 +20,21 @@ export default class ExperienceShowTreeEditController extends Controller {
       this.internalScore = score;
   }
 
+  @tracked internalComment = null;
+  @tracked didSetComment = false;
   get currentComment(){
-    return this.model.scoring?.comment || this.internalComment;
+    if( this.didSetComment ) {
+      return this.internalComment;
+    } else {
+      return this.model.scoring?.comment;
+    }
   }
   set currentComment(comment){
+    comment = comment == "" ? null : comment;
+    this.didSetComment = true;
+    this.internalComment = comment;
     if( this.model.scoring )
       this.model.scoring.comment = comment;
-    else
-      this.internalComment = comment;
   }
 
   get extendedEditInfo() {
@@ -72,7 +78,8 @@ export default class ExperienceShowTreeEditController extends Controller {
     this.model.scoring.save();
   }
 
-  @action removeFile(image) {
+  @action
+  removeFile(image) {
     console.error(`removefile is not implemented yet in /app/controllers/experience/show/tree/edit.js`);
   }
 
