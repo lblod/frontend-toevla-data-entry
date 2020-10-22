@@ -32,7 +32,6 @@ export default class PointOfInterest extends Model {
   @attr('boolean') hasClearlyRecognizableBuilding: boolean | undefined | null;
   @attr('boolean') hasClearlyRecognizableEntrance: boolean | undefined | null;
   @attr('boolean') hasVisibleGuidelines: boolean | undefined | null;
-  @attr('boolean') hasMarkingsOrContrastsOnGlassDoors: boolean | undefined | null;
   @attr('boolean') extraAttentionGivenToAcoustics: boolean | undefined | null;
   @attr('boolean') hasAlternativeEntranceForWheelchair: boolean | undefined | null;
   @attr('boolean') hasFreeEntranceForGuide: boolean | undefined | null;
@@ -54,6 +53,7 @@ export default class PointOfInterest extends Model {
   @hasMany('file', { inverse: null }) images!: File[];
   @belongsTo('widget') widget!: Widget;
   @belongsTo('concept') wifiAvailability: Concept | undefined | null;
+  @belongsTo('concept') typeOfGlassDoorDecoration: Concept | undefined | null;
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.

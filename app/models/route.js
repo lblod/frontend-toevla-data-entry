@@ -4,7 +4,6 @@ export default class RouteModel extends Model {
   @attr('boolean') isSimpleAndLogical;
   @attr('boolean') hasClearSignalizationInBuilding;
   @attr('boolean') hasSyntheticSpeechInElevator;
-  @attr('boolean') isOnlyOnGroundFloor;
   @attr('number') smallestPointOnRoute;
   @attr('number') highestThresholdOnRoute;
   @attr('number') amountOfThresholds;
@@ -21,4 +20,5 @@ export default class RouteModel extends Model {
   @attr('boolean') hasExtraAttentionForAcoustics;
   @belongsTo('area') sizeOfElevator;
   @belongsTo('area') sizeOfPlateauElevator;
+  @belongsTo('concept') multipleLevelsCategory;
 }
