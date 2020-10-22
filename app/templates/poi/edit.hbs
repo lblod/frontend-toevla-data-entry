@@ -26,12 +26,12 @@
       <AuHeading @skin="2" class="au-u-margin-bottom">Locatie aanpassen</AuHeading>
       <form {{on "submit" this.submit}}>
         <p>
-          <AuLabel for="edit">Name</AuLabel>
+          <AuLabel for="edit">Naam</AuLabel>
           <AuInput @width="block" id="edit" @type="string" @value={{this.model.label}} />
         </p>
 
         <p>
-          <AuLabel for="edit">Address</AuLabel>
+          <AuLabel for="edit">Adres</AuLabel>
           <AuInput @width="block" id="edit" @type="string" @value={{this.model.locationString}} />
         </p>
 
