@@ -3,6 +3,8 @@ import Model, { attr, belongsTo, hasMany } from '@ember-data/model';
 export default class ConceptScheme extends Model {
   @attr('string') uri: string | undefined;
   @attr('string') title: string | undefined;
+  @attr('string') selectableLabel: string | undefined;
+
   @attr('number') order: number | undefined;
   @attr('string') htmlContent: string | undefined;
   @attr('string') criterionType: string | undefined;

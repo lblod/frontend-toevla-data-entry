@@ -17,8 +17,10 @@
     {{#if this.extendedEditInfo}}
       {{#component this.extendedEditInfo.component
            key=this.extendedEditInfo.key
+           conceptScheme=this.extendedEditInfo.conceptScheme
            treeNode=@model.treeNode
-           experience=@model.experience as |events|}}
+           experience=@model.experience
+           as |events|}}
         <span {{did-update events.reset @model.treeNode}}></span>
       {{/component}}
     {{/if}}

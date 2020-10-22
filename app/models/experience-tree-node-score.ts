@@ -6,7 +6,7 @@ import File from './file';
 export default class ExperienceTreeNodeScore extends Model {
   @attr('string') score: string | null | undefined;
   @attr('string') comment: string | null | undefined;
-  @belongsTo('tree-node') treeNode: TreeNode | null | undefined;
+  @belongsTo('concept') treeNode: TreeNode | null | undefined;
   @belongsTo('experience') experience: Experience | null | undefined;
   @hasMany('file', { inverse: "experienceTreeNodeScore" }) images!: File[];
 }

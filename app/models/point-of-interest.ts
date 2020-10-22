@@ -11,6 +11,7 @@ import File from './file';
 import Restaurant from './restaurant';
 import Shop from './shop';
 import Widget from './widget';
+import Concept from './concept';
 
 export default class PointOfInterest extends Model {
   @attr('string') uri: string | null | undefined;
@@ -19,7 +20,6 @@ export default class PointOfInterest extends Model {
   @attr('boolean') hasCashPayment: boolean | undefined | null;
   @attr('boolean') hasPaymentWithMovableElectronicPaymentSystem: boolean | undefined | null;
   @attr('boolean') hasPaymentWithFixedElectronicPaymentSystem: boolean | undefined | null;
-  @attr('boolean') wifiAlwaysAvailable: boolean | undefined | null;
   @attr('boolean') assistanceForGuideDogs: boolean | undefined | null;
   @attr('boolean') hasVisualVisitPreparationPlan: boolean | undefined | null;
   @attr('boolean') websiteHasScreenreader: boolean | undefined | null;
@@ -53,6 +53,7 @@ export default class PointOfInterest extends Model {
   @hasMany('file') files!: File[];
   @hasMany('file', { inverse: null }) images!: File[];
   @belongsTo('widget') widget!: Widget;
+  @belongsTo('concept') wifiAvailability: Concept | undefined | null;
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.

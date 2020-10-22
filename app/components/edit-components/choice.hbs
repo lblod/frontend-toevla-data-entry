@@ -1,0 +1,45 @@
+<WithStatechart @state={{this.statechart}} as |chart|>
+  {{yield (hash reset=(fn chart.send "RESET"))}}
+  <chart.if @state="init">
+    <AuLoader />
+  </chart.if>
+  <chart.if @state="dataEntry">
+    <p class="au-u-margin-bottom-tiny">
+      <AuLabel for="score">Score</AuLabel>
+      <RadioButtons @selected={{this.currentValue.uri}} @onSelect={{this.updateSelection}} as |RadioButton|>
+        {{#each this.options as |option|}}
+          <RadioButton @label={{option.selectableLabel}} @value={{option.uri}} />
+        {{/each}}
+        <RadioButton @label="Geen" @value={{null}} />
+      </RadioButtons>
+    </p>
+    <AuButton {{on "click" (fn chart.preventAndSend "SAVE")}} type="button">Opslaan</AuButton>
+  </chart.if>
+  <chart.if @state="saved">
+    <p class="au-u-margin-bottom-tiny">
+      <AuLabel for="score">Score</AuLabel>
+      <RadioButtons @selected={{this.currentValue.uri}} @onSelect={{this.updateSelection}} as |RadioButton|>
+        {{#each this.options as |option|}}
+          <RadioButton @label={{option.selectableLabel}} @value={{option.uri}} />
+        {{/each}}
+        <RadioButton @label="Geen" @value={{null}} />
+      </RadioButtons>
+    </p>
+    <AuButton {{on "click" (fn chart.preventAndSend "SAVE")}} type="button">Opslaan</AuButton>
+    <span class="au-c-message"><AuIcon @icon="check" @size="large" />Opgeslagen</span>
+  </chart.if>
+  <chart.if @state="saving">
+    <p class="au-u-margin-bottom-tiny">
+      saving
+    </p>
+    <AuButton @loading="true">Opslaan</AuButton>
+  </chart.if>
+</WithStatechart>
+
+<div>
+  <Criteria::SelectChoiceCriterion @treeNode={{@treeNode}} @value={{this.currentValue}} as |label check score|>
+    {{#if label}}
+      <Labels::String @value={{label}} />
+    {{/if}}
+  </Criteria::SelectChoiceCriterion>
+</div>

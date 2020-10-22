@@ -17,7 +17,7 @@ const eMapping = {
   "https://data.toevla.org/id/concepts/fab3d846-a393-4c89-a2db-0ee075406f66":	{ component: "edit-components/boolean", key: "pointOfInterest.acceptsCityPass" },
   "https://data.toevla.org/id/concepts/b60c0fd6-61ce-4461-824d-efd6cb2055bd":	{ component: "edit-components/boolean", key: "pointOfInterest.acceptsEdc" },
   "https://data.toevla.org/id/concepts/fc8bb9f5-76f0-47a5-a628-858037dcc076":	{ component: "edit-components/boolean", key: "pointOfInterest.wheelchairAvailable" },
-  "https://data.toevla.org/id/concepts/4bd0372b-314b-43c1-8295-7114b6f08443":	{ component: "edit-components/boolean", key: "pointOfInterest.wifiAlwaysAvailable" },
+  "https://data.toevla.org/id/concepts/4bd0372b-314b-43c1-8295-7114b6f08443":	{ component: "edit-components/choice", key: "pointOfInterest.wifiAvailability", conceptScheme: "https://data.toevla.org/id/concept-schemes/e623da8d-3495-4bd4-a691-53c3637f406e" },
   "https://data.toevla.org/id/concepts/0545c86a-5d54-463c-b161-c1b8946b13cd":	{ component: "edit-components/boolean", key: "pointOfInterest.assistanceForGuideDogs" },
   "https://data.toevla.org/id/concepts/5d0ccee1-065d-4ce1-923f-d9c13b600d60": { component: "edit-components/boolean", key: "pointOfInterest.hasVisualVisitPreparationPlan" },
   "https://data.toevla.org/id/concepts/9ae90bc9-2f2f-47b6-b7fc-a542172e6ac5":	{ component: "edit-components/boolean", key: "pointOfInterest.websiteSupportsWcag2" },
