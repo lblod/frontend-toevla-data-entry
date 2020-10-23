@@ -30,4 +30,10 @@ export default class ExperienceShowTreeEditRoute extends Route {
 
     return { experience, treeNode, scoring };
   }
+
+  setupController( controller ) {
+    super.setupController( ...arguments );
+
+    controller.reset();
+  }
 }

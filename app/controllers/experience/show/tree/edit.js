@@ -7,34 +7,27 @@ import { editMapping } from 'frontend-toevla-data-entry/utils/custom-component-m
 import { yes, no, info } from 'frontend-toevla-data-entry/utils/uris/criterion-codelist';
 
 export default class ExperienceShowTreeEditController extends Controller {
-  @tracked internalScore = null;
   @tracked showComponent = false;
 
-  get currentScore(){
-    return this.model.scoring?.score || this.internalScore;
-  }
-  set currentScore(score){
-    if( this.model.scoring )
-      this.model.scoring.score = score;
-    else
-      this.internalScore = score;
+  @action
+  reset() {
+    this.didSetScore = false;
+    this.didSetComment = false;
   }
 
-  @tracked internalComment = null;
-  @tracked didSetComment = false;
-  get currentComment(){
-    if( this.didSetComment ) {
-      return this.internalComment;
-    } else {
-      return this.model.scoring?.comment;
-    }
+  // -- SCORING --
+  @tracked internalScore = null;
+  @tracked didSetScore = false;
+
+  get currentScore() {
+    if( this.didSetScore )
+      return this.internalScore;
+    else
+      return this.model.scoring?.score;
   }
-  set currentComment(comment){
-    comment = comment == "" ? null : comment;
-    this.didSetComment = true;
-    this.internalComment = comment;
-    if( this.model.scoring )
-      this.model.scoring.comment = comment;
+  set currentScore(score) {
+    this.didSetScore = true;
+    this.internalScore = score;
   }
 
   get extendedEditInfo() {
@@ -51,6 +44,29 @@ export default class ExperienceShowTreeEditController extends Controller {
   }
 
   @action
+  selectScore( score ) {
+    this.currentScore = score;
+  }
+
+  // -- COMMENTS --
+  @tracked internalComment = null;
+  @tracked didSetComment = false;
+
+  get currentComment(){
+    if( this.didSetComment ) {
+      return this.internalComment;
+    } else {
+      return this.model.scoring?.comment;
+    }
+  }
+  set currentComment(comment) {
+    comment = comment == "" ? null : comment;
+    this.didSetComment = true;
+    this.internalComment = comment;
+  }
+
+  // -- FILES --
+  @action
   async uploaded( file ) {
     this.ensureScoringModel();
     await this.model.scoring.save();
@@ -62,25 +78,22 @@ export default class ExperienceShowTreeEditController extends Controller {
   }
 
   @action
-  selectScore( score ) {
-    this.currentScore = score;
+  removeFile(image) {
+    console.error(`removefile is not implemented yet in /app/controllers/experience/show/tree/edit.js`);
   }
 
-  @action
-  reset(){
-    console.log("we should reset");
-  }
-
+  // -- SAVING --
   @action
   submit( event ) {
     event.preventDefault();
     this.ensureScoringModel();
-    this.model.scoring.save();
-  }
 
-  @action
-  removeFile(image) {
-    console.error(`removefile is not implemented yet in /app/controllers/experience/show/tree/edit.js`);
+    if( this.didSetScore )
+      this.model.scoring.score = this.enteredScore;
+    if( this.didSetComment )
+      this.model.scoring.comment = this.enteredComment;
+
+    this.model.scoring.save();
   }
 
   ensureScoringModel() {
