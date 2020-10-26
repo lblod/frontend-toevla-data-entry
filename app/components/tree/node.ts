@@ -3,7 +3,7 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
 import TreeNode from 'frontend-toevla-data-entry/models/tree-node';
-import Experience from 'frontend-toevla-data-entry/models/experience';
+import Scorable from 'frontend-toevla-data-entry/models/scorable';
 import mapping from 'frontend-toevla-data-entry/utils/custom-component-mapping';
 import Statechart from 'ember-statecharts/utils/statechart';
 import { handler, statechart } from 'frontend-toevla-data-entry/utils/rockin-statechart';
@@ -12,7 +12,7 @@ import treeNodeMachine from 'frontend-toevla-data-entry/machines/tree-node-machi
 interface TreeNodeArgs {
   title: string | undefined;
   node: TreeNode;
-  experience: Experience;
+  subject: Scorable;
   disableHandlerComponent: boolean | undefined;
 }
 

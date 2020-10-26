@@ -24,7 +24,7 @@ export default class ExperienceShowTreeEditRoute extends Route {
     const treeNode = await this.store.findRecord('concept', treeNodeId);
     const scoring =
       (await this.store.query('experience-tree-node-score', {
-        "filter[experience][:id:]": experience.id,
+        "filter[subject][:id:]": experience.id,
         "filter[tree-node][:id:]": treeNode.id
       })).firstObject;
 

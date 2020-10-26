@@ -1,4 +1,4 @@
-import Model, { attr, hasMany, belongsTo } from '@ember-data/model';
+import { attr, hasMany, belongsTo } from '@ember-data/model';
 import Experience from './experience';
 import Entrance from './entrance';
 import Parking from './parking';
@@ -12,8 +12,9 @@ import Restaurant from './restaurant';
 import Shop from './shop';
 import Widget from './widget';
 import Concept from './concept';
+import Scorable from './scorable';
 
-export default class PointOfInterest extends Model {
+export default class PointOfInterest extends Scorable {
   @attr('string') uri: string | null | undefined;
   @attr('string') label: string | null | undefined;
   @attr('string') locationString: string | null | undefined;

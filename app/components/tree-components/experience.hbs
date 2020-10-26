@@ -1,7 +1,7 @@
-{{#each @experience.pointOfInterest.experiences as |experience|}}
+{{#each @subject.pointOfInterest.experiences as |experience|}}
   <Tree::Node
     @node={{@node}}
-    @experience={{experience}}
+    @subject={{experience}}
     @title={{concat "Beleving - " experience.title}}
     @disableHandlerComponent={{true}}
     class="au-c-tree__item au-c-tree__item--child">

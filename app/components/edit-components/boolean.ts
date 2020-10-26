@@ -2,7 +2,7 @@ import { get } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import Component from '@glimmer/component';
 import TreeNode from 'frontend-toevla-data-entry/models/tree-node';
-import Experience from 'frontend-toevla-data-entry/models/experience';
+import Scorable from 'frontend-toevla-data-entry/models/scorable';
 import { property, getInstance, setInstanceValue, save } from 'frontend-toevla-data-entry/utils/path-instances';
 import Statechart from 'ember-statecharts/utils/statechart';
 import { handler, statechart } from 'frontend-toevla-data-entry/utils/rockin-statechart';
@@ -10,7 +10,7 @@ import { handler, statechart } from 'frontend-toevla-data-entry/utils/rockin-sta
 interface EditComponentsBooleanArgs {
   key: string;
   treeNode: TreeNode;
-  experience: Experience;
+  subject: Scorable;
 }
 
 export default class EditComponentsBoolean extends Component<EditComponentsBooleanArgs> {
@@ -100,7 +100,7 @@ export default class EditComponentsBoolean extends Component<EditComponentsBoole
    */
   @handler()
   async initIntermediateObjects() {
-    this.currentInstance = await getInstance(this.args.experience, this.args.key);
+    this.currentInstance = await getInstance(this.args.subject, this.args.key);
     this.statechart.send("SETUP_OBJECTS");
   }
 
@@ -109,8 +109,8 @@ export default class EditComponentsBoolean extends Component<EditComponentsBoole
   async save(){
     try {
       if( this.hasSetValue ) {
-        await setInstanceValue( this.args.experience, this.args.key, this.configuredValue );
-        await save( this.args.experience, this.args.key );
+        await setInstanceValue( this.args.subject, this.args.key, this.configuredValue );
+        await save( this.args.subject, this.args.key );
       }
       this.statechart.send("SAVED");
     } catch {

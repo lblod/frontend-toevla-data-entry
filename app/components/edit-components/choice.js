@@ -107,7 +107,7 @@ export default class EditComponentsChoiceComponent extends Component {
   @handler()
   async initIntermediateObjects() {
     try {
-      this.currentInstance = await getInstance(this.args.experience, this.args.key);
+      this.currentInstance = await getInstance(this.args.subject, this.args.key);
       await get( this.currentInstance, this.currentProperty );
       const conceptSchemes = await this.store.query("concept-scheme", { "filter[:uri:]": this.args.conceptScheme });
       const conceptScheme = conceptSchemes.firstObject;
@@ -123,8 +123,8 @@ export default class EditComponentsChoiceComponent extends Component {
   async save(){
     try {
       if( this.hasSetValue ) {
-        await setInstanceValue( this.args.experience, this.args.key, this.configuredValue );
-        await save( this.args.experience, this.args.key );
+        await setInstanceValue( this.args.subject, this.args.key, this.configuredValue );
+        await save( this.args.subject, this.args.key );
       }
       this.statechart.send("SAVED");
     } catch {

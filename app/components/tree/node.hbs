@@ -1,5 +1,5 @@
 {{#if this.handlerComponent}}
-  {{component this.handlerComponent node=@node experience=@experience}}
+  {{component this.handlerComponent node=@node subject=@subject}}
 {{else}}
   <WithStatechart @state={{this.statechart}} as |chart|>
     <li ...attributes>
@@ -40,8 +40,8 @@
         {{#if @node.children.length}}
           <ul class="au-c-tree__list">
             {{#each this.sortedChildren as |child|}}
-              <Tree::Node @node={{child}} @experience={{@experience}} class="au-c-tree__item au-c-tree__item--child">
-                <LinkTo class="au-c-tree__edit" @route="experience.show.tree.edit" @models={{array @experience.id child.id}}>
+              <Tree::Node @node={{child}} @subject={{@subject}} class="au-c-tree__item au-c-tree__item--child">
+                <LinkTo class="au-c-tree__edit" @route="experience.show.tree.edit" @models={{array @subject.id child.id}}>
                   <AuIcon @icon="pencil" />
                   <span class="au-c-tree__edit-label">Aanpassen</span>
                 </LinkTo>

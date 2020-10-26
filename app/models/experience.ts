@@ -1,10 +1,11 @@
-import Model, { attr, belongsTo } from '@ember-data/model';
+import { attr, belongsTo } from '@ember-data/model';
 import PointOfInterest from './point-of-interest';
 import GuidedTour from './guided-tour';
 import Auditorium from './auditorium';
 import Route from './route';
+import Scorable from './scorable';
 
-export default class Experience extends Model {
+export default class Experience extends Scorable {
   @belongsTo('point-of-interest') pointOfInterest!: PointOfInterest;
   @belongsTo('route') circulation!: Route;
   @belongsTo('guided-tour') guidedTour!: Guidedtour;

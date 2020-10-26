@@ -36,16 +36,16 @@ export default class EditComponentsCentimetersComponent extends EditComponentsBo
    */
   @handler()
   async initIntermediateObjects() {
-    this.currentInstance = await getInstance(this.args.experience, this.args.key + ".width");
+    this.currentInstance = await getInstance(this.args.subject, this.args.key + ".width");
     this.statechart.send("SETUP_OBJECTS");
   }
 
   @handler()
   async save(){
     if( this.hasSetWidth || this.hasSetHeight ) {
-      await setInstanceValue( this.args.experience, this.args.key + ".width", this.width );
-      await setInstanceValue( this.args.experience, this.args.key + ".height", this.height );
-      await save( this.args.experience, this.args.key + ".width" ); // saves the object above
+      await setInstanceValue( this.args.subject, this.args.key + ".width", this.width );
+      await setInstanceValue( this.args.subject, this.args.key + ".height", this.height );
+      await save( this.args.subject, this.args.key + ".width" ); // saves the object above
     }
     this.statechart.send("SAVED");
   }
