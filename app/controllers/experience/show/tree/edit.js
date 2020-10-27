@@ -72,7 +72,7 @@ export default class ExperienceShowTreeEditController extends Controller {
     await this.model.scoring.save();
     this.model.scoring.images.pushObject(file);
     this.model.scoring.save();
-    const poi = await this.model.experience.pointOfInterest;
+    const poi = await this.model.subject.pointOfInterest;
     get( poi, "images" ).pushObject(file);
     poi.save();
   }
@@ -102,7 +102,7 @@ export default class ExperienceShowTreeEditController extends Controller {
            this.store.createRecord('experience-tree-node-score', {
              score: this.internalScore,
              comment: this.internalComment,
-             experience: this.model.experience,
+             subject: this.model.subject,
              treeNode: this.model.treeNode
            }));
   }

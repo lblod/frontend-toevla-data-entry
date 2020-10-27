@@ -20,15 +20,15 @@ class RouteModel {
 
 export default class ExperienceShowTreeEditRoute extends Route {
   async model( { tree_node_id: treeNodeId } ) {
-    const experience = this.modelFor("experience.show");
+    const subject = this.modelFor("experience.show");
     const treeNode = await this.store.findRecord('concept', treeNodeId);
     const scoring =
       (await this.store.query('experience-tree-node-score', {
-        "filter[subject][:id:]": experience.id,
+        "filter[subject][:id:]": subject.id,
         "filter[tree-node][:id:]": treeNode.id
       })).firstObject;
 
-    return { experience, treeNode, scoring };
+    return { subject, treeNode, scoring };
   }
 
   setupController( controller ) {

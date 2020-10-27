@@ -6,7 +6,11 @@ import Experience from 'frontend-toevla-data-entry/models/experience';
 export default class ExperienceShow extends Route {
   @service store!: Store;
 
-  model( { id }: { id: string } ): Promise<Experience | undefined> {
-    return this.store.findRecord("experience", id);
+  async model( { id }: { id: string } ): Promise<Experience | undefined> {
+    const scorables =
+      await this
+        .store
+        .query("scorable", { "filter[:id:]": id });
+    return scorables.firstObject;
   }
 }
