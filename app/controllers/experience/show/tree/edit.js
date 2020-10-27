@@ -16,18 +16,18 @@ export default class ExperienceShowTreeEditController extends Controller {
   }
 
   // -- SCORING --
-  @tracked internalScore = null;
+  @tracked enteredScore = null;
   @tracked didSetScore = false;
 
   get currentScore() {
     if( this.didSetScore )
-      return this.internalScore;
+      return this.enteredScore;
     else
       return this.model.scoring?.score;
   }
   set currentScore(score) {
     this.didSetScore = true;
-    this.internalScore = score;
+    this.enteredScore = score;
   }
 
   get extendedEditInfo() {
@@ -49,12 +49,12 @@ export default class ExperienceShowTreeEditController extends Controller {
   }
 
   // -- COMMENTS --
-  @tracked internalComment = null;
+  @tracked enteredComment = null;
   @tracked didSetComment = false;
 
   get currentComment(){
     if( this.didSetComment ) {
-      return this.internalComment;
+      return this.enteredComment;
     } else {
       return this.model.scoring?.comment;
     }
@@ -62,7 +62,7 @@ export default class ExperienceShowTreeEditController extends Controller {
   set currentComment(comment) {
     comment = comment == "" ? null : comment;
     this.didSetComment = true;
-    this.internalComment = comment;
+    this.enteredComment = comment;
   }
 
   // -- FILES --
@@ -100,8 +100,8 @@ export default class ExperienceShowTreeEditController extends Controller {
     if( ! this.model.scoring )
       set( this.model, "scoring",
            this.store.createRecord('experience-tree-node-score', {
-             score: this.internalScore,
-             comment: this.internalComment,
+             score: this.enteredScore,
+             comment: this.enteredComment,
              experience: this.model.experience,
              treeNode: this.model.treeNode
            }));
