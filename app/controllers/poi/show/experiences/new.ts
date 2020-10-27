@@ -54,12 +54,14 @@ export default class PoiShowExperiencesNew extends Controller {
           try {
             const title = context.title;
             const pointOfInterest = context.poi;
+            const isMainExperience = context.poi.experiences.length == 0 ? true : false;
             const record =
               await context
                 .store
                 .createRecord( 'experience', {
                   pointOfInterest,
-                  title
+                  title,
+                  isMainExperience
                 })
                 .save();
             context.statechart.send("SUCCESS", { record });

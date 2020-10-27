@@ -10,6 +10,7 @@ export default class Experience extends Model {
   @belongsTo('guided-tour') guidedTour!: Guidedtour;
   @belongsTo('auditorium') auditorium!: Auditorium;
   @attr('string') title: string | null | undefined;
+  @attr('boolean') isMainExperience: boolean | null | undefined;
   @attr('boolean') hasMultipleElementsToDriveUnder: boolean | null | undefined;
   @attr('boolean') hasGoodLighting: boolean | null | undefined;
   @attr('boolean') hasMagnifyingGlass: boolean | null | undefined;
