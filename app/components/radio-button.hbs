@@ -1,9 +1,13 @@
-<label style="display:block;">
-  {{@label}}
-  <input
-    type='radio'
-    name={{@name}}
-    checked={{if (eq @selected @value) "selected" ""}}
-    {{on "input" (fn @choose @label @value)}}
-  />
-</label>
+<li class="au-c-list-radio__item">
+  <label class="au-c-list-radio__button">
+    <input
+      type='radio'
+      name={{@name}}
+      checked={{if (eq @selected @value) "selected" ""}}
+      {{on "input" (fn @choose @label @value)}}
+    />
+    <span class="au-c-list-radio__label">
+      {{@label}}
+    </span>
+  </label>
+</li>
