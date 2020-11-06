@@ -6,18 +6,17 @@ export default class CriteriaSelectStringCriterionComponent extends Component {
     const treeNode = this.args.treeNode;
 
     if( this.args.treeNode ) {
-      if( value === treeNode.firstLimit )
+      if( value && value != "" ) {
         return 1;
-      if( value === treeNode.secondLimit )
+      } else {
         return 2;
-      if( value === treeNode.thirdLimit )
-        return 3;
+      }
     }
     return null;
   }
 
   get matchPositive() {
-    return this.matchedIndex >= 2;
+    return this.matchedIndex == 1;
   }
 
   get matchScore() {
@@ -27,8 +26,6 @@ export default class CriteriaSelectStringCriterionComponent extends Component {
       return treeNode.firstScore;
     case 2:
       return treeNode.secondScore;
-    case 3:
-      return treeNode.thirdScore;
     default:
       return null;
     }
@@ -38,11 +35,9 @@ export default class CriteriaSelectStringCriterionComponent extends Component {
     const treeNode = this.args.treeNode;
     switch ( this.matchedIndex ) {
     case 1:
-      return treeNode.firstLabel;
+      return this.args.value;
     case 2:
       return treeNode.secondLabel;
-    case 3:
-      return treeNode.thirdLabel;
     default:
       return null;
     }

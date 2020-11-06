@@ -16,6 +16,9 @@ import Concept from './concept';
 export default class PointOfInterest extends Model {
   @attr('string') uri: string | null | undefined;
   @attr('string') label: string | null | undefined;
+  @attr('string') comment: string | null | undefined;
+  @attr('string') commentOnPublicTransport: string | null | undefined;
+  @attr('string') commentOnEntrance: string | null | undefined;
   @attr('string') locationString: string | null | undefined;
   @attr('boolean') hasCashPayment: boolean | undefined | null;
   @attr('boolean') hasPaymentWithMovableElectronicPaymentSystem: boolean | undefined | null;

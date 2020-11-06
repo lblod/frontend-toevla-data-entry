@@ -1,6 +1,7 @@
 import Model, { attr, belongsTo } from '@ember-data/model';
 
 export default class RouteModel extends Model {
+  @attr('string') comment;
   @attr('boolean') isSimpleAndLogical;
   @attr('boolean') hasClearSignalizationInBuilding;
   @attr('boolean') hasSyntheticSpeechInElevator;
