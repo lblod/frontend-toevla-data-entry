@@ -48,7 +48,7 @@ export default class ExperienceShowTreeEditController extends Controller {
     this.currentScore = score;
   }
 
-  // -- COMMENTS --
+  // -- COMMENT TEXT --
   @tracked enteredComment = null;
   @tracked didSetComment = false;
 
@@ -63,6 +63,40 @@ export default class ExperienceShowTreeEditController extends Controller {
     comment = comment == "" ? null : comment;
     this.didSetComment = true;
     this.enteredComment = comment;
+  }
+
+  // -- COMMENT LINK TEXT --
+  @tracked enteredCommentLinkText = null;
+  @tracked didSetCommentLinkText = false;
+
+  get currentCommentLinkText(){
+    if( this.didSetCommentLinkText ) {
+      return this.enteredCommentLinkText;
+    } else {
+      return this.model.scoring?.commentLinkText;
+    }
+  }
+  set currentCommentLinkText(comment) {
+    comment = comment == "" ? null : comment;
+    this.didSetCommentLinkText = true;
+    this.enteredCommentLinkText = comment;
+  }
+
+  // -- COMMENT LINK URL --
+  @tracked enteredCommentLinkUrl = null;
+  @tracked didSetCommentLinkUrl = false;
+
+  get currentCommentLinkUrl(){
+    if( this.didSetCommentLinkUrl ) {
+      return this.enteredCommentLinkUrl;
+    } else {
+      return this.model.scoring?.commentLinkUrl;
+    }
+  }
+  set currentCommentLinkUrl(comment) {
+    comment = comment == "" ? null : comment;
+    this.didSetCommentLinkUrl = true;
+    this.enteredCommentLinkUrl = comment;
   }
 
   // -- FILES --
@@ -92,6 +126,10 @@ export default class ExperienceShowTreeEditController extends Controller {
       this.model.scoring.score = this.enteredScore;
     if( this.didSetComment )
       this.model.scoring.comment = this.enteredComment;
+    if( this.didSetCommentLinkText )
+      this.model.scoring.commentLinkText = this.enteredCommentLinkText;
+    if( this.didSetCommentLinkUrl )
+      this.model.scoring.commentLinkUrl = this.enteredCommentLinkUrl;
 
     this.model.scoring.save();
   }
@@ -102,6 +140,8 @@ export default class ExperienceShowTreeEditController extends Controller {
            this.store.createRecord('experience-tree-node-score', {
              score: this.enteredScore,
              comment: this.enteredComment,
+             commentLinkText: this.enteredCommentLinkText,
+             commentLinkUrl: this.enteredCommentLinkUrl,
              experience: this.model.experience,
              treeNode: this.model.treeNode
            }));
