@@ -1,0 +1,112 @@
+<div class="au-c-main-container__content au-c-main-container__content--scroll">
+  <AuToolbar @size="medium" @skin="tint" @border="bottom" class="au-c-toolbar__breadcrumbs">
+    <AuToolbarGroup>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="login" @skin="secondary">
+            <AuIcon @icon="arrow-left" @alignment="left" />
+            Home
+          </AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <strong>Over Toegankelijk Vlaanderen</strong>
+        </li>
+      </ul>
+    </AuToolbarGroup>
+  </AuToolbar>
+  <section class="au-o-region-large">
+    <div class="au-o-layout au-o-layout--large">
+      <AuContent>
+        <AuHeading>Over Toegankelijk Vlaanderen</AuHeading>
+      </AuContent>
+      <hr class="au-c-hr">
+      <AuContent>
+        <h2>Wat is Toegankelijk Vlaanderen?</h2>
+        <p>Toegankelijk Vlaanderen wil mensen, met én zonder beperking, geïnformeerd en met een gerust hart op pad laten gaan.</p>
+        <h3>Hoe doen we dat?</h3>
+        <p>We bouwen een online toepassing die informatie over toegankelijkheid op elke website op dezelfde manier weergeeft.</p>
+        <p>Zo creëren we bewustzijn over toegankelijkheid en moedigen we de kwaliteit van de toegankelijkheid in openbare plaatsen aan. In Vlaanderen, maar ook daarbuiten.</p>
+      </AuContent>
+      <hr class="au-c-hr">
+      <AuContent>
+        <h2>Duidelijke online informatie</h2>
+        <p>Informatie over toegankelijkheid is vaak moeilijk vindbaar, onduidelijk en versnipperd.</p>
+        <p>We ontwerpen een ‘widget’ samen met experten en eindgebruikers. Dat is een venster met een specifieke functie die eenvoudig aan een website kan worden toegevoegd. In ons geval bevat het venster informatie over toegankelijkheid.</p>
+        <p>Die informatie wordt</p>
+        <ul>
+          <li>telkens op dezelfde manier weergegeven;</li>
+          <li>ingegeven door experten, maar later ook door vrijwilligers of eigenaars van openbare plaatsen;</li>
+          <li>op termijn beoordeeld door bezoekers.</li>
+        </ul>
+        <p>De widget van Toegankelijk Vlaanderen zal gratis beschikbaar zijn.</p>
+      </AuContent>
+      <hr class="au-c-hr">
+      <AuContent>
+        <h2>Onze partners</h2>
+        <p>Toegankelijk Vlaanderen is een initiatief van het <a class="au-c-link" href="https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-kanselarij-en-bestuur/agentschap-binnenlands-bestuur">Agentschap Binnenlands Bestuur</a> en <a href="https://www.inter.vlaanderen/" class="au-c-link">Inter</a>.</p>
+        <p>We werken samen met verschillende partners.</p>
+      </AuContent>
+    </div>
+  </section>
+
+  <section class="au-o-region-large au-c-theme-gray-200">
+    <div class="au-o-layout au-o-layout--large">
+      <AuHeading @level="2" @skin="3" class="au-u-margin-bottom au-u-hidden-visually">Gerelateerde pagina's</AuHeading>
+      <div class="au-o-grid au-o-grid--small">
+        <div class="au-o-grid__item au-u-1-2@small">
+          <AuCard class="au-u-text-center">
+            <AuBadge @icon="calendar" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+            <AuContent>
+              <AuHeading @level="2" @skin="4">
+                Ons plan
+              </AuHeading>
+              <p class="au-u-margin-top-tiny">We kiezen voor een kleinschalige aanpak en breiden geleidelijk sectoraal en regionaal uit.</p>
+              <p>
+                <LinkTo @route="roadmap" class="au-c-button au-c-button--secondary">
+                  Roadmap
+                </LinkTo>
+              </p>
+            </AuContent>
+          </AuCard>
+        </div>
+
+        <div class="au-o-grid__item au-u-1-2@small">
+          <AuCard class="au-u-text-center">
+            <AuBadge @icon="sitemap" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+            <AuContent>
+              <AuHeading @level="2" @skin="4">
+                Beschikbare gebouwen
+              </AuHeading>
+              <p class="au-u-margin-top-tiny">Er zijn reeds een aantal gebouwen beschikbaar in onze database.</p>
+              <p>
+                <LinkTo @route="buildings" class="au-c-button au-c-button--secondary">
+                  Bekijk de gebouwen
+                </LinkTo>
+              </p>
+            </AuContent>
+          </AuCard>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <AuMainFooter>
+    <AuHeading @level="3" @skin="4">
+      Toegankelijk.Vlaanderen is een officiële website van de Vlaamse overheid
+    </AuHeading>
+    <AuContent @skin="small">
+      <p>Uitgegeven door <a class="au-c-link" href="https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-kanselarij-en-bestuur/agentschap-binnenlands-bestuur">Agentschap Binnenlands Bestuur</a> i.s.m. <a href="https://www.inter.vlaanderen/" class="au-c-link">Inter</a></p>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="legal.disclaimer" @skin="secondary">Disclaimer</AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="legal.cookiestatement" @skin="secondary">Cookieverklaring</AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="legal.toegankelijkheidsverklaring" @skin="secondary">Toegankelijkheidsverklaring</AuLink>
+        </li>
+      </ul>
+    </AuContent>
+  </AuMainFooter>
+</div>

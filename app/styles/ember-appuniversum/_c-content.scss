@@ -96,6 +96,11 @@ $au-content-small         : $au-base !default;
   ul:not(.au-c-list-horizontal) li + li {
     margin-top: $au-unit-tiny;
   }
+
+  ol {
+    list-style: decimal;
+    margin-left: $au-unit-small + $au-unit-tiny;
+  }
 }
 
 .au-c-content--small {
