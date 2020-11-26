@@ -3,7 +3,7 @@
   <div class="au-o-grid">
     <div class="au-o-grid__item au-u-1-3@small">
       <div class="au-c-image">
-        <img src="/images/{{@model.id}}?height=600" alt="{{@model.label}}"/>
+        <img src="/images/{{@model.id}}?height=600" alt="{{@model.description}}"/>
       </div>
     </div>
     <div class="au-o-grid__item au-u-2-3@small">
@@ -16,6 +16,11 @@
         <p>
           <AuLabel for="label">Label</AuLabel>
           <Input id="label" @type="text" class="au-c-input au-c-input--block" @value={{@model.label}} @key-down={{this.updateLabel}}/>
+        </p>
+
+        <p>
+          <AuLabel for="description">Alt text</AuLabel>
+          <Input id="description" @type="text" class="au-c-input au-c-input--block" @value={{@model.description}} @key-down={{this.updatAlt}}/>
         </p>
 
         <p>

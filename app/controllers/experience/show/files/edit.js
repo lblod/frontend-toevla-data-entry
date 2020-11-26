@@ -4,20 +4,25 @@ import { action } from '@ember/object';
 
 export default class ExperienceShowFilesEditController extends Controller {
   @action
-  async save(){
+  async save() {
     this.model.save();
   }
   @action
-  async updateLabel(data){
-    this.model.label=data;
+  async updateLabel(data) {
+    this.model.label = data;
+  }
+
+  @action
+  async updateAlt(data) {
+    this.model.alt = data;
   }
 
   @tracked
   experience;
 
   @action
-  async delete(){
-    const poi= await this.experience.pointOfInterest;
+  async delete() {
+    const poi = await this.experience.pointOfInterest;
     (await poi.images).removeObject(this.model);
     poi.save();
     this.transitionToRoute('experience.show.tree', this.experience);
