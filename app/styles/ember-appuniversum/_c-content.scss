@@ -64,6 +64,17 @@ $au-content-small         : $au-base !default;
     font-weight: $au-medium;
   }
 
+  em,
+  .au-c-caption {
+    font-style: italic;
+    color: $au-gray-600;
+  }
+
+  sup {
+    vertical-align: top;
+    font-size: smaller;
+  }
+
   > * + * {
     margin-top: $au-unit;
   }
