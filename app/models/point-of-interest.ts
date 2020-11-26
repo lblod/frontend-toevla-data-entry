@@ -57,6 +57,7 @@ export default class PointOfInterest extends Model {
   @belongsTo('widget') widget!: Widget;
   @belongsTo('concept') wifiAvailability: Concept | undefined | null;
   @belongsTo('concept') typeOfGlassDoorDecoration: Concept | undefined | null;
+  @hasMany('concept') summaryIcons: Concept[] | undefined | null;
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.
