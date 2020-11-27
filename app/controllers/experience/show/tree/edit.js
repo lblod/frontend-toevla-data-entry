@@ -13,6 +13,8 @@ export default class ExperienceShowTreeEditController extends Controller {
   reset() {
     this.didSetScore = false;
     this.didSetComment = false;
+    this.didSetCommentLinkText = false;
+    this.didSetCommentLinkUrl = false;
   }
 
   // -- SCORING --
