@@ -1,0 +1,160 @@
+<div class="au-c-main-container__content au-c-main-container__content--scroll">
+  <AuToolbar @size="medium" @skin="tint" @border="bottom" class="au-c-toolbar__breadcrumbs">
+    <AuToolbarGroup>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="login" @skin="secondary">
+            <AuIcon @icon="arrow-left" @alignment="left" />
+            Home
+          </AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="pre-launch" @skin="secondary">
+            Handleiding testfase
+          </AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <strong>Onze aanpak</strong>
+        </li>
+      </ul>
+    </AuToolbarGroup>
+  </AuToolbar>
+
+  <section class="au-o-region-large">
+    <div class="au-o-layout au-o-layout--large">
+      <AuContent>
+        <AuHeading>Onze aanpak</AuHeading>
+      </AuContent>
+      <hr class="au-c-hr">
+      <div class="au-o-grid">
+        <div class="au-o-grid__item au-u-3-5@medium">
+          <AuContent @skin="large">
+            <p class="au-c-intro">We kiezen voor een kleinschalige aanpak en breiden geleidelijk sectoraal en regionaal uit.</p>
+            <p><strong>We werken nauw samen met:</strong></p>
+            <ul class="au-u-margin-top-small">
+              <li>regionale en sectorale partners</li>
+              <li>eindgebruikers en belangenorganisaties</li>
+            </ul>
+          </AuContent>
+          <AuContent class="au-u-margin-top-large">
+            <h2 class="au-c-heading au-c-heading--3">Tijdspad</h2>
+            <ol class="au-c-numbered-list">
+              <li class="au-c-numbered-list__item">
+                <strong>Fase 1</strong> – Onderzoek en ontwikkeling prototype widget <AuPill @skin="success">Afgewerkt</AuPill>
+                <ul>
+                  <li>We ontwikkelen een widget voor musea en historische huizen</li>
+                  <li>We werken samen met de Stad Gent</li>
+                </ul>
+              </li>
+              <li class="au-c-numbered-list__item">
+                <strong>Fase 2</strong> – Testfase widget voor musea en historische huizen <AuPill @skin="success">Afgewerkt</AuPill>
+                <ul>
+                  <li>We verzamelen meer feedback</li>
+                  <li>We betrekken de juiste mensen en organisaties</li>
+                </ul>
+              </li>
+              <li class="au-c-numbered-list__item">
+                <strong>Fase 3</strong> – Widget voor musea en historische huizen naar het brede publiek <AuPill @skin="action">Aan de gang</AuPill>
+                <ul>
+                  <li>We stellen de widget beschikbaar voor musea en historische huizen in heel Vlaanderen</li>
+                  <li>We maken de online toepassing bekend bij het brede publiek</li>
+                </ul>
+              </li>
+              <li class="au-c-numbered-list__item">
+                <strong>Fase 4</strong> – Uitbreiding naar nieuwe sectoren
+                <ul>
+                  <li>We breiden uit naar nieuwe sectoren en andere regio’s</li>
+                </ul>
+              </li>
+              <li class="au-c-numbered-list__item">
+                <strong>Fase 5</strong> – Nieuwe interactieve functies
+                <ul>
+                  <li>We onderzoeken de mogelijkheden waarbij eigenaars van locaties zelf informatie kunnen ingeven</li>
+                  <li>We geven eindgebruikers de mogelijkheid over locaties heen te zoeken en locaties te beoordelen</li>
+                </ul>
+              </li>
+            </ol>
+          </AuContent>
+        </div>
+        <div class="au-o-grid__item au-u-2-5@medium au-u-visible-medium-up">
+          <div class="au-c-image au-c-image--transparent">
+            <img src="/assets/images/roadmap.svg" alt="Illustratie van een smartphone waar meerdere mensen tegelijk blokjes toevoegen aan een applicatie op het scherm">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="au-o-region-large au-u-border-top">
+    <div class="au-o-layout au-o-layout--large">
+      <AuContent @skin="large" class="au-u-content-center">
+        <h2>Jouw mening telt!</h2>
+        <p>De mening van onze eindgebruikers is belangrijk.</p>
+        <p><em>Is de tentoonstelling in het museum dat ik wil bezoeken interessant voor mij? Kan ik met mijn rolstoel gemakkelijk binnen (en naar het toilet) in het restaurant om de hoek? Beschikt het buurtcentrum over een aanbod op maat? Voel ik me in het recreatiedomein van mijn gemeente welkom en omkaderd.</em></p>
+        <p>Welke informatie heb jij nodig om geïnformeerd en zorgeloos op pad te gaan? Laat het ons weten!</p>
+        <p>{Neem contact met ons op om deel te nemen aan onze gebruikerssessies of schrijf je in voor onze nieuwsbrief.}</p>
+      </AuContent>
+    </div>
+  </section>
+
+  <section class="au-o-region-large au-c-theme-gray-200">
+    <div class="au-o-layout au-o-layout--large">
+      <AuHeading @level="2" @skin="3" class="au-u-margin-bottom au-u-hidden-visually">Gerelateerde pagina's</AuHeading>
+      <div class="au-o-grid au-o-grid--small">
+        <div class="au-o-grid__item au-u-1-2@small">
+          <AuCard class="au-u-text-center">
+            <AuBadge @icon="info-circle" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+            <AuContent>
+              <AuHeading @level="2" @skin="4">
+                Wat is Toegankelijk Vlaanderen?
+              </AuHeading>
+              <p class="au-u-margin-top-tiny">Toegankelijk Vlaanderen wil mensen, met én zonder beperking, geïnformeerd en met een gerust hart op pad laten gaan.</p>
+              <p>
+                <LinkTo @route="about" class="au-c-button au-c-button--secondary">
+                  Onze missie
+                </LinkTo>
+              </p>
+            </AuContent>
+          </AuCard>
+        </div>
+
+        <div class="au-o-grid__item au-u-1-2@small">
+          <AuCard class="au-u-text-center">
+            <AuBadge @icon="sitemap" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+            <AuContent>
+              <AuHeading @level="2" @skin="4">
+                Handleiding testfase
+              </AuHeading>
+              <p class="au-u-margin-top-tiny">Deel je mening over onze nieuwe online toepassing van 3 december tot 24 december 2020.</p>
+              <p>
+                <LinkTo @route="pre-launch" class="au-c-button au-c-button--secondary">
+                  Bekijk de handleiding
+                </LinkTo>
+              </p>
+            </AuContent>
+          </AuCard>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <AuMainFooter>
+    <AuHeading @level="3" @skin="4">
+      Toegankelijk.Vlaanderen is een officiële website van de Vlaamse overheid
+    </AuHeading>
+    <AuContent @skin="small">
+      <p>Uitgegeven door <a class="au-c-link" href="https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-kanselarij-en-bestuur/agentschap-binnenlands-bestuur">Agentschap Binnenlands Bestuur</a> i.s.m. <a href="https://www.inter.vlaanderen/" class="au-c-link">Inter</a></p>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="legal.disclaimer" @skin="secondary">Disclaimer</AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="legal.cookiestatement" @skin="secondary">Cookieverklaring</AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="legal.toegankelijkheidsverklaring" @skin="secondary">Toegankelijkheidsverklaring</AuLink>
+        </li>
+      </ul>
+    </AuContent>
+  </AuMainFooter>
+</div>

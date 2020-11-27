@@ -41,6 +41,9 @@ Router.map(function() {
     this.route('toegankelijkheidsverklaring');
   });
   this.route('contact');
+  this.route('roadmap', { path: "/onze-aanpak" });
+  this.route('about', { path: "/over-toegankelijk-vlaanderen" });
+  this.route('pre-launch', { path: "/handleiding-testfase" });
   this.route('buildings', { path: "/gebouwen" });
   this.route('developers', { path: "/ontwikkelaars" }, function() {
     this.route('styling');

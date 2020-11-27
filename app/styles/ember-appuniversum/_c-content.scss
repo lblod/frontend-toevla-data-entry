@@ -64,6 +64,17 @@ $au-content-small         : $au-base !default;
     font-weight: $au-medium;
   }
 
+  em,
+  .au-c-caption {
+    font-style: italic;
+    color: $au-gray-600;
+  }
+
+  sup {
+    vertical-align: top;
+    font-size: smaller;
+  }
+
   > * + * {
     margin-top: $au-unit;
   }
@@ -95,6 +106,11 @@ $au-content-small         : $au-base !default;
 
   ul:not(.au-c-list-horizontal) li + li {
     margin-top: $au-unit-tiny;
+  }
+
+  ol {
+    list-style: decimal;
+    margin-left: $au-unit-small + $au-unit-tiny;
   }
 }
 
