@@ -3,7 +3,7 @@
 
 <AuHeading @level="3" @skin="3">1. Kopieer de widget code naar de plaats op de pagina waar u de widget wil weergeven</AuHeading>
 <CodeBlock @code='<script
-  src="https://toegankelijk.vlaanderen.be/widget.js"
+  src="{{this.baseUri.origin}}/widget.js"
   resource="[uri voor jouw gebouw-widget]"
   typeof="http://data.toegankelijk.vlaanderen.be/ns/Widget"></script>'
   @language="html" />
@@ -17,7 +17,7 @@
 <p>U kan een aantal design elementen (kleuren, typografie) aanpassen door deze mee te geven in de widget code.</p>
 
 <CodeBlock @code='<script
-  src="https://toegankelijk.vlaanderen.be/widget.js"
+  src="{{this.baseUri.origin}}/widget.js"
   resource="[uri voor jouw gebouw-widget]"
   typeof="http://data.toegankelijk.vlaanderen.be/ns/Widget"
   data-style-check="#0E5EB8"
