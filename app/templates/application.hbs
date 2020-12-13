@@ -3,7 +3,11 @@
        <AuIcon @icon="login" @alignment="left" />Aanmelden
        </LinkTo> --}}
   <span role="menuitem"  class="au-c-button au-c-button--tertiary">
-    <AuIcon @icon="login" @alignment="left" />Aanmelden
+    {{#if this.session.isAuthenticated}}
+      <AcmidmLogout />
+    {{else}}
+      <AcmidmLogin />
+    {{/if}}
   </span>
 </AuMainHeader>
 

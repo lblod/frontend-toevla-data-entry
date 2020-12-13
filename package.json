@@ -25,6 +25,7 @@
     "@ember/render-modifiers": "^1.0.2",
     "@glimmer/component": "^1.0.0",
     "@glimmer/tracking": "^1.0.0",
+    "@lblod/ember-acmidm-login": "^1.1.1",
     "@types/ember": "^3.1.2",
     "@types/ember-data": "^3.1.11",
     "@types/ember-data__model": "^3.15.0",

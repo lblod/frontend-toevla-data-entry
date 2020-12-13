@@ -1,4 +1,4 @@
-FROM madnificent/ember:3.15.2 as builder
+FROM madnificent/ember:3.20.0 as builder
 
 LABEL maintainer="info@redpencil.io"
 
@@ -8,8 +8,8 @@ RUN npm install
 COPY . .
 RUN ember build -prod
 
-FROM semtech/ember-proxy-service:1.4.0
+FROM semtech/static-file-service
 
-ENV STATIC_FOLDERS_REGEX "^/(assets|font|files)/"
+# ENV STATIC_FOLDERS_REGEX "^/(assets|font|files)/"
 
-COPY --from=builder /app/dist /app
+COPY --from=builder /app/dist /data
