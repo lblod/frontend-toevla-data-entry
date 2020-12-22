@@ -7,6 +7,8 @@ import File from './file';
 export default class ExperienceTreeNodeScore extends Model {
   @attr('string') score: string | null | undefined;
   @attr('string') comment: string | null | undefined;
+  @attr('string') commentLinkText: string | null | undefined;
+  @attr('string') commentLinkUrl: string | null | undefined;
   @belongsTo('concept') treeNode: TreeNode | null | undefined;
   @belongsTo('scorable', { polymorphic: true }) subject: Scorable | PointOfInterest | Experience | undefined;
   @hasMany('file', { inverse: "experienceTreeNodeScore" }) images!: File[];

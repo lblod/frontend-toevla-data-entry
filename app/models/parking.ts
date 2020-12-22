@@ -2,6 +2,7 @@ import Model, { attr, belongsTo } from '@ember-data/model';
 import PathToEntrance from './path-to-entrance';
 
 export default class ParkingModel extends Model {
+  @attr('string') comment: boolean | undefined | null;
   @attr('boolean') isPartOfLocation: boolean | undefined | null;
   @attr('boolean') hasDriveOnPossibility: boolean | undefined | null;
   @attr('boolean') isWellLit: boolean | undefined | null;

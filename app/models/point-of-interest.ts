@@ -17,6 +17,9 @@ import Scorable from './scorable';
 export default class PointOfInterest extends Scorable {
   @attr('string') uri: string | null | undefined;
   @attr('string') label: string | null | undefined;
+  @attr('string') comment: string | null | undefined;
+  @attr('string') commentOnPublicTransport: string | null | undefined;
+  @attr('string') commentOnEntrance: string | null | undefined;
   @attr('string') locationString: string | null | undefined;
   @attr('boolean') hasCashPayment: boolean | undefined | null;
   @attr('boolean') hasPaymentWithMovableElectronicPaymentSystem: boolean | undefined | null;
@@ -55,6 +58,7 @@ export default class PointOfInterest extends Scorable {
   @belongsTo('widget') widget!: Widget;
   @belongsTo('concept') wifiAvailability: Concept | undefined | null;
   @belongsTo('concept') typeOfGlassDoorDecoration: Concept | undefined | null;
+  @hasMany('concept') summaryIcons: Concept[] | undefined | null;
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.

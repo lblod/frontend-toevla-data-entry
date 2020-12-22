@@ -1,0 +1,148 @@
+<div class="au-c-main-container__content au-c-main-container__content--scroll">
+  <main id="content">
+    <AuToolbar @size="medium" @skin="tint" @border="bottom" class="au-c-toolbar__breadcrumbs">
+      <AuToolbarGroup>
+        <ul class="au-c-list-horizontal">
+          <li class="au-c-list-horizontal__item">
+            <AuLink @linkRoute="login" @skin="secondary">
+              <AuIcon @icon="arrow-left" @alignment="left" />
+              Home
+            </AuLink>
+          </li>
+          <li class="au-c-list-horizontal__item">
+            <AuLink @linkRoute="pre-launch" @skin="secondary">
+              Handleiding testfase
+            </AuLink>
+          </li>
+          <li class="au-c-list-horizontal__item">
+            <strong>Over Toegankelijk Vlaanderen</strong>
+          </li>
+        </ul>
+      </AuToolbarGroup>
+    </AuToolbar>
+
+    <section class="au-o-region-large">
+      <div class="au-o-layout au-o-layout--large">
+        <AuContent>
+          <AuHeading>Wat is Toegankelijk Vlaanderen?</AuHeading>
+        </AuContent>
+        <hr class="au-c-hr">
+        <div class="au-o-grid">
+          <div class="au-o-grid__item au-u-3-5@medium">
+            <AuContent @skin="large">
+              <p class="au-c-intro">Toegankelijk Vlaanderen stuurt mensen, met en zonder beperking, geïnformeerd en met een gerust hart op pad in heel Vlaanderen.</p>
+              <h2 class="au-c-heading au-c-heading--3">Hoe doen we dat?</h2>
+              <p>We bouwen een online toepassing die informatie over toegankelijkheid op elke website op dezelfde manier weergeeft.</p>
+              <p>Zo creëren we bewustzijn over toegankelijkheid en moedigen we de kwaliteit van de toegankelijkheid in publieke locaties aan. In Vlaanderen, maar ook daarbuiten. </p>
+            </AuContent>
+          </div>
+          <div class="au-o-grid__item au-u-2-5@medium au-u-visible-medium-up">
+            <div class="au-c-image au-c-image--transparent">
+              <img src="/assets/images/about.svg" alt="Illustratie van een vrouw die een boek leest leunend op een stapel boeken">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="au-o-region-large au-u-border-top">
+      <div class="au-o-layout au-o-layout--large">
+        <div class="au-o-grid au-o-grid--middle au-o-grid--reverse">
+          <div class="au-o-grid__item au-u-1-2@medium">
+            <AuContent>
+              <h2>Duidelijke online informatie</h2>
+              <p>Informatie over toegankelijkheid is vaak moeilijk vindbaar, onduidelijk en versnipperd.</p>
+              <p>We ontwerpen een ‘widget’ samen met experten en eindgebruikers. Dat is een herbruikbaar blok met een specifieke functie op een website. Onze widget toont informatie over toegankelijkheid.</p>
+              <p><strong>Die informatie wordt:</strong></p>
+              <ul class="au-u-margin-top-small">
+                <li>telkens op dezelfde gebruiksvriendelijke en leesbare manier weergegeven;</li>
+                <li>ingegeven door experten, maar later ook door vrijwilligers, ervaringsdeskundigen of eigenaars van publieke locaties;</li>
+                <li>op termijn beoordeeld door bezoekers.</li>
+              </ul>
+              <p>De widget van Toegankelijk Vlaanderen is gratis beschikbaar en kan eenvoudig aan een website worden toegevoegd.</p>
+              <p>De toegankelijkheidsinformatie zorgt voor transparantie en reclame voor eigenaars van publiekelocaties. De gegevens worden - via een linked open data standaard – maximaal gedeeld en verspreid over het internet.</p>
+            </AuContent>
+          </div>
+          <div class="au-o-grid__item au-u-1-2@medium">
+            <div class="au-c-image au-c-image--transparent">
+              <img src="/assets/images/toevla-mockup.png" alt="Overzicht van de widget met een detail van parkeren en een foto waarop je de ingang ziet van een gebouw.">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="au-o-region-large au-u-border-top">
+      <div class="au-o-layout au-o-layout--large">
+        <AuContent @skin="large" class="au-u-content-center">
+          <h2>Jouw mening telt!</h2>
+          <p>De mening van onze eindgebruikers is belangrijk.</p>
+          <p><em>Is de tentoonstelling in het museum dat ik wil bezoeken interessant voor mij? Kan ik met mijn rolstoel gemakkelijk binnen (en naar het toilet) in het restaurant om de hoek? Beschikt het buurtcentrum over een aanbod op maat? Voel ik me in het recreatiedomein van mijn gemeente welkom en omkaderd.</em></p>
+          <p>Welke informatie heb jij nodig om geïnformeerd en zorgeloos op pad te gaan? Laat het ons weten!</p>
+          <p><AuLink @linkRoute="contact">Neem contact met ons op</AuLink> om deel te nemen aan onze gebruikerssessies of <a href="https://gelijkekansen.us8.list-manage.com/subscribe?u=2e52b215088b83b2fee354f5c&id=f5c2edfb6d" target="_blank" rel="noopener noreferrer" class="au-c-link">schrijf je in voor onze nieuwsbrief.</a></p>
+        </AuContent>
+      </div>
+    </section>
+
+    <section class="au-o-region-large au-c-theme-gray-200">
+      <div class="au-o-layout au-o-layout--large">
+        <AuHeading @level="2" @skin="3" class="au-u-margin-bottom">Gerelateerde pagina's</AuHeading>
+        <div class="au-o-grid au-o-grid--small">
+          <div class="au-o-grid__item au-u-1-2@small">
+            <AuCard class="au-u-text-center">
+              <AuBadge @icon="calendar" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+              <AuContent>
+                <AuHeading @level="2" @skin="4">
+                  Onze aanpak
+                </AuHeading>
+                <p class="au-u-margin-top-tiny">We kiezen voor een kleinschalige aanpak en breiden geleidelijk sectoraal en regionaal uit.</p>
+                <p>
+                  <LinkTo @route="roadmap" class="au-c-button au-c-button--secondary">
+                    Bekijk het tijdspad
+                  </LinkTo>
+                </p>
+              </AuContent>
+            </AuCard>
+          </div>
+
+          <div class="au-o-grid__item au-u-1-2@small">
+            <AuCard class="au-u-text-center">
+              <AuBadge @icon="sitemap" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+              <AuContent>
+                <AuHeading @level="2" @skin="4">
+                  Handleiding testfase
+                </AuHeading>
+                <p class="au-u-margin-top-tiny">Deel je mening over onze nieuwe online toepassing van 3 december tot 24 december 2020.</p>
+                <p>
+                  <LinkTo @route="pre-launch" class="au-c-button au-c-button--secondary">
+                    Bekijk de handleiding
+                  </LinkTo>
+                </p>
+              </AuContent>
+            </AuCard>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <AuMainFooter>
+    <AuHeading @level="3" @skin="4">
+      Toegankelijk.Vlaanderen is een officiële website van de Vlaamse overheid
+    </AuHeading>
+    <AuContent @skin="small">
+      <p>Uitgegeven door <a class="au-c-link" href="https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-kanselarij-en-bestuur/agentschap-binnenlands-bestuur">Agentschap Binnenlands Bestuur</a> i.s.m. <a href="https://www.inter.vlaanderen/" class="au-c-link">Inter</a></p>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="legal.disclaimer" @skin="secondary">Disclaimer</AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="legal.cookiestatement" @skin="secondary">Cookieverklaring</AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="legal.toegankelijkheidsverklaring" @skin="secondary">Toegankelijkheidsverklaring</AuLink>
+        </li>
+      </ul>
+    </AuContent>
+  </AuMainFooter>
+</div>

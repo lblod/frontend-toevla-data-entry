@@ -3,7 +3,7 @@
 
 <AuHeading @level="3" @skin="3">1. Kopieer de widget code naar de plaats op de pagina waar u de widget wil weergeven</AuHeading>
 <CodeBlock @code='<script
-  src="https://qa.toegankelijk.vlaanderen.be/widget.js"
+  src="{{this.baseUri.origin}}/widget.js"
   resource="[uri voor jouw gebouw-widget]"
   typeof="http://data.toegankelijk.vlaanderen.be/ns/Widget"></script>'
   @language="html" />
@@ -17,7 +17,7 @@
 <p>U kan een aantal design elementen (kleuren, typografie) aanpassen door deze mee te geven in de widget code.</p>
 
 <CodeBlock @code='<script
-  src="https://qa.toegankelijk.vlaanderen.be/widget.js"
+  src="{{this.baseUri.origin}}/widget.js"
   resource="[uri voor jouw gebouw-widget]"
   typeof="http://data.toegankelijk.vlaanderen.be/ns/Widget"
   data-style-check="#0E5EB8"
@@ -38,5 +38,5 @@
 <p>Meer info over een correcte <LinkTo @route="developers.plaatsing" class="au-c-link">plaatsing van de widget</LinkTo></p>
 
 <AuHeading @level="3" @skin="3">Vragen of hulp nodig?</AuHeading>
-<p>Indien u problemen tegenkomt bij het implementeren van de widget kan u ons contacteren op <a href="mailto:toevla@inter.vlaanderen" class="au-c-link">toevla@inter.vlaanderen</a></p>
+<p>Indien u problemen tegenkomt bij het implementeren van de widget kan u ons contacteren op <a href="mailto:toegankelijk@vlaanderen.be" class="au-c-link">toegankelijk@vlaanderen.be</a></p>
 <p>Bugs of issues met de widget kan u melden op de <a href="https://github.com/lblod/frontend-toevla/issues" target="_blank" rel="noopener noreferrer" class="au-c-link">github pagina</a> van het project.</p>

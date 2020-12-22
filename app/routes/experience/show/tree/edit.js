@@ -27,6 +27,9 @@ export default class ExperienceShowTreeEditRoute extends Route {
         "filter[subject][:id:]": subject.id,
         "filter[tree-node][:id:]": treeNode.id
       })).firstObject;
+    const iconScheme = (await this.store.query('concept-scheme', {
+      "filter[:uri:]": "http://data.toevla.org/concept-schemes/summaryIcons",
+      "include": "top-level-nodes"}));
 
     return { subject, treeNode, scoring };
   }

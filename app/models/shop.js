@@ -1,6 +1,7 @@
 import Model, { attr } from '@ember-data/model';
 
 export default class ShopModel extends Model {
+  @attr('string') comment;
   @attr('boolean') hasCashPayment;
   @attr('boolean') hasPaymentWithMovableElectronicPaymentSystem;
   @attr('boolean') hasPaymentWithFixedElectronicPaymentSystem;

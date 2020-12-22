@@ -2,6 +2,7 @@ import Model, { attr, belongsTo } from '@ember-data/model';
 import Area from './area';
 
 export default class Toilet extends Model {
+  @attr('string') comment: string | null | undefined;
   @attr('boolean') hasSimpleAndLogicalRoute: boolean | null | undefined;
   @attr('boolean') hasSyntheticSpeechInElevator: boolean | null | undefined;
   @attr('boolean') hasClearSignalizationInBuilding: boolean | null | undefined;

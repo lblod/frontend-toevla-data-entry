@@ -1,0 +1,9 @@
+<div {{on "click" this.login}}>
+  <AuIcon @icon="login" @alignment="left" />Aanmelden
+</div>
+{{#if this.isAuthenticating}}
+  ...
+{{/if}}
+{{#if this.errorMessage}}
+  {{this.errorMessage}}
+{{/if}}

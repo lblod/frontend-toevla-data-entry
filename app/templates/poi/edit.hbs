@@ -21,6 +21,7 @@
       </ul>
     </AuToolbarGroup>
   </AuToolbar>
+
   <div class="au-o-layout">
     <div class="au-o-region-large">
       <AuHeading @skin="2" class="au-u-margin-bottom">Locatie aanpassen</AuHeading>
@@ -35,9 +36,31 @@
           <AuInput @width="block" id="edit" @type="string" @value={{this.model.locationString}} />
         </p>
 
+        <p>
+          <AuLabel>Iconen</AuLabel>
+          <ul class="au-c-list-radio">
+            {{#each this.sortedIcons as |concept|}}
+              <li class="au-c-list-radio__item">
+                <label class="au-c-list-radio__button">
+                  <input
+                    name="radios"
+                    type="checkbox"
+                    checked={{ember-data-object-in-array concept this.model.summaryIcons}}
+                    {{on "change" (fn this.toggleIcon concept)}}>
+                  <span class="au-c-list-radio__label">
+                    <ConceptIcon @for={{concept.uri}} />
+                    {{concept.title}}
+                  </span>
+                </label>
+              </li>
+            {{/each}}
+          </ul>
+        </p>
+
         <AuButtonGroup class="au-u-margin-top-small">
           <AuButton type="submit">Opslaan</AuButton>
         </AuButtonGroup>
+
       </form>
 
       <AuToolbar @border="top" class="au-u-margin-top au-u-padding-top-small">

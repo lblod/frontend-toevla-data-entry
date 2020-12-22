@@ -13,21 +13,23 @@ export default class ExperienceShowTreeEditController extends Controller {
   reset() {
     this.didSetScore = false;
     this.didSetComment = false;
+    this.didSetCommentLinkText = false;
+    this.didSetCommentLinkUrl = false;
   }
 
   // -- SCORING --
-  @tracked internalScore = null;
+  @tracked enteredScore = null;
   @tracked didSetScore = false;
 
   get currentScore() {
     if( this.didSetScore )
-      return this.internalScore;
+      return this.enteredScore;
     else
       return this.model.scoring?.score;
   }
   set currentScore(score) {
     this.didSetScore = true;
-    this.internalScore = score;
+    this.enteredScore = score;
   }
 
   get extendedEditInfo() {
@@ -48,13 +50,13 @@ export default class ExperienceShowTreeEditController extends Controller {
     this.currentScore = score;
   }
 
-  // -- COMMENTS --
-  @tracked internalComment = null;
+  // -- COMMENT TEXT --
+  @tracked enteredComment = null;
   @tracked didSetComment = false;
 
   get currentComment(){
     if( this.didSetComment ) {
-      return this.internalComment;
+      return this.enteredComment;
     } else {
       return this.model.scoring?.comment;
     }
@@ -62,7 +64,41 @@ export default class ExperienceShowTreeEditController extends Controller {
   set currentComment(comment) {
     comment = comment == "" ? null : comment;
     this.didSetComment = true;
-    this.internalComment = comment;
+    this.enteredComment = comment;
+  }
+
+  // -- COMMENT LINK TEXT --
+  @tracked enteredCommentLinkText = null;
+  @tracked didSetCommentLinkText = false;
+
+  get currentCommentLinkText(){
+    if( this.didSetCommentLinkText ) {
+      return this.enteredCommentLinkText;
+    } else {
+      return this.model.scoring?.commentLinkText;
+    }
+  }
+  set currentCommentLinkText(comment) {
+    comment = comment == "" ? null : comment;
+    this.didSetCommentLinkText = true;
+    this.enteredCommentLinkText = comment;
+  }
+
+  // -- COMMENT LINK URL --
+  @tracked enteredCommentLinkUrl = null;
+  @tracked didSetCommentLinkUrl = false;
+
+  get currentCommentLinkUrl(){
+    if( this.didSetCommentLinkUrl ) {
+      return this.enteredCommentLinkUrl;
+    } else {
+      return this.model.scoring?.commentLinkUrl;
+    }
+  }
+  set currentCommentLinkUrl(comment) {
+    comment = comment == "" ? null : comment;
+    this.didSetCommentLinkUrl = true;
+    this.enteredCommentLinkUrl = comment;
   }
 
   // -- FILES --
@@ -92,6 +128,10 @@ export default class ExperienceShowTreeEditController extends Controller {
       this.model.scoring.score = this.enteredScore;
     if( this.didSetComment )
       this.model.scoring.comment = this.enteredComment;
+    if( this.didSetCommentLinkText )
+      this.model.scoring.commentLinkText = this.enteredCommentLinkText;
+    if( this.didSetCommentLinkUrl )
+      this.model.scoring.commentLinkUrl = this.enteredCommentLinkUrl;
 
     this.model.scoring.save();
   }
@@ -100,8 +140,10 @@ export default class ExperienceShowTreeEditController extends Controller {
     if( ! this.model.scoring )
       set( this.model, "scoring",
            this.store.createRecord('experience-tree-node-score', {
-             score: this.internalScore,
-             comment: this.internalComment,
+             score: this.enteredScore,
+             comment: this.enteredComment,
+             commentLinkText: this.enteredCommentLinkText,
+             commentLinkUrl: this.enteredCommentLinkUrl,
              subject: this.model.subject,
              treeNode: this.model.treeNode
            }));
