@@ -1,8 +1,10 @@
-import Controller from '@ember/controller';
-import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
+import { tracked } from '@glimmer/tracking';
+import Controller from '@ember/controller';
 
-export default class ExperienceShowFilesEditController extends Controller {
+export default class PoiShowFilesEditController extends Controller {
+  @tracked poi;
+
   @action
   async save() {
     this.model.save();
@@ -17,14 +19,11 @@ export default class ExperienceShowFilesEditController extends Controller {
     this.model.alt = data;
   }
 
-  @tracked
-  experience;
-
   @action
   async delete() {
-    const poi = await this.experience.pointOfInterest;
-    (await poi.images).removeObject(this.model);
-    poi.save();
+    (await this.poi.images).removeObject(this.model);
+    this.poi.save();
     this.transitionToRoute('experience.show.tree', this.experience);
   }
+
 }
