@@ -37,7 +37,7 @@
 </WithStatechart>
 
 <div>
-  <Criteria::SelectChoiceCriterion @treeNode={{@treeNode}} @value={{this.currentValue}} as |label check score|>
+  <Criteria::SelectChoiceCriterion @treeNode={{@treeNode}} @value={{this.currentValue}} as |label|>
     {{#if label}}
       <Labels::String @value={{label}} />
     {{/if}}

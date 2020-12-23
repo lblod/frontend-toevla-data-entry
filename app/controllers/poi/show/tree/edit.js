@@ -114,7 +114,7 @@ export default class PoiShowTreeEditController extends Controller {
   }
 
   @action
-  removeFile(image) {
+  removeFile(/* image */) {
     console.error(`removefile is not implemented yet in /app/controllers/experience/show/tree/edit.js`);
   }
 

@@ -59,14 +59,18 @@ function valueMatchesAreaString( value, string ) {
         // parse out the constraint and the numbers
         const match = str.match( /\s*([><=]+)\s*(\d+)\s*x\s*(\d+)\s*/ );
         if( match ) {
-          const [ _fullMatch, constraint, yVal, zVal ] = match;
+          const [ /* fullMatch */, constraint, yVal, zVal ] = match;
 
           return valueMatchesSimpleNumericString( y, `${constraint} ${yVal}` )
             && valueMatchesSimpleNumericString( z, `${constraint} ${zVal}` );
         } else {
           console.log(`Match was null for ${string}`);
+          return null;
         }
       });
+  } else {
+    // This should not happen on complete data
+    return null;
   }
 }
 

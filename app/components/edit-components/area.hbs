@@ -46,7 +46,7 @@
   {{#let (array (parse-int this.width) (parse-int this.height)) as |parsedValue|}}
     <Criteria::SelectAreaCriterion
       @value={{parsedValue}}
-      @treeNode={{this.args.treeNode}}
+      @treeNode={{@treeNode}}
       as |label|>
       <Labels::AreaString
         @label={{label}}

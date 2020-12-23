@@ -3,7 +3,6 @@ import Component from '@glimmer/component';
 export default class CriteriaSelectStringCriterionComponent extends Component {
   get matchedIndex() {
     const value = this.args.value;
-    const treeNode = this.args.treeNode;
 
     if( this.args.treeNode ) {
       if( value && value != "" ) {

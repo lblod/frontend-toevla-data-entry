@@ -1,10 +1,8 @@
 import { inject as service } from '@ember/service';
 import Route from '@ember/routing/route';
 
-import StoreService from '@ember-data/store';
-
 export default class BuildingsRoute extends Route {
-  @service store!: StoreService;
+  @service store;
 
   model() {
     if( this.store.peekAll('widget').length )

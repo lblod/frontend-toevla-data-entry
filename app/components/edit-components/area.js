@@ -1,8 +1,7 @@
-import { get } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import EditComponentsBooleanComponent from './boolean';
-import { property, getInstance, setInstanceValue, save } from 'frontend-toevla-data-entry/utils/path-instances';
-import { handler, statechart } from 'frontend-toevla-data-entry/utils/rockin-statechart';
+import { getInstance, setInstanceValue, save } from 'frontend-toevla-data-entry/utils/path-instances';
+import { handler } from 'frontend-toevla-data-entry/utils/rockin-statechart';
 
 export default class EditComponentsCentimetersComponent extends EditComponentsBooleanComponent {
   @tracked internalWidth;
@@ -12,7 +11,7 @@ export default class EditComponentsCentimetersComponent extends EditComponentsBo
 
   get width(){
     if( !this.currentInstance )
-      return;
+      return null;
     else
       return this.hasSetWidth ? this.internalWidth : this.currentInstance.width;
   }
@@ -22,7 +21,7 @@ export default class EditComponentsCentimetersComponent extends EditComponentsBo
   }
   get height(){
     if( !this.currentInstance )
-      return;
+      return null;
     else
       return this.hasSetHeight ? this.internalHeight : this.currentInstance.height;
   }

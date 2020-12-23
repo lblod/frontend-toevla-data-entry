@@ -1,25 +1,27 @@
-{{#if active}}
-  <button class="au-c-close" {{action "delete"}}>
-    <AuIcon @icon="cross" @size="large" />
-    <span class="au-u-hidden-visually">Verwijderen</span>
-  </button>
-{{/if}}
-<div class="au-o-box au-o-box--flush au-c-card">
-  <AuContent @skin="small">
-    {{!-- <AuHeading @level="4" @skin="6">
-      {{file.filename}}
-      <span class="au-c-info-text">({{file.humanReadableSize}})</span>
-    </AuHeading> --}}
-    <div class="au-c-upload-image">
-      {{yield}}
-    </div>
-    {{#if downloadable}}
-      {{!-- <p class="au-c-upload-download">
+<div class="upload__files upload__files--has-files">
+  {{#if @active}}
+    <button class="au-c-close" {{on "click" (fn this.delete)}} type="button">
+      <AuIcon @icon="cross" @size="large" />
+      <span class="au-u-hidden-visually">Verwijderen</span>
+    </button>
+  {{/if}}
+  <div class="au-o-box au-o-box--flush au-c-card">
+    <AuContent @skin="small">
+      {{!-- <AuHeading @level="4" @skin="6">
+          {{file.filename}}
+          <span class="au-c-info-text">({{file.humanReadableSize}})</span>
+          </AuHeading> --}}
+      <div class="au-c-upload-image">
+        {{yield}}
+      </div>
+      {{#if @downloadable}}
+        {{!-- <p class="au-c-upload-download">
         <a class="au-c-link" href="{{file.downloadLink}}" download="{{file.filename}}">
-          <AuIcon @icon="download" @alignment="left" />
-          Download
+        <AuIcon @icon="download" @alignment="left" />
+        Download
         </a>
-      </p> --}}
-    {{/if}}
-  </AuContent>
+        </p> --}}
+      {{/if}}
+    </AuContent>
+  </div>
 </div>

@@ -31,7 +31,7 @@
   {{#let (parse-int this.currentValue) as |parsedValue|}}
     <Criteria::SelectCriterion
       @value={{parsedValue}}
-      @treeNode={{this.args.treeNode}}
+      @treeNode={{@treeNode}}
       as |label|>
       <Labels::NumericString
         @label={{label}}

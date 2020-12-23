@@ -7,5 +7,7 @@ export default class LabelsNumericStringComponent extends Component {
   get filledInTemplate(){
     if( this.args.label )
       return this.args.label.replace(/{{\s*x\s*}}/, this.args.value);
+    else
+      return null;
   }
 }

@@ -7,7 +7,7 @@ export default class EditComponentsKilometersComponent extends MetersComponent {
   }
 
   @action
-  inputValueChanged( event, value ) {
+  inputValueChanged( event /*, value */ ) {
     event.preventDefault();
     this.currentValue = Math.round( event.target.valueAsNumber * 1000 );
   }

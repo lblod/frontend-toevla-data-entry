@@ -5,5 +5,5 @@ export default helper(function parseInteger([value]/*, hash*/) {
     return parseInt( value );
   } else {
     return undefined;
-  };
+  }
 });
