@@ -8,7 +8,7 @@ import Scorable from './scorable';
 export default class Experience extends Scorable {
   @belongsTo('point-of-interest') pointOfInterest!: PointOfInterest;
   @belongsTo('route') circulation!: Route;
-  @belongsTo('guided-tour') guidedTour!: Guidedtour;
+  @belongsTo('guided-tour') guidedTour!: GuidedTour;
   @belongsTo('auditorium') auditorium!: Auditorium;
   @attr('string') title: string | null | undefined;
   @attr('string') comment: string | null | undefined;

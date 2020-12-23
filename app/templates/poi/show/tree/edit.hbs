@@ -1,0 +1,79 @@
+<div class="au-c-action-sidebar">
+  <div class="au-o-box au-c-action-sidebar__header">
+    <AuHeading @level="4" @skin="3">
+      {{@model.treeNode.title}}
+    </AuHeading>
+    <p class="au-c-info-text"><strong>Tree node:</strong> {{@model.treeNode.uri}}</p>
+    <p class="au-c-info-text"><strong>Edit type:</strong> {{this.extendedEditInfo.component}}</p>
+
+    <LinkTo @route="experience.show.tree" @model={{@model.subject}} class="au-c-close au-c-close--large">
+      <AuIcon @icon="cross" @size="large" />
+      <span class="au-u-hidden-visually">Sluiten</span>
+    </LinkTo>
+
+  </div>
+
+  <div class="au-o-box au-c-sidebar__content">
+    {{#if this.extendedEditInfo}}
+      {{#component this.extendedEditInfo.component
+           key=this.extendedEditInfo.key
+           conceptScheme=this.extendedEditInfo.conceptScheme
+           treeNode=@model.treeNode
+           subject=@model.subject
+           as |events|}}
+        <span {{did-update events.reset @model.treeNode}}></span>
+      {{/component}}
+    {{/if}}
+
+    {{outlet}}
+
+    <div class="au-u-margin-top-small">
+      <strong>Type</strong> {{@model.treeNode.criterionType}}
+    </div>
+
+    <hr class="au-c-hr">
+
+    <form {{on "submit" this.submit}} class="au-c-form">
+      {{#if @model.treeNode.children}}
+        <p>
+          <AuLabel for="score">Score</AuLabel>
+          <RadioButtons @selected={{this.currentScore}} @onSelect={{this.selectScore}} as |RadioButton|>
+            {{#each this.scoreOptions as |option|}}
+              <RadioButton @label={{option.label}} @value={{option.value}} />
+            {{/each}}
+          </RadioButtons>
+        </p>
+        {{else}}
+        <p>
+          <AuLabel for="comment">Comment</AuLabel>
+          <AuInput @width="block" id="comment" @value={{this.currentComment}} @placeholder="" />
+          <AuLabel for="commentUrlText">Comment link text</AuLabel>
+          <AuInput @width="block" id="commentUrlText" @value={{this.currentCommentLinkText}} @placeholder="" />
+          <AuLabel for="commentUrl">Comment link URL</AuLabel>
+          <AuInput @width="block" id="commentUrl" @value={{this.currentCommentLinkUrl}} @placeholder="" />
+        </p>
+      {{/if}}
+      <AuButton type="submit" {{on "click" this.submit}}>Instellen</AuButton>
+    </form>
+
+    {{!--
+    <hr class="au-c-hr" />
+
+    <div class="au-c-upload-box">
+    <AuHeading @level="2" @skin="5" class="au-u-margin-bottom-small">Foto's</AuHeading>
+    <VoMuFileDropzone @onFinishUpload={{this.uploaded}} @maxFileSizeMB="1024" @queueName="madIsTheBest" />
+    <ul class="au-o-grid au-o-grid--tiny au-u-margin-bottom-none">
+    {{#each this.model.scoring.images as |image|}}
+    <li class="au-o-grid__item au-u-1-3 au-u-1-4@small au-u-1-6@medium">
+    <VoMuFileCard @file={{image}} @onDelete={{fn this.removeFile image}} class="au-c-upload__file">
+    <img src="/images/{{image.id}}?height={{100}}" alt="{{image.label}}"/>
+    </VoMuFileCard>
+    </li>
+    {{/each}}
+    </ul>
+    </div>
+    --}}
+
+  </div>
+
+</div>

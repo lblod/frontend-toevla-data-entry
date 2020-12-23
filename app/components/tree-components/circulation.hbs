@@ -1,12 +1,12 @@
-{{#each @experience.pointOfInterest.experiences as |experience|}}
+{{#each @subject.experiences as |experience|}}
   <Tree::Node
     @node={{@node}}
-    @experience={{experience}}
+    @subject={{experience}}
     @title={{concat "Circulatie - " experience.title}}
     @disableHandlerComponent={{true}}
     class="au-c-tree__item au-c-tree__item--child">
 
-    <LinkTo class="au-c-tree__edit" @route="experience.show.tree.edit" @models={{array experience.id @node.id}}>
+    <LinkTo class="au-c-tree__edit" @route="poi.show.tree.edit" @models={{array experience.id @node.id}}>
       <AuIcon @icon="pencil" />
       <span class="au-c-tree__edit-label">Aanpassen</span>
     </LinkTo>

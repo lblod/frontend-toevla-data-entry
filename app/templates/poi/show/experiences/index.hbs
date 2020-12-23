@@ -16,7 +16,7 @@
   {{#each @model as |experience|}}
     <li class="au-o-grid__item">
       <article class="au-o-box au-o-box--small au-c-card au-c-card--link">
-        <LinkTo class="au-c-link au-c-link--secondary au-c-card__link" @route="experience.show.tree" @model={{experience}}>{{experience.title}}</LinkTo>
+        <LinkTo class="au-c-link au-c-link--secondary au-c-card__link" @route="experience.edit" @model={{experience}}>{{experience.title}}</LinkTo>
       </article>
     </li>
   {{/each}}

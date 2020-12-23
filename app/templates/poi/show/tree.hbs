@@ -1,0 +1,28 @@
+<AuToolbar @border="bottom" @size="medium">
+  <AuToolbarGroup>
+    <AuHeading @level="2" @skin="5" class="au-u-limit-text">
+      {{this.model.title}}
+    </AuHeading>
+  </AuToolbarGroup>
+</AuToolbar>
+<div class="au-c-body-container au-c-body-container--scroll au-c-theme-gray-100">
+  <div class="au-o-grid au-o-grid--flush au-o-grid--fixed">
+    <div class="au-o-grid__item au-u-3-5 au-u-2-3@medium">
+      <ul class="au-c-tree">
+        {{#each this.sortedNodes as |node|}}
+          <Tree::Node @node={{node}} @subject={{this.poi}} class="au-c-tree__item" />
+        {{/each}}
+        <div class="au-c-upload-box">
+          <AuHeading @level="2" @skin="5" class="au-u-margin-bottom-small">Foto's</AuHeading>
+          <UploadImage @poi={{this.poi}}/>
+          <ListImages @poi={{this.poi}} @height={{100}}/>
+        </div>
+      </ul>
+    </div>
+    <div class="au-o-grid__item au-u-2-5 au-u-1-3@medium">
+      {{outlet}}
+    </div>
+  </div>
+</div>
+
+{{outlet}}

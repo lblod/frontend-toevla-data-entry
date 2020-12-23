@@ -12,9 +12,15 @@ Router.map(function() {
       this.route('experiences', function() {
         this.route('new');
       });
+
+      this.route('tree', function() {
+        this.route('edit', { path: "/node/:tree_node_id/scorable/:scorable_id" } );
+      });
     });
     this.route('new');
     this.route('edit', { path: "/:id/edit" });
+
+    this.route('tree', function() {});
   });
 
   this.route('experience', function() {

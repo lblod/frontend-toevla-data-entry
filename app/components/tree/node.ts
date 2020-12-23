@@ -2,7 +2,7 @@ import { get } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import Component from '@glimmer/component';
-import TreeNode from 'frontend-toevla-data-entry/models/tree-node';
+import TreeNode from 'frontend-toevla-data-entry/models/concept';
 import Scorable from 'frontend-toevla-data-entry/models/scorable';
 import mapping from 'frontend-toevla-data-entry/utils/custom-component-mapping';
 import Statechart from 'ember-statecharts/utils/statechart';
