@@ -1,5 +1,7 @@
 import { set } from '@ember/object';
 import { get as emberGet } from '@ember/object';
+import PointOfInterest from '../models/point-of-interest';
+import Experience from '../models/experience';
 
 export function butLast(path){
   const [, ...rest] = path.split(".").reverse();
@@ -34,10 +36,18 @@ export function property(path){
   return name;
 }
 
-export async function getInstance(experience, path, { create } = { create: true }){
+export async function getInstance(root, path, { create } = { create: true }){
+  let rootKind;
+  if( root instanceof PointOfInterest )
+    rootKind = "pointOfInterest";
+  else if( root instanceof Experience )
+    rootKind = "experience";
+  else
+    throw `Cannot get instance for ${root}`;
+
   const objectPath = butLast(path);
   const pathArray = objectPath ? objectPath.split(".") : [];
-  const returnedInstance = await ensureExistingInstances(experience, "experience", pathArray, { create });
+  const returnedInstance = await ensureExistingInstances(root, rootKind, pathArray, { create });
   if( returnedInstance )
     return returnedInstance;
   else
