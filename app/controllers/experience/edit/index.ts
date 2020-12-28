@@ -10,7 +10,7 @@ export default class ExperienceEditIndex extends Controller {
   async submit(event: Event) {
     event.preventDefault();
     await this.model.save();
-    this.transitionToRoute( "experience.show.tree", this.model );
+    this.transitionToRoute( "poi.show.experiences.index", this.model.pointOfInterest );
   }
 
   @action
