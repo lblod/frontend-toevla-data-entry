@@ -1,7 +1,7 @@
 import { get } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import Component from '@glimmer/component';
-import TreeNode from 'frontend-toevla-data-entry/models/tree-node';
+import TreeNode from 'frontend-toevla-data-entry/models/concept';
 import Scorable from 'frontend-toevla-data-entry/models/scorable';
 import { property, getInstance, setInstanceValue, save } from 'frontend-toevla-data-entry/utils/path-instances';
 import Statechart from 'ember-statecharts/utils/statechart';

@@ -6,7 +6,6 @@ export default class ConceptScheme extends Model {
   @attr('string') selectableLabel: string | undefined;
 
   @attr('number') order: number | undefined;
-  @attr('string') htmlContent: string | undefined;
   @attr('string') criterionType: string | undefined;
 
   @attr('string') firstScore;
