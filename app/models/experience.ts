@@ -12,7 +12,6 @@ export default class Experience extends Scorable {
   @belongsTo('auditorium') auditorium!: Auditorium;
   @attr('string') title: string | null | undefined;
   @attr('string') comment: string | null | undefined;
-  @attr('boolean') isMainExperience: boolean | null | undefined;
   @attr('boolean') hasMultipleElementsToDriveUnder: boolean | null | undefined;
   @attr('boolean') hasGoodLighting: boolean | null | undefined;
   @attr('boolean') hasMagnifyingGlass: boolean | null | undefined;
