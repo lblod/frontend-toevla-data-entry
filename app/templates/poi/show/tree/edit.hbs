@@ -15,13 +15,13 @@
 
   <div class="au-o-box au-c-sidebar__content">
     {{#if this.extendedEditInfo}}
-      {{#component this.extendedEditInfo.component
+      {{#component (concat "edit-components/" this.extendedEditInfo.component)
            key=this.extendedEditInfo.key
            conceptScheme=this.extendedEditInfo.conceptScheme
            treeNode=@model.treeNode
            subject=@model.subject
-           as |events|}}
-        <span {{did-update events.reset @model.treeNode}}></span>
+           as |actions|}}
+        <span {{did-update actions.reset @model.treeNode}}></span>
       {{/component}}
     {{/if}}
 
