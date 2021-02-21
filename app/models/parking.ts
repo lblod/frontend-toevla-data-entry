@@ -3,15 +3,15 @@ import PathToEntrance from './path-to-entrance';
 
 export default class ParkingModel extends Model {
   @attr('string') comment: boolean | undefined | null;
-  @attr('boolean') isPartOfLocation: boolean | undefined | null;
-  @attr('boolean') hasDriveOnPossibility: boolean | undefined | null;
-  @attr('boolean') isWellLit: boolean | undefined | null;
-  @attr('boolean') hasDetailedRouteDescription: boolean | undefined | null;
-  @attr('boolean') detailedRouteDescriptionHasScreenReader: boolean | undefined | null;
-  @attr('boolean') detailedRouteDescriptionIsAvailableInFlemishSignLanguage: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) isPartOfLocation: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) hasDriveOnPossibility: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) isWellLit: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) hasDetailedRouteDescription: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) detailedRouteDescriptionHasScreenReader: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) detailedRouteDescriptionIsAvailableInFlemishSignLanguage: boolean | undefined | null;
   @attr('number') numberOfWheelchairFriendlySpots: boolean | undefined | null;
-  @attr('boolean') onPublicDomain: boolean | undefined | null;
-  @attr('boolean') hasWheelchairFriendlyTerrain: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) onPublicDomain: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) hasWheelchairFriendlyTerrain: boolean | undefined | null;
   @attr('number') parkingSpaceLength: number | undefined | null;
   @attr('number') parkingSpaceWidth: number | undefined | null;
   @attr('number') maxVehicleHeight: number | undefined | null;
