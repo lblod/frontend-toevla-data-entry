@@ -1,4 +1,4 @@
-<div class="au-c-main-container__content au-c-main-container__content--scroll"  id="content">
+<div class="au-c-main-container__content"  id="content">
   <AuToolbar @border="bottom" @size="large">
     <AuToolbarGroup>
         <AuHeading @skin="2">Locaties</AuHeading>
@@ -10,13 +10,13 @@
       </LinkTo>
     </AuToolbarGroup>
   </AuToolbar>
-  <div class="au-o-box">
-    <ul class="au-o-grid au-o-grid--tiny">
+  <div class="au-o-box au-c-theme-gray-100 au-c-body-container au-c-body-container--scroll">
+    <ul class="au-o-grid au-o-grid--tiny au-u-padding-bottom">
       {{#each @model as |poi|}}
         <li class="au-o-grid__item">
           <article class="au-o-box au-o-box--small au-c-card au-c-card--link">
             <AuHeading @level="2" @skin="4">
-              <LinkTo @route="poi.show" @model={{poi.id}} class="au-c-link au-c-link--secondary au-c-card__link">
+              <LinkTo @route="poi.show.tree" @model={{poi.id}} class="au-c-link au-c-link--secondary au-c-card__link">
                 {{poi.label}}
               </LinkTo>
             </AuHeading>

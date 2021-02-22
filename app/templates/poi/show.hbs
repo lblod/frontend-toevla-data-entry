@@ -20,25 +20,20 @@
     <AuToolbarGroup>
       <AuHeading @skin="2"><AuPill>Locatie</AuPill> <span  class="au-u-limit-text">{{@model.label}}</span></AuHeading>
     </AuToolbarGroup>
-    <AuToolbarGroup class="au-u-h6">
-      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.experiences.index" @model={{@model}}>
-        Belevingen
-      </LinkTo>
-      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.tree" @model={{@model}}>
-        Kennisboom
-      </LinkTo>
-      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.edit" @model={{@model}}>
-        <AuIcon @icon="pencil" @alignment="left" />
-        Aanpassen
-      </LinkTo>
+    <AuToolbarGroup>
+      <div class="au-c-button-group">
+        <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.tree" @model={{@model}}>
+          Kennisboom
+        </LinkTo>
+        <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.experiences.index" @model={{@model}}>
+          Belevingen
+        </LinkTo>
+        <LinkTo class="au-c-button" @route="poi.edit" @model={{@model}}>
+          <AuIcon @icon="pencil" @alignment="left" />
+          Aanpassen
+        </LinkTo>
+      </div>
     </AuToolbarGroup>
   </AuToolbar>
-  <div class="au-o-box">
-{{!--
-    <article class="au-o-box au-o-box--small au-c-card au-c-card--link au-u-margin-bottom">
-      <LinkTo class="au-c-link au-c-link--secondary au-c-card__link" @route="experience.show.tree" @model={{@model}}> Gebouw</LinkTo>
-    </article> --}}
-
-    {{outlet}}
-  </div>
+  {{outlet}}
 </div>

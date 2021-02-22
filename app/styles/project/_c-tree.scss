@@ -118,7 +118,7 @@
   }
 
   @include mq(medium) {
-    height: $au-unit-large + $au-unit - .2rem;
+    // height: $au-unit-large + $au-unit - .2rem;
     background-color: transparent;
 
     .au-c-icon {
