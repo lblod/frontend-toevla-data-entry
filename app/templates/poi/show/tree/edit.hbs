@@ -33,7 +33,7 @@
 
     <hr class="au-c-hr">
 
-    <form {{on "submit" this.submit}} class="au-c-form">
+    <form class="au-c-form">
       {{#if @model.treeNode.children}}
         <p>
           <AuLabel for="score">Score</AuLabel>
@@ -53,7 +53,6 @@
           <AuInput @width="block" id="commentUrl" @value={{this.currentCommentLinkUrl}} @placeholder="" />
         </p>
       {{/if}}
-      <AuButton type="submit" {{on "click" this.submit}}>Instellen</AuButton>
     </form>
 
     {{!--
