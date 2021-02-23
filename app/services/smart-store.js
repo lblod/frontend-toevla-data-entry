@@ -1,3 +1,4 @@
+import { inject as service } from '@ember/service';
 import Service from '@ember/service';
 import { tracked } from 'tracked-built-ins';
 
@@ -36,6 +37,9 @@ export default class SmartStoreService extends Service {
   // all failed changes
   _failed = tracked([]);
 
+  // Router service is used to auto-generate the URL
+  @service router;
+
   // a timeout to save each outstanding change
   timeouts = new WeakMap();
 
@@ -73,12 +77,12 @@ export default class SmartStoreService extends Service {
   /**
      * Persist an item, this is like calling .save on the item.
      */
-  persist(item, routeInfo) {
+  persist(item, options = {}) {
     // save new item directly
     if (item.isNew)
       item.save();
     else
-      this._addOutstandingChange(item, routeInfo);
+      this._addOutstandingChange(item, options);
   }
 
   hasOutstandingUpdate(item) {
@@ -86,8 +90,9 @@ export default class SmartStoreService extends Service {
   }
 
   // Adds an outstanding change to the backlog
-  _addOutstandingChange(item, routeInfo) {
+  _addOutstandingChange(item, options) {
     let saveInfo;
+    let routeInfo = options.routeInfo || this._currentRouteInfo;
     if (this.hasOutstandingUpdate(item)) {
       saveInfo = this._waiting[item.id];
       saveInfo.update(routeInfo);
@@ -130,7 +135,7 @@ export default class SmartStoreService extends Service {
     const item = saveInfo.instance;
     console.log(this._waiting);
     delete this._waiting[item.id];
-    this._waiting = {...this._waiting};
+    this._waiting = { ...this._waiting };
     console.log(this._waiting);
     this._executing.add(saveInfo);
   }
@@ -142,5 +147,22 @@ export default class SmartStoreService extends Service {
   _moveToFailed(saveInfo) {
     this._executing.delete(saveInfo);
     this._failed.push(saveInfo);
+  }
+
+  get _currentRouteInfo() {
+    const route = this.router.currentRoute;
+    const routeProperties = function(route) {
+      if (route === null) {
+        return [];
+      } else {
+        const params =
+          route
+            .paramNames
+            .map((name) => route.params[name]);
+        return [...routeProperties(route.parent), ...params];
+      }
+    };
+
+    return [route.name, routeProperties(route)];
   }
 }
