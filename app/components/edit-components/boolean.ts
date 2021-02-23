@@ -90,6 +90,6 @@ export default class EditComponentsBoolean extends Component<EditComponentsBoole
 
   async saveValue() {
     await setInstanceValue( this.args.subject, this.args.key, this.configuredValue );
-    this.smartStore.persist( this.args.subject );
+    this.smartStore.persist( this.currentInstance );
   }
 }

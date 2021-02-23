@@ -18,6 +18,7 @@ export default class EditComponentsCentimetersComponent extends EditComponentsBo
   set width(value){
     this.internalWidth = value;
     this.hasSetWidth = true;
+    this.storeValues();
   }
   get height(){
     if( !this.currentInstance )
@@ -28,6 +29,7 @@ export default class EditComponentsCentimetersComponent extends EditComponentsBo
   set height(value){
     this.internalHeight = value;
     this.hasSetHeight = true;
+    this.storeValues();
   }
 
   /**
@@ -39,13 +41,9 @@ export default class EditComponentsCentimetersComponent extends EditComponentsBo
     this.statechart.send("SETUP_OBJECTS");
   }
 
-  @handler()
-  async save(){
-    if( this.hasSetWidth || this.hasSetHeight ) {
-      await setInstanceValue( this.args.subject, this.args.key + ".width", this.width );
-      await setInstanceValue( this.args.subject, this.args.key + ".height", this.height );
-      await save( this.args.subject, this.args.key + ".width" ); // saves the object above
-    }
-    this.statechart.send("SAVED");
+  async storeValues() {
+    await setInstanceValue( this.args.subject, this.args.key + ".width", this.width );
+    await setInstanceValue( this.args.subject, this.args.key + ".height", this.height );
+    this.smartStore.persist( this.currentInstance );
   }
 }

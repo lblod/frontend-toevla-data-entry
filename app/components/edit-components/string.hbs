@@ -4,28 +4,11 @@
     <AuLoader />
   </chart.if>
   <chart.if @state="dataEntry">
-    <form {{on "submit" (fn chart.preventAndSend "SAVE")}}>
+    <form>
       <p class="au-u-margin-bottom-small">
         <AuLabel for="string">Geef een opmerking in.</AuLabel>
         <Input id="string" @value={{this.currentValue}} class="au-c-input au-c-input--block" />
       </p>
-      <AuButton type="submit">Opslaan</AuButton>
     </form>
-  </chart.if>
-  <chart.if @state="saved">
-    <form {{on "submit" (fn chart.preventAndSend "SAVE")}}>
-      <p class="au-u-margin-bottom-small">
-        <AuLabel for="string">Geef een opmerking in.</AuLabel>
-        <Input id="string" @value={{this.currentValue}} class="au-c-input au-c-input--block" />
-      </p>
-      <AuButton type="submit">Opslaan</AuButton><span class="au-c-message"><AuIcon @icon="check" @size="large" />Opgeslagen</span>
-    </form>
-  </chart.if>
-  <chart.if @state="saving">
-    <p class="au-u-margin-bottom-small">
-      <AuLabel for="string">Geef een opmerking in.</AuLabel>
-      <Input id="string" @value={{this.currentValue}} class="au-c-input au-c-input--block" disabled/>
-    </p>
-    <AuButton @loading="true">Opslaan</AuButton>
   </chart.if>
 </WithStatechart>

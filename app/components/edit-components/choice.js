@@ -13,6 +13,8 @@ export default class EditComponentsChoiceComponent extends Component {
   @tracked options;
   @service store;
 
+  @service smartStore;
+
   @statechart(
     {
       initial: "init",
@@ -21,33 +23,13 @@ export default class EditComponentsChoiceComponent extends Component {
           entry: ["initIntermediateObjects"],
           on: {
             SETUP_OBJECTS: "dataEntry",
-            RESET: "resetting"
+            RESET: "resetting",
+            FAIL: "failed"
           }
         },
         dataEntry: {
           on: {
-            SAVE: "saving",
             RESET: "resetting"
-          }
-        },
-        saving: {
-          entry: ["save"],
-          on: {
-            SAVED: "saved",
-            RESET: "resetAfterSave",
-            FAIL: "failed"
-          }
-        },
-        saved: {
-          on: {
-            SAVE: "saving",
-            RESET: "resetting"
-          }
-        },
-        resetAfterSave: {
-          on: {
-            SAVED: "resetting",
-            FAIL: "failed"
           }
         },
         resetting: {
@@ -57,7 +39,10 @@ export default class EditComponentsChoiceComponent extends Component {
             RESET: "resetting"
           }
         },
-        failed: {}
+        failed: {
+          RESET: "resetting",
+          CLEARED: "init"
+        }
       }
     }
   )
@@ -86,6 +71,7 @@ export default class EditComponentsChoiceComponent extends Component {
   @action
   updateSelection(uri) {
     this.currentValue = this.options.findBy( 'uri', uri );
+    this.saveValue();
   }
 
   /**
@@ -114,17 +100,8 @@ export default class EditComponentsChoiceComponent extends Component {
     }
   }
 
-  // @action
-  @handler()
-  async save(){
-    try {
-      if( this.hasSetValue ) {
-        await setInstanceValue( this.args.subject, this.args.key, this.configuredValue );
-        await save( this.args.subject, this.args.key );
-      }
-      this.statechart.send("SAVED");
-    } catch {
-      this.statechart.send("FAIL");
-    }
+  async saveValue() {
+    await setInstanceValue( this.args.subject, this.args.key, this.configuredValue );
+    this.smartStore.persist( this.currentInstance );
   }
 }

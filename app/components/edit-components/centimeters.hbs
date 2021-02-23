@@ -8,23 +8,7 @@
       <AuLabel for="width">Geef een waarde in cm.</AuLabel>
       <Input id="width" @value={{this.currentValue}} @type="number" class="au-c-input" /> <span class="au-u-margin-left-tiny au-c-info-text">cm</span>
     </p>
-    <AuButton {{on "click" (fn chart.preventAndSend "SAVE")}} type="button">Opslaan</AuButton>
   </chart.if>
-  <chart.if @state="saved">
-    <p class="au-u-margin-bottom-small">
-      <AuLabel for="width">Geef een waarde in cm.</AuLabel>
-      <Input id="width" @value={{this.currentValue}} @type="number" class="au-c-input" /> <span class="au-u-margin-left-tiny au-c-info-text">cm</span>
-    </p>
-    <AuButton {{on "click" (fn chart.preventAndSend "SAVE")}} type="button">Opslaan</AuButton><span class="au-c-message"><AuIcon @icon="check" @size="large" />Opgeslagen</span>
-  </chart.if>
-  <chart.if @state="saving">
-    <p class="au-u-margin-bottom-small">
-      <AuLabel for="width">Geef een waarde in cm.</AuLabel>
-      <Input id="width" @value={{this.currentValue}} @type="number" class="au-c-input" disabled/> <span class="au-u-margin-left-tiny au-c-info-text">cm</span>
-    </p>
-    <AuButton @loading="true">Opslaan</AuButton>
-  </chart.if>
-  {{yield (hash reset=(fn chart.send "RESET"))}}
 </WithStatechart>
 
 <div>
