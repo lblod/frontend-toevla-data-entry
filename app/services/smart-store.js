@@ -88,28 +88,19 @@ export default class SmartStoreService extends Service {
      * Persist an item, this is like calling .save on the item.
      */
   persist(item, options = {}) {
-    // save new item directly
-    if (item.isNew)
-      item.save();
-    else
-      this._addOutstandingChange(item, options);
-  }
-
-  hasOutstandingUpdate(item) {
-    return this._waiting[item.id];
-  }
-
-  // Adds an outstanding change to the backlog
-  _addOutstandingChange(item, options) {
     let saveInfo;
     let routeInfo = options.routeInfo || this._currentRouteInfo;
     if (this.hasOutstandingUpdate(item)) {
-      saveInfo = this._waiting[item.id];
+      saveInfo = this.getOutstandingUpdateForItem(item);
       saveInfo.update(routeInfo);
       clearTimeout(this.timeouts.get(saveInfo));
     } else {
       saveInfo = new SaveInfo(item, routeInfo);
-      this._waiting[item.id] = saveInfo;
+      if( !item.isNew ) {
+        this._waiting[item] = saveInfo;
+      } else {
+        this._waiting[item._internalModel.clientId] = saveInfo;
+      }
       this._waiting = { ...this._waiting };
     }
 
@@ -118,6 +109,14 @@ export default class SmartStoreService extends Service {
       setTimeout(
         () => this._executeItemSaveOnTimeout(saveInfo),
         5000));
+  }
+
+  hasOutstandingUpdate(item) {
+    return this.getOutstandingUpdateForItem(item);
+  }
+
+  getOutstandingUpdateForItem(item) {
+    return this._waiting[item] || this._waiting[item._internalModel.clientId];
   }
 
   async _executeItemSaveOnTimeout(saveInfo) {
@@ -144,7 +143,8 @@ export default class SmartStoreService extends Service {
   _moveToExecuting(saveInfo) {
     const item = saveInfo.instance;
     console.log(this._waiting);
-    delete this._waiting[item.id];
+    delete this._waiting[item];
+    delete this._waiting[item._internalModel.clientId]; // new items
     this._waiting = { ...this._waiting };
     console.log(this._waiting);
     this._executing.add(saveInfo);
