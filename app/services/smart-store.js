@@ -1,7 +1,12 @@
+import { isEqual } from '@ember/utils';
 import { inject as service } from '@ember/service';
 import Service from '@ember/service';
 import { tracked } from 'tracked-built-ins';
 
+function sameArray( a,b ) {
+  return a.length == b.length
+    && a.every( (v,i) => v == b[i] );
+}
 
 class SaveInfo {
   // item to save
@@ -23,7 +28,12 @@ class SaveInfo {
 
   // Updates an existing SaveInfo item
   update(routeInfo) {
-    this.routeInfos = [...this.routeInfos, routeInfo];
+    const routeInfoExists =
+      this.routeInfos.find((a) =>
+        a.name == routeInfo.name
+        && sameArray(a.models, routeInfo.models));
+    if (!routeInfoExists)
+      this.routeInfos.push(routeInfo);
     this.lastRequest = new Date();
   }
 }
@@ -163,6 +173,6 @@ export default class SmartStoreService extends Service {
       }
     };
 
-    return [route.name, routeProperties(route)];
+    return { name: route.name, models: routeProperties(route) };
   }
 }

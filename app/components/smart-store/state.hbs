@@ -1,0 +1,35 @@
+<dl>
+  <dl>Waiting</dl>
+  <dd>
+    {{this.smartStore.outstandingUpdates.length}}
+    <ul>
+      {{#each this.smartStore.outstandingUpdates as |update|}}
+        <li>
+          {{update.instance.id}}
+          <ul>
+            {{#each update.routeInfos as |r|}}
+              <LinkTo @route={{r.name}} @models={{r.models}}>{{r.name}}</LinkTo>
+            {{/each}}
+          </ul>
+        </li>
+      {{/each}}
+    </ul>
+  </dd>
+  <dl>Executing</dl>
+  <dd>{{this.smartStore.executingUpdates.length}}</dd>
+  <dl>Failed</dl>
+  <dd>
+    {{this.smartStore.failedUpdates.length}}
+    <ul>
+      {{#each this.smartStore.failedUpdates as |failure|}}
+        <li>{{failure.instance.id}}
+          <ul>
+            {{#each failure.routeInfos as |r|}}
+              <li><LinkTo @route={{r.name}} @models={{r.models}}>{{r.name}}</LinkTo></li>
+            {{/each}}
+          </ul>
+        </li>
+      {{/each}}
+    </ul>
+  </dd>
+</dl>
