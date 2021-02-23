@@ -1,3 +1,4 @@
+import { inject as service } from '@ember/service';
 import { get } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import Component from '@glimmer/component';
@@ -17,6 +18,8 @@ export default class EditComponentsBoolean extends Component<EditComponentsBoole
   @tracked currentInstance: any;
   @tracked hasSetValue: boolean = false;
   @tracked configuredValue: any = undefined;
+
+  @service smartStore;
 
   @statechart(
     {
@@ -110,7 +113,8 @@ export default class EditComponentsBoolean extends Component<EditComponentsBoole
     try {
       if( this.hasSetValue ) {
         await setInstanceValue( this.args.subject, this.args.key, this.configuredValue );
-        await save( this.args.subject, this.args.key );
+        // await save( this.args.subject, this.args.key );
+        this.smartStore.persist( this.args.subject, "poi.show.tree.edit", [] ); // todo: supply route
       }
       this.statechart.send("SAVED");
     } catch {
