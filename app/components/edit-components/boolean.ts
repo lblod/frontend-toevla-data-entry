@@ -4,9 +4,10 @@ import { tracked } from '@glimmer/tracking';
 import Component from '@glimmer/component';
 import TreeNode from 'frontend-toevla-data-entry/models/concept';
 import Scorable from 'frontend-toevla-data-entry/models/scorable';
-import { property, getInstance, setInstanceValue, save } from 'frontend-toevla-data-entry/utils/path-instances';
+import { property, getInstance, setInstanceValue } from 'frontend-toevla-data-entry/utils/path-instances';
 import Statechart from 'ember-statecharts/utils/statechart';
 import { handler, statechart } from 'frontend-toevla-data-entry/utils/rockin-statechart';
+import SmartStore from 'frontend-toevla-data-entry/services/smart-store';
 
 interface EditComponentsBooleanArgs {
   key: string;
@@ -19,7 +20,7 @@ export default class EditComponentsBoolean extends Component<EditComponentsBoole
   @tracked hasSetValue: boolean = false;
   @tracked configuredValue: any = undefined;
 
-  @service smartStore;
+  @service smartStore!: SmartStore;
 
   @statechart(
     {
@@ -34,28 +35,7 @@ export default class EditComponentsBoolean extends Component<EditComponentsBoole
         },
         dataEntry: {
           on: {
-            SAVE: "saving",
             RESET: "resetting"
-          }
-        },
-        saving: {
-          entry: ["save"],
-          on: {
-            SAVED: "saved",
-            RESET: "resetAfterSave",
-            FAIL: "failed"
-          }
-        },
-        saved: {
-          on: {
-            SAVE: "saving",
-            RESET: "resetting"
-          }
-        },
-        resetAfterSave: {
-          on: {
-            SAVED: "resetting",
-            FAIL: "failed"
           }
         },
         resetting: {
@@ -87,6 +67,7 @@ export default class EditComponentsBoolean extends Component<EditComponentsBoole
   set currentValue(value) {
     this.configuredValue = value;
     this.hasSetValue = true;
+    this.saveValue();
   }
 
   /**
@@ -107,18 +88,8 @@ export default class EditComponentsBoolean extends Component<EditComponentsBoole
     this.statechart.send("SETUP_OBJECTS");
   }
 
-  // @action
-  @handler()
-  async save(){
-    try {
-      if( this.hasSetValue ) {
-        await setInstanceValue( this.args.subject, this.args.key, this.configuredValue );
-        // await save( this.args.subject, this.args.key );
-        this.smartStore.persist( this.args.subject, "poi.show.tree.edit", [] ); // todo: supply route
-      }
-      this.statechart.send("SAVED");
-    } catch {
-      this.statechart.send("FAIL");
-    }
+  async saveValue() {
+    await setInstanceValue( this.args.subject, this.args.key, this.configuredValue );
+    this.smartStore.persist( this.args.subject );
   }
 }
