@@ -1,0 +1,55 @@
+.au-c-state__label {
+  display: flex;
+  background-color: $au-gray-700;
+  color: $au-white;
+  padding: $au-unit-tiny/2 $au-unit-tiny;
+  border-radius: $au-radius;
+  align-items: center;
+}
+
+.au-c-state__label--save {
+  .au-c-icon {
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+}
+
+.au-c-state__label--saved {
+  background-color: $au-green-700;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.au-c-state-list {
+  display: block;
+  color: $au-gray-800;
+  background-color: $au-gray-200;
+  padding: $au-unit-tiny/2 $au-unit-tiny;
+  border-radius: $au-radius;
+
+  p {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.au-c-state-list__list {
+  margin-top: $au-unit-tiny;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  li {
+    margin-right: $au-unit-tiny;
+  }
+}

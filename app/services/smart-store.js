@@ -108,7 +108,7 @@ export default class SmartStoreService extends Service {
       saveInfo,
       setTimeout(
         () => this._executeItemSaveOnTimeout(saveInfo),
-        5000));
+        1000));
   }
 
   hasOutstandingUpdate(item) {

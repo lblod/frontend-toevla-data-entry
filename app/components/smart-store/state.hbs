@@ -1,35 +1,26 @@
-<dl>
-  <dl>Waiting</dl>
-  <dd>
-    {{this.smartStore.outstandingUpdates.length}}
-    <ul>
-      {{#each this.smartStore.outstandingUpdates as |update|}}
-        <li>
-          {{update.instance.id}}
-          <ul>
-            {{#each update.routeInfos as |r|}}
-              <LinkTo @route={{r.name}} @models={{r.models}}>{{r.name}}</LinkTo>
-            {{/each}}
-          </ul>
-        </li>
+{{#if this.smartStore.outstandingUpdates.length}}
+<span class="au-c-state__label au-c-state__label--save">
+  <AuIcon @icon="renew" @alignment="left" @size="large" @ariaHidden={{true}} />
+  Opslaan
+</span>
+{{/if}}
+
+{{#if this.smartStore.executingUpdates.length}}
+<span class="au-c-state__label au-c-state__label--saved">
+  <AuIcon @icon="check" @alignment="left" @size="large" @ariaHidden={{true}} />
+  Opgeslagen
+</span>
+{{/if}}
+
+{{#if this.smartStore.failedUpdates.length}}
+<div class="au-c-state-list">
+  <p><AuIcon @icon="alert-triangle" @alignment="left" @size="large" @ariaHidden={{true}} /> Mislukt, probeer opnieuw:</p>
+  <ul class="au-c-state-list__list">
+    {{#each this.smartStore.failedUpdates as |failure|}}
+      {{#each failure.routeInfos as |r|}}
+        <li><LinkTo @route={{r.name}} @models={{r.models}} class="au-c-link">{{r.name}}</LinkTo></li>
       {{/each}}
-    </ul>
-  </dd>
-  <dl>Executing</dl>
-  <dd>{{this.smartStore.executingUpdates.length}}</dd>
-  <dl>Failed</dl>
-  <dd>
-    {{this.smartStore.failedUpdates.length}}
-    <ul>
-      {{#each this.smartStore.failedUpdates as |failure|}}
-        <li>{{failure.instance.id}}
-          <ul>
-            {{#each failure.routeInfos as |r|}}
-              <li><LinkTo @route={{r.name}} @models={{r.models}}>{{r.name}}</LinkTo></li>
-            {{/each}}
-          </ul>
-        </li>
-      {{/each}}
-    </ul>
-  </dd>
-</dl>
+    {{/each}}
+  </ul>
+</div>
+{{/if}}

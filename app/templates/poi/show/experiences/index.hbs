@@ -1,23 +1,26 @@
-<AuToolbar class="au-u-margin-bottom">
+
+<AuToolbar @size="medium" @border="bottom" >
   <AuToolbarGroup>
-    <AuHeading @level="2" @skin="3">
-      Events
+    <AuHeading @level="2" @skin="5">
+      Belevingen
     </AuHeading>
   </AuToolbarGroup>
   <AuToolbarGroup>
-    <LinkTo @route="poi.show.experiences.new" @model={{this.poi}} class="au-c-button">
+    <LinkTo @route="poi.show.experiences.new" @model={{this.poi}} class="au-c-button au-c-button--tertiary">
       <AuIcon @icon="add" @alignment="left" />
       Event toevoegen
     </LinkTo>
   </AuToolbarGroup>
 </AuToolbar>
 
-<ul class="au-o-grid au-o-grid--tiny">
-  {{#each @model as |experience|}}
-    <li class="au-o-grid__item">
-      <article class="au-o-box au-o-box--small au-c-card au-c-card--link">
-        <LinkTo class="au-c-link au-c-link--secondary au-c-card__link" @route="experience.edit" @model={{experience}}>{{experience.title}}</LinkTo>
-      </article>
-    </li>
-  {{/each}}
-</ul>
+<div class="au-o-box au-c-body-container au-c-body-container--scroll au-c-theme-gray-100">
+  <ul class="au-o-grid au-o-grid--tiny au-u-padding-bottom">
+    {{#each @model as |experience|}}
+      <li class="au-o-grid__item">
+        <article class="au-o-box au-o-box--small au-c-card au-c-card--link">
+          <LinkTo class="au-c-link au-c-link--secondary au-c-card__link" @route="experience.edit" @model={{experience}}>{{experience.title}}</LinkTo>
+        </article>
+      </li>
+    {{/each}}
+  </ul>
+</div>

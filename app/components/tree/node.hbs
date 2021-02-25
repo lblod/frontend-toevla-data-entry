@@ -8,13 +8,19 @@
           <chart.if @state="open">
             <button class="au-c-tree__button" type="button" {{on "click" (fn chart.preventAndSend "TOGGLE_OPEN")}} aria-expanded="true">
               <AuIcon @icon="nav-down" />
-              {{this.nodeTitle}}
+              <span class="au-c-tree__button-text">
+                {{this.nodeTitle}}
+              </span>
+              <span class="au-c-tree__button-label">Toon minder</span>
             </button>
           </chart.if>
           <chart.if @state="collapsed">
             <button class="au-c-tree__button" type="button" {{on "click" (fn chart.preventAndSend "TOGGLE_OPEN")}}  aria-expanded="false">
               <AuIcon @icon="nav-right" />
-              {{this.nodeTitle}}
+              <span class="au-c-tree__button-text">
+                {{this.nodeTitle}}
+              </span>
+              <span class="au-c-tree__button-label">Toon meer</span>
             </button>
           </chart.if>
           <chart.if @state="loading">
@@ -29,7 +35,7 @@
           </AuHeading>
         {{/if}}
 
-        <p class="au-c-tree__uri">{{@node.uri}}</p>
+        {{!-- <p class="au-c-tree__uri">{{@node.uri}}</p> --}}
       </div>
 
       <chart.if @state="error">
