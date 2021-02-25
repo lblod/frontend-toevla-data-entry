@@ -1,11 +1,18 @@
-{{#if this.smartStore.outstandingUpdates.length}}
-<span class="au-c-state__label au-c-state__label--save">
-  <AuIcon @icon="renew" @alignment="left" @size="large" @ariaHidden={{true}} />
-  Opslaan
-</span>
+{{#if this.isWaiting}}
+  <span class="au-c-state__label au-c-state__label--save">
+    <AuIcon style="animation-name: none" @icon="renew" @alignment="left" @size="large" @ariaHidden={{true}} />
+    Opslaan
+  </span>
 {{/if}}
 
-{{#if this.smartStore.executingUpdates.length}}
+{{#if this.isSaving}}
+  <span class="au-c-state__label au-c-state__label--save">
+    <AuIcon @icon="renew" @alignment="left" @size="large" @ariaHidden={{true}} />
+    Opslaan
+  </span>
+{{/if}}
+
+{{#if this.hasSaved}}
 <span class="au-c-state__label au-c-state__label--saved">
   <AuIcon @icon="check" @alignment="left" @size="large" @ariaHidden={{true}} />
   Opgeslagen
