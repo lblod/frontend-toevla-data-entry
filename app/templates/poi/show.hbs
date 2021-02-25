@@ -18,12 +18,12 @@
   </AuToolbar>
   <AuToolbar @border="bottom" @size="large">
     <AuToolbarGroup>
-      <AuHeading @skin="2"><AuPill>Locatie</AuPill> <span  class="au-u-limit-text">{{@model.label}}</span></AuHeading>
+      <AuHeading @skin="2"><span class="au-u-limit-text">{{@model.label}}</span></AuHeading><SmartStore::State />
     </AuToolbarGroup>
     <AuToolbarGroup class="au-u-h6">
-      <div class="au-c-button au-c-button--secondary">
+      {{!-- <div class="au-c-button au-c-button--secondary">
         O({{this.smartStore.outstandingUpdates.length}}) X({{this.smartStore.executingUpdates.length}}) F({{this.smartStore.failedUpdates.length}})
-      </div>
+      </div> --}}
       <div class="au-c-button-group">
         <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.tree" @model={{@model}}>
           Kennisboom
@@ -44,5 +44,5 @@
     </article> --}}
 
     {{outlet}}
-  <SmartStore::State />
+
 </div>

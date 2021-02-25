@@ -3,14 +3,13 @@
     <AuHeading @level="4" @skin="3">
       {{@model.treeNode.title}}
     </AuHeading>
-    <p class="au-c-info-text"><strong>Tree node:</strong> {{@model.treeNode.uri}}</p>
-    <p class="au-c-info-text"><strong>Edit type:</strong> {{this.extendedEditInfo.component}}</p>
+    {{!-- <p class="au-c-info-text"><strong>Tree node:</strong> {{@model.treeNode.uri}}</p> --}}
+    {{!-- <p class="au-c-info-text"><strong>Edit type:</strong> {{this.extendedEditInfo.component}}</p> --}}
 
     <LinkTo @route="poi.show.tree" @model={{@model.poi}} class="au-c-close au-c-close--large">
       <AuIcon @icon="cross" @size="large" />
       <span class="au-u-hidden-visually">Sluiten</span>
     </LinkTo>
-
   </div>
 
   <div class="au-o-box au-c-sidebar__content">
@@ -27,9 +26,9 @@
 
     {{outlet}}
 
-    <div class="au-u-margin-top-small">
+    {{!-- <div class="au-u-margin-top-small">
       <strong>Type</strong> {{@model.treeNode.criterionType}}
-    </div>
+    </div> --}}
 
     <hr class="au-c-hr">
 
@@ -45,13 +44,19 @@
         </p>
         {{else}}
         <p>
-          <AuLabel for="comment">Comment</AuLabel>
-          <AuInput @width="block" id="comment" @value={{this.currentComment}} @placeholder="" />
-          <AuLabel for="commentUrlText">Comment link text</AuLabel>
-          <AuInput @width="block" id="commentUrlText" @value={{this.currentCommentLinkText}} @placeholder="" />
-          <AuLabel for="commentUrl">Comment link URL</AuLabel>
-          <AuInput @width="block" id="commentUrl" @value={{this.currentCommentLinkUrl}} @placeholder="" />
+          <AuLabel for="comment">Commentaar</AuLabel>
+          <AuTextarea @width="block" id="comment" @value={{this.currentComment}} @placeholder="" />
         </p>
+        <div>
+          <AuLabel for="commentUrlText" class="au-u-margin-bottom-none">Link tekst <AuPill>Optioneel</AuPill></AuLabel>
+          <AuHelpText class="au-u-margin-top-none au-u-margin-bottom-tiny">De tekst die weergegeven wordt (vb. Toegankelijk Vlaanderen) </AuHelpText>
+          <AuInput @width="block" id="commentUrlText" @value={{this.currentCommentLinkText}} @placeholder="" />
+        </div>
+        <div>
+          <AuLabel for="commentUrl" class="au-u-margin-bottom-none">Link URL <AuPill>Optioneel</AuPill></AuLabel>
+          <AuHelpText class="au-u-margin-top-none au-u-margin-bottom-tiny">De URL van de link (vb. https://toegankelijk.vlaanderen.be/login) </AuHelpText>
+          <AuInput @width="block" id="commentUrl" @value={{this.currentCommentLinkUrl}} @placeholder="" />
+        </div>
       {{/if}}
     </form>
 
