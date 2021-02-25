@@ -1,9 +1,4 @@
 import JSONAPISerializer from '@ember-data/serializer/json-api';
+import keepOnlyChanged from 'ember-data-change-tracker/mixins/keep-only-changed';
 
-export default class ApplicationSerializer extends JSONAPISerializer {
-  serializeAttribute( snapshot, json, key, attributes ) {
-    if (key !== 'uri' && snapshot._changedAttributes[key]) {
-      return super.serializeAttribute(...arguments);
-    }
-  }
-}
+export default class ApplicationSerializer extends JSONAPISerializer.extend(keepOnlyChanged) { }
