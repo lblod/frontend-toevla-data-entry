@@ -1,6 +1,6 @@
 {
   "name": "frontend-toevla-data-entry",
-  "version": "0.7.8",
+  "version": "0.8.0",
   "private": true,
   "description": "Small description for frontend-toevla-data-entry goes here",
   "repository": "",
@@ -78,6 +78,7 @@
     "qunit-dom": "^1.2.0",
     "sass": "^1.26.10",
     "svg-symbols": "^1.0.5",
+    "tracked-built-ins": "^1.0.2",
     "tracked-toolbox": "^1.0.1",
     "typescript": "^3.9.5"
   },

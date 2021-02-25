@@ -1,3 +1,4 @@
+import { inject as service } from '@ember/service';
 import { get } from '@ember/object';
 import { set } from '@ember/object';
 import { action } from '@ember/object';
@@ -8,6 +9,8 @@ import { yes, no, info } from 'frontend-toevla-data-entry/utils/uris/criterion-c
 
 export default class PoiShowTreeEditController extends Controller {
   @tracked showComponent = false;
+
+  @service smartStore;
 
   @action
   reset() {
@@ -30,6 +33,7 @@ export default class PoiShowTreeEditController extends Controller {
   set currentScore(score) {
     this.didSetScore = true;
     this.enteredScore = score;
+    this.persist();
   }
 
   get extendedEditInfo() {
@@ -48,6 +52,7 @@ export default class PoiShowTreeEditController extends Controller {
   @action
   selectScore( score ) {
     this.currentScore = score;
+    this.persist();
   }
 
   // -- COMMENT TEXT --
@@ -65,6 +70,7 @@ export default class PoiShowTreeEditController extends Controller {
     comment = comment == "" ? null : comment;
     this.didSetComment = true;
     this.enteredComment = comment;
+    this.persist();
   }
 
   // -- COMMENT LINK TEXT --
@@ -82,6 +88,7 @@ export default class PoiShowTreeEditController extends Controller {
     comment = comment == "" ? null : comment;
     this.didSetCommentLinkText = true;
     this.enteredCommentLinkText = comment;
+    this.persist();
   }
 
   // -- COMMENT LINK URL --
@@ -99,6 +106,7 @@ export default class PoiShowTreeEditController extends Controller {
     comment = comment == "" ? null : comment;
     this.didSetCommentLinkUrl = true;
     this.enteredCommentLinkUrl = comment;
+    this.persist();
   }
 
   // -- FILES --
@@ -118,10 +126,7 @@ export default class PoiShowTreeEditController extends Controller {
     console.error(`removefile is not implemented yet in /app/controllers/experience/show/tree/edit.js`);
   }
 
-  // -- SAVING --
-  @action
-  submit( event ) {
-    event.preventDefault();
+  persist() {
     this.ensureScoringModel();
 
     if( this.didSetScore )
@@ -133,7 +138,7 @@ export default class PoiShowTreeEditController extends Controller {
     if( this.didSetCommentLinkUrl )
       this.model.scoring.commentLinkUrl = this.enteredCommentLinkUrl;
 
-    this.model.scoring.save();
+    this.smartStore.persist( this.model.scoring );
   }
 
   ensureScoringModel() {

@@ -3,13 +3,13 @@ import PointOfInterest from './point-of-interest';
 import Concept from './concept';
 
 export default class EntranceModel extends Model {
-  @attr('boolean') hasMannedDesk: boolean | undefined | null;
-  @attr('boolean') hasTeleloopAtCounter: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) hasMannedDesk: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) hasTeleloopAtCounter: boolean | undefined | null;
   @attr('number') highestThreshold: number | undefined | null;
   @attr('number') amountOfStairs: number | undefined | null;
   @attr('number') amountOfSlopes: number | undefined | null;
-  @attr('boolean') hasEntranceGutters: boolean | undefined | null;
-  @attr('boolean') hasRevolvingDoor: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) hasEntranceGutters: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) hasRevolvingDoor: boolean | undefined | null;
   @attr('number') doorWidth: number | undefined | null;
   @attr('number') hasEntranceCheck: number | undefined | null;
   @attr('number') turningRadiusAtDoor: number | undefined | null;

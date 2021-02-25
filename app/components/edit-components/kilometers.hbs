@@ -12,29 +12,6 @@
         {{on "change" this.inputValueChanged}} />
       <span class="au-u-margin-left-tiny au-c-info-text">km</span>
     </p>
-    <AuButton {{on "click" (fn chart.preventAndSend "SAVE")}} type="button">Opslaan</AuButton>
-  </chart.if>
-  <chart.if @state="saved">
-    <p class="au-u-margin-bottom-small">
-      <AuLabel for="kilometers">Geef een waarde in km.</AuLabel>
-      <input
-        id="kilometers" class="au-c-input" type="number"
-        value={{this.kilometerValue}}
-        {{on "change" this.inputValueChanged}} />
-      <span class="au-u-margin-left-tiny au-c-info-text">km</span>
-    </p>
-    <AuButton {{on "click" (fn chart.preventAndSend "SAVE")}} type="button">Opslaan</AuButton><span class="au-c-message"><AuIcon @icon="check" @size="large" />Opgeslagen</span>
-  </chart.if>
-  <chart.if @state="saving">
-    <p class="au-u-margin-bottom-small">
-      <AuLabel for="kilometers">Geef een waarde in km.</AuLabel>
-      <input
-        id="kilometers" class="au-c-input" type="number"
-        value={{this.kilometerValue}}
-        {{on "change" this.inputValueChanged}} />
-      <span class="au-u-margin-left-tiny au-c-info-text">km</span>
-    </p>
-    <AuButton @loading="true">Opslaan</AuButton>
   </chart.if>
 </WithStatechart>
 
