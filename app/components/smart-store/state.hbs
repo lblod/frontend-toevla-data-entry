@@ -1,7 +1,7 @@
 {{#if this.isWaiting}}
   <span class="au-c-state__label au-c-state__label--save">
-    <AuIcon style="animation-name: none" @icon="renew" @alignment="left" @size="large" @ariaHidden={{true}} />
-    Opslaan
+    <AuIcon @icon="renew" @size="large" @ariaHidden={{true}} />
+    <span class="au-u-hidden-visually">Wachten</span>
   </span>
 {{/if}}
 
