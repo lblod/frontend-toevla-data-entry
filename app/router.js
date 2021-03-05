@@ -40,7 +40,6 @@ Router.map(function() {
   this.route('contact');
   this.route('roadmap', { path: "/onze-aanpak" });
   this.route('about', { path: "/over-toegankelijk-vlaanderen" });
-  this.route('pre-launch', { path: "/handleiding-testfase" });
   this.route('buildings', { path: "/gebouwen" }); // TODO: should this become a widgets route?
   this.route('developers', { path: "/ontwikkelaars" }, function() {
     this.route('styling');
