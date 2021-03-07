@@ -30,6 +30,19 @@
       <strong>Type</strong> {{@model.treeNode.criterionType}}
     </div> --}}
 
+    {{#if @model.treeNode.dataEntryComment}}
+      <div class="au-u-margin-top-small">
+        <button {{on "click" this.toggleShowInfo}}>
+          <strong>
+            [{{#if this.showInfo}}+{{else}}-{{/if}}] Info
+          </strong>
+        </button>
+      </div>
+      {{#if this.showInfo}}
+        {{@model.treeNode.dataEntryComment}}
+      {{/if}}
+    {{/if}}
+
     <hr class="au-c-hr">
 
     <form class="au-c-form">
