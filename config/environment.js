@@ -7,6 +7,7 @@ module.exports = function(environment) {
     rootURL: '/',
     locationType: 'auto',
     changeTracker: { trackHasMany: true, auto: true },
+    authorizationKind: "on", // for now, anything except for none means we'll do authorization
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -43,6 +44,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.authorizationKind = "none";
   }
 
   if (environment === 'test') {
@@ -59,6 +61,9 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     // here you can enable a production-specific feature
+
+    // set in Dockerfile environment variable
+    ENV.authorizationKind = '{{AUTHORIZATION_KIND}}';
   }
 
   return ENV;

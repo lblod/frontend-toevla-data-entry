@@ -12,4 +12,6 @@ FROM semtech/static-file-service
 
 # ENV STATIC_FOLDERS_REGEX "^/(assets|font|files)/"
 
+ENV EMBER_AUTHORIZATION_KIND="on"
+
 COPY --from=builder /app/dist /data
