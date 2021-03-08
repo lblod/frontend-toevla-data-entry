@@ -81,7 +81,8 @@
     "svg-symbols": "^1.0.5",
     "tracked-built-ins": "^1.0.2",
     "tracked-toolbox": "^1.0.1",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.5",
+    "workerpool": "6.1.0"
   },
   "engines": {
     "node": "10.* || >= 12"
