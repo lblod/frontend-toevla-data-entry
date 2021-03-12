@@ -7,6 +7,7 @@ export default class ConceptScheme extends Model {
 
   @attr('number') order: number | undefined;
   @attr('string') criterionType: string | undefined;
+  @attr('string') dataEntryComment: string | undefined;
 
   @attr('string') firstScore;
   @attr('string') firstLimit;

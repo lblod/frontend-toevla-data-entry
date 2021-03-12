@@ -18,6 +18,7 @@ export default class PoiShowTreeEditController extends Controller {
     this.didSetComment = false;
     this.didSetCommentLinkText = false;
     this.didSetCommentLinkUrl = false;
+    this.showInfo = false;
   }
 
   // -- SCORING --
@@ -152,5 +153,12 @@ export default class PoiShowTreeEditController extends Controller {
              subject: this.model.subject,
              treeNode: this.model.treeNode
            }));
+  }
+
+  // -- SHOW INFO --
+  @tracked showInfo = false;
+  @action
+  toggleShowInfo() {
+    this.showInfo = !this.showInfo;
   }
 }
