@@ -6,6 +6,17 @@
     {{!-- <p class="au-c-info-text"><strong>Tree node:</strong> {{@model.treeNode.uri}}</p> --}}
     {{!-- <p class="au-c-info-text"><strong>Edit type:</strong> {{this.extendedEditInfo.component}}</p> --}}
 
+    {{#if @model.treeNode.dataEntryComment}}
+      <button class="au-c-button au-c-button--tertiary au-u-padding-left-none au-u-margin-top-small" {{on "click" this.toggleShowInfo}} aria-expanded="{{if this.showInfo "true" "false"}}">
+        {{#if this.showInfo}}<AuIcon @icon="nav-down" @alignment="left" />{{else}}<AuIcon @icon="nav-right" @alignment="left" />{{/if}} Meer Info
+      </button>
+      {{#if this.showInfo}}
+        <AuHelpText class="au-c-helptext--focus" {{auto-focus}} tabindex="0">
+          {{@model.treeNode.dataEntryComment}}
+        </AuHelpText>
+      {{/if}}
+    {{/if}}
+
     <LinkTo @route="poi.show.tree" @model={{@model.poi}} class="au-c-close au-c-close--large">
       <AuIcon @icon="cross" @size="large" />
       <span class="au-u-hidden-visually">Sluiten</span>
@@ -29,19 +40,6 @@
     {{!-- <div class="au-u-margin-top-small">
       <strong>Type</strong> {{@model.treeNode.criterionType}}
     </div> --}}
-
-    {{#if @model.treeNode.dataEntryComment}}
-      <div class="au-u-margin-top-small">
-        <button {{on "click" this.toggleShowInfo}}>
-          <strong>
-            [{{#if this.showInfo}}+{{else}}-{{/if}}] Info
-          </strong>
-        </button>
-      </div>
-      {{#if this.showInfo}}
-        {{@model.treeNode.dataEntryComment}}
-      {{/if}}
-    {{/if}}
 
     <hr class="au-c-hr">
 
