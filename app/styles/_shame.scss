@@ -364,3 +364,10 @@
     margin-right: auto;
   }
 }
+
+
+.au-c-helptext--focus {
+  &:focus {
+    outline: 0;
+  }
+}
