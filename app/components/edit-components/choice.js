@@ -102,6 +102,9 @@ export default class EditComponentsChoiceComponent extends Component {
 
   async saveValue() {
     await setInstanceValue( this.args.subject, this.args.key, this.configuredValue );
+    // Note: we are saving twice here.  There is some bug in dirty
+    // tracking that makes this fail otherwise.
+    await this.currentInstance.save();
     this.smartStore.persist( this.currentInstance );
   }
 }
