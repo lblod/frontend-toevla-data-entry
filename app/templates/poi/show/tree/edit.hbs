@@ -55,16 +55,16 @@
         </p>
         {{else}}
         <p>
-          <AuLabel for="comment">Commentaar</AuLabel>
+          <AuLabel for="comment">Extra omschrijving</AuLabel>
           <AuTextarea @width="block" id="comment" @value={{this.currentComment}} @placeholder="" />
         </p>
         <div>
-          <AuLabel for="commentUrlText" class="au-u-margin-bottom-none">Link tekst <AuPill>Optioneel</AuPill></AuLabel>
+          <AuLabel for="commentUrlText" class="au-u-margin-bottom-none">Link tekst</AuLabel>
           <AuHelpText class="au-u-margin-top-none au-u-margin-bottom-tiny">De tekst die weergegeven wordt (vb. Toegankelijk Vlaanderen) </AuHelpText>
           <AuInput @width="block" id="commentUrlText" @value={{this.currentCommentLinkText}} @placeholder="" />
         </div>
         <div>
-          <AuLabel for="commentUrl" class="au-u-margin-bottom-none">Link URL <AuPill>Optioneel</AuPill></AuLabel>
+          <AuLabel for="commentUrl" class="au-u-margin-bottom-none">Link URL</AuLabel>
           <AuHelpText class="au-u-margin-top-none au-u-margin-bottom-tiny">De URL van de link (vb. https://toegankelijk.vlaanderen.be/login) </AuHelpText>
           <AuInput @width="block" id="commentUrl" @value={{this.currentCommentLinkUrl}} @placeholder="" />
         </div>
