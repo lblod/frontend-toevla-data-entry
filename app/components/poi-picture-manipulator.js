@@ -35,6 +35,16 @@ export default class PoiPictureManipulatorComponent extends Component {
       images[i].order = i;
       this.smartStore.persist( images[i] );
     }
-    console.log(`We sorted stuff!`, stuff);
+  }
+
+  @action
+  updateImage(image, property, event) {
+    image.set(property, event.target.value);
+    this.smartStore.persist( image );
+  }
+
+  @action
+  removeImage(image, /* event */) {
+    image.destroyRecord();
   }
 }

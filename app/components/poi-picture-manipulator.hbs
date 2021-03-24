@@ -22,10 +22,14 @@
         @isSortable={{true}}>
 
         <td><img src="/images/{{image.id}}?height=120" alt="{{image.label}}"/></td>
-        <td>{{image.label}}</td>
-        <td>{{image.description}}</td>
         <td>
-          <LinkTo @route="poi.show.files.edit" @models={{array @poi image}}>edit</LinkTo>
+          <input {{on "input" (fn this.updateImage image "label")}} value={{image.label}} type="text" />
+        </td>
+        <td>
+          <input {{on "input" (fn this.updateImage image "description")}} value={{image.description}} type="text" />
+        </td>
+        <td>
+          <button type="button" {{on "click" (fn this.removeImage image)}}>remove</button>
         </td>
       </DraggableObject>
     {{/each}}
