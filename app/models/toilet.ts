@@ -1,5 +1,6 @@
 import Model, { attr, belongsTo } from '@ember-data/model';
 import Area from './area';
+import Concept from './concept';
 
 export default class Toilet extends Model {
   @attr('string') comment: string | null | undefined;
@@ -22,13 +23,10 @@ export default class Toilet extends Model {
   @attr('number') turningRadius: number | null | undefined;
   @attr('number') amountOfSupportBraces: number | null | undefined;
   @attr('boolean', { allowNull: true }) hasWashbasin: boolean | null | undefined;
-  @attr('number') freeHeightUnderWashbasin: number | null | undefined;
-  @attr('number') freeDepthUnderWashbasin: number | null | undefined;
-  @attr('number') freeWidthUnderWashbasin: number | null | undefined;
   @belongsTo('area') sizeOfElevator: Area | null | undefined;
   @belongsTo('area') sizeOfPlateauElevator: Area | null | undefined;
   @belongsTo('area') sizeOfToiletRoom: Area | null | undefined;
-  @belongsTo('concept') canRideUnderWashbasinCategory;
+  @belongsTo('concept') canRideUnderWashbasinCategory: Concept | null | undefined;
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.

@@ -32,17 +32,16 @@ export default class PointOfInterest extends Scorable {
   @attr('boolean', { allowNull: true }) publicTransportGuidanceAvailable: boolean | undefined | null;
   @attr('boolean', { allowNull: true }) websiteHasAccessibleContrast: boolean | undefined | null;
   @attr('boolean', { allowNull: true }) websiteHasSignLanguage: boolean | undefined | null;
-  @attr('boolean', { allowNull: true }) wheelchairAvailable: boolean | undefined | null;
   @attr('boolean', { allowNull: true }) hasClearlyRecognizableBuilding: boolean | undefined | null;
   @attr('boolean', { allowNull: true }) hasClearlyRecognizableEntrance: boolean | undefined | null;
   @attr('boolean', { allowNull: true }) hasVisibleGuidelines: boolean | undefined | null;
   @attr('boolean', { allowNull: true }) extraAttentionGivenToAcoustics: boolean | undefined | null;
   @attr('boolean', { allowNull: true }) hasAlternativeEntranceForWheelchair: boolean | undefined | null;
-  @attr('boolean', { allowNull: true }) hasFreeEntranceForGuide: boolean | undefined | null;
-  @attr('boolean', { allowNull: true }) acceptsMuseumPass: boolean | undefined | null;
-  @attr('boolean', { allowNull: true }) acceptsUitpas: boolean | undefined | null;
-  @attr('boolean', { allowNull: true }) acceptsCityPass: boolean | undefined | null;
-  @attr('boolean', { allowNull: true }) acceptsEdc: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) hasRevolvingDoor: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) isNoisy: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) hasGlassFloor: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) hasDifficultStaircaseForDogs: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) hasEscalator: boolean | undefined | null;
   @hasMany('experience') experiences!: Experience[];
   @hasMany('entrance') entrances!: Entrance[];
   @hasMany('parking') parkings!: Parking[];
@@ -58,6 +57,13 @@ export default class PointOfInterest extends Scorable {
   @belongsTo('widget') widget!: Widget;
   @belongsTo('concept') wifiAvailability: Concept | undefined | null;
   @belongsTo('concept') typeOfGlassDoorDecoration: Concept | undefined | null;
+  @belongsTo('concept') acceptanceOfMuseumPass: Concept | undefined | null;
+  @belongsTo('concept') acceptanceOfUitpas: Concept | undefined | null;
+  @belongsTo('concept') acceptanceOfCityPass: Concept | undefined | null;
+  @belongsTo('concept') acceptanceOfEdc: Concept | undefined | null;
+  @belongsTo('concept') discountForGuide: Concept | undefined | null;
+  @belongsTo('concept') discountForTranslator: Concept | undefined | null;
+  @belongsTo('concept') wheelchairAvailability: Concept | undefined | null;
   @hasMany('concept') summaryIcons: Concept[] | undefined | null;
 }
 

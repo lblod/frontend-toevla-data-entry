@@ -31,6 +31,11 @@ export default class Experience extends Scorable {
   @attr('boolean', { allowNull: true }) hasActionableElements: boolean | null | undefined;
   @attr('boolean', { allowNull: true }) hasListeningElements: boolean | null | undefined;
   @attr('boolean', { allowNull: true }) hasPlacesOfSilence: boolean | null | undefined;
+
+  @attr('boolean', { allowNull: true }) audioGuideAvailableViaHeadset: boolean | null | undefined;
+  @attr('boolean', { allowNull: true }) audioGuideAvailableViaSmartphone: boolean | null | undefined;
+  @attr('boolean', { allowNull: true }) audioGuideAvailableViaOtherMeans: boolean | null | undefined;
+
   @attr('string') otherElements: boolean | null | undefined;
 }
 

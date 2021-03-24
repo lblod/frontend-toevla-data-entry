@@ -23,4 +23,5 @@ export default class RestaurantModel extends Model {
   @attr('boolean', { allowNull: true }) hasPaymentWithFixedElectronicPaymentSystem;
   @attr('boolean', { allowNull: true }) hasPaymentWithMovableElectronicPaymentSystem;
   @attr('boolean', { allowNull: true }) hasCashPayment;
+  @attr('boolean', { allowNull: true }) hasOnlineOrderingAndPaymentOption;
 }
