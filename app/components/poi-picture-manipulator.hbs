@@ -1,0 +1,33 @@
+<UploadImage @poi={{@poi}} />
+
+<table>
+  <thead>
+    <tr>
+      <th>Image</th><th>Alt</th><th>Description</th><th>Actions</th>
+    </tr>
+  </thead>
+
+  <SortableObjects
+    @tagName="tbody"
+    @sortEndAction={{this.onSort}}
+    @enableSort={{true}}
+    @useSwap={{true}}
+    @inPlace={{true}}
+    @sortableObjectList={{this.images}} >
+
+    {{#each this.images as |image|}}
+      <DraggableObject
+        @tagName="tr"
+        @content={{image}}
+        @isSortable={{true}}>
+
+        <td><img src="/images/{{image.id}}?height=120" alt="{{image.label}}"/></td>
+        <td>{{image.label}}</td>
+        <td>{{image.description}}</td>
+        <td>
+          <LinkTo @route="poi.show.files.edit" @models={{array @poi image}}>edit</LinkTo>
+        </td>
+      </DraggableObject>
+    {{/each}}
+  </SortableObjects>
+</table>
