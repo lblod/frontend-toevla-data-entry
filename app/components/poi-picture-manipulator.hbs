@@ -9,7 +9,7 @@
 
   <SortableObjects
     @tagName="tbody"
-    @sortEndAction={{this.onSort}}
+    @sortEndAction={{this.persistImageOrder}}
     @enableSort={{true}}
     @useSwap={{true}}
     @inPlace={{true}}
@@ -30,6 +30,8 @@
         </td>
         <td>
           <button type="button" {{on "click" (fn this.removeImage image)}}>remove</button>
+          <button type="button" {{on "click" (fn this.imageUp image)}}>up</button>
+          <button type="button" {{on "click" (fn this.imageDown image)}}>down</button>
         </td>
       </DraggableObject>
     {{/each}}

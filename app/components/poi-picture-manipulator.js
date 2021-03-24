@@ -29,7 +29,7 @@ export default class PoiPictureManipulatorComponent extends Component {
   @service smartStore
 
   @action
-  onSort(stuff) {
+  persistImageOrder() {
     const images = [...this.images];
     for( let i = 0; i < images.length; i++ ) {
       images[i].order = i;
@@ -39,12 +39,48 @@ export default class PoiPictureManipulatorComponent extends Component {
 
   @action
   updateImage(image, property, event) {
+    event.preventDefault();
     image.set(property, event.target.value);
     this.smartStore.persist( image );
   }
 
   @action
-  removeImage(image, /* event */) {
+  removeImage(image, event) {
+    event.preventDefault();
     image.destroyRecord();
+  }
+
+  @action
+  imageUp(image, event) {
+    event.preventDefault();
+    const currentIndex = this.images.indexOf( image );
+    swapIndex( this.images, currentIndex, currentIndex - 1);
+    this.persistImageOrder();
+  }
+
+  @action
+  imageDown(image, event) {
+    event.preventDefault();
+    const currentIndex = this.images.indexOf( image );
+    swapIndex( this.images, currentIndex, currentIndex + 1);
+    this.persistImageOrder();
+  }
+}
+
+/**
+ * Swaps the order of two items in an array.  Safe: if the items can't
+ * be swapped, no operation will be executed.
+ */
+function swapIndex( array, idxA, idxB ) {
+  const validRequest =
+        idxA >= 0
+        && idxB >= 0
+        && idxA < array.length
+        && idxB < array.length;
+
+  if( validRequest ) {
+    const itemA = array[idxA];
+    array[idxA] = array[idxB];
+    array[idxB] = itemA;
   }
 }
