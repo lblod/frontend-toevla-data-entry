@@ -142,11 +142,9 @@ export default class SmartStoreService extends Service {
 
   _moveToExecuting(saveInfo) {
     const item = saveInfo.instance;
-    console.log(this._waiting);
     delete this._waiting[item];
     delete this._waiting[item._internalModel.clientId]; // new items
     this._waiting = { ...this._waiting };
-    console.log(this._waiting);
     this._executing.add(saveInfo);
   }
 
