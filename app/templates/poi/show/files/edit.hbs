@@ -1,5 +1,4 @@
 <div class="au-o-box">
-
   <div class="au-o-grid">
     <div class="au-o-grid__item au-u-1-3@small">
       <div class="au-c-image">
@@ -12,21 +11,21 @@
         Terug
       </LinkTo>
       <div class="au-c-content au-u-margin-top-small">
-        <AuHeading @level="2" @skin="3">{{@model.id}}</AuHeading>
         <p>
-          <AuLabel for="label">Label</AuLabel>
-          <Input id="label" @type="text" class="au-c-input au-c-input--block" @value={{@model.label}} @key-down={{this.updateLabel}}/>
+          <AuLabel for="label">Omschrijving</AuLabel>
+          <AuTextarea @width="block" id="label" @value={{@model.label}} @key-down={{this.updateLabel}}></AuTextarea>
         </p>
 
         <p>
-          <AuLabel for="description">Alt text</AuLabel>
+          <AuLabel for="description">Alternatieve tekst</AuLabel>
           <Input id="description" @type="text" class="au-c-input au-c-input--block" @value={{@model.description}} @key-down={{this.updatAlt}}/>
+          <AuHelpText>Meer informatie: <a href="https://www.anysurfer.be/nl/documentatie/artikels/detail/tekstalternatieven" target="_blank" rel="noopener noreferrer" class="au-c-link">Welk tekstalternatief voor afbeeldingen</a></AuHelpText>
         </p>
 
-        <p>
+        {{!-- <p>
           <AuLabel for="order">Order</AuLabel>
           <Input id="order" class="au-c-input au-c-input--block" @type="number" @value={{mut @model.order}}/>
-        </p>
+        </p> --}}
 
         <AuButtonGroup>
           <AuButton type='button' {{on 'click' this.save}}>Opslaan</AuButton>
