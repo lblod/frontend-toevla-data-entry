@@ -1,6 +1,6 @@
 import Component from '@glimmer/component';
-import VoMuFileUpload from '@lblod/ember-vo-mu-file-upload'
+import VoMuFileDropzoneComponent from '@lblod/ember-vo-mu-file-upload/components/vo-mu-file-dropzone'
 
-export default class AuFileUpload extends VoMuFileUpload {
+export default class AuFileUpload extends VoMuFileDropzoneComponent {
 
 }
