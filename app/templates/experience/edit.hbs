@@ -12,11 +12,8 @@
           <LinkTo class="au-c-link au-c-link--secondary au-u-limit-breadcrumb" @route="poi.show.experiences.index" @model={{@model.pointOfInterest.id}}>{{@model.pointOfInterest.label}}</LinkTo>
         </li>
         <li class="au-c-list-horizontal__item">
-          <LinkTo class="au-c-link au-c-link--secondary au-u-limit-breadcrumb" @route="experience.edit" @model={{@model.id}}>{{@model.title}}</LinkTo>
-        </li>
-        <li class="au-c-list-horizontal__item">
           <strong>
-            Event aanpassen
+            {{@model.title}} aanpassen
           </strong>
         </li>
       </ul>
