@@ -25,7 +25,7 @@
   <div class="au-o-layout">
     <div class="au-o-region-large">
       <AuHeading @skin="2" class="au-u-margin-bottom">Locatie aanpassen</AuHeading>
-      <form {{on "submit" this.submit}}>
+      <form {{on "submit" this.submit}} class="au-c-form">
         <p>
           <AuLabel for="edit">Naam</AuLabel>
           <AuInput @width="block" id="edit" @type="string" @value={{this.model.label}} />

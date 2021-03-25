@@ -16,21 +16,12 @@
       </ul>
     </AuToolbarGroup>
   </AuToolbar>
-  <AuToolbar @border="bottom" @size="large">
+  <AuToolbar  @border="bottom" @size="large">
     <AuToolbarGroup>
       <AuHeading @skin="2"><span class="au-u-limit-text">{{@model.label}}</span></AuHeading><SmartStore::State />
     </AuToolbarGroup>
     <AuToolbarGroup class="au-u-h6">
-      {{!-- <div class="au-c-button au-c-button--secondary">
-        O({{this.smartStore.outstandingUpdates.length}}) X({{this.smartStore.executingUpdates.length}}) F({{this.smartStore.failedUpdates.length}})
-      </div> --}}
       <div class="au-c-button-group">
-        <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.tree" @model={{@model}}>
-          Kennisboom
-        </LinkTo>
-        <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.experiences.index" @model={{@model}}>
-          Belevingen
-        </LinkTo>
         <LinkTo class="au-c-button" @route="poi.edit" @model={{@model}}>
           <AuIcon @icon="pencil" @alignment="left" />
           Aanpassen
@@ -38,11 +29,17 @@
       </div>
     </AuToolbarGroup>
   </AuToolbar>
-  {{!--
-    <article class="au-o-box au-o-box--small au-c-card au-c-card--link au-u-margin-bottom">
-      <LinkTo class="au-c-link au-c-link--secondary au-c-card__link" @route="experience.show.tree" @model={{@model}}> Gebouw</LinkTo>
-    </article> --}}
 
-    {{outlet}}
+  <AuToolbar @border="bottom" @size="medium">
+    <div class="au-c-tabs">
+      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.tree" @model={{@model}}>
+        Kennis
+      </LinkTo>
+      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.experiences.index" @model={{@model}}>
+        Evenementen
+      </LinkTo>
+    </div>
+  </AuToolbar>
 
+  {{outlet}}
 </div>

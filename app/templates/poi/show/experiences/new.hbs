@@ -1,55 +1,57 @@
-<AuToolbar class="au-u-margin-bottom">
-  <AuToolbarGroup>
-    <AuHeading @level="2" @skin="3">
-      Nieuw event
-    </AuHeading>
-  </AuToolbarGroup>
-</AuToolbar>
-
-<WithStatechart @state={{this.statechart}} as |chart|>
-
-  <chart.if @state="init">
-    <form {{on "submit" (fn chart.preventAndSend "CREATE")}}>
-      <AuLabel for="editevent">Naam</AuLabel>
-      <AuInput @width="block" id="editevent" @type="string" @value={{this.title}} />
-      <AuButtonGroup class="au-u-margin-top-small">
-        <AuButton type="submit" {{on "click" (fn chart.preventAndSend "CREATE")}}>Aanmaken</AuButton>
-        <AuButton type="button" @skin="secondary" {{on "click" (fn chart.preventAndSend "CLEAR")}}>Reset</AuButton>
-      </AuButtonGroup>
-    </form>
-  </chart.if>
-
-  <chart.if @state="creating">
-    <div>
-      <AuHeading @level="3" @skin="5">Event aanmaken</AuHeading>
-      <AuLoader />
-    </div>
-  </chart.if>
-
-  <chart.if @state="failed">
-    <p>Oops, failed to create your event</p>
-    <button type="button" {{on "click" (fn chart.preventAndSend "RESET")}}>RESET</button>
-  </chart.if>
-
-  <chart.if @state="created">
-    <div>
-      <AuHeading @level="3" @skin="5">Event aanmaken, doorsturen naar detailpagina.</AuHeading>
-      <AuLoader />
-    </div>
-  </chart.if>
-
-  <chart.if @state="failedTransitioning">
-    <div>
-      <AuHeading @level="3" @skin="5">Failed to transition to your created experience.</AuHeading>
-    </div>
-  </chart.if>
-
-  <AuToolbar @border="top" class="au-u-margin-top au-u-padding-top-small">
-    <AuToolbarGroup class="au-c-toolbar__group--row">
-      <LinkTo class="au-c-link au-c-link--secondary" @route="poi.show.experiences.index" @model={{this.poi}}>
-        <AuIcon @icon="arrow-left" @alignment="left" />
-        Terug naar alle events
-      </LinkTo>
+<div class="au-o-box au-c-body-container au-c-body-container--scroll au-c-theme-gray-100">
+  <AuToolbar class="au-u-margin-bottom">
+    <AuToolbarGroup>
+      <AuHeading @level="2" @skin="3">
+        Nieuw event
+      </AuHeading>
     </AuToolbarGroup>
   </AuToolbar>
-</WithStatechart>
+
+  <WithStatechart @state={{this.statechart}} as |chart|>
+
+    <chart.if @state="init">
+      <form {{on "submit" (fn chart.preventAndSend "CREATE")}}>
+        <AuLabel for="editevent">Naam</AuLabel>
+        <AuInput @width="block" id="editevent" @type="string" @value={{this.title}} />
+        <AuButtonGroup class="au-u-margin-top-small">
+          <AuButton type="submit" {{on "click" (fn chart.preventAndSend "CREATE")}}>Aanmaken</AuButton>
+          <AuButton type="button" @skin="secondary" {{on "click" (fn chart.preventAndSend "CLEAR")}}>Reset</AuButton>
+        </AuButtonGroup>
+      </form>
+    </chart.if>
+
+    <chart.if @state="creating">
+      <div>
+        <AuHeading @level="3" @skin="5">Event aanmaken</AuHeading>
+        <AuLoader />
+      </div>
+    </chart.if>
+
+    <chart.if @state="failed">
+      <p>Oops, failed to create your event</p>
+      <button type="button" {{on "click" (fn chart.preventAndSend "RESET")}}>RESET</button>
+    </chart.if>
+
+    <chart.if @state="created">
+      <div>
+        <AuHeading @level="3" @skin="5">Event aanmaken, doorsturen naar detailpagina.</AuHeading>
+        <AuLoader />
+      </div>
+    </chart.if>
+
+    <chart.if @state="failedTransitioning">
+      <div>
+        <AuHeading @level="3" @skin="5">Failed to transition to your created experience.</AuHeading>
+      </div>
+    </chart.if>
+
+    <AuToolbar @border="top" class="au-u-margin-top au-u-padding-top-small">
+      <AuToolbarGroup class="au-c-toolbar__group--row">
+        <LinkTo class="au-c-link au-c-link--secondary" @route="poi.show.experiences.index" @model={{this.poi}}>
+          <AuIcon @icon="arrow-left" @alignment="left" />
+          Terug naar alle events
+        </LinkTo>
+      </AuToolbarGroup>
+    </AuToolbar>
+  </WithStatechart>
+</div>
