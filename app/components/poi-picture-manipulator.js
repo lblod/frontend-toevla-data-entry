@@ -19,21 +19,21 @@ class PictureListResource extends Resource {
       poi
         .images
         .toArray()
-        .sortBy( "order" ));
+        .sortBy("order"));
   }
 }
 
 export default class PoiPictureManipulatorComponent extends Component {
-  @use images = new PictureListResource( () => [this.args.poi]);
+  @use images = new PictureListResource(() => [this.args.poi]);
 
   @service smartStore
 
   @action
   persistImageOrder() {
     const images = [...this.images];
-    for( let i = 0; i < images.length; i++ ) {
+    for (let i = 0; i < images.length; i++) {
       images[i].order = i;
-      this.smartStore.persist( images[i] );
+      this.smartStore.persist(images[i]);
     }
   }
 
@@ -41,7 +41,7 @@ export default class PoiPictureManipulatorComponent extends Component {
   updateImage(image, property, event) {
     event.preventDefault();
     image.set(property, event.target.value);
-    this.smartStore.persist( image );
+    this.smartStore.persist(image);
   }
 
   @action
@@ -53,16 +53,16 @@ export default class PoiPictureManipulatorComponent extends Component {
   @action
   imageUp(image, event) {
     event.preventDefault();
-    const currentIndex = this.images.indexOf( image );
-    swapIndex( this.images, currentIndex, currentIndex - 1);
+    const currentIndex = this.images.indexOf(image);
+    swapIndex(this.images, currentIndex, currentIndex - 1);
     this.persistImageOrder();
   }
 
   @action
   imageDown(image, event) {
     event.preventDefault();
-    const currentIndex = this.images.indexOf( image );
-    swapIndex( this.images, currentIndex, currentIndex + 1);
+    const currentIndex = this.images.indexOf(image);
+    swapIndex(this.images, currentIndex, currentIndex + 1);
     this.persistImageOrder();
   }
 
@@ -82,14 +82,14 @@ export default class PoiPictureManipulatorComponent extends Component {
  * Swaps the order of two items in an array.  Safe: if the items can't
  * be swapped, no operation will be executed.
  */
-function swapIndex( array, idxA, idxB ) {
+function swapIndex(array, idxA, idxB) {
   const validRequest =
-        idxA >= 0
-        && idxB >= 0
-        && idxA < array.length
-        && idxB < array.length;
+    idxA >= 0
+    && idxB >= 0
+    && idxA < array.length
+    && idxB < array.length;
 
-  if( validRequest ) {
+  if (validRequest) {
     const itemA = array[idxA];
     array[idxA] = array[idxB];
     array[idxB] = itemA;
