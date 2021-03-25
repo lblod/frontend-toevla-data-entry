@@ -1,6 +1,4 @@
 .au-c-upload-box {
-  padding: $au-unit-small;
-  padding-bottom: 0;
   border: .1rem solid $au-gray-200;
   background-color: $au-white;
   margin-bottom: $au-unit;
@@ -81,13 +79,14 @@
 .au-c-upload-image {
   display: block;
   position: relative;
+  background-color: $au-gray-1000;
 
   img {
     position: relative;
     width: 100%;
     height: 70px;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   @include mq(small) {

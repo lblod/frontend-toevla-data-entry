@@ -14,7 +14,9 @@
           <Tree::Node @node={{node}} @subject={{this.poi}} class="au-c-tree__item" />
         {{/each}}
         <div class="au-c-upload-box">
-          <AuHeading @level="2" @skin="5" class="au-u-margin-bottom-small">Foto's</AuHeading>
+          <div class="au-o-box au-o-box--small">
+            <AuHeading @level="2" @skin="5">Foto's</AuHeading>
+          </div>
           <PoiPictureManipulator @poi={{this.poi}} />
         </div>
       </ul>

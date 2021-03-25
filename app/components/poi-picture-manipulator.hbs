@@ -1,39 +1,65 @@
-<UploadImage @poi={{@poi}} />
+<div class="au-c-data-table__wrapper">
+  <table class="au-c-data-table__table ">
+    <thead>
+      <tr class="au-c-data-table__header">
+        <th class="data-table__header-title">Positie</th>
+        <th class="data-table__header-title">Foto</th>
+        <th class="data-table__header-title">Beschrijving</th>
+        <th class="data-table__header-title">Alternatieve tekst</th>
+        <th class="data-table__header-title">Acties</th>
+      </tr>
+    </thead>
 
-<table>
-  <thead>
-    <tr>
-      <th>Image</th><th>Alt</th><th>Description</th><th>Actions</th>
-    </tr>
-  </thead>
+    <SortableObjects
+      @tagName="tbody"
+      @sortEndAction={{this.persistImageOrder}}
+      @enableSort={{true}}
+      @useSwap={{true}}
+      @inPlace={{true}}
+      @sortableObjectList={{this.images}} >
 
-  <SortableObjects
-    @tagName="tbody"
-    @sortEndAction={{this.persistImageOrder}}
-    @enableSort={{true}}
-    @useSwap={{true}}
-    @inPlace={{true}}
-    @sortableObjectList={{this.images}} >
+      {{#each this.images as |image|}}
+        <DraggableObject
+          @tagName="tr"
+          @content={{image}}
+          @isSortable={{true}}>
 
-    {{#each this.images as |image|}}
-      <DraggableObject
-        @tagName="tr"
-        @content={{image}}
-        @isSortable={{true}}>
+          <td>
+            <button type="button" {{on "click" (fn this.imageUp image)}} class="au-c-button au-c-button--secondary">
+              <AuIcon @icon="nav-up" />
+              <span class="au-u-hidden-visually">Plaats naar boven</span>
+            </button>
+            <button type="button" {{on "click" (fn this.imageDown image)}} class="au-c-button au-c-button--secondary">
+              <AuIcon @icon="nav-down" />
+              <span class="au-u-hidden-visually">Plaats naar beneden</span>
+            </button>
+          </td>
 
-        <td><img src="/images/{{image.id}}?height=120" alt="{{image.label}}"/></td>
-        <td>
-          <input {{on "input" (fn this.updateImage image "label")}} value={{image.label}} type="text" />
-        </td>
-        <td>
-          <input {{on "input" (fn this.updateImage image "description")}} value={{image.description}} type="text" />
-        </td>
-        <td>
-          <button type="button" {{on "click" (fn this.removeImage image)}}>remove</button>
-          <button type="button" {{on "click" (fn this.imageUp image)}}>up</button>
-          <button type="button" {{on "click" (fn this.imageDown image)}}>down</button>
-        </td>
-      </DraggableObject>
-    {{/each}}
-  </SortableObjects>
-</table>
+          <td class="au-u-padding-none">
+            <div class="au-c-upload-image">
+              <img src="/images/{{image.id}}?height=160" alt="{{image.label}}" />
+            </div>
+          </td>
+          <td>
+            <AuTextarea {{on "input" (fn this.updateImage image "description")}} value={{image.description}} @width="block" />
+          </td>
+          <td>
+            <AuTextarea {{on "input" (fn this.updateImage image "label")}} value={{image.label}} @width="block" />
+          </td>
+          <td>
+
+
+            <button type="button" {{on "click" (fn this.removeImage image)}} class="au-c-button au-c-button--tertiary au-c-button--alert">
+              <AuIcon @icon="bin" @alignment="left" />
+              Verwijder foto
+            </button>
+          </td>
+        </DraggableObject>
+      {{/each}}
+    </SortableObjects>
+  </table>
+</div>
+
+<div class="au-o-box au-o-box--small">
+  <UploadImage @poi={{@poi}} />
+</div>
