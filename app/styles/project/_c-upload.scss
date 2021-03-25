@@ -22,8 +22,9 @@
   }
 }
 
-.au-c-upload input {
-  display: block;
+.au-c-upload input,
+.file-upload input[hidden] {
+  display: block !important;
   height: 0;
   width: 0;
   outline: 0;
