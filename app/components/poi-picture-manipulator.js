@@ -65,6 +65,15 @@ export default class PoiPictureManipulatorComponent extends Component {
     swapIndex( this.images, currentIndex, currentIndex + 1);
     this.persistImageOrder();
   }
+
+  @action
+  async uploadedFile(file) {
+    file.pointOfInterest = this.args.poi;
+    file.order = this.images.length;
+    this.args.poi.images.addObject( file );
+    this.smartStore.persist(this.args.poi);
+    this.persistImageOrder();
+  }
 }
 
 /**
