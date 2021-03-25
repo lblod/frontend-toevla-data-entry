@@ -16,7 +16,7 @@
       </ul>
     </AuToolbarGroup>
   </AuToolbar>
-  <AuToolbar  @border="bottom" @size="large">
+  <AuToolbar @border="bottom" @size="large">
     <AuToolbarGroup>
       <AuHeading @skin="2"><span class="au-u-limit-text">{{@model.label}}</span></AuHeading><SmartStore::State />
     </AuToolbarGroup>
@@ -33,7 +33,7 @@
   <AuToolbar @border="bottom" @size="medium">
     <div class="au-c-tabs">
       <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.tree" @model={{@model}}>
-        Kennis
+        Algemene kennis
       </LinkTo>
       <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.experiences.index" @model={{@model}}>
         Evenementen
