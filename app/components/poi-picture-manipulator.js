@@ -70,8 +70,10 @@ export default class PoiPictureManipulatorComponent extends Component {
   async uploadedFile(file) {
     file.pointOfInterest = this.args.poi;
     file.order = this.images.length;
-    this.args.poi.images.addObject( file );
-    this.smartStore.persist(this.args.poi);
+    this.args.poi.images.addObject(file);
+    file.order == 0 // ember-data-change-tracker smartstore compatibity issue
+      ? this.args.poi.save()
+      : this.smartStore.persist(this.args.poi);
     this.persistImageOrder();
   }
 }
