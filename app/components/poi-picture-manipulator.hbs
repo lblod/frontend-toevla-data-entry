@@ -21,10 +21,15 @@
       {{#each this.images as |image|}}
         <DraggableObject
           @tagName="tr"
+          @dragHandle=".is-draggable"
           @content={{image}}
           @isSortable={{true}}>
 
           <td>
+            <button type="button" class="au-c-button is-draggable">
+              <AuIcon @icon="nav-up-down" />
+              <span class="au-u-hidden-visually">Verplaats</span>
+            </button>
             <button type="button" {{on "click" (fn this.imageUp image)}} class="au-c-button au-c-button--secondary">
               <AuIcon @icon="nav-up" />
               <span class="au-u-hidden-visually">Plaats naar boven</span>
@@ -35,7 +40,7 @@
             </button>
           </td>
 
-          <td class="au-u-padding-none">
+          <td class="au-u-padding-none is-draggable">
             <div class="au-c-upload-image">
               <img src="/images/{{image.id}}?height=160" alt="{{image.label}}" />
             </div>

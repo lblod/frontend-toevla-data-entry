@@ -371,3 +371,11 @@
     outline: 0;
   }
 }
+
+.is-draggable {
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+}

@@ -91,13 +91,13 @@
 
   @include mq(small) {
     img {
-      height: 100px;
+      height: 110px;
     }
   }
 
   @include mq(medium) {
     img {
-      height: 100px;
+      height: 110px;
     }
   }
 }
