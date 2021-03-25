@@ -70,14 +70,7 @@
 
   tbody tr {
     border-bottom: .1rem solid $au-gray-300;
-  }
-
-  tbody tr:nth-child(odd) {
     background-color: $au-gray-100;
-  }
-
-  tbody tr:nth-child(even) {
-    background-color: $au-white;
   }
 
   th {
@@ -89,6 +82,7 @@
 
   td {
     padding: $au-unit-small;
+    vertical-align: middle;
   }
 
   th {
@@ -97,23 +91,17 @@
 
   th,
   td {
-    max-width: 55ch;
     position: relative;
-  }
-
-  th.is-selectable,
-  td.is-selectable {
-    width: $au-unit-large + $au-unit-tiny;
   }
 
   th:first-child,
   td:first-child {
-    padding-left: $au-unit;
+    padding-left: $au-unit-small;
   }
 
   th:last-child,
   td:last-child {
-    padding-right: $au-unit;
+    padding-right: $au-unit-small;
     min-width: 0;
   }
 
