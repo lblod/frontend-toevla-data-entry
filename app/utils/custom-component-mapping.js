@@ -155,8 +155,6 @@ const eMapping = {
   "https://data.toevla.org/id/concepts/eccda7cb-56cd-4072-8983-709be079723d": { component: "choice", key: "tour.availabilityOfTailorMadeTours", conceptScheme: "https://data.toevla.org/id/concept-schemes/0059946e-e044-4088-98c1-a4fb66c5047f" },
 
   "https://data.toevla.org/id/concepts/51bfb01f-912a-4f19-83aa-6ff0afdb7be0": { component: "boolean", key: "tour.hasImageInterpreter" },
-  "https://data.toevla.org/id/concepts/9068439f-4c51-4695-8329-33edcff02bda": { component: "boolean", key: "tour.isAvailableOnQuietMoments" },
-  "https://data.toevla.org/id/concepts/eccda7cb-56cd-4072-8983-709be079723d": { component: "boolean", key: "tour.isAvailableTailorMade" },
   "https://data.toevla.org/id/concepts/d8e7f89e-c8c4-48cb-871b-46f6eda7c529": { component: "boolean", key: "circulation.hasClearSignalizationOnRoute" },
   "https://data.toevla.org/id/concepts/2ab19f33-3edc-4e6c-9175-bb6d39e4efcc": { component: "boolean", key: "circulation.hasVenuePlan" },
   "https://data.toevla.org/id/concepts/df6b875a-e8b4-4e0a-9690-79e78497eda6": { component: "boolean", key: "circulation.hasPlanForAdvisedPath" },

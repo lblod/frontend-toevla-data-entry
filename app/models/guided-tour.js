@@ -8,6 +8,6 @@ export default class GuidedTourModel extends Model {
   @belongsTo('concept') supportForDementia;
   @belongsTo('concept') supportForAutism;
   @belongsTo('concept') supportForChildren;
-  @belongsTo('concept') availabilityOnQuiteMoments;
+  @belongsTo('concept') availabilityOnQuietMoments;
   @belongsTo('concept') availabilityOfTailorMadeTours;
 }
