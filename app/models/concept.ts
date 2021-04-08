@@ -19,6 +19,15 @@ export default class ConceptScheme extends Model {
   @attr('string') thirdLimit;
   @attr('string') thirdLabel;
 
+  @attr('boolean', { allowNull: true }) declare isCriteriumForMentallyChallenged: boolean | null;
+  @attr('boolean', { allowNull: true }) declare isCriteriumForHearingImpaired: boolean | null;
+  @attr('boolean', { allowNull: true }) declare isCriteriumForDeaf: boolean | null;
+  @attr('boolean', { allowNull: true }) declare isCriteriumForVisuallyImpaired: boolean | null;
+  @attr('boolean', { allowNull: true }) declare isCriteriumForBlind: boolean | null;
+  @attr('boolean', { allowNull: true }) declare isCriteriumForBobilityProblems: boolean | null;
+  @attr('boolean', { allowNull: true }) declare isCriteriumForWheelchair: boolean | null;
+  @attr('boolean', { allowNull: true }) declare isCriteriumForAutism: boolean | null;
+
   @belongsTo('concept', { inverse: null }) parent: Concept | undefined;
   @hasMany('concept', { inverse: null }) children: Promise<Concept[]> | undefined;
 }
