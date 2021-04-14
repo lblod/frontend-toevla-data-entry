@@ -6,6 +6,7 @@ export default class EntranceModel extends Model {
   @attr('boolean', { allowNull: true }) hasMannedDesk: boolean | undefined | null;
   @attr('boolean', { allowNull: true }) hasTeleloopAtCounter: boolean | undefined | null;
   @attr('number') highestThreshold: number | undefined | null;
+  @attr('number') amountOfThresholds: number | undefined | null;
   @attr('number') amountOfStairs: number | undefined | null;
   @attr('number') amountOfSlopes: number | undefined | null;
   @attr('boolean', { allowNull: true }) hasEntranceGutters: boolean | undefined | null;

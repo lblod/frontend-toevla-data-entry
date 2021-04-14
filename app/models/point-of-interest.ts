@@ -42,6 +42,7 @@ export default class PointOfInterest extends Scorable {
   @attr('boolean', { allowNull: true }) hasGlassFloor: boolean | undefined | null;
   @attr('boolean', { allowNull: true }) hasDifficultStaircaseForDogs: boolean | undefined | null;
   @attr('boolean', { allowNull: true }) hasEscalator: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) hasWheelchairAccessibleToilet: boolean | undefined | null;
   @hasMany('experience') experiences!: Experience[];
   @hasMany('entrance') entrances!: Entrance[];
   @hasMany('parking') parkings!: Parking[];
