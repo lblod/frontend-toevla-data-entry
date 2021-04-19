@@ -23,6 +23,7 @@ export default class ConceptScheme extends Model {
   @belongsTo('concept', { inverse: null }) parent: Concept | undefined;
   @hasMany('concept', { inverse: null }) children: Promise<Concept[]> | undefined;
   @hasMany('concept', { inverse: null }) targetAudiences: Concept[];
+  @hasMany('concept', { inverse: null }) simplifiedTargetAudiences: Concept[];
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.
