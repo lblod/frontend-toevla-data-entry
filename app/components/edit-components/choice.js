@@ -48,8 +48,8 @@ export default class EditComponentsChoiceComponent extends Component {
   )
   statechart;
 
-  get currentProperty(){
-    return property( this.args.key );
+  get currentProperty() {
+    return property(this.args.key);
   }
 
   get currentValue() {
@@ -70,7 +70,7 @@ export default class EditComponentsChoiceComponent extends Component {
 
   @action
   updateSelection(uri) {
-    this.currentValue = this.options.findBy( 'uri', uri );
+    this.currentValue = this.options.findBy('uri', uri);
     this.saveValue();
   }
 
@@ -90,21 +90,24 @@ export default class EditComponentsChoiceComponent extends Component {
   async initIntermediateObjects() {
     try {
       this.currentInstance = await getInstance(this.args.subject, this.args.key);
-      await get( this.currentInstance, this.currentProperty );
+      await get(this.currentInstance, this.currentProperty);
       const conceptSchemes = await this.store.query("concept-scheme", { "filter[:uri:]": this.args.conceptScheme });
       const conceptScheme = conceptSchemes.firstObject;
-      this.options = await conceptScheme.topLevelNodes;
+      this.options =
+        (await conceptScheme.topLevelNodes)
+        .toArray()
+        .sortBy("order");
       this.statechart.send("SETUP_OBJECTS");
-    } catch(e) {
+    } catch (e) {
       this.statechart.send("FAIL", e);
     }
   }
 
   async saveValue() {
-    await setInstanceValue( this.args.subject, this.args.key, this.configuredValue );
+    await setInstanceValue(this.args.subject, this.args.key, this.configuredValue);
     // Note: we are saving twice here.  There is some bug in dirty
     // tracking that makes this fail otherwise.
     await this.currentInstance.save();
-    this.smartStore.persist( this.currentInstance );
+    this.smartStore.persist(this.currentInstance);
   }
 }
