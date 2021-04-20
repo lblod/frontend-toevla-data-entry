@@ -1,0 +1,25 @@
+{{page-title "Mock login by point of interest"}}
+
+<label>Search Poi: <input {{on "input" this.searchEvent}} value={{this.search}} placeholder="search string" /></label>
+
+{{get this.pois "length"}}
+
+<ul>
+  {{#each this.pois as |poi|}}
+    <li>
+      {{poi.id}} -- {{poi.label}}
+    </li>
+  {{/each}}
+</ul>
+
+<div>
+  {{#if (gt this.visiblePage 1)}}
+    <button {{on "click" this.previousPage}}>Previous</button>
+  {{/if}}
+  Pagina {{this.visiblePage}} van {{this.lastPage}}.
+  {{#if (lt this.visiblePage this.lastPage)}}
+    <button {{on "click" this.nextPage}}>Next</button>
+  {{/if}}
+</div>
+
+{{outlet}}

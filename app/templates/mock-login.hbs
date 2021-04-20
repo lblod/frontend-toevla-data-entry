@@ -1,7 +1,2 @@
-<label>Search Account: <input {{on "input" (perform this.postponedSearch)}} value={{this.search}} placeholder="search string" /></label>
-
-{{get this.accounts "length"}}
-
-{{#each this.accounts as |account|}}
-  {{account.id}}
-{{/each}}
+<h1>Mock login</h1>
+{{outlet}}

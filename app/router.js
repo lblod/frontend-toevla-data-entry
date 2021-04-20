@@ -42,5 +42,8 @@ Router.map(function() {
     this.route('plaatsing');
     this.route('intro');
   });
-  this.route('mock-login');
+  this.route('mock-login', function() {
+    this.route('accounts');
+    this.route('pois');
+  });
 });
