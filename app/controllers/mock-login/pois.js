@@ -1,8 +1,10 @@
+import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
 import Controller from '@ember/controller';
 import { isEmpty } from '@ember/utils';
 import { tracked } from '@glimmer/tracking';
 import { task, timeout } from 'ember-concurrency';
+import { Response } from 'fetch';
 
 const RESULTS_PER_PAGE = 20;
 
@@ -77,5 +79,21 @@ export default class MockLoginPoisController extends Controller {
       this.page = this.page - 1;
 
     this.fetchPois.perform();
+  }
+
+  @service session;
+
+  @action
+  async login( poi ) {
+    try {
+      await this.session.authenticate('authenticator:mock-login', poi);
+      this.errorMessage = "";
+    } catch (response ) {
+      if (response instanceof Response ) {
+        this.errorMessage = `Something went wrong whilst logging in, we received a ${response.status} with info ${response.statusText}`;
+      } else {
+        this.errorMessage = response.message;
+      }
+    }
   }
 }

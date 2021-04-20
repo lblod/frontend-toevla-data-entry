@@ -7,7 +7,7 @@
 <ul>
   {{#each this.pois as |poi|}}
     <li>
-      {{poi.id}} -- {{poi.label}}
+      <span role="button" {{on "click" (fn this.login poi)}}>{{poi.id}} -- {{poi.label}}</span>
     </li>
   {{/each}}
 </ul>
