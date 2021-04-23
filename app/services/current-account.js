@@ -1,3 +1,4 @@
+import { get } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 import Service from '@ember/service';
@@ -68,6 +69,14 @@ export default class CurrentAccountService extends Service {
 
   get selectedRole() {
     return this.session?.role;
+  }
+
+  get roleIsValidator() {
+    return get(this, "selectedRole.isValidator");
+  }
+
+  get roleIsDataEntry() {
+    return get(this, "selectedRole.isDataEntry");
   }
 
   isAuthenticated() {
