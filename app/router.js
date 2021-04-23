@@ -46,4 +46,8 @@ Router.map(function() {
     this.route('accounts');
     this.route('pois');
   });
+
+  this.route('session', function() {
+    this.route('roles');
+  });
 });

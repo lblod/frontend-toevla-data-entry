@@ -1,3 +1,4 @@
+import { inject as service } from '@ember/service';
 import Base from 'ember-simple-auth/authenticators/base';
 import { get } from '@ember/object';
 import fetch from 'fetch';
@@ -9,6 +10,7 @@ const CONTENT_TYPE = 'application/vnd.api+json';
 const SUPPORTED_CREDENTIALS = 'same-origin';
 
 export default class MockLoginAuthenticator extends Base {
+  @service store;
 
   // Restores the current session
   async restore() {
@@ -27,7 +29,7 @@ export default class MockLoginAuthenticator extends Base {
   }
 
   async authenticate(poi) {
-    console.assert( poi instanceof Poi );
+    console.assert( poi instanceof Poi || poi.type === "points-of-interest" );
 
     const result = await fetch(BASE_PATH, {
       method: 'POST',
@@ -36,7 +38,7 @@ export default class MockLoginAuthenticator extends Base {
           relationships: {
             "point-of-interest": {
               data: {
-                id: poi.get('id'),
+                id: get( poi, 'id'),
                 type: "points-of-interest"
               }
             }
@@ -49,8 +51,10 @@ export default class MockLoginAuthenticator extends Base {
         'Content-Type': CONTENT_TYPE
       })
     });
-    if (result.ok)
+    if (result.ok) {
+      this.store.unloadAll();
       return result.json();
+    }
     else
       throw result;
   }

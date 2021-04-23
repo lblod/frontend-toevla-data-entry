@@ -30,8 +30,8 @@ module.exports = function (environment) {
           apiKey: '4a28155a-802e-469b-87df-3b2b84f82a9e',
           baseUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/auth',
           scope: 'openid profile vo abb_toegankelijkvlaanderen',
-          redirectUri: 'https://qa.toegankelijk.vlaanderen.be/authorization/callback',
-          logoutUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/logout'
+          redirectUri: 'https://qa.toegankelijk.vlaanderen.be/authorization/callback'// ,
+          // logoutUrl: 'https://authenticatie-ti.vlaanderen.be/op/v1/logout'
         }
       }
     }

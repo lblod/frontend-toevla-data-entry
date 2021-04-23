@@ -1,0 +1,15 @@
+{{page-title "Roles"}}
+
+<ul>
+  {{#each this.currentAccount.availableRoles as |role|}}
+    <li aria-role="button" {{on "click" (fn this.chooseRole role)}}>
+      {{#if (is-validator-role role)}}
+        Inter validator
+      {{else}}
+        Invoerder: {{role.pointOfInterest.label}}
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>
+
+{{outlet}}

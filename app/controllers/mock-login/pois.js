@@ -4,7 +4,7 @@ import Controller from '@ember/controller';
 import { isEmpty } from '@ember/utils';
 import { tracked } from '@glimmer/tracking';
 import { task, timeout } from 'ember-concurrency';
-import { Response } from 'fetch';
+import fetch, { Response } from 'fetch';
 
 const RESULTS_PER_PAGE = 20;
 
@@ -40,18 +40,18 @@ export default class MockLoginPoisController extends Controller {
    */
   @task({ keepLatest: true })
   * fetchPois() {
-    const queryData =
-      (yield this
-        .store
-        .query('point-of-interest', {
-          sort: 'label',
-          "page[number]": this.page,
-          "page[size]": RESULTS_PER_PAGE,
-          "filter[label]": isEmpty(this.search) ? undefined : this.search
-        }));
+    const fetched = yield fetch( "/mocklogin/pois", {
+      method: "GET",
+      headers: {
+        "Accept": "application/vnd.api+json"
+      }
+    });
 
-    this.meta = queryData.meta;
-    this.pois = queryData.toArray();
+    const content = yield fetched.json();
+    content.data = content.data.map( (poi) =>
+      Object.assign( poi, poi.attributes ) );
+    this.meta = content.meta;
+    this.pois = content.data;
   }
 
   /**
@@ -88,6 +88,7 @@ export default class MockLoginPoisController extends Controller {
     try {
       await this.session.authenticate('authenticator:mock-login', poi);
       this.errorMessage = "";
+      this.transitionToRoute('session.roles');
     } catch (response ) {
       if (response instanceof Response ) {
         this.errorMessage = `Something went wrong whilst logging in, we received a ${response.status} with info ${response.statusText}`;
