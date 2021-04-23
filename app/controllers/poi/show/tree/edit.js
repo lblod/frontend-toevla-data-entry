@@ -11,6 +11,7 @@ export default class PoiShowTreeEditController extends Controller {
   @tracked showComponent = false;
 
   @service smartStore;
+  @service currentAccount;
 
   @action
   reset() {

@@ -44,7 +44,7 @@
 
 
     <form class="au-c-form">
-      {{#if @model.treeNode.children}}
+      {{#if (and @model.treeNode.children this.currentAccount.roleIsValidator)}}
         <p>
           <AuLabel for="score">Score</AuLabel>
           <RadioButtons @selected={{this.currentScore}} @onSelect={{this.selectScore}} as |RadioButton|>
@@ -53,8 +53,8 @@
             {{/each}}
           </RadioButtons>
         </p>
+        <hr class="au-c-hr">
       {{/if}}
-      <hr class="au-c-hr">
       <p>
         <AuLabel for="comment">Extra omschrijving</AuLabel>
         <AuTextarea @width="block" id="comment" @value={{this.currentComment}} @placeholder="" />
