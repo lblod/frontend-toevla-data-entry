@@ -11,6 +11,7 @@ import { emberDataObjectInArray } from '../../helpers/ember-data-object-in-array
 
 export default class PoiEdit extends Controller {
   @service store!: Store;
+  @service currentAccount;
 
   model!: PointOfInterest;
   iconScheme!: ConceptScheme;
