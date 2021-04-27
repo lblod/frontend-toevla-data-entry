@@ -3,9 +3,21 @@
     <AuContentHeader @titlePartOne="Vlaanderen" @titlePartTwo="is gelijke kansen">
       <img sizes="50vw" src="/assets/images/toevla-header-1600.jpg" srcset="/assets/images/toevla-header-320.jpg 320w, /assets/images/toevla-header-1024.jpg 1024w, /assets/images/toevla-header-1600.jpg 1600w" alt="Foto van een parkeerplaats voor rolstoelgebruikers.">
     </AuContentHeader>
+    <AuToolbar @border="bottom" style="display:block">
+      <div class="au-o-layout">
+        <div class="au-c-tabs">
+
+          <LinkTo class="au-c-button au-c-button--secondary" @route="mock-login.pois">
+            Museum
+          </LinkTo>
+          <LinkTo class="au-c-button au-c-button--secondary" @route="mock-login.accounts">
+            Persoon
+          </LinkTo>
+        </div>
+      </div>
+    </AuToolbar>
     <section class="au-o-region-large">
       <div class="au-o-layout">
-        <AuHeading @skin="2" class="au-u-margin-bottom">Mock login</AuHeading>
         {{outlet}}
       </div>
     </section>
