@@ -1,13 +1,14 @@
 <AuMainHeader @homeRoute="index" @appTitle="Toegankelijk Vlaanderen" @contactRoute="contact">
-  {{!-- <LinkTo @route="poi" role="menuitem" class="au-c-button au-c-button--tertiary">
-       <AuIcon @icon="login" @alignment="left" />Aanmelden
-       </LinkTo> --}}
+  <LinkTo @route="login" role="menuitem" class="au-c-button au-c-button--tertiary">
+    <AuIcon @icon="login" @alignment="left" />Aanmelden
+  </LinkTo>
   <span role="menuitem"  class="au-c-button au-c-button--tertiary">
-    {{#if this.session.isAuthenticated}}
+    {{!-- {{#if this.session.isAuthenticated}}
       <AcmidmLogout />
     {{else}}
       <AcmidmLogin />
-    {{/if}}
+    {{/if}} --}}
+
   </span>
 </AuMainHeader>
 

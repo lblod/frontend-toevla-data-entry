@@ -3,6 +3,9 @@
     <AuLabel for="select" class="au-u-margin-bottom-small">Waar gaat uw bericht over?</AuLabel>
     <ul class="au-c-list">
       <li class="au-c-list__item">
+        <WuRadioButton @label="Aanmelden in de applicatie" @value="toegankelijk@vlaanderen.be?subject=Aanmelden in de applicatie - Toegankelijk Vlaanderen" @onChange={{fn (mut this.mailto)}} @isBlock={{true}} />
+      </li>
+      <li class="au-c-list__item">
         <WuRadioButton @label="Een vraag over de applicatie" @value="toegankelijk@vlaanderen.be?subject=Vraag of probleem - Toegankelijk Vlaanderen" @onChange={{fn (mut this.mailto)}} @isBlock={{true}} />
       </li>
       <li class="au-c-list__item">
