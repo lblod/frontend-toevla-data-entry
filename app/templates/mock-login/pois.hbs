@@ -1,25 +1,42 @@
 {{page-title "Mock login by point of interest"}}
 
-<label>Search Poi: <input {{on "input" this.searchEvent}} value={{this.search}} placeholder="search string" /></label>
+<div class="au-u-margin-bottom">
+  <AuLabel for="loginSearch" >Zoek locaties</AuLabel>
+  <AuInput id="loginSearch" @width="block" {{on "input" this.searchEvent}} value={{this.search}} />
+</div>
 
-{{get this.pois "length"}}
+{{!-- {{get this.pois "length"}} --}}
 
-<ul>
+<ul class="au-c-list">
   {{#each this.pois as |poi|}}
-    <li>
-      <span role="button" {{on "click" (fn this.login poi)}}>{{poi.id}} -- {{poi.label}}</span>
+    <li class="au-c-list__item">
+      <AuButton @skin="secondary" @width="block" {{on "click" (fn this.login poi)}} >
+        {{poi.id}} – {{poi.label}}
+      </AuButton>
     </li>
   {{/each}}
 </ul>
 
-<div>
+<ul class="au-c-list-horizontal au-u-margin-top">
   {{#if (gt this.visiblePage 1)}}
-    <button {{on "click" this.previousPage}}>Previous</button>
-  {{/if}}
-  Pagina {{this.visiblePage}} van {{this.lastPage}}.
+  <li class="au-c-list-horizontal__item">
+    <AuButton @skin="tertiary" {{on "click" this.previousPage}}>
+      <AuIcon @icon="arrow-left" @alignment="left" />
+      Previous
+    </AuButton>
+  </li>
+   {{/if}}
+  <li class="au-c-list-horizontal__item">
+    <span class="au-c-helptext">Pagina {{this.visiblePage}} van {{this.lastPage}}</span>
+  </li>
   {{#if (lt this.visiblePage this.lastPage)}}
-    <button {{on "click" this.nextPage}}>Next</button>
+  <li class="au-c-list-horizontal__item">
+    <AuButton @skin="tertiary" {{on "click" this.nextPage}}>
+      Next
+      <AuIcon @icon="arrow-right" @alignment="right" />
+    </AuButton>
+  </li>
   {{/if}}
-</div>
+</ul>
 
 {{outlet}}
