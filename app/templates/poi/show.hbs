@@ -22,9 +22,17 @@
     </AuToolbarGroup>
     <AuToolbarGroup class="au-u-h6">
       <div class="au-c-button-group">
-        <LinkTo class="au-c-button" @route="poi.edit" @model={{@model}}>
+        <LinkTo class="au-c-button au-c-button--tertiary" @route="poi.edit" @model={{@model}}>
           <AuIcon @icon="pencil" @alignment="left" />
-          Aanpassen
+          Locatie aanpassen
+        </LinkTo>
+        <LinkTo class="au-c-button au-c-button--secondary" @route="poi.edit" @model={{@model}}>
+          <AuIcon @icon="send" @alignment="left" />
+          Verstuur
+        </LinkTo>
+        <LinkTo class="au-c-button" @route="poi.edit" @model={{@model}}>
+          <AuIcon @icon="publish" @alignment="left" />
+          Publiceer
         </LinkTo>
       </div>
     </AuToolbarGroup>
@@ -37,6 +45,9 @@
       </LinkTo>
       <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.experiences.index" @model={{@model}}>
         Tentoonstelling
+      </LinkTo>
+      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.history.index" @model={{@model}}>
+        Historiek
       </LinkTo>
     </div>
   </AuToolbar>

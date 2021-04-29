@@ -16,6 +16,7 @@ Router.map(function() {
       this.route('tree', function() {
         this.route('edit', { path: "/node/:tree_node_id/scorable/:scorable_id" } );
       });
+      this.route('history', function() {});
     });
     this.route('new');
     this.route('edit', { path: "/:id/edit" });

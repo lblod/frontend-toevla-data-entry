@@ -216,6 +216,21 @@
   & + & {
     margin-top: $au-unit-small;
   }
+
+  .au-c-list--timeline & + & {
+    margin-top: $au-unit;
+    position: relative;
+  }
+
+  .au-c-list--timeline & + &:before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: $au-unit-small;
+    height: $au-unit;
+    width: .2rem;
+    background-color: $au-gray-300;
+  }
 }
 
 
