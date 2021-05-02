@@ -40,7 +40,7 @@ steps:
   image: plugins/docker
   settings:
     repo: lblod/frontend-toevla-data-entry
-    tags: ${DRONE_BRANCH##feature/}
+    tags: feature-${DRONE_BRANCH##feature/}
     username:
       from_secret: docker_username
     password:
@@ -76,6 +76,6 @@ trigger:
     - tag
 ---
 kind: signature
-hmac: cc15da2e3ceb2b06f80699a1dac41361643c12e631d6f44c8c308838cd58536f
+hmac: e408c9bbd0f1d315e727d4e13485783fc86c03b09e2f35575e3c01f09641bd4b
 
 ...
