@@ -34,6 +34,26 @@ trigger:
 ---
 kind: pipeline
 type: docker
+name: push-feature-build-for-feature-branch
+steps:
+- name: push-feature-build
+  image: plugins/docker
+  settings:
+    repo: lblod/frontend-toevla-data-entry
+    tags: ${DRONE_BRANCH##feature/}
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
+trigger:
+  branch:
+  - feature/*
+  event:
+    exclude:
+    - pull_request
+---
+kind: pipeline
+type: docker
 name: release-on-tag
 steps:
 - name: build-dry-run
@@ -56,6 +76,6 @@ trigger:
     - tag
 ---
 kind: signature
-hmac: e1ca25d74696c3accd11c3ef78533e40ee9467813974692ef97acafd3940320a
+hmac: cc15da2e3ceb2b06f80699a1dac41361643c12e631d6f44c8c308838cd58536f
 
 ...
