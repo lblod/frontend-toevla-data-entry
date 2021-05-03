@@ -47,7 +47,11 @@ export default class TreeNodeComponent extends Component<TreeNodeArgs> {
 
   @action
   sidebarFocus(){
-    document.querySelector('.au-c-action-sidebar').focus();
+    var sidebarFocusTarget = document.querySelector('.au-c-action-sidebar');
+
+    if (sidebarFocusTarget) {
+      sidebarFocusTarget.focus();
+    }
   }
 
   get nodeTitle(){

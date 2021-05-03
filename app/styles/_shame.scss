@@ -429,15 +429,16 @@
   }
 
   .au-c-button.active {
-    // position: relative;
-    // background-color: $au-gray-100;
     text-decoration: none;
     box-shadow: inset 0 -.3rem 0 $au-gray-700;
     font-weight: $au-medium;
     color: $au-gray-900;
-    // padding-top: $au-unit-small;
-    // padding-bottom: $au-unit-small;
-    // height: $au-unit-large;
-    // bottom: -.1rem;
+  }
+}
+
+// No-focus utility {
+.au-u-no-focus {
+  &:focus {
+    outline: 0 !important;
   }
 }
