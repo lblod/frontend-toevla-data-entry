@@ -47,7 +47,7 @@
           <ul class="au-c-tree__list">
             {{#each this.sortedChildren as |child|}}
               <Tree::Node @node={{child}} @subject={{@subject}} class="au-c-tree__item au-c-tree__item--child">
-                <LinkTo class="au-c-tree__edit" @route="poi.show.tree.edit" @models={{array child.id @subject.id}}>
+                <LinkTo {{on "click" this.sidebarFocus}} class="au-c-tree__edit" @route="poi.show.tree.edit" @models={{array child.id @subject.id}}>
                   <AuIcon @icon="pencil" />
                   <span class="au-c-tree__edit-label">Aanpassen</span>
                 </LinkTo>

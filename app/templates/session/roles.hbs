@@ -1,17 +1,28 @@
 {{page-title "Roles"}}
 
-<ul class="au-c-list">
-  {{#each this.currentAccount.availableRoles as |role|}}
-    <li class="au-c-list__item">
-      <AuButton @skin="secondary" @width="block" {{on "click" (fn this.chooseRole role)}} >
-        {{#if (is-validator-role role)}}
-          Inter validator
-        {{else}}
-          Invoerder: {{role.pointOfInterest.label}}
-        {{/if}}
-      </AuButton>
-    </li>
-  {{/each}}
-</ul>
-
-{{outlet}}
+<div class="au-c-main-container__content au-c-main-container__content--scroll">
+  <main id="content">
+    <AuContentHeader @titlePartOne="Vlaanderen" @titlePartTwo="is gelijke kansen">
+      <img sizes="50vw" src="/assets/images/toevla-header-1600.jpg" srcset="/assets/images/toevla-header-320.jpg 320w, /assets/images/toevla-header-1024.jpg 1024w, /assets/images/toevla-header-1600.jpg 1600w" alt="Foto van een parkeerplaats voor rolstoelgebruikers.">
+    </AuContentHeader>
+    <section class="au-o-region-large">
+      <div class="au-o-layout">
+        <AuHeading @skin="2" class="au-u-margin-bottom">Selecteer je rol</AuHeading>
+        <ul class="au-c-list">
+          {{#each this.currentAccount.availableRoles as |role|}}
+            <li class="au-c-list__item">
+              <AuButton @skin="secondary" @width="block" {{on "click" (fn this.chooseRole role)}} >
+                {{#if (is-validator-role role)}}
+                  Inter validator
+                {{else}}
+                  Invoerder: {{role.pointOfInterest.label}}
+                {{/if}}
+              </AuButton>
+            </li>
+          {{/each}}
+        </ul>
+        {{outlet}}
+      </div>
+    </section>
+  </main>
+</div>
