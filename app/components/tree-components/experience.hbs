@@ -6,7 +6,7 @@
     @disableHandlerComponent={{true}}
     class="au-c-tree__item au-c-tree__item--child">
 
-    <LinkTo {{on "click" this.sidebarFocus}} class="au-c-tree__edit" @route="poi.show.tree.edit" @models={{array @node.id experience.id}}>
+    <LinkTo {{on "click" this.sidebarFocus}} class="au-c-tree__edit" @route="poi.show.tree.edit" @models={{array @node.id experience.id}}  area-label="Beleving - {{experience.title}} aanpassen">
       <AuIcon @icon="pencil" />
       <span class="au-c-tree__edit-label">Aanpassen</span>
     </LinkTo>
