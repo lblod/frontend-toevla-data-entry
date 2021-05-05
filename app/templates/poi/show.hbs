@@ -26,14 +26,52 @@
           <AuIcon @icon="pencil" @alignment="left" />
           Locatie aanpassen
         </LinkTo>
-        <LinkTo class="au-c-button au-c-button--secondary" @route="poi.edit" @model={{@model}}>
+
+        {{!-- Send --}}
+        <AuButton @skin="secondary" {{on "click" (fn (mut this.sendModal) true)}}>
           <AuIcon @icon="send" @alignment="left" />
           Verstuur
-        </LinkTo>
-        <LinkTo class="au-c-button" @route="poi.edit" @model={{@model}}>
+        </AuButton>
+        <AuModal
+          @modalTitle="Verstuur wijzigingen"
+          @modalOpen={{this.sendModal}}
+          @closeModal={{fn (mut this.sendModal) false}} as |Modal| >
+          <Modal.Body>
+            <p>Weet u zeker dat u deze versie wil versturen?</p>
+            <p><strong>U kan deze actie niet ongedaan maken.</strong></p>
+          </Modal.Body>
+          <Modal.Footer>
+            <AuButton>
+              Verstuur deze versie
+            </AuButton>
+            <AuButton @skin="secondary" {{on "click" (fn (mut this.sendModal) false)}}>
+              Annuleer
+            </AuButton>
+          </Modal.Footer>
+        </AuModal>
+
+        {{!-- Publish: only visible for Inter --}}
+        <AuButton {{on "click" (fn (mut this.publishModal) true)}}>
           <AuIcon @icon="publish" @alignment="left" />
           Publiceer
-        </LinkTo>
+        </AuButton>
+        <AuModal
+          @modalTitle="Publiceer data"
+          @modalOpen={{this.publishModal}}
+          @closeModal={{fn (mut this.publishModal) false}} as |Modal| >
+          <Modal.Body>
+            <p>Weet u zeker dat u deze versie wil publiceren?</p>
+            <p><strong>U kan deze actie niet ongedaan maken.</strong></p>
+          </Modal.Body>
+          <Modal.Footer>
+            <AuButton>
+              Publiceer deze versie
+            </AuButton>
+            <AuButton @skin="secondary" {{on "click" (fn (mut this.publishModal) false)}}>
+              Annuleer
+            </AuButton>
+          </Modal.Footer>
+        </AuModal>
       </div>
     </AuToolbarGroup>
   </AuToolbar>

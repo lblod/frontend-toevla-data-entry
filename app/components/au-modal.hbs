@@ -1,0 +1,41 @@
+{{#if @modalOpen}}
+  {{#in-element this.destinationElement}}
+    <div {{on "click" this.closeModal}} class="au-c-modal-backdrop {{if @modalOpen "is-visible"}}"  role="button"></div>
+    <div id="{{@id}}"
+      class={{concat "au-c-modal " this.size (if @modalOpen " is-visible")}}
+      role="dialog"
+      aria-describedby={{concat "au-c-modal-title-" @id}}
+      tabindex="-1"
+      {{did-insert (fn this.setInert false)}}
+      {{focus-trap
+          isActive=@modalOpen
+          focusTrapOptions=
+            (hash
+              onDeactivate=this.closeModal
+              initialFocus=".au-c-modal__title"
+              allowOutsideClick=true
+            )
+      }}
+      ...attributes
+    >
+      <div class="au-c-modal__header">
+        <h1 id="au-c-modal-title-{{@id}}" class="au-c-modal__title" tabindex="-1">
+          {{@modalTitle}}
+        </h1>
+        <button
+          class="au-c-modal__close"
+          type="button"
+          data-test-au-modal-close
+          {{on "click" this.closeModal}}
+        >
+          <AuIcon @icon="cross" @size="large" />
+          <span class="au-u-hidden-visually">Venster sluiten</span>
+        </button>
+      </div>
+
+      {{yield (hash
+          Body=(component "au-modal-body")
+          Footer=(component "au-modal-footer"))}}
+    </div>
+  {{/in-element}}
+{{/if}}
