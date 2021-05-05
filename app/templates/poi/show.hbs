@@ -37,8 +37,9 @@
           @modalOpen={{this.sendModal}}
           @closeModal={{fn (mut this.sendModal) false}} as |Modal| >
           <Modal.Body>
-            <p>Weet u zeker dat u deze versie wil versturen?</p>
-            <p><strong>U kan deze actie niet ongedaan maken.</strong></p>
+            <AuAlert @alertIcon="info-circle" @alertTitle="Weet u zeker dat u deze versie wil versturen?" @alertskin="info" class="au-u-margin-bottom-none">
+              <p>U kan deze actie niet ongedaan maken.</p>
+            </AuAlert>
           </Modal.Body>
           <Modal.Footer>
             <AuButton>
@@ -60,8 +61,9 @@
           @modalOpen={{this.publishModal}}
           @closeModal={{fn (mut this.publishModal) false}} as |Modal| >
           <Modal.Body>
-            <p>Weet u zeker dat u deze versie wil publiceren?</p>
-            <p><strong>U kan deze actie niet ongedaan maken.</strong></p>
+            <AuAlert @alertIcon="info-circle" @alertTitle="Weet u zeker dat u deze versie wil publiceren?" @alertskin="info" class="au-u-margin-bottom-none">
+              <p>U kan deze actie niet ongedaan maken.</p>
+            </AuAlert>
           </Modal.Body>
           <Modal.Footer>
             <AuButton>
