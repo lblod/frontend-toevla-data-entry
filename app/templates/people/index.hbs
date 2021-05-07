@@ -1,48 +1,70 @@
 {{page-title "Mock login by point of interest"}}
 
-<AuHeading @skin="2" class="au-u-margin-bottom">Gebruikersbeheer</AuHeading>
+<div class="au-c-main-container__content au-c-main-container__content--scroll">
+  <main id="content">
+    <section class="au-o-region-large">
+      <div class="au-o-layout">
+        <AuHeading @skin="2" class="au-u-margin-bottom">Gebruikersbeheer</AuHeading>
 
-<div class="au-u-margin-bottom">
-  <AuLabel for="loginSearch" >Zoek gebruiker</AuLabel>
-  <AuInput id="loginSearch" @width="block" {{on "input" this.searchEvent}} value={{this.search}} />
+        <form {{on "submit" this.createPerson}} class="au-o-grid au-o-grid--tiny">
+          <div class="au-o-grid__item au-u-1-2@medium">
+            <AuLabel for="createFirstName">Voornaam </AuLabel>
+            <AuInput id="createFirstName" @value={{this.firstName}} @width="block" />
+          </div>
+          <div class="au-o-grid__item au-u-1-2@medium">
+            <AuLabel for="createName">Achternaam </AuLabel>
+            <AuInput id="createName" @value={{this.lastName}} @width="block" />
+          </div>
+          <div class="au-o-grid__item">
+            <AuLabel for="createEmail">E-mail adres </AuLabel>
+            <AuInput id="createEmail" @value={{this.emailAddress}} @width="block" />
+          </div>
+          <div class="au-o-grid__item">
+            <AuButton type="submit">Maak aan</AuButton>
+          </div>
+        </form>
+
+        <hr class="au-c-hr" />
+
+        <div class="au-u-margin-bottom">
+          <AuLabel for="loginSearch" >Zoek gebruiker</AuLabel>
+          <AuInput id="loginSearch" @width="block" {{on "input" this.searchEvent}} value={{this.search}} />
+        </div>
+
+        <ul class="au-c-list">
+          {{#each this.people as |person|}}
+            <li class="au-c-list__item">
+              <LinkTo @route="people.show" @model={{person.id}}>
+                {{person.id}} – {{person.firstName}} - {{person.lastName}}
+              </LinkTo>
+            </li>
+          {{/each}}
+        </ul>
+
+        <ul class="au-c-list-horizontal au-u-margin-top">
+          {{#if (gt this.visiblePage 1)}}
+          <li class="au-c-list-horizontal__item">
+            <AuButton @skin="tertiary" {{on "click" this.previousPage}}>
+              <AuIcon @icon="arrow-left" @alignment="left" />
+              Previous
+            </AuButton>
+          </li>
+          {{/if}}
+          <li class="au-c-list-horizontal__item">
+            <span class="au-c-helptext">Pagina {{this.visiblePage}} van {{this.lastPage}}</span>
+          </li>
+          {{#if (lt this.visiblePage this.lastPage)}}
+          <li class="au-c-list-horizontal__item">
+            <AuButton @skin="tertiary" {{on "click" this.nextPage}}>
+              Next
+              <AuIcon @icon="arrow-right" @alignment="right" />
+            </AuButton>
+          </li>
+          {{/if}}
+        </ul>
+
+
+      </div>
+    </section>
+  </main>
 </div>
-
-<ul class="au-c-list">
-  {{#each this.people as |person|}}
-    <li class="au-c-list__item">
-      <LinkTo @route="people.show" @model={{person.id}}>
-        {{person.id}} – {{person.firstName}} - {{person.lastName}}
-      </LinkTo>
-    </li>
-  {{/each}}
-</ul>
-
-<ul class="au-c-list-horizontal au-u-margin-top">
-  {{#if (gt this.visiblePage 1)}}
-  <li class="au-c-list-horizontal__item">
-    <AuButton @skin="tertiary" {{on "click" this.previousPage}}>
-      <AuIcon @icon="arrow-left" @alignment="left" />
-      Previous
-    </AuButton>
-  </li>
-   {{/if}}
-  <li class="au-c-list-horizontal__item">
-    <span class="au-c-helptext">Pagina {{this.visiblePage}} van {{this.lastPage}}</span>
-  </li>
-  {{#if (lt this.visiblePage this.lastPage)}}
-  <li class="au-c-list-horizontal__item">
-    <AuButton @skin="tertiary" {{on "click" this.nextPage}}>
-      Next
-      <AuIcon @icon="arrow-right" @alignment="right" />
-    </AuButton>
-  </li>
-  {{/if}}
-</ul>
-
-<form {{on "submit" this.createPerson}}>
-  <label>Voornaam: <Input @value={{this.firstName}} /></label>
-  <label>Achternaam: <Input @value={{this.lastName}} /></label>
-  <label>Email-address: <Input @value={{this.emailAddress}} /></label>
-
-  <button type="submit">Maak aan</button>
-</form>
