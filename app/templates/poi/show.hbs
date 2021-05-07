@@ -42,9 +42,16 @@
             </AuAlert>
           </Modal.Body>
           <Modal.Footer>
-            <AuButton>
-              Verstuur deze versie
-            </AuButton>
+            {{#if this.currentAccount.roleIsValidator}}
+              <AuButton {{on "click" this.sendToMuseum}}>
+                Verstuur deze versie
+              </AuButton>
+            {{/if}}
+            {{#if this.currentAccount.roleIsDataEntry}}
+              <AuButton {{on "click" this.sendToValidator}}>
+                Verstuur deze versie
+              </AuButton>
+            {{/if}}
             <AuButton @skin="secondary" {{on "click" (fn (mut this.sendModal) false)}}>
               Annuleer
             </AuButton>
@@ -52,28 +59,30 @@
         </AuModal>
 
         {{!-- Publish: only visible for Inter --}}
-        <AuButton {{on "click" (fn (mut this.publishModal) true)}}>
-          <AuIcon @icon="publish" @alignment="left" />
-          Publiceer
-        </AuButton>
-        <AuModal
-          @modalTitle="Publiceer data"
-          @modalOpen={{this.publishModal}}
-          @closeModal={{fn (mut this.publishModal) false}} as |Modal| >
-          <Modal.Body>
-            <AuAlert @alertIcon="info-circle" @alertTitle="Weet u zeker dat u deze versie wil publiceren?" @alertskin="info" class="au-u-margin-bottom-none">
-              <p>U kan deze actie niet ongedaan maken.</p>
-            </AuAlert>
-          </Modal.Body>
-          <Modal.Footer>
-            <AuButton>
-              Publiceer deze versie
-            </AuButton>
-            <AuButton @skin="secondary" {{on "click" (fn (mut this.publishModal) false)}}>
-              Annuleer
-            </AuButton>
-          </Modal.Footer>
-        </AuModal>
+        {{#if this.currentAccount.roleIsValidator}}
+          <AuButton {{on "click" (fn (mut this.publishModal) true)}}>
+            <AuIcon @icon="publish" @alignment="left" />
+            Publiceer
+          </AuButton>
+          <AuModal
+            @modalTitle="Publiceer data"
+            @modalOpen={{this.publishModal}}
+            @closeModal={{fn (mut this.publishModal) false}} as |Modal| >
+            <Modal.Body>
+              <AuAlert @alertIcon="info-circle" @alertTitle="Weet u zeker dat u deze versie wil publiceren?" @alertskin="info" class="au-u-margin-bottom-none">
+                <p>U kan deze actie niet ongedaan maken.</p>
+              </AuAlert>
+            </Modal.Body>
+            <Modal.Footer>
+              <AuButton {{on "click" this.publish}}>
+                Publiceer deze versie
+              </AuButton>
+              <AuButton @skin="secondary" {{on "click" (fn (mut this.publishModal) false)}}>
+                Annuleer
+              </AuButton>
+            </Modal.Footer>
+          </AuModal>
+        {{/if}}
       </div>
     </AuToolbarGroup>
   </AuToolbar>
