@@ -1,0 +1,48 @@
+{{page-title "Mock login by point of interest"}}
+
+<AuHeading @skin="2" class="au-u-margin-bottom">Gebruikersbeheer</AuHeading>
+
+<div class="au-u-margin-bottom">
+  <AuLabel for="loginSearch" >Zoek gebruiker</AuLabel>
+  <AuInput id="loginSearch" @width="block" {{on "input" this.searchEvent}} value={{this.search}} />
+</div>
+
+<ul class="au-c-list">
+  {{#each this.people as |person|}}
+    <li class="au-c-list__item">
+      <AuButton @skin="secondary" @width="block">
+        {{person.id}} – {{person.firstName}} - {{person.lastName}}
+      </AuButton>
+    </li>
+  {{/each}}
+</ul>
+
+<ul class="au-c-list-horizontal au-u-margin-top">
+  {{#if (gt this.visiblePage 1)}}
+  <li class="au-c-list-horizontal__item">
+    <AuButton @skin="tertiary" {{on "click" this.previousPage}}>
+      <AuIcon @icon="arrow-left" @alignment="left" />
+      Previous
+    </AuButton>
+  </li>
+   {{/if}}
+  <li class="au-c-list-horizontal__item">
+    <span class="au-c-helptext">Pagina {{this.visiblePage}} van {{this.lastPage}}</span>
+  </li>
+  {{#if (lt this.visiblePage this.lastPage)}}
+  <li class="au-c-list-horizontal__item">
+    <AuButton @skin="tertiary" {{on "click" this.nextPage}}>
+      Next
+      <AuIcon @icon="arrow-right" @alignment="right" />
+    </AuButton>
+  </li>
+  {{/if}}
+</ul>
+
+<form {{on "submit" this.createPerson}}>
+  <label>Voornaam: <Input @value={{this.firstName}} /></label>
+  <label>Achternaam: <Input @value={{this.lastName}} /></label>
+  <label>Email-address: <Input @value={{this.emailAddress}} /></label>
+
+  <button type="submit">Maak aan</button>
+</form>
