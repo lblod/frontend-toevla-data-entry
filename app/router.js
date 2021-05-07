@@ -51,5 +51,7 @@ Router.map(function() {
   this.route('session', function() {
     this.route('roles');
   });
-  this.route('people', function() {});
+  this.route('people', function() {
+    this.route('show', { path: "/:id" });
+  });
 });

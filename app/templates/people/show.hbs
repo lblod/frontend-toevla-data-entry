@@ -1,18 +1,39 @@
-{{page-title "Mock login by point of interest"}}
+{{page-title "Bewerk persoon"}}
 
-<AuHeading @skin="2" class="au-u-margin-bottom">Gebruikersbeheer</AuHeading>
+<ul>
+  <li>{{this.model.firstName}}</li>
+  <li>{{this.model.lastName}}</li>
+  <li>
+    {{this.account.email}}
+  </li>
+</ul>
+
+Roles:
+
+<ul>
+  {{#each this.account.roles as |role|}}
+    <li>
+      {{#if role.isValidator}}
+        Validator
+      {{else}}
+        Invoerder: {{role.pointOfInterest.label}}
+      {{/if}}
+      <button {{on "click" (fn this.removeRole role)}}>Verwijder</button>
+    </li>
+  {{/each}}
+</ul>
+
+<button type="button" {{on "click" this.addValidatorRole}}>Voeg validatie rol toe</button>
 
 <div class="au-u-margin-bottom">
-  <AuLabel for="loginSearch" >Zoek gebruiker</AuLabel>
+  <AuLabel for="loginSearch" >Zoek museum</AuLabel>
   <AuInput id="loginSearch" @width="block" {{on "input" this.searchEvent}} value={{this.search}} />
 </div>
 
 <ul class="au-c-list">
-  {{#each this.people as |person|}}
+  {{#each this.pois as |museum|}}
     <li class="au-c-list__item">
-      <LinkTo @route="people.show" @model={{person.id}}>
-        {{person.id}} – {{person.firstName}} - {{person.lastName}}
-      </LinkTo>
+      {{museum.id}} -- {{museum.label}} <button type="button" {{on "click" (fn this.addRoleForMuseum museum)}}>Voeg toe</button>
     </li>
   {{/each}}
 </ul>
@@ -39,10 +60,4 @@
   {{/if}}
 </ul>
 
-<form {{on "submit" this.createPerson}}>
-  <label>Voornaam: <Input @value={{this.firstName}} /></label>
-  <label>Achternaam: <Input @value={{this.lastName}} /></label>
-  <label>Email-address: <Input @value={{this.emailAddress}} /></label>
-
-  <button type="submit">Maak aan</button>
-</form>
+{{outlet}}
