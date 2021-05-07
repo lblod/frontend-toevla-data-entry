@@ -1,63 +1,67 @@
 {{page-title "Bewerk persoon"}}
 
-<ul>
-  <li>{{this.model.firstName}}</li>
-  <li>{{this.model.lastName}}</li>
-  <li>
-    {{this.account.email}}
-  </li>
-</ul>
+<div class="au-c-main-container__content au-c-main-container__content--scroll">
+  <main id="content">
+    <section class="au-o-region-large">
+      <div class="au-o-layout">
+        <AuHeading @skin="2">{{this.model.firstName}} {{this.model.lastName}}</AuHeading>
+        <p class="au-u-margin-bottom">
+          {{this.account.email}}
+        </p>
 
-Roles:
+        <AuHeading @skin="3" @level="2">Roles:</AuHeading>
+        <ul class="au-c-list">
+          {{#each this.account.roles as |role|}}
+            <li class="au-c-list__item">
+              {{#if role.isValidator}}
+                Validator
+              {{else}}
+                Invoerder: {{role.pointOfInterest.label}}
+              {{/if}}
+              <AuButton @skin="tertiary" @alert="true" {{on "click" (fn this.removeRole role)}}>Verwijder</AuButton>
+            </li>
+          {{/each}}
+        </ul>
 
-<ul>
-  {{#each this.account.roles as |role|}}
-    <li>
-      {{#if role.isValidator}}
-        Validator
-      {{else}}
-        Invoerder: {{role.pointOfInterest.label}}
-      {{/if}}
-      <button {{on "click" (fn this.removeRole role)}}>Verwijder</button>
-    </li>
-  {{/each}}
-</ul>
+        <AuButton {{on "click" this.addValidatorRole}}>Voeg validatie rol toe</AuButton>
 
-<button type="button" {{on "click" this.addValidatorRole}}>Voeg validatie rol toe</button>
+        <div class="au-u-margin-bottom">
+          <AuLabel for="loginSearch" >Zoek museum</AuLabel>
+          <AuInput id="loginSearch" @width="block" {{on "input" this.searchEvent}} value={{this.search}} />
+        </div>
 
-<div class="au-u-margin-bottom">
-  <AuLabel for="loginSearch" >Zoek museum</AuLabel>
-  <AuInput id="loginSearch" @width="block" {{on "input" this.searchEvent}} value={{this.search}} />
+        <ul class="au-c-list">
+          {{#each this.pois as |museum|}}
+            <li class="au-c-list__item">
+              {{museum.id}} -- {{museum.label}} <button type="button" {{on "click" (fn this.addRoleForMuseum museum)}}>Voeg toe</button>
+            </li>
+          {{/each}}
+        </ul>
+
+        <ul class="au-c-list-horizontal au-u-margin-top">
+          {{#if (gt this.visiblePage 1)}}
+          <li class="au-c-list-horizontal__item">
+            <AuButton @skin="tertiary" {{on "click" this.previousPage}}>
+              <AuIcon @icon="arrow-left" @alignment="left" />
+              Previous
+            </AuButton>
+          </li>
+          {{/if}}
+          <li class="au-c-list-horizontal__item">
+            <span class="au-c-helptext">Pagina {{this.visiblePage}} van {{this.lastPage}}</span>
+          </li>
+          {{#if (lt this.visiblePage this.lastPage)}}
+          <li class="au-c-list-horizontal__item">
+            <AuButton @skin="tertiary" {{on "click" this.nextPage}}>
+              Next
+              <AuIcon @icon="arrow-right" @alignment="right" />
+            </AuButton>
+          </li>
+          {{/if}}
+        </ul>
+
+        {{outlet}}
+      </div>
+    </section>
+  </main>
 </div>
-
-<ul class="au-c-list">
-  {{#each this.pois as |museum|}}
-    <li class="au-c-list__item">
-      {{museum.id}} -- {{museum.label}} <button type="button" {{on "click" (fn this.addRoleForMuseum museum)}}>Voeg toe</button>
-    </li>
-  {{/each}}
-</ul>
-
-<ul class="au-c-list-horizontal au-u-margin-top">
-  {{#if (gt this.visiblePage 1)}}
-  <li class="au-c-list-horizontal__item">
-    <AuButton @skin="tertiary" {{on "click" this.previousPage}}>
-      <AuIcon @icon="arrow-left" @alignment="left" />
-      Previous
-    </AuButton>
-  </li>
-   {{/if}}
-  <li class="au-c-list-horizontal__item">
-    <span class="au-c-helptext">Pagina {{this.visiblePage}} van {{this.lastPage}}</span>
-  </li>
-  {{#if (lt this.visiblePage this.lastPage)}}
-  <li class="au-c-list-horizontal__item">
-    <AuButton @skin="tertiary" {{on "click" this.nextPage}}>
-      Next
-      <AuIcon @icon="arrow-right" @alignment="right" />
-    </AuButton>
-  </li>
-  {{/if}}
-</ul>
-
-{{outlet}}
