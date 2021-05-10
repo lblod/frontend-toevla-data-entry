@@ -1,67 +1,109 @@
 {{page-title "Bewerk persoon"}}
 
-<div class="au-c-main-container__content au-c-main-container__content--scroll">
-  <main id="content">
-    <section class="au-o-region-large">
-      <div class="au-o-layout">
-        <AuHeading @skin="2">{{this.model.firstName}} {{this.model.lastName}}</AuHeading>
-        <p class="au-u-margin-bottom">
-          {{this.account.email}}
-        </p>
-
-        <AuHeading @skin="3" @level="2">Roles:</AuHeading>
-        <ul class="au-c-list">
-          {{#each this.account.roles as |role|}}
-            <li class="au-c-list__item">
+<div class="au-c-main-container__content"  id="content">
+  <AuToolbar @size="medium" @skin="tint" @border="bottom" class="au-c-toolbar__breadcrumbs">
+    <AuToolbarGroup>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="poi" @skin="secondary">
+            <AuIcon @icon="arrow-left" @alignment="left" />
+            Locaties
+          </AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="people" @skin="secondary">
+            Gebruikersbeheer
+          </AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <strong>Bewerk persoon</strong>
+        </li>
+      </ul>
+    </AuToolbarGroup>
+  </AuToolbar>
+  <AuToolbar @border="bottom" @size="large">
+    <AuToolbarGroup>
+      <AuHeading @skin="2">{{this.model.firstName}} {{this.model.lastName}}</AuHeading>
+    </AuToolbarGroup>
+    <AuToolbarGroup>
+      <AuPill><a href="mailto:{{this.account.email}}" class="au-c-link au-c-link--secondary">{{this.account.email}}</a></AuPill>
+    </AuToolbarGroup>
+  </AuToolbar>
+  <div class="au-o-box au-c-body-container au-c-body-container--scroll au-c-theme-gray-100">
+    <div>
+    <AuHeading @skin="4" @level="2" class="au-u-margin-bottom-small">Rollen:</AuHeading>
+    <ul class="au-c-list">
+      {{#each this.account.roles as |role|}}
+        <li class="au-c-list__item">
+          <article class="au-o-box au-o-box--small au-c-card au-c-card--flex">
+            <p>
               {{#if role.isValidator}}
                 Validator
               {{else}}
                 Invoerder: {{role.pointOfInterest.label}}
               {{/if}}
-              <AuButton @skin="tertiary" @alert="true" {{on "click" (fn this.removeRole role)}}>Verwijder</AuButton>
-            </li>
-          {{/each}}
-        </ul>
-
-        <AuButton {{on "click" this.addValidatorRole}}>Voeg validatie rol toe</AuButton>
-
-        <div class="au-u-margin-bottom">
-          <AuLabel for="loginSearch" >Zoek museum</AuLabel>
-          <AuInput id="loginSearch" @width="block" {{on "input" this.searchEvent}} value={{this.search}} />
-        </div>
-
-        <ul class="au-c-list">
-          {{#each this.pois as |museum|}}
-            <li class="au-c-list__item">
-              {{museum.id}} -- {{museum.label}} <button type="button" {{on "click" (fn this.addRoleForMuseum museum)}}>Voeg toe</button>
-            </li>
-          {{/each}}
-        </ul>
-
-        <ul class="au-c-list-horizontal au-u-margin-top">
-          {{#if (gt this.visiblePage 1)}}
-          <li class="au-c-list-horizontal__item">
-            <AuButton @skin="tertiary" {{on "click" this.previousPage}}>
-              <AuIcon @icon="arrow-left" @alignment="left" />
-              Previous
+            </p>
+            <AuButton @skin="tertiary" @alert="true" {{on "click" (fn this.removeRole role)}}>
+              <AuIcon @icon="bin" @alignment="left"/>
+              Verwijder
             </AuButton>
-          </li>
-          {{/if}}
-          <li class="au-c-list-horizontal__item">
-            <span class="au-c-helptext">Pagina {{this.visiblePage}} van {{this.lastPage}}</span>
-          </li>
-          {{#if (lt this.visiblePage this.lastPage)}}
-          <li class="au-c-list-horizontal__item">
-            <AuButton @skin="tertiary" {{on "click" this.nextPage}}>
-              Next
-              <AuIcon @icon="arrow-right" @alignment="right" />
-            </AuButton>
-          </li>
-          {{/if}}
-        </ul>
+          </article>
+        </li>
+      {{/each}}
+    </ul>
+    <p class="au-u-margin-top-small">
+      <AuButton {{on "click" this.addValidatorRole}}>
+        <AuIcon @icon="add" @alignment="left"/>
+        Voeg validatie rol toe
+      </AuButton>
+    </p>
 
-        {{outlet}}
-      </div>
-    </section>
-  </main>
+    <hr class="au-c-hr" />
+
+    <div class="au-u-margin-bottom">
+      <AuLabel for="loginSearch" >Zoek museum</AuLabel>
+      <AuInput id="loginSearch" @width="block" {{on "input" this.searchEvent}} value={{this.search}} />
+    </div>
+
+    <ul class="au-c-list">
+      {{#each this.pois as |museum|}}
+        <li class="au-c-list__item">
+          <article class="au-o-box au-o-box--small au-c-card au-c-card--link">
+            <p>
+              {{museum.id}} -- {{museum.label}}
+            </p>
+            <AuButton @skin="tertiary" {{on "click" (fn this.addRoleForMuseum museum)}} class="au-c-card__link">
+              <AuIcon @icon="add" @alignment="left"/>
+              Voeg toe
+            </AuButton>
+          </article>
+        </li>
+      {{/each}}
+    </ul>
+
+      <ul class="au-c-list-horizontal au-u-margin-top">
+        {{#if (gt this.visiblePage 1)}}
+        <li class="au-c-list-horizontal__item">
+          <AuButton @skin="tertiary" {{on "click" this.previousPage}}>
+            <AuIcon @icon="arrow-left" @alignment="left" />
+            Previous
+          </AuButton>
+        </li>
+        {{/if}}
+        <li class="au-c-list-horizontal__item">
+          <span class="au-c-helptext">Pagina {{this.visiblePage}} van {{this.lastPage}}</span>
+        </li>
+        {{#if (lt this.visiblePage this.lastPage)}}
+        <li class="au-c-list-horizontal__item">
+          <AuButton @skin="tertiary" {{on "click" this.nextPage}}>
+            Next
+            <AuIcon @icon="arrow-right" @alignment="right" />
+          </AuButton>
+        </li>
+        {{/if}}
+      </ul>
+
+      {{outlet}}
+    </div>
+  </div>
 </div>

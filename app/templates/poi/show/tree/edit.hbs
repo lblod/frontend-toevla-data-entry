@@ -41,9 +41,7 @@
       <strong>Type</strong> {{@model.treeNode.criterionType}}
     </div> --}}
 
-
-
-    <form class="au-c-form">
+    <form class="au-c-form au-u-margin-top au-u-padding-bottom">
       {{#if (and @model.treeNode.children this.currentAccount.roleIsValidator)}}
         <p>
           <AuLabel for="score">Score</AuLabel>

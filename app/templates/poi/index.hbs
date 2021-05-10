@@ -5,6 +5,10 @@
     </AuToolbarGroup>
     <AuToolbarGroup>
       {{#if this.currentAccount.roleIsValidator}}
+        <LinkTo @route="people" class="au-c-button au-c-button--secondary">
+          <AuIcon @icon="users" @alignment="left" />
+          Gebruikersbeheer
+        </LinkTo>
         <LinkTo @route="poi.new" class="au-c-button">
           <AuIcon @icon="add" @alignment="left" />
           Locatie toevoegen

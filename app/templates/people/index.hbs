@@ -1,70 +1,91 @@
-{{page-title "Mock login by point of interest"}}
+{{page-title "Gebruikersbeheer"}}
 
-<div class="au-c-main-container__content au-c-main-container__content--scroll">
-  <main id="content">
-    <section class="au-o-region-large">
-      <div class="au-o-layout">
-        <AuHeading @skin="2" class="au-u-margin-bottom">Gebruikersbeheer</AuHeading>
-
-        <form {{on "submit" this.createPerson}} class="au-o-grid au-o-grid--tiny">
-          <div class="au-o-grid__item au-u-1-2@medium">
-            <AuLabel for="createFirstName">Voornaam </AuLabel>
-            <AuInput id="createFirstName" @value={{this.firstName}} @width="block" />
-          </div>
-          <div class="au-o-grid__item au-u-1-2@medium">
-            <AuLabel for="createName">Achternaam </AuLabel>
-            <AuInput id="createName" @value={{this.lastName}} @width="block" />
-          </div>
-          <div class="au-o-grid__item">
-            <AuLabel for="createEmail">E-mail adres </AuLabel>
-            <AuInput id="createEmail" @value={{this.emailAddress}} @width="block" />
-          </div>
-          <div class="au-o-grid__item">
-            <AuButton type="submit">Maak aan</AuButton>
-          </div>
-        </form>
-
-        <hr class="au-c-hr" />
-
-        <div class="au-u-margin-bottom">
-          <AuLabel for="loginSearch" >Zoek gebruiker</AuLabel>
-          <AuInput id="loginSearch" @width="block" {{on "input" this.searchEvent}} value={{this.search}} />
+<div class="au-c-main-container__content"  id="content">
+  <AuToolbar @size="medium" @skin="tint" @border="bottom" class="au-c-toolbar__breadcrumbs">
+    <AuToolbarGroup>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="poi" @skin="secondary">
+            <AuIcon @icon="arrow-left" @alignment="left" />
+            Locaties
+          </AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <strong>Gebruikersbeheer</strong>
+        </li>
+      </ul>
+    </AuToolbarGroup>
+  </AuToolbar>
+  <AuToolbar @border="bottom" @size="large">
+    <AuToolbarGroup>
+      <AuHeading @skin="2">Gebruikersbeheer</AuHeading>
+    </AuToolbarGroup>
+  </AuToolbar>
+  <div class="au-o-box au-c-body-container au-c-body-container--scroll au-c-theme-gray-100">
+    <div>
+      <form {{on "submit" this.createPerson}} class="au-o-grid au-o-grid--tiny">
+        <div class="au-o-grid__item au-u-1-2@medium">
+          <AuLabel for="createFirstName">Voornaam </AuLabel>
+          <AuInput id="createFirstName" @value={{this.firstName}} @width="block" />
         </div>
+        <div class="au-o-grid__item au-u-1-2@medium">
+          <AuLabel for="createName">Achternaam </AuLabel>
+          <AuInput id="createName" @value={{this.lastName}} @width="block" />
+        </div>
+        <div class="au-o-grid__item">
+          <AuLabel for="createEmail">E-mail adres </AuLabel>
+          <AuInput id="createEmail" @value={{this.emailAddress}} @width="block" />
+        </div>
+        <div class="au-o-grid__item">
+          <AuButton type="submit">Maak aan</AuButton>
+        </div>
+      </form>
 
-        <ul class="au-c-list">
-          {{#each this.people as |person|}}
-            <li class="au-c-list__item">
-              <LinkTo @route="people.show" @model={{person.id}}>
-                {{person.id}} – {{person.firstName}} - {{person.lastName}}
-              </LinkTo>
-            </li>
-          {{/each}}
-        </ul>
+      <hr class="au-c-hr" />
 
-        <ul class="au-c-list-horizontal au-u-margin-top">
-          {{#if (gt this.visiblePage 1)}}
-          <li class="au-c-list-horizontal__item">
-            <AuButton @skin="tertiary" {{on "click" this.previousPage}}>
-              <AuIcon @icon="arrow-left" @alignment="left" />
-              Previous
-            </AuButton>
-          </li>
-          {{/if}}
-          <li class="au-c-list-horizontal__item">
-            <span class="au-c-helptext">Pagina {{this.visiblePage}} van {{this.lastPage}}</span>
-          </li>
-          {{#if (lt this.visiblePage this.lastPage)}}
-          <li class="au-c-list-horizontal__item">
-            <AuButton @skin="tertiary" {{on "click" this.nextPage}}>
-              Next
-              <AuIcon @icon="arrow-right" @alignment="right" />
-            </AuButton>
-          </li>
-          {{/if}}
-        </ul>
-
-
+      <div class="au-u-margin-bottom">
+        <AuLabel for="loginSearch" >Zoek gebruiker</AuLabel>
+        <AuInput id="loginSearch" @width="block" {{on "input" this.searchEvent}} value={{this.search}} />
       </div>
-    </section>
-  </main>
+
+      <ul class="au-c-list">
+        {{#each this.people as |person|}}
+          <li class="au-c-list__item">
+            <article class="au-o-box au-o-box--small au-c-card au-c-card--link">
+              <AuHeading @level="2" @skin="5">
+                <LinkTo @route="people.show" @model={{person.id}} class="au-c-link au-c-link--secondary au-c-card__link">
+                  {{person.firstName}} {{person.lastName}}
+                </LinkTo>
+              </AuHeading>
+              <AuPill>
+                {{person.id}}
+              </AuPill>
+            </article>
+          </li>
+        {{/each}}
+      </ul>
+
+      <ul class="au-c-list-horizontal au-u-margin-top">
+        {{#if (gt this.visiblePage 1)}}
+        <li class="au-c-list-horizontal__item">
+          <AuButton @skin="tertiary" {{on "click" this.previousPage}}>
+            <AuIcon @icon="arrow-left" @alignment="left" />
+            Previous
+          </AuButton>
+        </li>
+        {{/if}}
+        <li class="au-c-list-horizontal__item">
+          <span class="au-c-helptext">Pagina {{this.visiblePage}} van {{this.lastPage}}</span>
+        </li>
+        {{#if (lt this.visiblePage this.lastPage)}}
+        <li class="au-c-list-horizontal__item">
+          <AuButton @skin="tertiary" {{on "click" this.nextPage}}>
+            Next
+            <AuIcon @icon="arrow-right" @alignment="right" />
+          </AuButton>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
 </div>

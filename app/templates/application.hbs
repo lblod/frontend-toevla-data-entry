@@ -1,16 +1,23 @@
 <div id="ember-appuniversum-wormhole"></div>
 
 <AuMainHeader @homeRoute="index" @appTitle="Toegankelijk Vlaanderen" @contactRoute="contact">
+  {{#if this.session.isAuthenticated}}
+  {{!-- @TODO: Add username variable --}}
+  <AuDropdown @dropdownTitle="Username" @dropdownButtonLabel="Account settings" @alignment="right">
+    {{!-- @TODO: Add switch functionality --}}
+    <AuButton @skin="tertiary" role="menuitem">
+      <AuIcon @icon="switch" @alignment="left" />Wissel rol
+    </AuButton>
+    {{!-- @TODO: Add logout functionality --}}
+    <AuButton @skin="tertiary" role="menuitem">
+      <AuIcon @icon="logout" @alignment="left" />Afmelden
+    </AuButton>
+  </AuDropdown>
+  {{else}}
   <LinkTo @route="login" role="menuitem" class="au-c-button au-c-button--tertiary">
     <AuIcon @icon="login" @alignment="left" />Aanmelden
   </LinkTo>
-  {{!-- <span role="menuitem"  class="au-c-button au-c-button--tertiary"> --}}
-    {{!-- {{#if this.session.isAuthenticated}}
-      <AcmidmLogout />
-    {{else}}
-      <AcmidmLogin />
-    {{/if}} --}}
-  {{!-- </span> --}}
+  {{/if}}
 </AuMainHeader>
 
 <main class="au-c-main-container" id="main">

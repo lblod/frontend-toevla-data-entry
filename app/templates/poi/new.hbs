@@ -21,10 +21,10 @@
       <AuHeading @skin="2">Nieuwe locatie toevoegen</AuHeading>
     </AuToolbarGroup>
   </AuToolbar>
-  <div class="au-o-box">
+  <div class="au-o-box au-c-body-container au-c-body-container--scroll au-c-theme-gray-100">
     <WithStatechart @state={{this.statechart}} as |chart|>
       <chart.if @state="init">
-        <form {{on "submit" (fn chart.preventAndSend "CREATE")}}>
+        <form {{on "submit" (fn chart.preventAndSend "CREATE")}} class="au-c-form">
           <p>
             <AuLabel for="addpoi">Naam</AuLabel>
             <AuInput id="addpoi" type="text" @value={{this.label}} @width="block" @placeholder="Museum M" />
