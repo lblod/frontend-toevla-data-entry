@@ -9,7 +9,7 @@
       <AuIcon @icon="switch" @alignment="left" />Wissel rol
     </AuButton>
     {{!-- @TODO: Add logout functionality --}}
-    <AuButton @skin="tertiary" role="menuitem">
+    <AuButton @skin="tertiary" role="menuitem" {{on "click" (fn this.logout)}}>
       <AuIcon @icon="logout" @alignment="left" />Afmelden
     </AuButton>
   </AuDropdown>
