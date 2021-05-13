@@ -10,9 +10,17 @@
           <div class="au-u-margin-bottom-small">
             <AuLabel for="loginEmail" class="au-u-margin-bottom-none" >Geef je e-mail adres in</AuLabel>
             <AuHelpText @skin="secondary" class="au-u-margin-bottom-tiny">Na het versturen van je e-mail krijg je een unieke link toegestuurd om in te loggen.</AuHelpText>
-            <AuInput id="loginEmail" @width="block" />
+            <AuInput disabled={{this.disableInput}} id="loginEmail" @width="block" @value={{this.emailAddress}} />
           </div>
-          <AuButton>Verkrijg login link</AuButton>
+          {{#if (and (not this.requesting) (not this.requested))}}
+            <AuButton {{on "click" (fn this.requestLoginLink this.emailAddress)}}>Verkrijg login link</AuButton>
+          {{/if}}
+          {{#if this.requesting}}
+            <AuButton @disabled="true">Link wordt aangevraagd</AuButton>
+          {{/if}}
+          {{#if this.requested}}
+            <AuButton @disabled="true">Login link aangevraagd</AuButton>
+          {{/if}}
         </div>
         {{outlet}}
 
