@@ -19,7 +19,7 @@ export default class LoginController extends Controller {
       console.log("No address given");
     } else {
       this.requesting = true;
-      const req = await fetch(`/email-login/emails/${address}/keys`, {
+      const req = await fetch(`/email-login/emails/${encodeURIComponent(address)}/keys`, {
         method: "POST"
       });
       console.log( await req.json() );
