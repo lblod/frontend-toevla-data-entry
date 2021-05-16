@@ -54,4 +54,5 @@ Router.map(function() {
   this.route('people', function() {
     this.route('show', { path: "/:id" });
   });
+  this.route('email-login');
 });
