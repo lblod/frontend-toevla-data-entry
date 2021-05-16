@@ -1,3 +1,4 @@
+import { set } from '@ember/object';
 import { A } from '@ember/array';
 import { inject as service } from '@ember/service';
 import { action } from '@ember/object';
@@ -112,16 +113,19 @@ export default class PeopleShowController extends Controller {
     const role = this.store.createRecord('validator-role');
     role.save();
 
-    // setup broken empty relationship handling
-    if( this.account.roles.length === 0 ) {
-      this.account.roles = [role];
-      await this.account.save();
-      this.account.roles = A([]);
-      await this.account.save();
-    }
+    // work around broken partial update library we save it so it knows
+    // the state, then we clear it because otherwise it doesn't pick up
+    // the changes, then we update with the state we wanted to have in
+    // the first place.
+    const currentRoles = (await this.account.roles).toArray();
+    const newRoles = [...currentRoles,role];
 
-    this.account.roles.pushObject(role);
-    this.account.save();
+    this.account.roles = A(newRoles);
+    await this.account.save();
+    this.account.roles = A([]);
+    await this.account.save();
+    this.account.roles = A(newRoles);
+    await this.account.save();
   }
 
   @action
