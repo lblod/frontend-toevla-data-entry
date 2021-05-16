@@ -1,3 +1,4 @@
+import { set } from '@ember/object';
 import { A } from '@ember/array';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
@@ -23,9 +24,14 @@ export default class PoiEdit extends Controller {
       .sortBy("order");
   }
 
-  @action submit(event: Event) {
+  @action async submit(event: Event) {
     event.preventDefault();
-    this.model.save();
+    // working around buggy partial updat library
+    const icons = (await this.model.summaryIcons).toArray();
+    this.model.summaryIcons = [];
+    await this.model.save();
+    this.model.summaryIcons = A(icons);
+    await this.model.save();
     this.transitionToRoute("poi.show.experiences.index", this.model);
   }
 
@@ -37,14 +43,13 @@ export default class PoiEdit extends Controller {
   }
 
   @action
-  toggleIcon(concept) {
+  async toggleIcon(concept) {
     const model = this.model;
     if (emberDataObjectInArray(concept, model.summaryIcons)) {
       model.summaryIcons = model.summaryIcons.rejectBy("id", concept.id);
     } else {
-      const arr = model.summaryIcons.toArray();
-      arr.push( concept );
-      model.summaryIcons = A( arr );
+      const arr = (await model.summaryIcons).toArray();
+      model.summaryIcons = A([...arr, concept]);
     }
   }
 
