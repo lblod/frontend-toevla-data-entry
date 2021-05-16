@@ -19,7 +19,8 @@ export default class EmailLoginAuthenticator extends Base {
       type: 'GET',
       credentials: SUPPORTED_CREDENTIALS,
       headers: new Headers({
-        'Content-Type': CONTENT_TYPE
+        'Content-Type': CONTENT_TYPE,
+        'Accept': CONTENT_TYPE
       })
     });
     if (result.ok)
@@ -41,7 +42,8 @@ export default class EmailLoginAuthenticator extends Base {
       }),
       credentials: SUPPORTED_CREDENTIALS,
       headers: new Headers({
-        'Content-Type': CONTENT_TYPE
+        'Content-Type': CONTENT_TYPE,
+        'Accept': CONTENT_TYPE
       })
     });
     if (result.ok) {
@@ -59,7 +61,8 @@ export default class EmailLoginAuthenticator extends Base {
       method: 'DELETE',
       credentials: SUPPORTED_CREDENTIALS,
       headers: new Headers({
-        'Content-Type': CONTENT_TYPE
+        'Content-Type': CONTENT_TYPE,
+        'Accept': CONTENT_TYPE
       })
     });
     if (result.ok)
