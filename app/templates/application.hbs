@@ -5,7 +5,7 @@
   {{!-- @TODO: Add username variable --}}
   <AuDropdown @dropdownTitle="Username" @dropdownButtonLabel="Account settings" @alignment="right">
     {{!-- @TODO: Add switch functionality --}}
-    <AuButton @skin="tertiary" role="menuitem">
+    <AuButton @skin="tertiary" role="menuitem" {{on "click" (fn this.selectRole)}}>
       <AuIcon @icon="switch" @alignment="left" />Wissel rol
     </AuButton>
     {{!-- @TODO: Add logout functionality --}}
