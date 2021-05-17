@@ -25,17 +25,17 @@
           @content={{image}}
           @isSortable={{true}}>
           <td>
-            <button type="button" class="au-c-button is-draggable">
+            <button type="button" class="au-c-button is-draggable" aria-hidden="true">
               <AuIcon @icon="nav-up-down" />
               <span class="au-u-hidden-visually">Verplaats</span>
             </button>
             <button type="button" {{on "click" (fn this.imageUp image)}} class="au-c-button au-c-button--secondary">
               <AuIcon @icon="nav-up" />
-              <span class="au-u-hidden-visually">Plaats naar boven</span>
+              <span class="au-u-hidden-visually">Plaats {{image.id}} naar boven</span>
             </button>
             <button type="button" {{on "click" (fn this.imageDown image)}} class="au-c-button au-c-button--secondary">
               <AuIcon @icon="nav-down" />
-              <span class="au-u-hidden-visually">Plaats naar beneden</span>
+              <span class="au-u-hidden-visually">Plaats {{image.id}} naar beneden</span>
             </button>
           </td>
           <td class="au-u-padding-none">
@@ -52,7 +52,7 @@
           <td>
             <button type="button" {{on "click" (fn this.removeImage image)}} class="au-c-button au-c-button--tertiary au-c-button--alert">
               <AuIcon @icon="bin" @alignment="left" />
-              Verwijder foto
+              Verwijder foto <span class="au-u-hidden-visually">{{image.id}}</span>
             </button>
           </td>
         </DraggableObject>
