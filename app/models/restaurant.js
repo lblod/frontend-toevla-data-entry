@@ -7,6 +7,9 @@ export default class RestaurantModel extends Model {
   @attr('number') smallestPointOnRouteForTarrace;
   @attr('number') mostNarrowDoorWidthForTerrace;
   @attr('number') heightUnderTableForWheelchairInConsumptionSpace;
+  @attr('number') amountOfThresholds;
+  @attr('number') amountOfStairs;
+  @attr('number') amountOfSlopes;
   @attr('number') highestThresholdOnRouteToConsumptionSpace;
   @attr('number') smallestPointOnRouteToConsumptionSpace;
   @attr('number') mostNarrowDoorWidthInConsumptionSpace;
