@@ -44,10 +44,12 @@
             </div>
           </td>
           <td>
-            <AuTextarea {{on "input" (fn this.updateImage image "label")}} value={{image.label}} @width="block" />
+            <label class="au-u-hidden-visually" for="label{{image.id}}">{{image.id}} label</label>
+            <AuTextarea id="label{{image.id}}" {{on "input" (fn this.updateImage image "label")}} value={{image.label}} @width="block" />
           </td>
           <td>
-            <AuTextarea {{on "input" (fn this.updateImage image "description")}} value={{image.description}} @width="block" />
+            <label class="au-u-hidden-visually" for="description{{image.id}}">{{image.id}} description</label>
+            <AuTextarea id="description{{image.id}}" {{on "input" (fn this.updateImage image "description")}} value={{image.description}} @width="block" />
           </td>
           <td>
             <button type="button" {{on "click" (fn this.removeImage image)}} class="au-c-button au-c-button--tertiary au-c-button--alert">
