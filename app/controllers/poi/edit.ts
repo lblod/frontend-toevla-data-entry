@@ -1,4 +1,3 @@
-import { set } from '@ember/object';
 import { A } from '@ember/array';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
@@ -8,11 +7,12 @@ import PointOfInterest from 'frontend-toevla-data-entry/models/point-of-interest
 import Concept from 'frontend-toevla-data-entry/models/concept';
 import ConceptScheme from 'frontend-toevla-data-entry/models/concept';
 import { emberDataObjectInArray } from '../../helpers/ember-data-object-in-array';
+import CurrentAccount from '../../services/current-account';
 
 
 export default class PoiEdit extends Controller {
   @service store!: Store;
-  @service currentAccount;
+  @service currentAccount!: CurrentAccount;
 
   model!: PointOfInterest;
   iconScheme!: ConceptScheme;
@@ -43,7 +43,7 @@ export default class PoiEdit extends Controller {
   }
 
   @action
-  async toggleIcon(concept) {
+  async toggleIcon(concept: Concept) {
     const model = this.model;
     if (emberDataObjectInArray(concept, model.summaryIcons)) {
       model.summaryIcons = model.summaryIcons.rejectBy("id", concept.id);
