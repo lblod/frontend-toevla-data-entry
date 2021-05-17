@@ -1,33 +1,35 @@
-{{#if this.isWaiting}}
-  <span class="au-c-state__label au-c-state__label--save">
-    <AuIcon @icon="renew" @size="large" @ariaHidden={{true}} />
-    <span class="au-u-hidden-visually">Wachten</span>
+<div aria-live="assertive" aria-controls="main" aria-atomic="true" aria-relevant="all" >
+  {{#if this.isWaiting}}
+    <span class="au-c-state__label au-c-state__label--save">
+      <AuIcon @icon="renew" @size="large" @ariaHidden={{true}} />
+      <span class="au-u-hidden-visually">Wachten</span>
+    </span>
+  {{/if}}
+
+  {{#if this.isSaving}}
+    <span class="au-c-state__label au-c-state__label--save">
+      <AuIcon @icon="renew" @alignment="left" @size="large" @ariaHidden={{true}} />
+      Opslaan
+    </span>
+  {{/if}}
+
+  {{#if this.hasSaved}}
+  <span class="au-c-state__label au-c-state__label--saved">
+    <AuIcon @icon="check" @alignment="left" @size="large" @ariaHidden={{true}} />
+    Opgeslagen
   </span>
-{{/if}}
+  {{/if}}
 
-{{#if this.isSaving}}
-  <span class="au-c-state__label au-c-state__label--save">
-    <AuIcon @icon="renew" @alignment="left" @size="large" @ariaHidden={{true}} />
-    Opslaan
-  </span>
-{{/if}}
-
-{{#if this.hasSaved}}
-<span class="au-c-state__label au-c-state__label--saved">
-  <AuIcon @icon="check" @alignment="left" @size="large" @ariaHidden={{true}} />
-  Opgeslagen
-</span>
-{{/if}}
-
-{{#if this.smartStore.failedUpdates.length}}
-<div class="au-c-state-list">
-  <p><AuIcon @icon="alert-triangle" @alignment="left" @size="large" @ariaHidden={{true}} /> Mislukt, probeer opnieuw:</p>
-  <ul class="au-c-state-list__list">
-    {{#each this.smartStore.failedUpdates as |failure|}}
-      {{#each failure.routeInfos as |r|}}
-        <li><LinkTo @route={{r.name}} @models={{r.models}} class="au-c-link">{{r.name}}</LinkTo></li>
+  {{#if this.smartStore.failedUpdates.length}}
+  <div class="au-c-state-list">
+    <p><AuIcon @icon="alert-triangle" @alignment="left" @size="large" @ariaHidden={{true}} /> Mislukt, probeer opnieuw:</p>
+    <ul class="au-c-state-list__list">
+      {{#each this.smartStore.failedUpdates as |failure|}}
+        {{#each failure.routeInfos as |r|}}
+          <li><LinkTo @route={{r.name}} @models={{r.models}} class="au-c-link">{{r.name}}</LinkTo></li>
+        {{/each}}
       {{/each}}
-    {{/each}}
-  </ul>
+    </ul>
+  </div>
+  {{/if}}
 </div>
-{{/if}}
