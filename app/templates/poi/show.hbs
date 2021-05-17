@@ -88,14 +88,14 @@
   </AuToolbar>
 
   <AuToolbar @border="bottom" @size="medium">
-    <div class="au-c-tabs">
-      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.tree" @model={{@model}}>
+    <div class="au-c-tabs" role="tablist" aria-label="Locatie inhoud">
+      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.tree" @model={{@model}} role="tab">
         Toegankelijkheidsdata
       </LinkTo>
-      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.experiences.index" @model={{@model}}>
+      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.experiences.index" @model={{@model}} role="tab">
         Tentoonstelling
       </LinkTo>
-      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.history.index" @model={{@model}}>
+      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.history.index" @model={{@model}} role="tab">
         Historiek
       </LinkTo>
     </div>

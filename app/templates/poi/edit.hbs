@@ -27,13 +27,13 @@
       <AuHeading @skin="2" class="au-u-margin-bottom">Locatie aanpassen</AuHeading>
       <form {{on "submit" this.submit}} class="au-c-form">
         <p>
-          <AuLabel for="edit">Naam</AuLabel>
-          <AuInput @width="block" id="edit" @type="string" @value={{this.model.label}} />
+          <AuLabel for="name">Naam</AuLabel>
+          <AuInput @width="block" id="name" @type="string" @value={{this.model.label}} />
         </p>
 
         <p>
-          <AuLabel for="edit">Adres</AuLabel>
-          <AuInput @width="block" id="edit" @type="string" @value={{this.model.locationString}} />
+          <AuLabel for="address">Adres</AuLabel>
+          <AuInput @width="block" id="address" @type="string" @value={{this.model.locationString}} />
         </p>
 
         {{#if this.currentAccount.roleIsValidator}}
