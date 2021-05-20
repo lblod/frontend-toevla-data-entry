@@ -89,13 +89,13 @@
 
   <AuToolbar @border="bottom" @size="medium">
     <div class="au-c-tabs" role="tablist" aria-label="Locatie inhoud">
-      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.tree" @model={{@model}} role="tab">
+      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.tree" @model={{@model}} role="tab" aria-controls="panel-1" id="tab-1">
         Toegankelijkheidsdata
       </LinkTo>
-      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.experiences.index" @model={{@model}} role="tab">
+      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.experiences.index" @model={{@model}} role="tab" aria-controls="panel-2" id="tab-2">
         Tentoonstelling
       </LinkTo>
-      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.history.index" @model={{@model}} role="tab">
+      <LinkTo class="au-c-button au-c-button--secondary" @route="poi.show.history.index" @model={{@model}} role="tab" aria-controls="panel-3" id="tab-3">
         Historiek
       </LinkTo>
     </div>
