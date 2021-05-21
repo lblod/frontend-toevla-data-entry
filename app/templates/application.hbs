@@ -4,6 +4,9 @@
   {{#if this.session.isAuthenticated}}
   {{!-- @TODO: Add username variable --}}
   <AuDropdown @dropdownTitle="Username" @dropdownButtonLabel="Account settings" @alignment="right">
+    <AuButton @skin="tertiary" role="menuitem" {{on "click" (fn this.selectRole)}}>
+      <AuIcon @icon="switch" @alignment="left" />Wissel rol
+    </AuButton>
     <AuButton @skin="tertiary" role="menuitem" {{on "click" (fn this.logout)}}>
       <AuIcon @icon="logout" @alignment="left" />Afmelden
     </AuButton>
