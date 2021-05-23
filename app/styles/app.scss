@@ -20,10 +20,14 @@
  */
 
 
+
 // VARIABLES
 @import "appuniversum/s-colors";
 @import "appuniversum/s-global";
 @import "appuniversum/s-utilities";
+
+// Override outline
+$au-outline: .3rem solid #c48a00;
 
 
 // MIXINS

@@ -1,4 +1,4 @@
-.au-c-tree {
+.au-c-tree-holder {
   height: 100%;
   width: 100%;
   background-color: $au-gray-100;
@@ -6,6 +6,8 @@
   padding: $au-unit;
   border-right: .1rem solid $au-gray-200;
 }
+
+.au-c-tree {}
 
 .au-c-tree__list {
   position: relative;
