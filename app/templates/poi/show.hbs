@@ -22,10 +22,12 @@
     </AuToolbarGroup>
     <AuToolbarGroup class="au-u-h6">
       <div class="au-c-button-group">
-        <LinkTo class="au-c-button au-c-button--tertiary" @route="poi.edit" @model={{@model}}>
-          <AuIcon @icon="pencil" @alignment="left" />
-          Locatie aanpassen
-        </LinkTo>
+        {{#if this.currentAccount.roleIsValidator}}
+          <LinkTo class="au-c-button au-c-button--tertiary" @route="poi.edit" @model={{@model}}>
+            <AuIcon @icon="pencil" @alignment="left" />
+            Locatie aanpassen
+          </LinkTo>
+        {{/if}}
 
         {{!-- Send --}}
         <AuButton @skin="secondary" {{on "click" (fn (mut this.sendModal) true)}}>
