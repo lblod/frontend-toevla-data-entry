@@ -2,7 +2,11 @@ import Component from '@glimmer/component';
 
 export default class CriteriaSelectBooleanCriterionComponent extends Component {
   get matchedIndex() {
-    return this.args.value ? 1 : 2;
+    if (this.args.value === true)
+      return 1;
+    else if (this.args.value === false)
+      return 2;
+    else return 3;
   }
 
   get matchPositive() {
@@ -11,30 +15,30 @@ export default class CriteriaSelectBooleanCriterionComponent extends Component {
 
   get rawTemplateString() {
     const treeNode = this.args.treeNode;
-    switch ( this.matchedIndex ) {
-    case 1:
-      return treeNode.firstLabel;
-    case 2:
-      return treeNode.secondLabel;
-    default:
-      return null;
+    switch (this.matchedIndex) {
+      case 1:
+        return treeNode.firstLabel;
+      case 2:
+        return treeNode.secondLabel;
+      default:
+        return treeNode.thirdLabel;
     }
   }
 
   get matchScore() {
     const treeNode = this.args.treeNode;
-    switch( this.matchedIndex ) {
-    case 1:
-      return treeNode.firstScore;
-    case 2:
-      return treeNode.secondScore;
-    default:
-      return null;
+    switch (this.matchedIndex) {
+      case 1:
+        return treeNode.firstScore;
+      case 2:
+        return treeNode.secondScore;
+      default:
+        return treeNode.thirdScore;
     }
   }
 
   get templateString() {
-    return ["undefined","geen weergave"].includes( this.rawTemplateString && this.rawTemplateString.toLowerCase() )
+    return ["undefined", "geen weergave"].includes(this.rawTemplateString && this.rawTemplateString.toLowerCase())
       ? null
       : this.rawTemplateString;
   }
