@@ -7,12 +7,11 @@
     <p class="au-u-margin-bottom-tiny">
       <AuLabel for="boolean">Is deze eigenschap aanwezig?</AuLabel>
       <label class="au-c-toggle">
-        <Input id="boolean" @checked={{this.currentValue}} @type="checkbox" class="input-checkbox" />
-        <span class="au-c-toggle__elements">
-          <span class="au-c-toggle__switch"></span>
-          <span class="au-c-toggle__on-value">Ja</span>
-          <span class="au-c-toggle__off-value">Nee</span>
-        </span>
+        <RadioButtons @selected={{this.currentValue}} @onSelect={{this.updateValue}} as |RadioButton|>
+          <RadioButton @label="Ja" @value={{true}} />
+          <RadioButton @label="Nee" @value={{false}} />
+          <RadioButton @label="Niet ingevuld" @value={{undefined}} />
+        </RadioButtons>
       </label>
     </p>
   </chart.if>

@@ -1,3 +1,4 @@
+import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { get } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
@@ -91,5 +92,10 @@ export default class EditComponentsBoolean extends Component<EditComponentsBoole
   async saveValue() {
     await setInstanceValue( this.args.subject, this.args.key, this.configuredValue );
     this.smartStore.persist( this.currentInstance );
+  }
+
+  @action
+  updateValue(value: true | false | undefined) {
+    this.currentValue = value;
   }
 }
