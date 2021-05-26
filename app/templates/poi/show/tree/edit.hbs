@@ -67,6 +67,15 @@
         <AuHelpText class="au-u-margin-top-none au-u-margin-bottom-tiny">De URL van de link (vb. https://toegankelijk.vlaanderen.be/login) </AuHelpText>
         <AuInput @width="block" id="commentUrl" @value={{this.currentCommentLinkUrl}} @placeholder="" />
       </div>
+
+      {{#if (or this.currentComment (and this.currentCommentLinkText this.currentCommentLinkUrl))}}
+        <AuPill class="au-u-margin-top-small">
+          {{this.currentComment}}&nbsp;
+          {{#if (and this.currentCommentLinkText this.currentCommentLinkUrl)}}
+            <a href={{this.currentCommentLinkUrl}}>{{this.currentCommentLinkText}}</a>
+          {{/if}}
+        </AuPill>
+      {{/if}}
     </form>
   </div>
 </div>
