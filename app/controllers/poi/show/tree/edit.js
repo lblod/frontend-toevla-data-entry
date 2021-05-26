@@ -20,6 +20,10 @@ export default class PoiShowTreeEditController extends Controller {
     this.didSetCommentLinkText = false;
     this.didSetCommentLinkUrl = false;
     this.showInfo = false;
+
+    this.enteredComment = null;
+    this.enteredCommentLinkText = null;
+    this.enteredCommentLinkUrl = null;
   }
 
   // -- SCORING --
