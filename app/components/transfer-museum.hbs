@@ -1,0 +1,33 @@
+<AuButton @skin="secondary" {{on "click" (fn (mut this.showModal) true)}}>
+  <AuIcon @icon={{@buttonIcon}} @alignment="left" />
+  {{@buttonLabel}}
+</AuButton>
+<AuModal
+  @modalTitle={{@modalTitle}}
+  @modalOpen={{this.showModal}}
+  @closeModal={{fn (mut this.showModal) false}} as |Modal| >
+  <Modal.Body>
+    <AuAlert @alertIcon="info-circle" @alertTitle={{@sendMessage}} @alertskin="info" class="au-u-margin-bottom-none">
+      <p>U kan deze actie niet ongedaan maken.</p>
+    </AuAlert>
+  </Modal.Body>
+  <Modal.Footer>
+    {{#if this.didSend}}
+      <AuButton class="is-disabled" disabled>
+        {{@sendLabel}}
+      </AuButton>
+      <AuButton @skin="secondary" {{on "click" (fn (mut this.showModal) false)}}>
+        Sluiten
+      </AuButton>
+
+      <span aria-live>Aanvraag verzonden</span>
+    {{else}}
+      <AuButton {{on "click" this.send}}>
+        {{@sendLabel}}
+      </AuButton>
+      <AuButton @skin="secondary" {{on "click" (fn (mut this.showModal) false)}}>
+        Annuleer
+      </AuButton>
+    {{/if}}
+  </Modal.Footer>
+</AuModal>
