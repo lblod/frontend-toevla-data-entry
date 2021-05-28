@@ -22,11 +22,11 @@ export default class Toilet extends Model {
   @attr('number') spaceNextToToilet: number | null | undefined;
   @attr('number') turningRadius: number | null | undefined;
   @attr('number') amountOfSupportBraces: number | null | undefined;
-  @attr('boolean', { allowNull: true }) hasWashbasin: boolean | null | undefined;
   @belongsTo('area') sizeOfElevator: Area | null | undefined;
   @belongsTo('area') sizeOfPlateauElevator: Area | null | undefined;
   @belongsTo('area') sizeOfToiletRoom: Area | null | undefined;
   @belongsTo('concept') canRideUnderWashbasinCategory: Concept | null | undefined;
+  @belongsTo('concept') washbasinAvailability: Concept | null | undefined;
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.
