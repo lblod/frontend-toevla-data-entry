@@ -77,7 +77,7 @@ const eMapping = {
   "https://data.toevla.org/id/concepts/60031a1d-cee8-4d02-a745-930de16f7c5e": { component: "boolean", key: "parking.detailedRouteDescriptionHasScreenReader" },
   "https://data.toevla.org/id/concepts/1015eff1-2a00-4cc5-a0ac-59eee06602fa": { component: "boolean", key: "parking.detailedRouteDescriptionIsAvailableInFlemishSignLanguage" },
   "https://data.toevla.org/id/concepts/6a31ce16-1e0d-4d01-96b5-4a976c849bc8": { component: "count", key: "parking.numberOfWheelchairFriendlySpots" },
-  "https://data.toevla.org/id/concepts/09eacace-66b4-41b6-959d-60316e83bf6a": { component: "boolean", key: "parking.onPublicDomain" },
+  "https://data.toevla.org/id/concepts/09eacace-66b4-41b6-959d-60316e83bf6a": { component: "string", key: "parking.descriptionOfParkingOnPublicDomain" },
   "https://data.toevla.org/id/concepts/9cf0259c-b038-4691-a113-0ae9c47ea407": { component: "boolean", key: "parking.hasWheelchairFriendlyTerrain" },
   "https://data.toevla.org/id/concepts/2e2ce9ba-cc64-4e1c-8171-35f0915e4784": { component: "centimeters", key: "parking.parkingSpaceWidth" },
   "https://data.toevla.org/id/concepts/4cf4c693-4217-4e90-ac3c-81ac12c68c0b": { component: "centimeters", key: "parking.parkingSpaceLength" },

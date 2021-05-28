@@ -10,7 +10,7 @@ export default class ParkingModel extends Model {
   @attr('boolean', { allowNull: true }) detailedRouteDescriptionHasScreenReader: boolean | undefined | null;
   @attr('boolean', { allowNull: true }) detailedRouteDescriptionIsAvailableInFlemishSignLanguage: boolean | undefined | null;
   @attr('number') numberOfWheelchairFriendlySpots: boolean | undefined | null;
-  @attr('boolean', { allowNull: true }) onPublicDomain: boolean | undefined | null;
+  @attr('string') descriptionOfParkingOnPublicDomain: string | undefined | null;
   @attr('boolean', { allowNull: true }) hasWheelchairFriendlyTerrain: boolean | undefined | null;
   @attr('number') parkingSpaceLength: number | undefined | null;
   @attr('number') parkingSpaceWidth: number | undefined | null;
