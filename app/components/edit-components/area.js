@@ -41,6 +41,16 @@ export default class EditComponentsCentimetersComponent extends EditComponentsBo
     this.statechart.send("SETUP_OBJECTS");
   }
 
+  /**
+   * Resets the data entry
+   */
+  @handler()
+  resetDataEntry(){
+    this.hasSetWidth = false;
+    this.hasSetHeight = false;
+    super.resetDataEntry(...arguments);
+  }
+
   async storeValues() {
     await setInstanceValue( this.args.subject, this.args.key + ".width", this.width );
     await setInstanceValue( this.args.subject, this.args.key + ".height", this.height );
