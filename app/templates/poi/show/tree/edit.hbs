@@ -12,7 +12,7 @@
       </button>
       {{#if this.showInfo}}
         <AuHelpText class="au-c-helptext--focus" {{auto-focus}} tabindex="0">
-          {{@model.treeNode.dataEntryComment}}
+          {{@model.treeNode.dataEntryComment}} {{#if (and (config "APP.showLinksToManual") @model.treeNode.manualHyperlink)}}<a href={{@model.treeNode.manualHyperlink}} target="_blank">Handleiding</a>{{/if}}
         </AuHelpText>
       {{/if}}
     {{/if}}
