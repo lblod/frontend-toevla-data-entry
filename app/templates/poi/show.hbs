@@ -30,60 +30,29 @@
         {{/if}}
 
         {{!-- Send --}}
-        <AuButton @skin="secondary" {{on "click" (fn (mut this.sendModal) true)}}>
-          <AuIcon @icon="send" @alignment="left" />
-          Verstuur
-        </AuButton>
-        <AuModal
-          @modalTitle="Verstuur wijzigingen"
-          @modalOpen={{this.sendModal}}
-          @closeModal={{fn (mut this.sendModal) false}} as |Modal| >
-          <Modal.Body>
-            <AuAlert @alertIcon="info-circle" @alertTitle="Weet u zeker dat u deze versie wil versturen?" @alertskin="info" class="au-u-margin-bottom-none">
-              <p>U kan deze actie niet ongedaan maken.</p>
-            </AuAlert>
-          </Modal.Body>
-          <Modal.Footer>
-            {{#if this.currentAccount.roleIsValidator}}
-              <AuButton {{on "click" this.sendToMuseum}}>
-                Verstuur deze versie
-              </AuButton>
-            {{/if}}
-            {{#if this.currentAccount.roleIsDataEntry}}
-              <AuButton {{on "click" this.sendToValidator}}>
-                Verstuur deze versie
-              </AuButton>
-            {{/if}}
-            <AuButton @skin="secondary" {{on "click" (fn (mut this.sendModal) false)}}>
-              Annuleer
-            </AuButton>
-          </Modal.Footer>
-        </AuModal>
+        {{#if (or this.currentAccount.roleIsValidator this.currentAccount.roleIsDataEntry)}}
+          <TransferMuseum
+            @buttonLabel="Verstuur"
+            @path={{if this.currentAccount.roleIsValidator
+                      (concat "/transfer/museum/" this.model.id "/send-to-museum")
+                      (concat "/transfer/museum/" this.model.id "/send-to-validator")}}
+            @buttonIcon="send"
+            @modalTitle="Verstuur wijzigingen"
+            @sendLabel="Verstuur deze versie"
+            @sendMessage="Weet u zeker dat u deze versie wil verzenden?"
+          />
+        {{/if}}
 
         {{!-- Publish: only visible for Inter --}}
         {{#if this.currentAccount.roleIsValidator}}
-          <AuButton {{on "click" (fn (mut this.publishModal) true)}}>
-            <AuIcon @icon="publish" @alignment="left" />
-            Publiceer
-          </AuButton>
-          <AuModal
-            @modalTitle="Publiceer data"
-            @modalOpen={{this.publishModal}}
-            @closeModal={{fn (mut this.publishModal) false}} as |Modal| >
-            <Modal.Body>
-              <AuAlert @alertIcon="info-circle" @alertTitle="Weet u zeker dat u deze versie wil publiceren?" @alertskin="info" class="au-u-margin-bottom-none">
-                <p>U kan deze actie niet ongedaan maken.</p>
-              </AuAlert>
-            </Modal.Body>
-            <Modal.Footer>
-              <AuButton {{on "click" this.publish}}>
-                Publiceer deze versie
-              </AuButton>
-              <AuButton @skin="secondary" {{on "click" (fn (mut this.publishModal) false)}}>
-                Annuleer
-              </AuButton>
-            </Modal.Footer>
-          </AuModal>
+          <TransferMuseum
+            @buttonLabel="Publiceer data"
+            @path={{concat "/transfer/museum/" this.model.id "/send-to-public"}}
+            @buttonIcon="publish"
+            @modalTitle="Publiceer wijzigingen"
+            @sendLabel="Verstuur deze versie"
+            @sendMessage="Weet u zeker dat u deze versie wil publiceren?"
+          />
         {{/if}}
       </div>
     </AuToolbarGroup>

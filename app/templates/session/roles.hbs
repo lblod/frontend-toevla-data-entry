@@ -9,13 +9,13 @@
       <div class="au-o-layout">
         <AuHeading @skin="2" class="au-u-margin-bottom">Selecteer je rol</AuHeading>
         <ul class="au-c-list">
-          {{#each this.currentAccount.availableRoles as |role|}}
+          {{#each this.sortedModel as |role|}}
             <li class="au-c-list__item">
-              <AuButton @skin="secondary" @width="block" {{on "click" (fn this.chooseRole role)}} >
-                {{#if (is-validator-role role)}}
+              <AuButton @skin="secondary" @width="block" {{on "click" (fn this.chooseRole role.id)}} >
+                {{#if (eq role.type "validator-roles")}}
                   Inter validator
                 {{else}}
-                  Invoerder: {{role.pointOfInterest.label}}
+                  Invoerder: {{role.attributes.concatenatedPoiName}}
                 {{/if}}
               </AuButton>
             </li>

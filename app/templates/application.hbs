@@ -2,15 +2,14 @@
 
 <AuMainHeader @homeRoute="index" @appTitle="Toegankelijk Vlaanderen" @contactRoute="contact">
   {{#if this.session.isAuthenticated}}
-  {{!-- @TODO: Add username variable --}}
-  <AuDropdown @dropdownTitle="Username" @dropdownButtonLabel="Account settings" @alignment="right">
-    <AuButton @skin="tertiary" role="menuitem" {{on "click" (fn this.selectRole)}}>
-      <AuIcon @icon="switch" @alignment="left" />Wissel rol
-    </AuButton>
-    <AuButton @skin="tertiary" role="menuitem" {{on "click" (fn this.logout)}}>
-      <AuIcon @icon="logout" @alignment="left" />Afmelden
-    </AuButton>
-  </AuDropdown>
+    <AuDropdown @dropdownTitle={{this.username}} @dropdownButtonLabel="Account settings" @alignment="right">
+      <AuButton @skin="tertiary" role="menuitem" {{on "click" (fn this.selectRole)}}>
+        <AuIcon @icon="switch" @alignment="left" />Wissel rol
+      </AuButton>
+      <AuButton @skin="tertiary" role="menuitem" {{on "click" (fn this.logout)}}>
+        <AuIcon @icon="logout" @alignment="left" />Afmelden
+      </AuButton>
+    </AuDropdown>
   {{else}}
   <LinkTo @route="login" class="au-c-button au-c-button--tertiary">
     <AuIcon @icon="login" @alignment="left" />Aanmelden

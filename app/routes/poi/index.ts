@@ -7,6 +7,8 @@ export default class PoiIndexRoute extends Route {
   @service store!: StoreService;
 
   model() {
-    return this.store.findAll('point-of-interest');
+    return this.store.query('point-of-interest', {
+      "page[size]": 100
+    });
   }
 }

@@ -20,10 +20,12 @@ export default class PointOfInterest extends Scorable {
   @attr('string') comment: string | null | undefined;
   @attr('string') commentOnPublicTransport: string | null | undefined;
   @attr('string') commentOnEntrance: string | null | undefined;
+  @attr('string') commentOnAlternativeEntranceForWheelchair: string | null | undefined;
   @attr('string') locationString: string | null | undefined;
   @attr('boolean', { allowNull: true }) hasCashPayment: boolean | undefined | null;
   @attr('boolean', { allowNull: true }) hasPaymentWithMovableElectronicPaymentSystem: boolean | undefined | null;
   @attr('boolean', { allowNull: true }) hasPaymentWithFixedElectronicPaymentSystem: boolean | undefined | null;
+  @attr('boolean', { allowNull: true }) hasOnlineOrderingAndPaymentOption: boolean | undefined | null;
   @attr('boolean', { allowNull: true }) assistanceForGuideDogs: boolean | undefined | null;
   @attr('boolean', { allowNull: true }) hasVisualVisitPreparationPlan: boolean | undefined | null;
   @attr('boolean', { allowNull: true }) websiteHasScreenreader: boolean | undefined | null;

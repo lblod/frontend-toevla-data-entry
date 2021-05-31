@@ -12,7 +12,7 @@
       </button>
       {{#if this.showInfo}}
         <AuHelpText class="au-c-helptext--focus" {{auto-focus}} tabindex="0">
-          {{@model.treeNode.dataEntryComment}}
+          {{@model.treeNode.dataEntryComment}} {{#if (and (config "APP.showLinksToManual") @model.treeNode.manualHyperlink)}}<a href={{@model.treeNode.manualHyperlink}} target="_blank">Handleiding</a>{{/if}}
         </AuHelpText>
       {{/if}}
     {{/if}}
@@ -67,6 +67,15 @@
         <AuHelpText class="au-u-margin-top-none au-u-margin-bottom-tiny">De URL van de link (vb. https://toegankelijk.vlaanderen.be/login) </AuHelpText>
         <AuInput @width="block" id="commentUrl" @value={{this.currentCommentLinkUrl}} @placeholder="" />
       </div>
+
+      {{#if (or this.currentComment (and this.currentCommentLinkText this.currentCommentLinkUrl))}}
+        <AuPill class="au-u-margin-top-small">
+          {{this.currentComment}}&nbsp;
+          {{#if (and this.currentCommentLinkText this.currentCommentLinkUrl)}}
+            <a href={{this.currentCommentLinkUrl}}>{{this.currentCommentLinkText}}</a>
+          {{/if}}
+        </AuPill>
+      {{/if}}
     </form>
   </div>
 </div>

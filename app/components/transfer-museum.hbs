@@ -1,0 +1,56 @@
+<WithStatechart @state={{this.transferChart}} as |transferChart|>
+  <AuButton @skin="secondary" {{on "click" (fn (mut this.showModal) true)}}>
+    <AuIcon @icon={{@buttonIcon}} @alignment="left" />
+    {{@buttonLabel}}
+  </AuButton>
+  <AuModal
+    @modalTitle={{@modalTitle}}
+    @modalOpen={{this.showModal}}
+    @closeModal={{fn (mut this.showModal) false}} as |Modal| >
+    <Modal.Body>
+      <AuAlert @alertIcon="info-circle" @alertTitle={{@sendMessage}} @alertskin="info" class="au-u-margin-bottom-none">
+        <p>U kan deze actie niet ongedaan maken.</p>
+      </AuAlert>
+    </Modal.Body>
+    <Modal.Footer>
+      <transferChart.if @state="init">
+        <AuButton {{on "click" (fn transferChart.preventAndSend "REQUEST_TRANSFER")}}>
+          {{@sendLabel}}
+        </AuButton>
+        <AuButton @skin="secondary" {{on "click" (fn (mut this.showModal) false)}}>
+          Annuleer
+        </AuButton>
+      </transferChart.if>
+
+      <transferChart.if @state="requestingTransfer">
+        <AuButton class="is-disabled" disabled>
+          {{@sendLabel}}
+        </AuButton>
+        <AuButton @skin="secondary" {{on "click" (fn (mut this.showModal) false)}}>
+          Sluiten
+        </AuButton>
+
+        <span aria-live>Aanvraag verzonden</span>
+      </transferChart.if>
+
+      <transferChart.if @state="informTransferFinished">
+        <AuButton {{on "click" (fn transferChart.preventAndSend "REQUEST_TRANSFER")}}>
+          {{@sendLabel}}
+        </AuButton>
+        <AuButton @skin="secondary" {{on "click" (fn (mut this.showModal) false)}}>
+          Sluiten
+        </AuButton>
+
+        <span aria-live>Aanvraag uitgevoerd</span>
+      </transferChart.if>
+
+      <transferChart.if @state="fail">
+        <AuButton @skin="secondary" {{on "click" (fn (mut this.showModal) false)}}>
+          Sluiten
+        </AuButton>
+
+        <span aria-live>Er is iets mis gelopen bij het uitvoeren van de aanvraag.  Contacteer ons.</span>
+      </transferChart.if>
+    </Modal.Footer>
+  </AuModal>
+</WithStatechart>
