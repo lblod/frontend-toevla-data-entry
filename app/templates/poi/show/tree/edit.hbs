@@ -69,12 +69,15 @@
       </div>
 
       {{#if (or this.currentComment (and this.currentCommentLinkText this.currentCommentLinkUrl))}}
-        <AuPill class="au-u-margin-top-small">
+      <div>
+        <p class="au-c-label">Extra omschrijving en link preview</p>
+        <AuPill class="au-u-padding-tiny">
           {{this.currentComment}}&nbsp;
           {{#if (and this.currentCommentLinkText this.currentCommentLinkUrl)}}
-            <a href={{this.currentCommentLinkUrl}}>{{this.currentCommentLinkText}}</a>
+          <a href={{this.currentCommentLinkUrl}} class="au-c-link" target="_blank" rel="noopener noreferrer">{{this.currentCommentLinkText}}</a>
           {{/if}}
         </AuPill>
+      </div>
       {{/if}}
     </form>
   </div>
