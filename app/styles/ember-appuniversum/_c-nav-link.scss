@@ -1,0 +1,50 @@
+/* ==================================
+   #LINKS
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-nav-link-color                       : $au-gray-800 !default;
+$au-nav-link-hover-color                 : $au-gray-900 !default;
+$au-nav-link-active-color                : $au-gray-900 !default;
+
+/* Component
+  ========================================================================== */
+
+.au-c-nav-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $au-font;
+  transition: color $au-transition, text-decoration $au-transition;
+  font-weight: $au-regular;
+  padding: $au-unit-tiny $au-unit;
+  text-decoration: none;
+  width: 100%;
+
+  &,
+  &:visited {
+    color: $au-nav-link-color;
+  }
+
+  &:hover,
+  &:focus {
+    color: $au-nav-link-hover-color;
+    box-shadow: inset 0 -3px 0 0 $au-gray-900;
+
+  }
+
+  &:focus {
+    outline: $au-outline;
+    outline-offset: $au-unit-tiny/2;
+  }
+
+  &.is-active {
+    font-weight: $au-medium;
+    color: $au-nav-link-active-color;
+    text-decoration: none;
+    pointer-events: none;
+    box-shadow: inset 0 -3px 0 0 $au-gray-900;
+  }
+}

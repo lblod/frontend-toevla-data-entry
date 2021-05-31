@@ -1,0 +1,161 @@
+{{page-title "Aan de slag – Toegankelijk Vlaanderen"}}
+
+<div class="au-c-main-container__content au-c-main-container__content--scroll">
+  <Navigation />
+
+  <main id="content">
+    <section class="au-o-region-large">
+      <div class="au-o-layout au-o-layout--large">
+        <AuContent>
+          <AuHeading>Aan de slag</AuHeading>
+        </AuContent>
+        <hr class="au-c-hr">
+        <div class="au-o-grid">
+          <div class="au-o-grid__item au-u-1-2@medium">
+            <AuContent @skin="large">
+              <p class="au-c-intro au-u-italic">
+                Is een museum interessant om te bezoeken?<br>
+                Zijn de activiteiten toegankelijk voor mij?<br>
+                Is er een aanbod op maat?
+              </p>
+              <p>Toegankelijk Vlaanderen helpt om de toegankelijkheidsinformatie van locaties te verzamelen en correct weer te geven. Bezoekers kunnen die betrouwbare informatie eenvoudig raadplegen dankzij een uniforme weergave.</p>
+              <h2 class="au-c-heading au-c-heading--3">Data opmeten en invoeren</h2>
+              <p>Via de nieuwe invoerapplicatie kan je als museumverantwoordelijke zelf aan de slag. Je kan de toegankelijkheidsdata van je locatie zelf verzamelen en invoeren. Inter is er om je te ondersteunen bij vragen en om de ingevoerde data te valideren vooraleer deze online weer te geven.</p>
+              <p>Dankzij een stukje code op je website is het mogelijk om de toegankelijkheidsinformatie (widget) rechtstreeks weer te geven. Hoe je dit kan doen staat omschreven onder de ‘Technische integratie’. </p>
+            </AuContent>
+          </div>
+          <div class="au-o-grid__item au-u-1-2@medium au-u-visible-medium-up">
+            <div class="au-c-image au-c-image--transparent">
+              <img src="/assets/images/about.svg" alt="Illustratie van een vrouw die een boek leest leunend op een stapel boeken">
+            </div>
+          </div>
+        </div>
+        <hr class="au-c-hr au-c-hr--huge">
+        <div class="au-o-grid au-o-grid--middle au-o-grid--reverse">
+          <div class="au-o-grid__item au-u-1-2@medium">
+            <AuContent @skin="large">
+              <h2 class="au-c-heading au-c-heading--3">Toegankelijkheidswijzer</h2>
+              <p>U kan onze toegankelijkheidswijzer makkelijk integreren in uw website. Zo kan u de bezoekers steeds de meest actuele toegankelijkheidsinformatie meegeven.</p>
+              <ul class="au-u-margin-top-small">
+                <li>We verzamelen informatie rond een vast aantal punten en geven deze weer in een overzichtelijke lijst.</li>
+                <li>We tonen foto’s die de toegankelijkheid van de locatie illustreren.</li>
+              </ul>
+              <p>
+                <LinkTo @route="widget" class="au-c-link">
+                  Lees meer over de toegankelijkheidswijzer
+                </LinkTo>
+              </p>
+            </AuContent>
+          </div>
+          <div class="au-o-grid__item au-u-1-2@medium">
+            <div class="au-c-image au-c-image--transparent">
+              <img src="/assets/images/toevla-mockup.png" alt="Overzicht van de widget met een detail van parkeren en een foto waarop je de ingang ziet van een gebouw.">
+            </div>
+          </div>
+        </div>
+        <hr class="au-c-hr au-c-hr--huge">
+        <h2 class="au-c-heading au-c-heading--3 au-u-margin-bottom">Cases</h2>
+        <div class="au-o-grid">
+          <div class="au-o-grid__item au-u-1-4@medium">
+            <ul class="au-c-list-navigation" role="tablist" aria-label="Cases">
+              <li class="au-c-list-navigation__item" >
+                <AuNavigationLink @linkRoute="get-started.index" role="tab" aria-controls="panel-1" id="tab-1">
+                  Ik ben de eigenaar of beheerder van een museum en wil ook een widget met de toegankelijkheidsinformatie over mijn museum?
+                </AuNavigationLink>
+              </li>
+              <li class="au-c-list-navigation__item">
+                <AuNavigationLink @linkRoute="get-started.case2" role="tab" aria-controls="panel-2" id="tab-2">
+                  Ik wil een museum bezoeken en zoek musea met informatie over toegankelijkheid.
+                </AuNavigationLink>
+              </li>
+              <li class="au-c-list-navigation__item">
+                <AuNavigationLink @linkRoute="get-started.case3" role="tab" aria-controls="panel-3" id="tab-3">
+                  Ik ben een ontwikkelaar en wil de widget integreren in een website.
+                </AuNavigationLink>
+              </li>
+              <li class="au-c-list-navigation__item">
+                <AuNavigationLink @linkRoute="get-started.case4" role="tab" aria-controls="panel-4" id="tab-4">
+                  Ik ben de eigenaar of beheerder van een museum en wil een nieuwe tentoonstelling toevoegen aan mijn dossier.
+                </AuNavigationLink>
+              </li>
+            </ul>
+          </div>
+          <div class="au-o-grid__item au-u-3-4@medium">
+            <AuContent id="content">
+              {{outlet}}
+            </AuContent>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="au-o-region-large au-u-border-top">
+      <div class="au-o-layout au-o-layout--large">
+        <AuContent @skin="large" class="au-u-content-center">
+          <h2>Zin om aan de slag te gaan?</h2>
+          <p>Wil jij ook meewerken aan het informeren van bezoekers over de toegankelijkheid van musea? Schrijf je in via het <AuLink @linkRoute="contact">inschrijfformulier</AuLink> en je ontvangt de nodige informatie.</p>
+        </AuContent>
+      </div>
+    </section>
+
+    <section class="au-o-region-large au-c-theme-gray-200">
+      <div class="au-o-layout  au-o-layout--large">
+        <AuHeading @level="2" @skin="3" class="au-u-margin-bottom">Integreer informatie over jouw toegankelijk gebouw in je website.</AuHeading>
+        <div class="au-o-grid au-o-grid--small">
+          <div class="au-o-grid__item au-u-1-2@small">
+            <AuCard class="au-u-text-center">
+              <AuBadge @icon="sitemap" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+              <AuContent>
+                <AuHeading @level="3" @skin="4">
+                  Gebouwen
+                </AuHeading>
+                <p class="au-u-margin-top-tiny">Een overzicht van de gebouwen waarvoor er toegankelijkheidsinformatie beschikbaar is.</p>
+                <p>
+                  <LinkTo @route="buildings" class="au-c-button ">
+                    Zoek een gebouw
+                  </LinkTo>
+                </p>
+              </AuContent>
+            </AuCard>
+          </div>
+          <div class="au-o-grid__item au-u-1-2@small">
+            <AuCard class="au-u-text-center">
+              <AuBadge @icon="users" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+              <AuContent>
+                <AuHeading @level="3" @skin="4">
+                  Voor ontwikkelaars
+                </AuHeading>
+                <p class="au-u-margin-top-tiny">Hier vind u meer informatie over hoe je de toegankelijkheidswijzer kan integreren in uw website.</p>
+                <p>
+                  <LinkTo @route="developers.intro" class="au-c-button">
+                    Integratie handleiding
+                  </LinkTo>
+                </p>
+              </AuContent>
+            </AuCard>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <AuMainFooter>
+    <AuHeading @level="3" @skin="4">
+      Toegankelijk.Vlaanderen is een officiële website van de Vlaamse overheid
+    </AuHeading>
+    <AuContent @skin="small">
+      <p>Uitgegeven door <a class="au-c-link" href="https://www.vlaanderen.be/organisaties/administratieve-diensten-van-de-vlaamse-overheid/beleidsdomein-kanselarij-en-bestuur/agentschap-binnenlands-bestuur">Agentschap Binnenlands Bestuur</a> i.s.m. <a href="https://www.inter.vlaanderen/" class="au-c-link">Inter</a></p>
+      <ul class="au-c-list-horizontal">
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="legal.disclaimer" @skin="secondary">Disclaimer</AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="legal.cookiestatement" @skin="secondary">Cookieverklaring</AuLink>
+        </li>
+        <li class="au-c-list-horizontal__item">
+          <AuLink @linkRoute="legal.toegankelijkheidsverklaring" @skin="secondary">Toegankelijkheidsverklaring</AuLink>
+        </li>
+      </ul>
+    </AuContent>
+  </AuMainFooter>
+</div>

@@ -23,6 +23,16 @@
   }
 }
 
+.au-c-navigation {
+  width: 100%;
+}
+
+.au-c-toolbar__group--navigation {
+  @include mq($until: small) {
+    width: 100%;
+  }
+}
+
 // Add a fixed grid option for sidebar layouts (@TODO: update appuniversum)
 .au-o-grid--fixed {
   height: 100%;
@@ -247,14 +257,12 @@
 
 .au-c-hero__image svg {
   position: absolute;
+  height: 100%;
+  width: 100%;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
-
-  .au-c-hero__image:first-child svg {
-    left: -$au-unit-huge;
-  }
-  .au-c-hero__image:last-child svg {
-    right: 0;
-  }
 
 .au-c-hero__usp {
   z-index: 1;
@@ -440,4 +448,9 @@
   &:focus {
     outline: 0 !important;
   }
+}
+
+.au-u-italic {
+  font-style: italic;
+  color: $au-gray-700;
 }

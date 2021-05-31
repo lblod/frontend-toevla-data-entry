@@ -1,0 +1,50 @@
+/* ==================================
+   #LIST HORIZONTAL
+   ================================== */
+
+/* Variables
+   ========================================================================== */
+
+$au-list-responsive-divider    : 1px dotted $au-gray-300 !default;
+
+
+/* Component
+   ========================================================================== */
+
+.au-c-list-responsive {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  // flex-direction: column;
+}
+
+.au-c-list-responsive__item {
+  display: flex;
+  align-items: center;
+
+  & + & {
+    border-left: $au-list-responsive-divider;
+  }
+
+
+  @include mq($until: small) {
+    width: 33.33%;
+    border-left: 0;
+    border-bottom: $au-list-responsive-divider;
+    border-right: $au-list-responsive-divider;
+
+    & + & {
+      border-left: 0;
+    }
+
+    &:nth-child(3) {
+      border-right: 0;
+    }
+
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6) {
+      border-bottom: 0;
+    }
+  }
+}

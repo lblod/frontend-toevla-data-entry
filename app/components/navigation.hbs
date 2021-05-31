@@ -1,0 +1,34 @@
+<AuToolbar @border="bottom" @skin="tint" class="au-c-toolbar--navigation">
+  <AuToolbarGroup class="au-c-toolbar__group--navigation">
+    <nav class="au-c-navigation">
+      <ul class="au-c-list-responsive">
+        <li class="au-c-list-responsive__item">
+          <AuNavLink @linkRoute="index">
+            Home
+          </AuNavLink>
+        </li>
+        <li class="au-c-list-responsive__item">
+          <AuNavLink @linkRoute="get-started">
+            Aan de slag
+          </AuNavLink>
+        </li>
+        <li class="au-c-list-responsive__item">
+          <AuNavLink @linkRoute="widget">
+            Toegankelijkheidswijzer
+          </AuNavLink>
+        </li>
+        <li class="au-c-list-responsive__item">
+          <AuNavLink @linkRoute="buildings">
+            Gebouwen
+          </AuNavLink>
+        </li>
+        {{!-- <li class="au-c-list-responsive__item">
+          <a href="#!" target="_blank" class="au-c-nav-link">
+            <AuIcon @icon="manual" @alignment="left" />
+            Handleiding
+          </a>
+        </li> --}}
+      </ul>
+    </nav>
+  </AuToolbarGroup>
+</AuToolbar>
