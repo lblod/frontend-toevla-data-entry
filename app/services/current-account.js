@@ -88,8 +88,6 @@ export default class CurrentAccountService extends Service {
   // @pre( function() { return this.sessionService.isAuthenticated; }, "Can't fetch account if not authenticated (ad-hoc definition)" )
   // @pre( () => this.sessionService.isAuthenticated, "Can't work due to JS semantics, I think" )
   async fetch() {
-    console.log("Fetching session");
-
     // first set up the session and roles
     try {
       const queryResults = await this.store.query("session", {
