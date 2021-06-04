@@ -11,12 +11,21 @@ export default class SessionRolesRoute extends Route {
   }
 
   async model() {
-    return (await
-      (await fetch('/session/roles', {
-        headers: new Headers({
-          accept: "application/vnd.api+json"
-        })
-      })).json()).data;
+    const res = await fetch('/session/roles', {
+      headers: new Headers({
+        accept: "application/vnd.api+json"
+      })});
+
+    if (res.status !== 200) {
+      this.sessionService.invalidate();
+      return;
+    } else {
+      try {
+        return (await res.json()).data;
+      } catch (e) {
+        await this.sessionService.invalidate();
+      }
+    }
   }
 
   afterModel() {
