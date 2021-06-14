@@ -55,4 +55,10 @@ Router.map(function() {
     this.route('show', { path: "/:id" });
   });
   this.route('email-login');
+  this.route('get-started', { path: "/aan-de-slag" }, function() {
+    this.route('case2');
+    this.route('case3');
+    this.route('case4');
+  });
+  this.route('widget', { path: "/toegankelijkheidswijzer" });
 });
