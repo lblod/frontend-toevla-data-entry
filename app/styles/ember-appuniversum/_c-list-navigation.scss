@@ -90,15 +90,12 @@ $au-list-navigation-border-color: $au-gray-200 !default;
     font-weight: $au-medium;
     color: $au-gray-900;
     text-decoration: none;
+    box-shadow: inset -.3rem 0 0 $au-gray-300;
+    background-color: $au-gray-200;
   }
 
   @include mq(medium) {
     padding: $au-unit-small $au-unit-small + $au-unit-tiny;
-
-    &.active {
-      box-shadow: inset -.3rem 0 0 $au-gray-300;
-      background-color: $au-gray-200;
-    }
   }
 }
 

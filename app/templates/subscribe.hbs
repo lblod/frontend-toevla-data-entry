@@ -1,4 +1,4 @@
-{{page-title "Voor ontwikkelaars – Toegankelijk Vlaanderen"}}
+{{page-title "Inschrijven – Toegankelijk Vlaanderen"}}
 
 <div class="au-c-main-container__content au-c-main-container__content--scroll">
   <Navigation />
@@ -7,40 +7,11 @@
     <section class="au-o-region-large">
       <div class="au-o-layout au-o-layout--large">
         <AuContent>
-          <AuHeading>Voor ontwikkelaars</AuHeading>
+          <AuHeading>Inschrijven</AuHeading>
         </AuContent>
         <hr class="au-c-hr">
-        <div class="au-o-grid">
-          <div class="au-o-grid__item au-u-1-4@medium">
-            <ul class="au-c-list-navigation">
-              <li class="au-c-list-navigation__item">
-                <AuNavigationLink @linkRoute="developers.intro">
-                  Widget integreren
-                </AuNavigationLink>
-              </li>
-              <li class="au-c-list-navigation__item">
-                <AuNavigationLink @linkRoute="developers.buildings">
-                  Locatie URI's
-                </AuNavigationLink>
-              </li>
-              <li class="au-c-list-navigation__item">
-                <AuNavigationLink @linkRoute="developers.styling">
-                  Stijl aanpassen
-                </AuNavigationLink>
-              </li>
-              <li class="au-c-list-navigation__item">
-                <AuNavigationLink @linkRoute="developers.plaatsing">
-                  Plaatsing van de widget
-                </AuNavigationLink>
-              </li>
-            </ul>
-          </div>
-          <div class="au-o-grid__item au-u-3-4@medium">
-            <AuContent id="content">
-              {{outlet}}
-            </AuContent>
-          </div>
-        </div>
+        <iframe src="https://tally.so/embed/nrOX2m?hideTitle=1&alignLeft=1" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0" title="Toegankelijk Vlaanderen
+Locatie - Inschrijving" class="au-c-iframe"></iframe>
       </div>
     </section>
 
@@ -48,7 +19,7 @@
       <div class="au-o-layout  au-o-layout--large">
         <AuHeading @level="2" @skin="3" class="au-u-margin-bottom">Aan de slag met de toegankelijkheidswijzer</AuHeading>
         <div class="au-o-grid au-o-grid--small">
-          <div class="au-o-grid__item au-u-1-2@small au-u-1-2@medium">
+          <div class="au-o-grid__item au-u-1-2@small au-u-1-3@medium">
             <AuCard class="au-u-text-center">
               <AuBadge @icon="pencil" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
               <AuContent>
@@ -64,7 +35,7 @@
               </AuContent>
             </AuCard>
           </div>
-          <div class="au-o-grid__item au-u-1-2@small au-u-1-2@medium">
+          <div class="au-o-grid__item au-u-1-2@small au-u-1-3@medium">
             <AuCard class="au-u-text-center">
               <AuBadge @icon="sitemap" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
               <AuContent>
@@ -75,6 +46,22 @@
                 <p>
                   <LinkTo @route="buildings" class="au-c-button ">
                     Zoek een gebouw
+                  </LinkTo>
+                </p>
+              </AuContent>
+            </AuCard>
+          </div>
+          <div class="au-o-grid__item au-u-1-2@small au-u-1-3@medium">
+            <AuCard class="au-u-text-center">
+              <AuBadge @icon="users" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
+              <AuContent>
+                <AuHeading @level="3" @skin="4">
+                  Voor ontwikkelaars
+                </AuHeading>
+                <p class="au-u-margin-top-tiny">Hier vind u meer informatie over hoe je de toegankelijkheidswijzer kan integreren in uw website.</p>
+                <p>
+                  <LinkTo @route="developers.intro" class="au-c-button">
+                    Integratie handleiding
                   </LinkTo>
                 </p>
               </AuContent>

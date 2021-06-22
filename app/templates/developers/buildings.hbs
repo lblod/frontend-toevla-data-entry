@@ -1,0 +1,26 @@
+
+<AuHeading @level="2" @skin="2">Locatie URI's</AuHeading>
+<p>De volgende musea hebben toegankelijkheidsinformatie:</p>
+<ul class="au-o-grid au-o-grid--tiny au-u-list-none">
+  {{#each @model as |widget|}}
+    <li class="au-o-grid__item">
+      <article class="au-c-card">
+        <AuToolbar @border="bottom" @size="small">
+          <AuToolbarGroup>
+            <AuHeading @level="2" @skin="4">
+              {{widget.pointOfInterest.label}}
+            </AuHeading>
+          </AuToolbarGroup>
+          <AuToolbarGroup>
+            <p>
+              URI:
+              <AuPill>
+                {{widget.uri}}
+              </AuPill>
+            </p>
+          </AuToolbarGroup>
+        </AuToolbar>
+      </article>
+    </li>
+  {{/each}}
+</ul>

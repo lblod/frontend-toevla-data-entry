@@ -28,7 +28,7 @@ $au-list-responsive-divider    : 1px dotted $au-gray-300 !default;
 
 
   @include mq($until: small) {
-    width: 33.33%;
+    width: 50%;
     border-left: 0;
     border-bottom: $au-list-responsive-divider;
     border-right: $au-list-responsive-divider;

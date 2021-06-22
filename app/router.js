@@ -35,19 +35,18 @@ Router.map(function() {
     this.route('toegankelijkheidsverklaring');
   });
   this.route('contact');
-  this.route('roadmap', { path: "/onze-aanpak" });
   this.route('about', { path: "/over-toegankelijk-vlaanderen" });
   this.route('buildings', { path: "/gebouwen" }); // TODO: should this become a widgets route?
   this.route('developers', { path: "/ontwikkelaars" }, function() {
     this.route('styling');
     this.route('plaatsing');
     this.route('intro');
+    this.route('buildings', { path: "/gebouwen" });
   });
   this.route('mock-login', function() {
     this.route('accounts');
     this.route('pois');
   });
-
   this.route('session', function() {
     this.route('roles');
   });
@@ -55,10 +54,8 @@ Router.map(function() {
     this.route('show', { path: "/:id" });
   });
   this.route('email-login');
-  this.route('get-started', { path: "/aan-de-slag" }, function() {
-    this.route('case2');
-    this.route('case3');
-    this.route('case4');
-  });
   this.route('widget', { path: "/toegankelijkheidswijzer" });
+  this.route('get-started', { path: "/aan-de-slag" });
+  this.route('transcript');
+  this.route('subscribe', { path: "/inschrijven" });
 });

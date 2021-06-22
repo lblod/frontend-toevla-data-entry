@@ -266,6 +266,19 @@
 
 .au-c-hero__usp {
   z-index: 1;
+
+  margin-top: $au-unit-large;
+  margin-bottom: $au-unit-large;
+
+  @include mq(medium) {
+    margin-top: $au-unit-huge - $au-unit-large;
+    margin-bottom: $au-unit-huge - $au-unit-large;
+  }
+
+  @include mq(large) {
+    margin-top: $au-unit-huge;
+    margin-bottom: $au-unit-huge;
+  }
 }
 
 .au-c-intro {
@@ -350,6 +363,7 @@
   position: relative;
   padding-top: $au-unit-small;
   padding-left: $au-unit-large;
+  max-width: 120ch;
 
   &::before {
     content: counter(my-awesome-counter);
@@ -453,4 +467,35 @@
 .au-u-italic {
   font-style: italic;
   color: $au-gray-700;
+}
+
+// Youtube
+.au-c-youtube-holder {
+  border: .1rem solid $au-gray-200;
+  position: relative;
+  padding-bottom: 56.25%;
+  width: 100%;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.au-c-youtube-holder-caption {
+  @include au-font-size($au-h6);
+  margin-top: $au-unit-small;
+}
+
+.au-c-iframe {
+  border: .1rem solid $au-gray-200;
+  padding-left: $au-unit;
+}
+
+.au-u-list-none {
+  list-style: none !important;
+  margin-left: 0 !important;
 }

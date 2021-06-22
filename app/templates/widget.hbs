@@ -6,20 +6,16 @@
   <main id="content">
     <section class="au-o-region-large">
       <div class="au-o-layout au-o-layout--large">
-        <AuContent>
-          <AuHeading>Toegankelijkheidswijzer</AuHeading>
-        </AuContent>
-        <hr class="au-c-hr">
-        <div class="au-o-grid">
+        <div class="au-o-grid au-o-grid--middle">
           <div class="au-o-grid__item au-u-1-2@medium">
             <AuContent @skin="large">
+              <AuHeading>Toegankelijkheidswijzer</AuHeading>
               <p class="au-c-intro">
                 De toegankelijkheidswijzer is een vast informatieblok of 'widget' (met museumdata) dat je makkelijk kan integreren in een website. Bezoekers zien steeds de meest actuele toegankelijkheidsinformatie.
               </p>
               <h2 class="au-c-heading au-c-heading--3">Wat is een widget?</h2>
               <p>Een widget is een informatieblok dat je kan tonen op je website. In onze toepassing bevat dit blok toegankelijkheidsinformatie. De widget is het resultaat van de data die worden ingegeven in de invoerapplicatie. Dankzij de widget wordt toegankelijkheidsinformatie van verschillende publieke locaties op dezelfde uniforme manier ontsloten.</p>
-              <p>Belangrijk is dat we informatie kunnen geven voor iedereen, dat het essentiële, overzichtelijke informatie is en dat we een positieve boodschap kunnen meegeven.</p>
-              <p><AuLink @linkRoute="developers.intro">Lees meer over hoe u deze Toegangswijzer (widget) kan integreren</AuLink></p>
+              <p>Belangrijk is dat we informatie kunnen geven voor iedereen, dat het essentiële, overzichtelijke informatie is en dat we een positieve boodschap kunnen meegeven. Naast die knelpunten die mensen met een beperking beter op voorhand kennen, leggen we volop de aandacht op de toegankelijkheidstroeven van het museum.</p>
             </AuContent>
           </div>
           <div class="au-o-grid__item au-u-1-2@medium au-u-visible-medium-up">
@@ -32,13 +28,27 @@
         <div class="au-o-grid au-o-grid--middle au-o-grid--reverse">
           <div class="au-o-grid__item au-u-1-2@medium">
             <AuContent @skin="large">
+              <h2 class="au-c-heading au-c-heading--3">Gelinkte open data</h2>
+              <p class="au-u-margin-top-small">We delen onze informatie als gelinkte open data. Zo kan deze informatie ook gebruikt worden in andere websites (vb. Uit in Vlaanderen) of kunnen hier nieuwe applicaties mee gebouwd worden.</p>
+            </AuContent>
+          </div>
+          <div class="au-o-grid__item au-u-1-2@medium">
+            <div class="au-c-image au-c-image--transparent">
+              <img src="/assets/images/toevla-mockup-data.svg" alt="Illustratie die toont dat data op verschillende plaatsten kan gebruikt worden.">
+            </div>
+          </div>
+        </div>
+        <hr class="au-c-hr au-c-hr--huge">
+        <div class="au-o-grid au-o-grid--middle">
+          <div class="au-o-grid__item au-u-1-2@medium">
+            <AuContent @skin="large">
               <h2 class="au-c-heading au-c-heading--3">Opbouw van de widget</h2>
-              <p class="au-u-margin-top-small">De toegankelijkheidsinformatie in de widget wordt weergegeven volgens een <strong>vaste, uniforme structuur</strong>. Deze is voor elk gebouw hetzelfde. </p>
-              <p>De widget biedt informatie op 3 manieren aan:</p>
+              <p class="au-u-margin-top-small">De informatie in de toegankelijkheidswijzer wordt weergegeven volgens een vaste, uniforme structuur. Deze is voor elk gebouw hetzelfde.</p>
+              <p>De widget biedt toegankelijkheidsinformatie op 3 manieren aan:</p>
               <ul>
-                <li><strong>Highlights</strong>. Deze vind je bovenaan, dit zijn iconen die snel een eerste beeld geven van wat aanwezig is in het museum.</li>
-                <li><strong>Een middenblok</strong> met algemene informatie, info over de bereikbaarheid, het gebouw zelf en extra faciliteiten. Dankzij een openklapsysteem kan er nog bijkomende detailinformatie worden weergegeven of verborgen.</li>
-                <li><strong>Foto’s</strong> met een korte verduidelijkende tekst.</li>
+                <li>Highlights</li>
+                <li>Detailinformatie</li>
+                <li>Foto’s</li>
               </ul>
             </AuContent>
           </div>
@@ -53,7 +63,7 @@
           <div class="au-o-grid__item au-u-1-3@small">
             <AuContent>
               <h2 class="au-c-heading au-c-heading--3">Highlights</h2>
-              <p class="au-u-margin-top-small">Deze vind je bovenaan, dit zijn iconen die snel een eerste beeld geven van wat aanwezig is in het museum. Iconen verschijnen enkel als er voor dat specifiek criterium informatie beschikbaar is (vb. wifi beschikbaar) of als een gebouwonderdeel een positieve score krijgt (vb. rolstoelvriendelijk toilet). In totaal zijn er 13 highlights die een museum kan bekomen.</p>
+              <p class="au-u-margin-top-small">Deze vind je bovenaan, dit zijn iconen die snel een eerste beeld geven over de toegankelijkheid van het museum. In totaal zijn er 13 highlights die een museum kan behalen.</p>
             </AuContent>
             <div class="au-c-image au-u-margin-top">
               <img src="/assets/images/toevla-widget-highlights.jpg" alt="Screenshot van highlights in de toegankelijkheidswijzer">
@@ -61,8 +71,8 @@
           </div>
           <div class="au-o-grid__item au-u-1-3@small">
             <AuContent>
-              <h2 class="au-c-heading au-c-heading--3">Middenblok</h2>
-              <p class="au-u-margin-top-small">Het vaste middenblok omvat algemene informatie, info over de bereikbaarheid, het gebouw zelf en extra faciliteiten. Dankzij een openklapsysteem kan bijkomende detailinformatie worden weergegeven of verborgen. We gaan voor een positieve benadering van de informatie en beperken ons tot de weergave van knelpunten waar het noodzakelijk is.</p>
+              <h2 class="au-c-heading au-c-heading--3">Detailinformatie</h2>
+              <p class="au-u-margin-top-small">Het hoofdblok van de toegankelijkheidswijzer bevat informatie over de bereikbaarheid, het gebouw zelf en alle extra faciliteiten. Dankzij een openklapsysteem kan bijkomende detailinformatie steeds worden weergegeven of verborgen.</p>
             </AuContent>
             <div class="au-c-image au-u-margin-top">
               <img src="/assets/images/toevla-widget-middenblok.jpg" alt="Screenshot het middenblok in de toegankelijkheidswijzer">
@@ -71,24 +81,10 @@
           <div class="au-o-grid__item au-u-1-3@small">
             <AuContent>
               <h2 class="au-c-heading au-c-heading--3">Foto’s</h2>
-              <p class="au-u-margin-top-small">Onderaan de widget zijn foto’s aanwezig met een korte verduidelijkende tekst op de foto. Deze fotogalerij bevat zowel sfeerbeelden als extra beeldmateriaal over eventuele knelpunten en aanvullende beelden over de toegankelijkheid.</p>
+              <p class="au-u-margin-top-small">Onderaan de widget zijn foto’s aanwezig met een korte verduidelijkende tekst op de foto. Deze fotogalerij bevat zowel sfeerbeelden als aanvullende beelden over de toegankelijkheid. Je kan de foto’s vergroten door ze aan te klikken.</p>
             </AuContent>
             <div class="au-c-image au-u-margin-top">
               <img src="/assets/images/toevla-widget-fotos.jpg" alt="Screenshot van de foto blok in de toegankelijkheidswijzer">
-            </div>
-          </div>
-        </div>
-        <hr class="au-c-hr au-c-hr--huge">
-        <div class="au-o-grid au-o-grid--middle au-o-grid--reverse">
-          <div class="au-o-grid__item au-u-1-2@medium">
-            <AuContent @skin="large">
-              <h2 class="au-c-heading au-c-heading--3">Technische integratie</h2>
-              <p class="au-u-margin-top-small">Je kan de toegankelijkheidsinformatie makkelijk integreren op je website. Hiervoor moet een stukje code worden opgenomen in één van de pagina’s van je website. Raadpleeg hiervoor de <AuLink @linkRoute="developers.intro">technische informatie</AuLink>.</p>
-            </AuContent>
-          </div>
-          <div class="au-o-grid__item au-u-1-2@medium">
-            <div class="au-c-image au-c-image--transparent">
-              <img src="/assets/images/toevla-widget-website.png" alt="Screenshot van de toegankelijkheidspagina van STAM">
             </div>
           </div>
         </div>
@@ -99,27 +95,26 @@
       <div class="au-o-layout au-o-layout--large">
         <AuContent @skin="large" class="au-u-content-center">
           <h2>Enkele reacties van testers van de widget</h2>
-          <p class="au-u-italic">“De info sluit aan op de ervaring en vraag van de gebruiker. Heel goed.”</p>
-          <p class="au-u-italic">“Details waar nodig, maar ook geen overdosis aan info.”</p>
-          <p class="au-u-italic">“Overzichtelijk en gebruiksvriendelijk. Mooi werk van alle partners!”</p>
-          <p class="au-u-italic">“De info laat zich prachtig integreren in de websites. De structuur zit goed. De verduidelijkende foto’s trekken de aandacht.”</p>
-          <p class="au-u-italic">“Heel duidelijk opgemaakt en altijd op dezelfde manier. Dat geeft mooi structuur.”</p>
-          <p class="au-u-italic">“Maakt kort en bondig duidelijk hoe het met de toegankelijkheid van het museum gesteld is.”</p>
-          <p class="au-u-italic">“Geeft bezoekers een beeld van wat te verwachten is.”</p>
+          <p class="au-u-italic">“Details waar nodig, maar ook geen overdosis aan info.” (museummedewerker)</p>
+          <p class="au-u-italic">“Overzichtelijk en gebruiksvriendelijk. Mooi werk van alle partners!” (overheidsmedewerker)</p>
+          <p class="au-u-italic">“De info laat zich prachtig integreren in de websites. De structuur zit goed. De verduidelijkende foto’s trekken de aandacht” (persoon met mobiliteitsbeperking, slecht te been en rolstoelgebruiker)</p>
+          <p class="au-u-italic">“Heel duidelijk opgemaakt en altijd op dezelfde manier. Dat geeft mooi structuur.” (oudere, persoon met een met chronische ziekte)</p>
+          <p class="au-u-italic">“Maakt kort en bondig duidelijk hoe het met de toegankelijkheid van het museum gesteld is.” (overheidsmedewerker)</p>
+          <p class="au-u-italic">“Geeft bezoekers een beeld van wat te verwachten is.” (begeleider van een oudere)</p>
         </AuContent>
       </div>
     </section>
 
     <section class="au-o-region-large au-c-theme-gray-200">
       <div class="au-o-layout  au-o-layout--large">
-        <AuHeading @level="2" @skin="3" class="au-u-margin-bottom">Integreer informatie over jouw toegankelijk gebouw in je website.</AuHeading>
+        <AuHeading @level="2" @skin="3" class="au-u-margin-bottom">Aan de slag met de toegankelijkheidswijzer</AuHeading>
         <div class="au-o-grid au-o-grid--small">
           <div class="au-o-grid__item au-u-1-2@small au-u-1-3@medium">
             <AuCard class="au-u-text-center">
               <AuBadge @icon="pencil" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
               <AuContent>
                 <AuHeading @level="3" @skin="4">
-                  Data opmeten en invoeren
+                  Voor musea
                 </AuHeading>
                 <p class="au-u-margin-top-tiny">Lees hoe je zelf kan starten met opmeten en invoeren van de gegevens van jouw locatie.</p>
                 <p>
@@ -135,7 +130,7 @@
               <AuBadge @icon="sitemap" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
               <AuContent>
                 <AuHeading @level="3" @skin="4">
-                  Gebouwen
+                  Voor gebruikers
                 </AuHeading>
                 <p class="au-u-margin-top-tiny">Een overzicht van de gebouwen waarvoor er toegankelijkheidsinformatie beschikbaar is.</p>
                 <p>

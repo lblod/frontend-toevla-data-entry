@@ -6,90 +6,66 @@
   <main id="content">
     <section class="au-o-region-large">
       <div class="au-o-layout au-o-layout--large">
-        <AuContent>
-          <AuHeading>Aan de slag</AuHeading>
-        </AuContent>
-        <hr class="au-c-hr">
-        <div class="au-o-grid">
+        <div class="au-o-grid au-o-grid--middle">
           <div class="au-o-grid__item au-u-1-2@medium">
             <AuContent @skin="large">
+              <AuHeading>Aan de slag</AuHeading>
               <p class="au-c-intro au-u-italic">
                 Is een museum interessant om te bezoeken?<br>
-                Zijn de activiteiten toegankelijk voor mij?<br>
+                Zijn de activiteiten toegankelijk?<br>
                 Is er een aanbod op maat?
               </p>
-              <p>Toegankelijk Vlaanderen verzamelt de toegankelijkheidsinformatie en geeft deze uniform weer. Bezoekers kunnen deze betrouwbare informatie eenvoudig raadplegen via de toegankelijkheidswijzer.</p>
-              <h2 class="au-c-heading au-c-heading--3">Data opmeten en invoeren</h2>
-              <p>Je kan als museumverantwoordelijke zelf de verzamelde toegankelijkheidsdata invoeren in de nieuwe invoerapplicatie. Inter ondersteunt je indien je vragen hebt en plaatst de data -na validatie- online.</p>
-              <p>Er is een handleiding beschikbaar om zelf informatie te verzamelen:</p>
-              <ul class="au-u-margin-top-small">
-                <li>OPMETEN en VERZAMELEN data <AuPill>Opgelet – handleiding staat niet online</AuPill></li>
-              </ul>
+              <p class="au-c-intro au-u-margin-top-large">Toegankelijk Vlaanderen verzamelt de toegankelijkheidsinformatie en geeft deze uniform weer. Bezoekers kunnen deze betrouwbare informatie eenvoudig raadplegen via de toegankelijkheidswijzer.</p>
             </AuContent>
           </div>
           <div class="au-o-grid__item au-u-1-2@medium au-u-visible-medium-up">
             <div class="au-c-image au-c-image--transparent">
-              <img src="/assets/images/about.svg" alt="Illustratie van een vrouw die een boek leest leunend op een stapel boeken">
+              <img src="/assets/images/toevla-start.svg" alt="Illustratie van een vrouw die bij een locatie zit.">
             </div>
           </div>
         </div>
         <hr class="au-c-hr au-c-hr--huge">
-        <div class="au-o-grid au-o-grid--middle au-o-grid--reverse">
-          <div class="au-o-grid__item au-u-1-2@medium">
-            <AuContent @skin="large">
-              <h2 class="au-c-heading au-c-heading--3">Toegankelijkheidswijzer</h2>
-              <p>De toegankelijkheidswijzer is een vast informatieblok of 'widget' (met museumdata) dat je makkelijk kan integreren in een website. Bezoekers zien steeds de meest actuele toegankelijkheidsinformatie.</p>
-              <ul class="au-u-margin-top-small">
-                <li>Belangrijke informatie wordt bovenaan als icoontjes weergegeven.</li>
-                <li>De toegankelijkheidsinformatie wordt op een compacte manier weergegeven. Je kan de informatieblokken openklappen voor meer details.</li>
-                <li>Een fotogalerij verduidelijkt de beschrijving.</li>
+        <AuContent @skin="large" class="au-u-margin-bottom">
+          <h2 class="au-c-heading au-c-heading--3">Een toegankelijkheidswijzer op jouw eigen museumwebsite?</h2>
+          <p>Welke stappen moet ik doorlopen? Wat is nodig om een widget te kunnen tonen op de website? Hoe ga ik aan de slag?</p>
+          <ol class="au-c-numbered-list">
+            <li class="au-c-numbered-list__item">
+              <p><strong>Stap 1</strong> – Schrijf je museum in vóór 15 augustus 2021.</p>
+              <ul>
+                <li>Vul het <AuLink @linkRoute="subscribe">Inschrijfformulier</AuLink> in en motiveer waarom we de toegankelijkheidstroeven van jouw museum in de kijker moeten zetten.</li>
+                <li>
+                  40 musea kunnen instappen in de volgende fase van het project.
+                </li>
+                <li>Ben je geselecteerd? Inter maakt jouw museum aan in de databank en registreert de museumverantwoordelijken (max. 2 per museum).</li>
               </ul>
-              <p>
-                <LinkTo @route="widget" class="au-c-link">
-                  Lees meer over de toegankelijkheidswijzer
-                </LinkTo>
-              </p>
-            </AuContent>
-          </div>
-          <div class="au-o-grid__item au-u-1-2@medium">
-            <div class="au-c-image au-c-image--transparent">
-              <img src="/assets/images/toevla-mockup.png" alt="Overzicht van de widget met een detail van parkeren en een foto waarop je de ingang ziet van een gebouw.">
-            </div>
-          </div>
-        </div>
-        <hr class="au-c-hr au-c-hr--huge">
-        <h2 class="au-c-heading au-c-heading--3 au-u-margin-bottom">Cases</h2>
-        <div class="au-o-grid">
-          <div class="au-o-grid__item au-u-1-4@medium">
-            <ul class="au-c-list-navigation" role="tablist" aria-label="Cases">
-              <li class="au-c-list-navigation__item" >
-                <AuNavigationLink @linkRoute="get-started.index" role="tab" aria-controls="panel-1" id="tab-1">
-                  Ik ben de eigenaar of beheerder van een museum en wil ook een widget met de toegankelijkheidsinformatie over mijn museum?
-                </AuNavigationLink>
-              </li>
-              <li class="au-c-list-navigation__item">
-                <AuNavigationLink @linkRoute="get-started.case2" role="tab" aria-controls="panel-2" id="tab-2">
-                  Ik wil een museum bezoeken en zoek musea met informatie over toegankelijkheid.
-                </AuNavigationLink>
-              </li>
-              <li class="au-c-list-navigation__item">
-                <AuNavigationLink @linkRoute="get-started.case3" role="tab" aria-controls="panel-3" id="tab-3">
-                  Ik ben een ontwikkelaar en wil de widget integreren in een website.
-                </AuNavigationLink>
-              </li>
-              <li class="au-c-list-navigation__item">
-                <AuNavigationLink @linkRoute="get-started.case4" role="tab" aria-controls="panel-4" id="tab-4">
-                  Ik ben de eigenaar of beheerder van een museum en wil een nieuwe tentoonstelling toevoegen aan mijn dossier.
-                </AuNavigationLink>
-              </li>
-            </ul>
-          </div>
-          <div class="au-o-grid__item au-u-3-4@medium">
-            <AuContent id="content">
-              {{outlet}}
-            </AuContent>
-          </div>
-        </div>
+            </li>
+            <li class="au-c-numbered-list__item">
+              <p><strong>Stap 2</strong> – Informatie verzamelen en invoeren</p>
+              <p class="au-u-margin-top-tiny">Je kan dit als museum helemaal zelf!</p>
+              <p>De museumverantwoordelijke:</p>
+              <ul>
+                <li>verzamelt de toegankelijkheidsdata met behulp van een praktische online handleiding.</li>
+                <li>voert de toegankelijkheidsdata in de invoerapplicatie in.</li>
+                <li>bevestigt via mail aan Inter dat het dossier klaar is voor validatie.</li>
+                <li>Inter controleert tot slot de ingevoerde data en verzorgt de afwerking van het dossier.</li>
+              </ul>
+            </li>
+            <li class="au-c-numbered-list__item">
+              <p><strong>Stap 3</strong> – Online tonen van de widget</p>
+              <ul>
+                <li>Na validatie door Inter verschijnt  het dossier standaard in <AuLink @linkRoute="buildings">het overzicht van de gebouwen</AuLink>.</li>
+                <li>Je zorgt als museum zelf voor de technische integratie van de widget op de eigen museumwebsite. Hoe je dit doet, lees je in de begeleidende nota over de <AuLink @linkRoute="developers.intro">technische integratie</AuLink>.</li>
+              </ul>
+            </li>
+            <li class="au-c-numbered-list__item">
+              <p><strong>Stap 4</strong> – Nieuwe informatie toevoegen of informatie updaten</p>
+              <ul>
+                <li>Een nieuwe tentoonstelling? Verbeterde toegankelijkheid? Als museumverantwoordelijke kan je op elk moment aanpassingen ingeven in de invoerapplicatie. Zo blijft de informatie op de website steeds actueel en relevant voor bezoekers.</li>
+                <li><strong>Tip:</strong> Breng Inter op tijd op de hoogte van het feit dat er wijzigingen aankomen. Zo kan Inter de validatie van de gegevens inplannen, zodat de nieuwe informatie op het juiste moment ook effectief online komt en zichtbaar wordt op de museumwebsite.</li>
+              </ul>
+            </li>
+          </ol>
+        </AuContent>
       </div>
     </section>
 
@@ -97,21 +73,21 @@
       <div class="au-o-layout au-o-layout--large">
         <AuContent @skin="large" class="au-u-content-center">
           <h2>Zin om aan de slag te gaan?</h2>
-          <p>Vul dan het <AuLink @linkRoute="contact">inschrijfformulier</AuLink> in en je ontvangt de nodige informatie.</p>
+          <p>Vul dan het <AuLink @linkRoute="subscribe">inschrijfformulier</AuLink> in en je ontvangt de nodige informatie.</p>
         </AuContent>
       </div>
     </section>
 
     <section class="au-o-region-large au-c-theme-gray-200">
       <div class="au-o-layout  au-o-layout--large">
-        <AuHeading @level="2" @skin="3" class="au-u-margin-bottom">Integreer informatie over jouw toegankelijk gebouw in je website.</AuHeading>
+        <AuHeading @level="2" @skin="3" class="au-u-margin-bottom">Aan de slag met de toegankelijkheidswijzer</AuHeading>
         <div class="au-o-grid au-o-grid--small">
           <div class="au-o-grid__item au-u-1-2@small">
             <AuCard class="au-u-text-center">
               <AuBadge @icon="sitemap" @skin="brand" class="au-u-margin-right-none au-u-margin-bottom-small" />
               <AuContent>
                 <AuHeading @level="3" @skin="4">
-                  Gebouwen
+                  Voor gebruikers
                 </AuHeading>
                 <p class="au-u-margin-top-tiny">Een overzicht van de gebouwen waarvoor er toegankelijkheidsinformatie beschikbaar is.</p>
                 <p>
