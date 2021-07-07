@@ -1,3 +1,4 @@
+import { A } from '@ember/array';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import Controller from '@ember/controller';
@@ -15,9 +16,22 @@ export default class ExperienceEditIndex extends Controller {
 
   @action
   async delete() {
-    const poi = this.model.pointOfInterest;
-    await this.model.destroyRecord();
-    this.transitionToRoute( "poi.show.experiences.index", poi );
+    const poi = await this.model.pointOfInterest;
+    const experiences = await poi.experiences;
+    // experiences.removeObject(this.model);
+    const targetArray = [...experiences.toArray()];
+    targetArray.removeObject(this.model);
+    this.model.pointOfInterest = null;
+    await this.model.save();
+    try {
+      // records might not be deleted because of too many optionals in
+      // the very large data model.  a post-factum cleanup-service can
+      // go and clean things up so we will not consider this to be the
+      // worst.
+      await this.model.destroyRecord();
+    } finally {
+      this.transitionToRoute( "poi.show.experiences.index", poi );
+    }
   }
 
 }
