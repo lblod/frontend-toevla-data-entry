@@ -64,5 +64,5 @@
 </div>
 
 <div class="au-o-box au-o-box--small">
-  <AuFileUpload @onFinishUpload={{this.uploadedFile}} @maxFileSizeMB="1024" @multiple={{true}} />
+  <AuFileUpload @endPoint="/file-service/files" @onFinishUpload={{this.uploadedFile}} @maxFileSizeMB="1024" @multiple={{true}} />
 </div>

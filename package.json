@@ -30,6 +30,7 @@
     "@glimmer/component": "^1.0.3",
     "@glimmer/tracking": "^1.0.3",
     "@lblod/ember-acmidm-login": "^1.1.1",
+    "@lblod/ember-vo-mu-file-upload": "0.7.0",
     "@types/ember": "^3.16.4",
     "@types/ember-data": "^3.16.12",
     "@types/ember-data__model": "^3.16.2",
@@ -104,6 +105,5 @@
     "edition": "octane"
   },
   "dependencies": {
-    "@lblod/ember-vo-mu-file-upload": "git://github.com/lblod/ember-vo-mu-file-upload.git#master"
   }
 }
