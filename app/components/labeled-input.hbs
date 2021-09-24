@@ -1,0 +1,6 @@
+<p>
+  {{#let (unique-id) as |id|}}
+    <AuLabel for={{id}}>{{@label}}</AuLabel>
+    {{yield id}}
+  {{/let}}
+</p>

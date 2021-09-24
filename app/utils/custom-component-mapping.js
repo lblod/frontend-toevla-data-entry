@@ -10,6 +10,146 @@ export default function customComponentMapping(uri){
 }
 
 const eMapping = {
+  "https://data.toevla.org/id/concepts/8497a885-e84a-4eca-b023-723846707cf0":	{ component: "choice", key: "wifiAvailability", conceptScheme: "https://data.toevla.org/id/concept-schemes/e623da8d-3495-4bd4-a691-53c3637f406e" },
+  "https://data.toevla.org/id/concepts/f6439242-1447-46a6-ae38-a12040a2fec8": { component: "boolean", key: "restaurant.hasMenuAvailableOnline" },
+  "https://data.toevla.org/id/concepts/1effcbf6-b825-4e91-88bc-aade841bd6d5": { component: "boolean", key: "restaurant.hasMenuVisuallyClearToRead" },
+  "https://data.toevla.org/id/concepts/0e72d245-3386-455c-8d82-3d340b372911": { component: "boolean", key: "restaurant.hasMenuAvailableInBraille" },
+  "https://data.toevla.org/id/concepts/f4500620-eef1-4c4d-a972-dd5b4cfd3454": { component: "boolean", key: "restaurant.hasMenuAvailableWithPictures" },
+  "https://data.toevla.org/id/concepts/5481dfc4-b6eb-4407-bb5e-bd367947cd36": { component: "boolean", key: "restaurant.hasDietBasedMeasAdjustment"},
+  "https://data.toevla.org/id/concepts/593361a3-f169-4dce-9c32-acfa4728e594": { component: "boolean", key: "restaurant.hasInformationOnAllergenics"},
+
+  /* START: new-for-reca */
+  "https://data.toevla.org/id/concepts/596be43d-7c4f-4429-96e9-c74351e0f920": { component: "choice", key: "restaurant.reservationOptions", conceptScheme: "https://data.toevla.org/id/concept-schemes/39f7b6fe-53f3-49b6-8809-cfa8875ce430"},
+  "https://data.toevla.org/id/concepts/cf662955-a0b6-42ae-9f55-cb5056f8aec5": { component: "boolean", key: "restaurant.hasTakeAwayService"},
+  "https://data.toevla.org/id/concepts/876f72d2-d2ef-4ac7-b971-a6d89bbacce7": { component: "boolean", key: "restaurant.hasHomeDelivery"},
+  "https://data.toevla.org/id/concepts/882cbeb0-4ee7-46c6-b7dc-31047cf43081": { component: "boolean", key: "restaurant.onlySelfService"},
+  /* END: new-for-reca */
+
+  "https://data.toevla.org/id/concepts/374827b3-7aaf-434d-a100-9328bec3feee": { component: "boolean", key: "restaurant.hasCashPayment"},
+  "https://data.toevla.org/id/concepts/f7783729-eec2-4b25-9aa4-1914472ce884": { component: "boolean", key: "restaurant.hasOnlineOrderingAndPaymentOption"},
+  "https://data.toevla.org/id/concepts/b4cdef89-38ee-42c3-9942-a0f4c40bc503": { component: "boolean", key: "restaurant.hasPaymentWithMovableElectronicPaymentSystem"},
+  "https://data.toevla.org/id/concepts/d5a164aa-e216-451d-87fe-d92ac8410f41": { component: "boolean", key: "restaurant.hasPaymentWithFixedElectronicPaymentSystem"},
+  "https://data.toevla.org/id/concepts/22e4a154-3597-49b0-b2a0-be7ad9ceb3bf": { component: "boolean", key: "restaurant.hasChildrenMenu"},
+  "https://data.toevla.org/id/concepts/80c2efc4-bea7-4e96-8982-8462b27365ad": { component: "boolean", key: "restaurant.hasChildSeat"},
+
+  /* START: new-for-reca */
+  "https://data.toevla.org/id/concepts/cc672f54-4d5a-4042-9379-87100b04ddd8": { component: "boolean", key: "restaurant.hasMicrowaveAvailable" },
+  "https://data.toevla.org/id/concepts/99ac4c93-f810-4786-a55c-ab6a1e821899": { component: "boolean", key: "restaurant.hasKidPlayCorner" },
+  /* END: new-for-reca */
+
+  "https://data.toevla.org/id/concepts/44cd39da-7986-4687-9dcb-564c09e95dbb": { component: "string", key: "restaurant.comment" },
+
+  "https://data.toevla.org/id/concepts/9f1fe825-6881-438c-9abe-b659ba4a59ee": { component: "boolean", key: "parking.isPartOfLocation" },
+  "https://data.toevla.org/id/concepts/c2201a2b-b91f-4b39-88e2-95b8a7cfdef7": { component: "boolean", key: "parking.isWellLit" },
+  "https://data.toevla.org/id/concepts/835cf088-f2dc-4f85-aec7-f6591b0250e1": { component: "boolean", key: "parking.hasDriveOnPossibility" },
+  "https://data.toevla.org/id/concepts/3e376fd1-2e2f-469a-b963-08b0568e9edf": { component: "count", key: "parking.numberOfWheelchairFriendlySpots" },
+  "https://data.toevla.org/id/concepts/cc948bc5-084b-4fbf-be85-03c05dd82fd9": { component: "boolean", key: "parking.hasWheelchairFriendlyTerrain" },
+  "https://data.toevla.org/id/concepts/598a7ab2-19e3-49d7-8055-c7d5f2753bd4": { component: "centimeters", key: "parking.parkingSpaceWidth" },
+  "https://data.toevla.org/id/concepts/945d961a-d35f-4f98-891d-23cd42a22ded": { component: "centimeters", key: "parking.parkingSpaceLength" },
+  "https://data.toevla.org/id/concepts/e4ee4f47-d20f-40bc-adc6-01d5b361be77": { component: "centimeters", key: "parking.maxVehicleHeight" },
+  "https://data.toevla.org/id/concepts/20d3e7c6-9654-4fb1-b7fb-ffeec04221dd": { component: "boolean", key: "parking.pathToEntrance.hasWheelchairFriendlyTerrain" },
+  "https://data.toevla.org/id/concepts/19215a7f-8ca7-447b-aebb-22014022b6d1": { component: "centimeters", key: "parking.pathToEntrance.narrowestPoint" },
+  "https://data.toevla.org/id/concepts/47e3db27-3492-4b60-9d21-c3d509111df0": { component: "centimeters", key: "parking.pathToEntrance.highestThreshold" },
+  "https://data.toevla.org/id/concepts/9315fc4f-9fb5-4bef-8e2f-0ccc6d2a5b36": { component: "count", key: "parking.pathToEntrance.amountOfThresholds" },
+  "https://data.toevla.org/id/concepts/74bec413-c587-49b0-884b-da62d64baf6e": { component: "count", key: "parking.pathToEntrance.amountOfStairs" },
+  "https://data.toevla.org/id/concepts/dad128bb-7384-47d2-9762-ed2e78f98de7": { component: "count", key: "parking.pathToEntrance.amountOfSlopes" },
+  "https://data.toevla.org/id/concepts/57f25a83-aa95-4a12-a4f4-445bcf11409b": { component: "boolean", key: "parking.pathToEntrance.hasRamp" },
+  /* START: new-for-reca */
+  "https://data.toevla.org/id/concepts/90785a52-e577-45a0-b352-98eeb094b1dd": { component: "boolean", key: "parking.onPublicDomain" },
+  /* END: new-for-reca */
+  "https://data.toevla.org/id/concepts/4e6fd341-c76d-4e78-859c-781e82a0bce7": { component: "string", key: "parking.comment" },
+
+  "https://data.toevla.org/id/concepts/179c734c-07c2-46fe-8882-df750e527d3e": { component: "boolean", key: "hasVisibleGuidelines" },
+  "https://data.toevla.org/id/concepts/6bff8fde-d87b-4c8f-b2bd-69d8a066705d": { component: "choice", key: "typeOfGlassDoorDecoration", conceptScheme: "https://data.toevla.org/id/concept-schemes/bd0cb7ef-ffa3-4b07-8829-ed1aa68a0125" },
+  "https://data.toevla.org/id/concepts/a0996111-df73-45af-b8be-c2edec37dbf9": { component: "string", key: "commentOnAlternativeEntranceForWheelchair" },
+  "https://data.toevla.org/id/concepts/1ab42648-38ab-45fe-a70c-cc5f5aacc6b1": { component: "centimeters", key: "entrance.highestThreshold" },
+  "https://data.toevla.org/id/concepts/06d69bdb-378b-4bf4-baee-2a6f228d4243": { component: "count", key: "entrance.amountOfThresholds" },
+  "https://data.toevla.org/id/concepts/f2b83725-2b1e-42f6-8977-dd578cfb6f1c": { component: "count", key: "entrance.amountOfStairs" },
+  "https://data.toevla.org/id/concepts/ca08f7f7-72c0-4391-904f-a357bf0c5c92": { component: "count", key: "entrance.amountOfSlopes" },
+  "https://data.toevla.org/id/concepts/8430b3f9-9517-4940-ab58-88cfe6e47807": { component: "boolean", key: "entrance.hasEntranceGutters" },
+  "https://data.toevla.org/id/concepts/b0f3af2c-b516-45d8-abbf-dcaa8aee3119": { component: "boolean", key: "entrance.hasRevolvingDoor" },
+  "https://data.toevla.org/id/concepts/8a5a969d-5225-4236-8979-502120b4a245": { component: "centimeters", key: "entrance.doorWidth" },
+  "https://data.toevla.org/id/concepts/093d5e2b-6610-465a-970b-a327b7d1ee0e": { component: "centimeters", key: "entrance.turningRadiusAtDoor" },
+  "https://data.toevla.org/id/concepts/6545d2ea-3ee3-49d5-a42b-c6216d925b08": { component: "choice", key: "entrance.forceForOpeningDoorCategory", conceptScheme: "https://data.toevla.org/id/concept-schemes/9f029773-b480-49bf-9df5-d5e23810c7dd" },
+  "https://data.toevla.org/id/concepts/86fe6b44-3389-4e97-848c-9c7b48ca0749": { component: "string", key: "commentOnEntrance" },
+
+
+  "https://data.toevla.org/id/concepts/dfde0ad8-d28b-4254-92a8-1177fb99c85e": { component: "boolean", key: "extraAttentionGivenToAcoustics" },
+  "https://data.toevla.org/id/concepts/bc08e009-8f99-4829-a28c-04dfc0b676b8": { component: "count", key: "restaurant.amountOfSeatingPlaces"},
+  "https://data.toevla.org/id/concepts/cfcead6d-4bc2-4308-a819-f87b3b1286d2": { component: "boolean", key: "restaurant.hasSpaceSuitedForGroupsWithMobileLimitation"},
+
+  /* START: new-for-reca */
+  // Alles op gelijkvloers of lift :: https://data.toevla.org/id/concepts/6ed7cea0-d3f0-4b1f-9c79-cd3967ec2b72
+  "https://data.toevla.org/id/concepts/6ed7cea0-d3f0-4b1f-9c79-cd3967ec2b72": { component: "boolean", key: "restaurant.everythingOnGroundFloorOrWithPlateauElevator" },
+  "https://data.toevla.org/id/concepts/2b3c49ac-adbe-4891-92d0-d5a5fa765a69": { component: "area", key: "restaurant.sizeOfElevator" },
+  /* END: new-for-reca */
+  "https://data.toevla.org/id/concepts/6fabf208-10a1-4938-bc91-093e84bdfe91": { component: "centimeters", key: "restaurant.smallestPointOnRouteToConsumptionSpace"},
+  "https://data.toevla.org/id/concepts/ddfef807-8755-423e-aeae-3aec60dca269": { component: "centimeters", key: "restaurant.highestThresholdOnRouteToConsumptionSpace"},
+  "https://data.toevla.org/id/concepts/b99121d5-97b5-466b-ae26-04bce715fdcc": { component: "count", key: "restaurant.amountOfThresholds"} ,
+  "https://data.toevla.org/id/concepts/c9968003-3ee4-43a2-893c-4bf83b60ecf6": { component: "count", key: "restaurant.amountOfStairs"} ,
+  "https://data.toevla.org/id/concepts/4a248876-0110-4448-b597-c415faa8040a": { component: "count", key: "restaurant.amountOfSlopes"} ,
+  "https://data.toevla.org/id/concepts/0e6cab05-b2e4-4f0a-b156-43c51dfd608a": { component: "area", key: "restaurant.sizeOfPlateauElevator" },
+
+  /* START: new-for-reca */
+  "https://data.toevla.org/id/concepts/af727ca9-4b79-4dea-938c-5afe6d6eb4a4": { component: "boolean", key: "restaurant.hasWheelchairFriendlyTable" },
+  "https://data.toevla.org/id/concepts/881715d4-fdc4-44cf-a3de-de25bf1e2265": { component: "centimeters", key: "restaurant.heightUnderTableForWheelchairInConsumptionSpace" },
+  "https://data.toevla.org/id/concepts/618f9338-ae09-4010-9fd3-75f5f5965692": { component: "boolean", key: "restaurant.hasTableRoundWithCentralSupport" },
+  "https://data.toevla.org/id/concepts/3f048cbe-9153-4d2c-abc1-eb7cd5914bbe": { component: "boolean", key: "restaurant.hasTableSquareWithCentralSupport" },
+  "https://data.toevla.org/id/concepts/13476465-1a09-40da-95be-652fbe0f8816": { component: "boolean", key: "restaurant.hasTableSquareWithSupportsOnCorners" },
+  "https://data.toevla.org/id/concepts/40f50cbc-9ec2-4154-8ef6-97a2ccdf87ae": { component: "boolean", key: "restaurant.onlyHasHighTables" },
+  "https://data.toevla.org/id/concepts/d1445744-6b91-4714-a575-257de628bc1f": { component: "string", key: "restaurant.commentOnConsumptionSpace" },
+  /* END: new-for-reca */
+
+  /* START: new-for-reca */
+  "https://data.toevla.org/id/concepts/0aa40d1a-a8f1-4cbb-92a6-0b08f137f411": { component: "boolean", key: "restaurant.tarraceAccessibleThroughConsumptionSpace" },
+  "https://data.toevla.org/id/concepts/28cdf2e1-21a2-4092-bb07-c6dcdc228926": { component: "boolean", key: "restaurant.terraceAccessibleFromOutside" },
+  "https://data.toevla.org/id/concepts/81e83e76-48d8-4f6b-8b9b-e981b3238ce3": { component: "boolean", key: "restaurant.hasCoveredTerrace" },
+  "https://data.toevla.org/id/concepts/21206a5f-4f66-422c-aee4-553b00cde092": { component: "boolean", key: "restaurant.noTarraceAvailable" },
+  /* END: new-for-reca */
+
+  "https://data.toevla.org/id/concepts/a0e47d0f-de78-456a-946d-12bc25a5c49b": { component: "centimeters", key: "restaurant.smallestPointOnRouteForTarrace" },
+  "https://data.toevla.org/id/concepts/62e91a68-af49-47f2-8564-de241e129074": { component: "centimeters", key: "restaurant.highestThresholdForTerrace"},
+  /* START: new-for-reca */
+  "https://data.toevla.org/id/concepts/28cae362-2d09-4cd5-b1ea-48dcbc95e34b": { component: "boolean", key: "restaurant.hasWheelchairFriendlyTableOnTerrace" },
+  "https://data.toevla.org/id/concepts/f713a011-cf41-4606-b71f-2f71e6b08bc6": { component: "centimeters", key: "restaurant.heightUnderTableForWheelchairOnTerrace" },
+  "https://data.toevla.org/id/concepts/fdecb32a-17a0-467f-b03f-bfccf06e69ff": { component: "boolean", key: "restaurant.hasTableRoundWithCentralSupportOnTerrace" } ,
+  "https://data.toevla.org/id/concepts/98f5d226-6862-47a3-8556-382318f73455": { component: "boolean", key: "restaurant.hasTableSquareWithCentralSupportOnTerrace" } ,
+  "https://data.toevla.org/id/concepts/3b213ac9-00c9-49be-8a28-46382f3a1305": { component: "boolean", key: "restaurant.hasTableSquareWithSupportsOnCornersOnTerrace" } ,
+  "https://data.toevla.org/id/concepts/079a8d59-d7b1-4d59-bb0f-f5dda7bcf7d0": { component: "boolean", key: "restaurant.onlyHasHighTablesOnTerrace" } ,
+  "https://data.toevla.org/id/concepts/433249f1-f27b-4ac0-98fe-01f5a3ee3bcd": { component: "string", key: "restaurant.commentOnTerrace" },
+  /* END: new-for-reca */
+
+  "https://data.toevla.org/id/concepts/5bcf9c9e-fdba-4124-8033-0dc3f0420cd2": { component: "boolean", key: "toilet.hasBabyNurturingTable" },
+  "https://data.toevla.org/id/concepts/b1c77177-cec7-42d6-acd1-0f93251dbde6": { component: "boolean", key: "hasWheelchairAccessibleToilet" },
+  "https://data.toevla.org/id/concepts/1608d840-2741-4b12-92f4-730e9b76a1dd": { component: "area", key: "toilet.sizeOfElevator" },
+  "https://data.toevla.org/id/concepts/d20c659b-ee19-4f8d-82fb-08df38c2ab2e": { component: "centimeters", key: "toilet.smallestPointOnRoute" },
+  "https://data.toevla.org/id/concepts/49f264f0-8d81-4fee-8e64-37c7df49e206": { component: "centimeters", key: "toilet.highestThresholdOnRoute" },
+  "https://data.toevla.org/id/concepts/ce5fe09f-4015-4e25-b0b3-086d72e67093": { component: "count", key: "toilet.amountOfThresholds" },
+  "https://data.toevla.org/id/concepts/11ae340f-6d2e-4222-b694-bc22b375e676": { component: "count", key: "toilet.amountOfStairs" },
+  "https://data.toevla.org/id/concepts/8b0182e4-6526-437f-9164-5e5248ceb11c": { component: "count", key: "toilet.amountOfSlopes" },
+  "https://data.toevla.org/id/concepts/f90f24af-353f-477a-8e64-66d20293bdff": { component: "boolean", key: "toilet.hasRamps" },
+  "https://data.toevla.org/id/concepts/5a0e70e8-76e7-4ce7-9566-cd9b0a3bea4e": { component: "area", key: "toilet.sizeOfPlateauElevator" },
+  "https://data.toevla.org/id/concepts/0454251b-34f3-452c-9e98-3c9eeed3e6b4": { component: "count", key: "toilet.amountOfPlateauElevators" },
+  "https://data.toevla.org/id/concepts/517117e7-711a-4725-b9a0-6e8118528594": { component: "centimeters", key: "toilet.doorWidth" },
+  "https://data.toevla.org/id/concepts/df15b21b-f710-4a2a-8c08-77ab0360ea7c": { component: "centimeters", key: "toilet.turningRadiusAtDoor" },
+  "https://data.toevla.org/id/concepts/26cce5f0-1210-48e9-89db-40170fe55262": { component: "area", key: "toilet.sizeOfToiletRoom" },
+  "https://data.toevla.org/id/concepts/036436e6-d523-427e-9b38-6c197ea6cd35": { component: "centimeters", key: "toilet.spaceInFrontOfToilet" },
+  "https://data.toevla.org/id/concepts/81f0ebae-2a6e-4e64-b0f7-a7f3170c7287": { component: "centimeters", key: "toilet.spaceNextToToilet" },
+  "https://data.toevla.org/id/concepts/2d85112e-dc16-4332-b537-575a889bb9ed": { component: "centimeters", key: "toilet.turningRadius" },
+  "https://data.toevla.org/id/concepts/482ba6ca-de00-427a-a2d7-c8174a88f3e2": { component: "count", key: "toilet.amountOfSupportBraces" },
+  "https://data.toevla.org/id/concepts/8e3b5dea-6c17-43ba-b3b9-d2ce3d1c2b48": { component: "choice", key: "toilet.washbasinAvailability", conceptScheme: "https://data.toevla.org/id/concept-schemes/605f6465-20b0-4528-937d-33b337723958" },
+  "https://data.toevla.org/id/concepts/ed9d8962-f196-4c39-8a21-9dccf0333780": { component: "string", key: "toilet.comment" },
+
+
+  /* START: new-for-reca */
+  "https://data.toevla.org/id/concepts/6528c92d-f0f1-4458-85cb-1413c78f946a": { component: "boolean", key: "restaurant.hasBallroom"},
+  "https://data.toevla.org/id/concepts/ff931a46-a05e-46b0-8df3-cb2bd3774550": { component: "boolean", key: "restaurant.hasPlayground"},
+  "https://data.toevla.org/id/concepts/35802504-e6d1-4e49-b265-987a7cd0a489": { component: "boolean", key: "restaurant.hasConferenceRoom"},
+  "https://data.toevla.org/id/concepts/844535cd-be7a-44b4-86ee-7271ebae1d5f": { component: "string", key: "restaurant.commentOnExtraFacilities"},
+  /* END: new-for-reca */
+
+
+  /* Musea Tree */
   "https://data.toevla.org/id/concepts/172da2d4-4114-465b-a083-7b7644618838":	{ component: "boolean", key: "publicTransportGuidanceAvailable" },
   "https://data.toevla.org/id/concepts/254027e0-9015-424b-a05f-60b0e33e5808":	{ component: "choice", key: "discountForGuide", conceptScheme: "https://data.toevla.org/id/concept-schemes/5bc9facd-b03f-486c-af76-69435a930c5e" },
   "https://data.toevla.org/id/concepts/2686a42a-6268-4ae4-9f4a-cc6ace21f2d1": { component: "choice", key: "discountForTranslator", conceptScheme: "https://data.toevla.org/id/concept-schemes/8d4cf373-bb4e-4a51-9059-9de51ddc46a7" },

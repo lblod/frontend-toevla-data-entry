@@ -5,7 +5,7 @@ import { inject as service } from '@ember/service';
 export default class PoiShow extends Route {
   @service store!: Store;
 
-  model({ id }: { id: string }) {
-    return this.store.findRecord('point-of-interest', id);
+  async model({ id }: { id: string }) {
+    return (await this.store.query("point-of-interest", { "filter[:id:]": id })).firstObject;
   }
 }

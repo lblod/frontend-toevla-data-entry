@@ -27,6 +27,21 @@
     <WithStatechart @state={{this.statechart}} as |chart|>
       <chart.if @state="init">
         <form {{on "submit" (fn chart.preventAndSend "CREATE")}} class="au-c-form">
+          <LabeledInput @label="Type" />
+
+          <ul>
+            {{#each this.kinds as |kind|}}
+              <li>
+                <AuControlRadio
+                  @label={{kind.label}}
+                  @value={{kind}}
+                  @name="kind"
+                  {{on "click" (fn (mut this.kind) kind)}}
+                />
+              </li>
+            {{/each}}
+          </ul>
+
           <p>
             <AuLabel for="addpoi">Naam</AuLabel>
             <AuInput id="addpoi" type="text" @value={{this.label}} @width="block" @placeholder="Museum M" />

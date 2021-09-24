@@ -8,7 +8,8 @@ export default class PoiIndexRoute extends Route {
 
   model() {
     return this.store.query('point-of-interest', {
-      "page[size]": 100
+      "page[size]": 100,
+      "filter[:has:label]": true
     });
   }
 }

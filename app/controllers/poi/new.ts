@@ -1,3 +1,4 @@
+import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import Controller from '@ember/controller';
@@ -5,6 +6,10 @@ import Store from '@ember-data/store';
 import Statechart from 'ember-statecharts/utils/statechart';
 import PointOfInterest from 'frontend-toevla-data-entry/models/point-of-interest';
 import { handler, guard, statechart } from 'frontend-toevla-data-entry/utils/rockin-statechart';
+
+type kind = { label: "museum", type: "museum" } | { label: "reca", type: "restaurant" };
+
+const kinds:kind[] = [{ label: "museum", type: "museum" }, { label: "reca", type: "restaurant" }];
 
 export default class PoiNew extends Controller {
   @tracked label: string | null = null;
@@ -54,14 +59,16 @@ export default class PoiNew extends Controller {
   }
 
   @handler()
-  async launchSave(){
+  async launchSave() {
     const label = this.label;
     const locationString = this.locationString;
     try {
+      const poiType = this.kind.type;
+
       const poiRecord =
         await this
           .store
-          .createRecord("point-of-interest", { label, locationString })
+          .createRecord(poiType, { label, locationString })
           .save();
 
       const widget = await this
@@ -88,6 +95,9 @@ export default class PoiNew extends Controller {
   get hasLabel() {
     return this.label && this.label !== "";
   }
+
+  @tracked kind: kind = kinds[0];
+  kinds: kind[] = kinds;
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your controllers.

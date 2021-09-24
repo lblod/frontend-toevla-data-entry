@@ -16,6 +16,9 @@ export default class ParkingModel extends Model {
   @attr('number') parkingSpaceWidth: number | undefined | null;
   @attr('number') maxVehicleHeight: number | undefined | null;
   @belongsTo('path') pathToEntrance: PathToEntrance | undefined | null;
+
+  // new for resto
+  @attr('boolean', { allowNull: true }) onPublicDomain: string | undefined | null;
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.

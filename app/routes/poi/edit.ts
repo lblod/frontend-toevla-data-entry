@@ -9,8 +9,8 @@ export default class PoiEdit extends Route {
   @service store!: Store;
   iconScheme: ConceptScheme | undefined;
 
-  model({id}: {id: string}): Promise<PointOfInterest | null> {
-    return this.store.findRecord("point-of-interest", id);
+  async model({id}: {id: string}): Promise<PointOfInterest | undefined> {
+    return (await this.store.query("point-of-interest", { "filter[:id:]": id })).firstObject;
   }
 
   async afterModel(model: PointOfInterest | null) {
