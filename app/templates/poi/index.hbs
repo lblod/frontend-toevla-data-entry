@@ -26,8 +26,8 @@
             <AuHeading @level="2" @skin="4">
               <LinkTo @route="poi.show.tree" @model={{poi.id}} class="au-c-link au-c-link--secondary au-c-card__link">
                 {{poi.label}}
-                {{#if this.currentAccount.roleIsValidator}}
-                  ({{poi.updatedAt}})
+                {{#if (and this.currentAccount.roleIsValidator poi.updatedAt)}}
+                  ({{relative-time poi.updatedAt}})
                 {{/if}}
               </LinkTo>
             </AuHeading>

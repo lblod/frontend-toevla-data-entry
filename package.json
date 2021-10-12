@@ -105,6 +105,7 @@
     "edition": "octane"
   },
   "dependencies": {
-    "@lblod/ember-vo-mu-file-upload": "git://github.com/lblod/ember-vo-mu-file-upload.git#master"
+    "@lblod/ember-vo-mu-file-upload": "git://github.com/lblod/ember-vo-mu-file-upload.git#master",
+    "date-fns": "^2.25.0"
   }
 }
