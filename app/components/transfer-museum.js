@@ -34,6 +34,7 @@ export default class TransferMuseumComponent extends Component {
   @handler()
   async requestTransfer() {
     try {
+      await this.args.beforeTransfer?.call();
       const resp = await fetch(this.args.path, { method: 'POST' });
       const body = await resp.json();
       if (resp.status !== 500 &&  resp.status !== 403) {
