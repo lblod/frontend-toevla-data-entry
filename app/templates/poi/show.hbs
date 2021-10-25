@@ -34,8 +34,8 @@
           <TransferMuseum
             @buttonLabel="Verstuur"
             @path={{if this.currentAccount.roleIsValidator
-                      (concat "/transfer/museum/" this.model.id "/send-to-museum")
-                      (concat "/transfer/museum/" this.model.id "/send-to-validator")}}
+                      (concat "/transfer/museum/" @model.id "/send-to-museum")
+                      (concat "/transfer/museum/" @model.id "/send-to-validator")}}
             @buttonIcon="send"
             @modalTitle="Verstuur wijzigingen"
             @sendLabel="Verstuur deze versie"
