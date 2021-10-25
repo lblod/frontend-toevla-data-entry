@@ -8,6 +8,10 @@ module.exports = function (environment) {
     locationType: 'auto',
     changeTracker: { trackHasMany: true, auto: true },
     authorizationKind: "on", // for now, anything except for none means we'll do authorization
+    'ember-plausible': {
+      apiHost: "{{PLAUSIBLE_HOST}}",
+      domain: "{{PLAUSIBLE_DOMAIN}}"
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
