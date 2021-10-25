@@ -40,6 +40,7 @@
             @modalTitle="Verstuur wijzigingen"
             @sendLabel="Verstuur deze versie"
             @sendMessage="Weet u zeker dat u deze versie wil verzenden?"
+            @beforeTransfer={{this.storeChangedAtDate}}
           />
         {{/if}}
 
@@ -52,6 +53,7 @@
             @modalTitle="Publiceer wijzigingen"
             @sendLabel="Verstuur deze versie"
             @sendMessage="Weet u zeker dat u deze versie wil publiceren?"
+            @beforeTransfer={{this.storeChangedAtDate}}
           />
         {{/if}}
       </div>

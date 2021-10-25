@@ -55,6 +55,9 @@ export default class TreeNodeComponent extends Component<TreeNodeArgs> {
   }
 
   get nodeTitle(){
-    return this.args.title || this.args.node.title;
+    const title = this.args.title || this.args.node.title;
+    const required = this.args.node.isCompulsory;
+
+    return required ? `${title} *` : title;
   }
 }

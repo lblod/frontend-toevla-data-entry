@@ -16,6 +16,7 @@ import Scorable from './scorable';
 
 export default class PointOfInterest extends Scorable {
   @attr('string') uri: string | null | undefined;
+  @attr('datetime') updatedAt: Date | null | undefined;
   @attr('string') label: string | null | undefined;
   @attr('string') comment: string | null | undefined;
   @attr('string') commentOnPublicTransport: string | null | undefined;
