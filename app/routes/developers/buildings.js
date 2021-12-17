@@ -8,6 +8,6 @@ export default class DevelopersBuildingsRoute extends Route {
     if( this.store.peekAll('widget').length )
       return this.store.findAll('widget');
     else
-      return this.store.query('widget', { include: "point-of-interest" });
+      return this.store.query('widget', { include: "point-of-interest", "page[size]": 250 });
   }
 }
