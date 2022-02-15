@@ -40,6 +40,7 @@ Router.map(function() {
   this.route('developers', { path: "/ontwikkelaars" }, function() {
     this.route('styling');
     this.route('plaatsing');
+    this.route('iframe');
     this.route('intro');
     this.route('buildings', { path: "/gebouwen" });
   });
