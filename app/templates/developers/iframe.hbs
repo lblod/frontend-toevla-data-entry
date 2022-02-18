@@ -1,0 +1,25 @@
+<AuHeading @level="2" @skin="2">Widget integreren alternatief (met iframe)</AuHeading>
+<p>Volg volgende stappen om de widget in een iframe op uw website te plaatsen.</p>
+
+<AuHeading @level="3" @skin="3">1. Kopieer de widget code naar de plaats op de pagina waar u de widget wil weergeven</AuHeading>
+<CodeBlock @code='<iframe
+    title="Toegankelijkheidswijzer"
+    width="800"
+    height="1050"
+    frameborder="0"
+    src="https://widget.toegankelijk.vlaanderen.be/widgets/[uri voor jouw gebouw-widget]">
+</iframe>'
+  @language="html" />
+
+<AuHeading @level="3" @skin="3">2. Vervang de resource URI</AuHeading>
+<p>Zoek op deze <LinkTo @route="developers.buildings" class="au-c-link">overzichtpagina</LinkTo> de resource URI code van uw gebouw.</p>
+
+<p>Zet uw resource URI op de juiste plaats in de widget code. U plaatst deze in de <CodeInline @code='src=""' @language="html" /> van de iframe. De waarde is een combinatie van <CodeInline @code='https://widget.toegankelijk.vlaanderen.be/widgets/' @language="html" /> + <strong>een unieke identificatie code</strong>.</p>
+
+<AuHeading @level="3" @skin="3">3. Via de iframe optie kan je de stijl van de widget niet aanpassen</AuHeading>
+<p>Indien u de de stijl van de widget wil aanpassen kies dan voor de <LinkTo @route="developers.intro" class="au-c-link">standaard integratie optie</LinkTo>.</p>
+<p>De breedte en hoogte van de iframe kan u naar wens aanpassen om deze correct in uw website te integreren.</p>
+
+<AuHeading @level="3" @skin="3">Vragen of hulp nodig?</AuHeading>
+<p>Indien u problemen tegenkomt bij het implementeren van de widget kan u ons contacteren op <a href="mailto:toegankelijk@vlaanderen.be" class="au-c-link">toegankelijk@vlaanderen.be</a></p>
+<p>Bugs of issues met de widget kan u melden op de <a href="https://github.com/lblod/frontend-toevla/issues" target="_blank" rel="noopener noreferrer" class="au-c-link">github pagina</a> van het project.</p>
