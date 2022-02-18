@@ -7,14 +7,14 @@
     width="800"
     height="1050"
     frameborder="0"
-    src="https://widget.toegankelijk.vlaanderen.be/widgets/[uri voor jouw gebouw-widget]">
+    src="https://widget.toegankelijk.vlaanderen.be/direct/[id voor jouw gebouw-widget]">
 </iframe>'
   @language="html" />
 
 <AuHeading @level="3" @skin="3">2. Vervang de resource URI</AuHeading>
-<p>Zoek op deze <LinkTo @route="developers.buildings" class="au-c-link">overzichtpagina</LinkTo> de resource URI code van uw gebouw.</p>
+<p>Zoek op deze <LinkTo @route="developers.buildings" class="au-c-link">overzichtpagina</LinkTo> de resource identificatie-code van uw gebouw (het laatste deel van de URI).</p>
 
-<p>Zet uw resource URI op de juiste plaats in de widget code. U plaatst deze in de <CodeInline @code='src=""' @language="html" /> van de iframe. De waarde is een combinatie van <CodeInline @code='https://widget.toegankelijk.vlaanderen.be/widgets/' @language="html" /> + <strong>een unieke identificatie code</strong>.</p>
+<p>Zet uw resource URI op de juiste plaats in de widget code. U plaatst deze in de <CodeInline @code='src=""' @language="html" /> van de iframe. De waarde is een combinatie van <CodeInline @code='https://widget.toegankelijk.vlaanderen.be/direct/' @language="html" /> + <strong>een unieke identificatie code</strong>.</p>
 
 <AuHeading @level="3" @skin="3">3. Via de iframe optie kan je de stijl van de widget niet aanpassen</AuHeading>
 <p>Indien u de de stijl van de widget wil aanpassen kies dan voor de <LinkTo @route="developers.intro" class="au-c-link">standaard integratie optie</LinkTo>.</p>
