@@ -1,7 +1,11 @@
 <AuHeading @level="2" @skin="2">Widget integreren</AuHeading>
-<p>Volg volgende stappen om de widget op uw website te plaatsen.</p>
+<p>Er zijn verschillende mogelijkheden om de widget op je website te plaatsen. De standaard integratie, die het best bruikbaar blijft, ook op mobiele apparaten of bij het versmallen van het scherm staat hieronder omschreven.</p>
 
-<AuHeading @level="3" @skin="3">1. Kopieer de widget code naar de plaats op de pagina waar u de widget wil weergeven</AuHeading>
+<p>Indien dit niet mogelijk is dan kan je de alternatieven op de pagina ‘Widget integreren – alternatieven’ bekijken. Daar omschrijven we hoe je de widget kan integreren via ‘iframe’ of via een ‘link'.</p>
+
+<p>Volg volgende stappen om de widget op je website te plaatsen.</p>
+
+<AuHeading @level="3" @skin="3">1. Kopieer de widget code (script) naar de plaats op de pagina waar je de widget wil weergeven</AuHeading>
 <CodeBlock @code='<script
   src="{{this.baseUri.origin}}/widget.js"
   resource="[uri voor jouw gebouw-widget]"
@@ -9,12 +13,12 @@
   @language="html" />
 
 <AuHeading @level="3" @skin="3">2. Vervang de resource URI</AuHeading>
-<p>Zoek op deze <LinkTo @route="developers.buildings" class="au-c-link">overzichtpagina</LinkTo> de resource URI code van uw gebouw.</p>
+<p>Zoek op deze <LinkTo @route="developers.buildings" class="au-c-link">overzichtpagina</LinkTo> de resource URI code voor jouw gebouw-widget.</p>
 
-<p>Zet uw resource URI op de juiste plaats in de widget code. U plaatst deze onder <CodeInline @code='resource=""' @language="html" />. De waarde is een combinatie van <CodeInline @code='http://data.toegankelijk.vlaanderen.be/id/widgets/' @language="html" /> + <strong>een unieke identificatie code</strong>.</p>
+<p>Zet de resource URI op de juiste plaats in de widget code. Plaats deze onder <CodeInline @code='resource=""' @language="html" />. De waarde is een combinatie van <CodeInline @code='http://data.toegankelijk.vlaanderen.be/id/widgets/' @language="html" /> + <strong>een unieke identificatie code</strong>.</p>
 
 <AuHeading @level="3" @skin="3">3. Pas indien gewenst de stijl van de widget aan</AuHeading>
-<p>U kan een aantal design elementen (kleuren, typografie) aanpassen door deze mee te geven in de widget code.</p>
+<p>Je kan een aantal design elementen (kleuren, typografie) aanpassen door deze mee te geven in de widget code.</p>
 
 <CodeBlock @code='<script
   src="{{this.baseUri.origin}}/widget.js"
