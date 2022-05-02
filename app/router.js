@@ -43,6 +43,7 @@ Router.map(function() {
     this.route('iframe');
     this.route('intro');
     this.route('buildings', { path: "/gebouwen" });
+    this.route('opensource');
   });
   this.route('mock-login', function() {
     this.route('accounts');
