@@ -69,6 +69,9 @@ export default class BuildingsRoute extends Route {
       }, {
         title: "DIVA - Museum voor diamant, juwelen en zilver",
         url: "https://www.divaantwerp.be/nl/visit/toegankelijkheid"
+      }, {
+        title: "Museum44 Meensel-Kiezegem",
+        url: "https://museum44.be/toegankelijkheid/"
       }
     ];
   }
