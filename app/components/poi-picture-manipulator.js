@@ -19,6 +19,7 @@ class PictureListResource extends Resource {
       poi
         .images
         .toArray()
+        .sort((a, b) => parseInt(b) - parseInt(a))
         .sortBy("order"));
   }
 }
