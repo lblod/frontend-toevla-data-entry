@@ -5,22 +5,28 @@ export default class BuildingsRoute extends Route {
     return [
       {
         title: "De wereld van Kina: het Huis",
-        url: "https://dewereldvankina.stad.gent/toegankelijkheid"
+        url: "https://dewereldvankina.stad.gent/toegankelijkheid",
+        widget: "5F9950A6EF5FF20008000002"
       }, {
         title: "Huis van Alijn",
-        url: "https://huisvanalijn.be/nl/toegankelijkheid"
+        url: "https://huisvanalijn.be/nl/toegankelijkheid",
+        widget: "5F9A9CB3EF5FF20008000080"
       }, {
         title: "S.M.A.K. Gent",
-        url: "https://smak.be/toegankelijkheid"
+        url: "https://smak.be/toegankelijkheid",
+        widget: "5FA7BC0EEF5FF200080000E2"
       }, {
         title: "De wereld van Kina: de Tuin",
-        url: "https://dewereldvankina.stad.gent/toegankelijkheid"
+        url: "https://dewereldvankina.stad.gent/toegankelijkheid",
+        widget: "5F9965C8EF5FF20008000006"
       }, {
         title: "MSK Gent - Museum voor Schone Kunsten Gent",
-        url: "https://www.mskgent.be/nl/toegankelijkheid"
+        url: "https://www.mskgent.be/nl/toegankelijkheid",
+        widget: "5FA2A9DBEF5FF20008000007"
       }, {
         title: "Museum Dr. Guislain",
-        url: "https://www.museumdrguislain.be/nl/toegankelijkheid"
+        url: "https://www.museumdrguislain.be/nl/toegankelijkheid",
+        widget: "5FABA33DEF5FF2000800011A"
       }, {
         title: "GUM - Gents Universiteitsmuseum",
         url: "https://www.gum.gent/nl/toegankelijkheid"
