@@ -4,8 +4,14 @@ import Route from '@ember/routing/route';
 export default class PeopleShowRoute extends Route {
   @service store;
 
-  model({id}) {
-    return this.store.findRecord( 'person', id );
+  async model({id}) {
+    const people =
+          await (this
+                 .store
+                 .query( 'person', { filter: { ":id:": id }, include: "accounts.roles" } ));
+    return people.firstObject;
+
+    // return this.store.findRecord( 'person', id );
   }
 
   setupController( controller, model ) {
