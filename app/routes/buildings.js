@@ -95,6 +95,10 @@ export default class BuildingsRoute extends Route {
         title: "Museum44 Meensel-Kiezegem",
         url: "https://museum44.be/toegankelijkheid/",
         widget: "610D13FC5E73B500080000AA"
+      }, {
+        title: "Het Stadsmus - Hasselt",
+        url: "https://www.visithasselt.be/nl/het-stadsmus/plan-je-bezoek",
+        widget: ""
       }
     ];
   }
