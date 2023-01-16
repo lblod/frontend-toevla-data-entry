@@ -1,8 +1,9 @@
+import { A } from '@ember/array';
 import Route from '@ember/routing/route';
 
 export default class BuildingsRoute extends Route {
   model() {
-    return [
+    return A([
       {
         title: "De wereld van Kina: het Huis",
         url: "https://dewereldvankina.stad.gent/toegankelijkheid",
@@ -108,6 +109,6 @@ export default class BuildingsRoute extends Route {
         url: "https://www.stadsmuseumlier.be/content/toegankelijkheid",
         widget: "610D26BA5E73B500080000D9"
       }
-    ];
+    ]).sortBy("title");
   }
 }
