@@ -98,7 +98,15 @@ export default class BuildingsRoute extends Route {
       }, {
         title: "Het Stadsmus - Hasselt",
         url: "https://www.visithasselt.be/nl/het-stadsmus/plan-je-bezoek",
-        widget: ""
+        widget: "6148A9B85E73B50009000125"
+      }, {
+        title: "M Leuven",
+        url: "https://www.mleuven.be/plan-je-bezoek/toegankelijkheid-faciliteiten/toegankelijkheid/toegankelijkheidswijzer",
+        widget: "6135BED65E73B50009000004"
+      }, {
+        title: "Stadsmuseum Lier",
+        url: "https://www.stadsmuseumlier.be/content/toegankelijkheid",
+        widget: "610D26BA5E73B500080000D9"
       }
     ];
   }
