@@ -108,6 +108,10 @@ export default class BuildingsRoute extends Route {
         title: "Stadsmuseum Lier",
         url: "https://www.stadsmuseumlier.be/content/toegankelijkheid",
         widget: "610D26BA5E73B500080000D9"
+      }, {
+        title: "KOERS, Museum van de Wielersport",
+        url: "https://koersmuseum.be/nl/general/toegankelijkheid",
+        widget: "60D47D0D5E73B5000800001C"
       }
     ]).sortBy("title");
   }
