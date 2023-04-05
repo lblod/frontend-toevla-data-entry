@@ -112,6 +112,10 @@ export default class BuildingsRoute extends Route {
         title: "KOERS, Museum van de Wielersport",
         url: "https://koersmuseum.be/nl/general/toegankelijkheid",
         widget: "60D47D0D5E73B5000800001C"
+      }, {
+        title: "Mu.ZEE - Oostende",
+        url: "https://www.muzee.be/nl/bezoek-1",
+        widget: "http://data.toegankelijk.vlaanderen.be/id/widgets/610D272B5E73B500080000DD"
       }
     ]).sortBy("title");
   }
