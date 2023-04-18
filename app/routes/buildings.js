@@ -116,6 +116,10 @@ export default class BuildingsRoute extends Route {
         title: "Mu.ZEE - Oostende",
         url: "https://www.muzee.be/nl/bezoek-1",
         widget: "http://data.toegankelijk.vlaanderen.be/id/widgets/610D272B5E73B500080000DD"
+      }, {
+        title: "Museum Torhouts Aardewerk",
+        url: "https://www.visittorhout.be/museum-torhouts-aardewerk",
+        widget: "http://data.toegankelijk.vlaanderen.be/id/widgets/610D07A75E73B50008000098"
       }
     ]).sortBy("title");
   }
