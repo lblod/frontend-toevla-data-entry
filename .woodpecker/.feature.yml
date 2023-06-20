@@ -1,0 +1,10 @@
+pipeline:
+  build:
+    image: woodpeckerci/plugin-docker-buildx
+    settings:
+      repo: ${CI_REPO}
+      tags: "feature-${CI_COMMIT_TAG##feature/}"
+    secrets: [ docker_username, docker_password ]
+when:
+  event: tag
+  tag: feature/*
