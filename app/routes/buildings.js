@@ -120,6 +120,10 @@ export default class BuildingsRoute extends Route {
         title: "Museum Torhouts Aardewerk",
         url: "https://www.visittorhout.be/museum-torhouts-aardewerk",
         widget: "http://data.toegankelijk.vlaanderen.be/id/widgets/610D07A75E73B50008000098"
+      }, {
+        title: "Technopolis",
+        url: "https://www.technopolis.be/nl/toegankelijkheid-en-voorzieningen/",
+        widget: "http://data.toegankelijk.vlaanderen.be/id/widgets/638864CF0C87E7C2C6A3B25C"
       }
     ]).sortBy("title");
   }
