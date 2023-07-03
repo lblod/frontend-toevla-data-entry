@@ -86,7 +86,7 @@ export default class BuildingsRoute extends Route {
         widget: "60D47D535E73B5000800001E"
       }, {
         title: "Gallo-Romeins Museum",
-        url: "https://www.galloromeinsmuseum.be/nl/praktisch/toegankelijkheid",
+        url: "https://www.galloromeinsmuseum.be/plan-je-bezoek/toegankelijkheid/",
         widget: "610D14555E73B500080000AE"
       }, {
         title: "DIVA - Museum voor diamant, juwelen en zilver",
