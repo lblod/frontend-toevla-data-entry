@@ -82,7 +82,7 @@ export default class BuildingsRoute extends Route {
         widget: "6148AACE5E73B5000900012B"
       }, {
         title: "Het James Ensorhuis",
-        url: "https://www.ensorstad.be/nl/toegankelijkheid",
+        url: "https://www.ensorhuis.be/nl/het-james-ensorhuis-vlaanderenstraat-29#ensor-block-02",
         widget: "60D47D535E73B5000800001E"
       }, {
         title: "Gallo-Romeins Museum",
