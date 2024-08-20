@@ -26,7 +26,7 @@ export default class BuildingsRoute extends Route {
         widget: "5FA2A9DBEF5FF20008000007"
       }, {
         title: "Museum Dr. Guislain",
-        url: "https://www.museumdrguislain.be/nl/toegankelijkheid",
+        url: "https://www.museumdrguislain.be/nl/toegankelijkheid-1",
         widget: "5FABA33DEF5FF2000800011A"
       }, {
         title: "GUM - Gents Universiteitsmuseum",
@@ -58,7 +58,7 @@ export default class BuildingsRoute extends Route {
         widget: "610D05F55E73B50008000090"
       }, {
         title: "Museum Voor Religieuze Kunst Diest",
-        url: "https://diest.be/museum-voor-religieuze-kunst",
+        url: "https://www.diest.be/vrije-tijd/cultuur-en-erfgoed/musea/museum-voor-religieuze-kunst",
         widget: "610D275C5E73B500080000DF"
       }, {
         title: "Bezoekerscentrum Dru!f, huis van de tafeldruif",
@@ -74,7 +74,7 @@ export default class BuildingsRoute extends Route {
         widget: "60B52839560CA50008000058"
       }, {
         title: "Museum Hof van Busleyden",
-        url: "https://www.hofvanbusleyden.be/toegankelijkheid",
+        url: "https://www.hofvanbusleyden.be/bezoek/toegankelijkheid",
         widget: "6148AB2E5E73B5000900012D"
       }, {
         title: "Museum aan de IJzer",
@@ -118,7 +118,7 @@ export default class BuildingsRoute extends Route {
         widget: "http://data.toegankelijk.vlaanderen.be/id/widgets/610D272B5E73B500080000DD"
       }, {
         title: "Museum Torhouts Aardewerk",
-        url: "https://www.visittorhout.be/museum-torhouts-aardewerk",
+        url: "https://www.visittorhout.be/toegankelijk",
         widget: "http://data.toegankelijk.vlaanderen.be/id/widgets/610D07A75E73B50008000098"
       }, {
         title: "Technopolis",
