@@ -54,7 +54,7 @@ export default class BuildingsRoute extends Route {
         widget: "5FB23B0CEF5FF20008000002"
       }, {
         title: "Damiaanmuseum",
-        url: "http://damiaanmuseum.be/toegankelijkheid/",
+        url: "https://www.damiaan.be/museum/toegankelijkheid",
         widget: "610D05F55E73B50008000090"
       }, {
         title: "Museum Voor Religieuze Kunst Diest",
