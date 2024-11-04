@@ -5,8 +5,8 @@ export default class BuildingsRoute extends Route {
   model() {
     return A([
       {
-        title: "De wereld van Kina: het Huis",
-        url: "https://dewereldvankina.stad.gent/toegankelijkheid",
+        title: "Huis",
+        url: "https://kina.stad.gent/toegankelijkheid",
         widget: "5F9950A6EF5FF20008000002"
       }, {
         title: "Huis van Alijn",
@@ -17,8 +17,8 @@ export default class BuildingsRoute extends Route {
         url: "https://smak.be/toegankelijkheid",
         widget: "5FA7BC0EEF5FF200080000E2"
       }, {
-        title: "De wereld van Kina: de Tuin",
-        url: "https://dewereldvankina.stad.gent/toegankelijkheid",
+        title: "Tuin",
+        url: "https://kina.stad.gent/toegankelijkheid",
         widget: "5F9965C8EF5FF20008000006"
       }, {
         title: "MSK Gent - Museum voor Schone Kunsten Gent",
