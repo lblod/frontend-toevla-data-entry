@@ -5,9 +5,10 @@ export default class BuildingsRoute extends Route {
   model() {
     return A([
       {
-        title: "Huis",
+        title: "Kina",
         url: "https://kina.stad.gent/toegankelijkheid",
-        widget: "5F9950A6EF5FF20008000002"
+        widget: "5F9950A6EF5FF20008000002" // Huis
+        // widget: "5F9965C8EF5FF20008000006" // Tuin
       }, {
         title: "Huis van Alijn",
         url: "https://huisvanalijn.be/nl/toegankelijkheid",
@@ -16,10 +17,6 @@ export default class BuildingsRoute extends Route {
         title: "S.M.A.K. Gent",
         url: "https://smak.be/toegankelijkheid",
         widget: "5FA7BC0EEF5FF200080000E2"
-      }, {
-        title: "Tuin",
-        url: "https://kina.stad.gent/toegankelijkheid",
-        widget: "5F9965C8EF5FF20008000006"
       }, {
         title: "MSK Gent - Museum voor Schone Kunsten Gent",
         url: "https://www.mskgent.be/nl/toegankelijkheid",
