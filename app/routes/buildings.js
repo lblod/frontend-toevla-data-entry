@@ -121,6 +121,10 @@ export default class BuildingsRoute extends Route {
         title: "Technopolis",
         url: "https://www.technopolis.be/nl/toegankelijkheid-en-voorzieningen/",
         widget: "638864CF0C87E7C2C6A3B25C"
+      }, {
+        title: "MOU museum Oudenaarde",
+        url: "https://www.oudenaarde.be/nl/mou/bezoek/praktisch",
+        widget: "610D142A5E73B500080000AC"
       }
     ]).sortBy("title");
   }
