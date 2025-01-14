@@ -112,15 +112,19 @@ export default class BuildingsRoute extends Route {
       }, {
         title: "Mu.ZEE - Oostende",
         url: "https://www.muzee.be/nl/bezoek-1",
-        widget: "http://data.toegankelijk.vlaanderen.be/id/widgets/610D272B5E73B500080000DD"
+        widget: "610D272B5E73B500080000DD"
       }, {
         title: "Museum Torhouts Aardewerk",
         url: "https://www.visittorhout.be/toegankelijk",
-        widget: "http://data.toegankelijk.vlaanderen.be/id/widgets/610D07A75E73B50008000098"
+        widget: "610D07A75E73B50008000098"
       }, {
         title: "Technopolis",
         url: "https://www.technopolis.be/nl/toegankelijkheid-en-voorzieningen/",
-        widget: "http://data.toegankelijk.vlaanderen.be/id/widgets/638864CF0C87E7C2C6A3B25C"
+        widget: "638864CF0C87E7C2C6A3B25C"
+      }, {
+        title: "MOU museum Oudenaarde",
+        url: "https://www.oudenaarde.be/nl/mou/bezoek/praktisch",
+        widget: "610D142A5E73B500080000AC"
       }
     ]).sortBy("title");
   }
