@@ -15,7 +15,7 @@ export default class BuildingsRoute extends Route {
         widget: "5F9A9CB3EF5FF20008000080"
       }, {
         title: "S.M.A.K. Gent",
-        url: "https://smak.be/toegankelijkheid",
+        url: "https://smak.be/nl/bezoek-smak/toegankelijkheid",
         widget: "5FA7BC0EEF5FF200080000E2"
       }, {
         title: "MSK Gent - Museum voor Schone Kunsten Gent",
