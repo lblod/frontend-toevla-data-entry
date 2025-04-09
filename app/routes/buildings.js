@@ -125,6 +125,11 @@ export default class BuildingsRoute extends Route {
         title: "MOU museum Oudenaarde",
         url: "https://www.oudenaarde.be/nl/mou/bezoek/praktisch",
         widget: "610D142A5E73B500080000AC"
+      },
+      {
+        title: "Venetiaanse Gaanderijen - Oostende",
+        url: "https://www.oostende.be/toegankelijkheid-venetiaanse",
+        widget: "65FADF5B9D50FB0224B58F4B"
       }
     ]).sortBy("title");
   }
