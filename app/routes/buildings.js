@@ -130,6 +130,11 @@ export default class BuildingsRoute extends Route {
         title: "Venetiaanse Gaanderijen - Oostende",
         url: "https://www.oostende.be/toegankelijkheid-venetiaanse",
         widget: "65FADF5B9D50FB0224B58F4B"
+      },
+      {
+        title: "Belevingscentrum Hoge Mote - Ronse",
+        url: "https://www.visitronse.be/nl/toegankelijkheidswijzer-hoge-mote",
+        widget: "67F3848B8CAA2C755C115D43"
       }
     ]).sortBy("title");
   }
