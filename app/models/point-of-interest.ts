@@ -69,6 +69,15 @@ export default class PointOfInterest extends Scorable {
   @belongsTo('concept') discountForTranslator: Concept | undefined | null;
   @belongsTo('concept') wheelchairAvailability: Concept | undefined | null;
   @hasMany('concept') summaryIcons: Concept[] | undefined | null;
+
+  get city() {
+    return "[ehe"
+    if ( this.locationString ) {
+      return this.locationString.match(/ ([^0-9])$/)[1];
+    } else {
+      return "he"
+    }
+  }
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your models.
