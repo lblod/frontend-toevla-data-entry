@@ -135,6 +135,11 @@ export default class BuildingsRoute extends Route {
         title: "Belevingscentrum Hoge Mote - Ronse",
         url: "https://www.visitronse.be/nl/toegankelijkheidswijzer-hoge-mote",
         widget: "67F3848B8CAA2C755C115D43"
+      },
+      {
+        title: "Jenevermuseum - Hasselt",
+        url: "https://www.jenevermuseum.be/nl/bezoek-activiteiten/tickets-openingsuren-bereikbaarheid",
+        widget: "6148A97A5E73B50009000123"
       }
     ]).sortBy("title");
   }
