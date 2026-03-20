@@ -140,6 +140,11 @@ export default class BuildingsRoute extends Route {
         title: "Jenevermuseum - Hasselt",
         url: "https://www.jenevermuseum.be/nl/bezoek-activiteiten/tickets-openingsuren-bereikbaarheid",
         widget: "6148A97A5E73B50009000123"
+      },
+      {
+        title: "Permekemuseum - Jabbeke",
+        widget: "68CD15B0162C0D68758CB764",
+        url: "https://www.permekemuseum.be/nl/praktisch"
       }
     ]).sortBy("title");
   }
