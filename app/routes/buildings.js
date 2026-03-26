@@ -145,6 +145,11 @@ export default class BuildingsRoute extends Route {
         title: "Permekemuseum - Jabbeke",
         widget: "68CD15B0162C0D68758CB764",
         url: "https://www.permekemuseum.be/nl/praktisch"
+      },
+      {
+        title: "Biblia, Bijbels belevingscentrum - Brugge",
+        widget: "689DCE1A8CAA2C755C115E26 ",
+        url: "https://www.biblia.be/nl/praktische-info"
       }
     ]).sortBy("title");
   }
