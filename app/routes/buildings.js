@@ -150,6 +150,11 @@ export default class BuildingsRoute extends Route {
         title: "Biblia, Bijbels belevingscentrum - Brugge",
         widget: "689DCE1A8CAA2C755C115E26 ",
         url: "https://www.biblia.be/nl/praktische-info"
+      },
+      {
+        title: "Texture, museum van vlas en textiel - Kortrijk",
+        widget: "http://data.toegankelijk.vlaanderen.be/id/widgets/6148AA7A5E73B50009000129",
+        url: "https://www.texturekortrijk.be/praktisch/toegankelijkheid"
       }
     ]).sortBy("title");
   }
