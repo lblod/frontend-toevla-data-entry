@@ -155,6 +155,11 @@ export default class BuildingsRoute extends Route {
         title: "Texture, museum van vlas en textiel - Kortrijk",
         widget: "http://data.toegankelijk.vlaanderen.be/id/widgets/6148AA7A5E73B50009000129",
         url: "https://www.texturekortrijk.be/praktisch/toegankelijkheid"
+      },
+      {
+        title: "Passchendaele Museum - Zonnebeke",
+        widget: "http://data.toegankelijk.vlaanderen.be/id/widgets/697B3F5EEAB6760B10E523F3",
+        url: "https://passchendaele.be/praktisch/toegankelijkheid/"
       }
     ]).sortBy("title");
   }
