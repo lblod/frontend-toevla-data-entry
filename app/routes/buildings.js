@@ -23,7 +23,7 @@ export default class BuildingsRoute extends Route {
         widget: "5FA2A9DBEF5FF20008000007"
       }, {
         title: "Museum Dr. Guislain - Gent",
-        url: "https://www.museumdrguislain.be/nl/toegankelijkheid-1",
+        url: "https://www.museumdrguislain.be/nl/toegankelijkheid",
         widget: "5FABA33DEF5FF2000800011A"
       }, {
         title: "GUM - Gents Universiteitsmuseum - Gent",
@@ -160,6 +160,16 @@ export default class BuildingsRoute extends Route {
         title: "Passchendaele Museum - Zonnebeke",
         widget: "http://data.toegankelijk.vlaanderen.be/id/widgets/697B3F5EEAB6760B10E523F3",
         url: "https://passchendaele.be/praktisch/toegankelijkheid/"
+      },
+      {
+        title: "Bakkerijmuseum - Veurne",
+        widget: "678A221B8CAA2C755C115CCA",
+        url: "https://www.bakkerijmuseum.be/nl/plan-je-bezoek/praktisch/bereikbaarheid-en-toegankelijkheid"
+      },
+      {
+        title: "Belle Epoque Centrum - Blankenberge",
+        widget: "610D14D65E73B500080000B2",
+        url: "https://www.belleepoquecentrum.be/toegankelijkheid-belle-epoque-centrum"
       }
     ]).sortBy("title");
   }
